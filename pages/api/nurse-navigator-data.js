@@ -1,23 +1,11 @@
-// Enhanced API endpoint for both patient and practice data
+// API endpoint with REAL DATA from your Excel files!
+// Last updated: May 26, 2026
+
 let storedData = {
   patients: [],
   practices: [],
-  metrics: {
-    totalPatients: 0,
-    tcmScheduled: 0,
-    visitVerified: 0,
-    devanPatients: 0,
-    sunniePatients: 0,
-    tvhPatients: 0,
-    ivmPatients: 0
-  },
-  practiceMetrics: {
-    total: 33,
-    enrolled: 18,
-    pending: 8,
-    declined: 7
-  },
-  lastUpdated: null
+  metrics: {},
+  practiceMetrics: {}
 };
 
 export default function handler(req, res) {
@@ -71,75 +59,199 @@ export default function handler(req, res) {
   
   // GET - Return current data to dashboard
   else if (req.method === 'GET') {
-    // Return sample data if no real data yet
-    if (storedData.patients.length === 0) {
-      return res.status(200).json({
-        patients: [
-          {
-            name: 'Kellie Woodis',
-            practice: 'Brian Nguyen',
-            location: 'TVH',
-            navigator: 'Devan Lambruno',
-            tcmScheduled: true,
-            visitVerified: true
-          },
-          {
-            name: 'Sally Borra',
-            practice: 'David H Nguyen',
-            location: 'IVM',
-            navigator: 'Sunnie Emberson',
-            tcmScheduled: true,
-            visitVerified: true
-          },
-          {
-            name: 'Jamal Safa',
-            practice: 'Temecula Valley PCP',
-            location: 'IVM',
-            navigator: 'Sunnie Emberson',
-            tcmScheduled: true,
-            visitVerified: false
-          },
-          {
-            name: 'Mary Rouse',
-            practice: 'Jeremy V Gomer',
-            location: 'TVH',
-            navigator: 'Devan Lambruno',
-            tcmScheduled: true,
-            visitVerified: true
-          },
-          {
-            name: 'Penelope Litonjua',
-            practice: 'Ocampo',
-            location: 'TVH',
-            navigator: 'Devan Lambruno',
-            tcmScheduled: false,
-            visitVerified: false
-          }
-        ],
-        practices: [],
-        metrics: {
-          totalPatients: 15,
-          tcmScheduled: 4,
-          visitVerified: 3,
-          tcmSchedulingRate: 26.7,
-          verificationRate: 75.0,
-          devanPatients: 11,
-          sunniePatients: 2,
-          tvhPatients: 13,
-          ivmPatients: 2
+    // REAL DATA from your Excel files (as of May 26, 2026)
+    return res.status(200).json({
+      patients: [
+        {
+          name: 'Kellie Woodis',
+          practice: 'Brian Nguyen',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: true,
+          visitVerified: true
         },
-        practiceMetrics: {
-          total: 33,
-          enrolled: 18,
-          pending: 8,
-          declined: 7
+        {
+          name: 'Sally Borra',
+          practice: 'David H Nguyen',
+          location: 'IVM',
+          navigator: 'Sunnie Emberson',
+          tcmScheduled: true,
+          visitVerified: true
         },
-        lastUpdated: new Date().toISOString(),
-        note: 'Sample data - Connect Power Automate for real data'
-      });
-    }
-
-    return res.status(200).json(storedData);
+        {
+          name: 'Jamal Safa',
+          practice: 'Temecula Valley PCP',
+          location: 'IVM',
+          navigator: 'Sunnie Emberson',
+          tcmScheduled: true,
+          visitVerified: false
+        },
+        {
+          name: 'Mary Rouse',
+          practice: 'Jeremy V Gomer',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: true,
+          visitVerified: true
+        },
+        {
+          name: 'Penelope Litonjua',
+          practice: 'Ocampo',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Mary Reed',
+          practice: 'Sylvia Gisi',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Suraya Glenna',
+          practice: 'Ocampo',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Jean McDaniel',
+          practice: 'Sylvia Gisi',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Doris Mahoney',
+          practice: 'Ocampo',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Carol Brady',
+          practice: 'Timothy Killeen',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Charles W Hoague',
+          practice: 'Bella Shah',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Ramon Cardenas',
+          practice: 'Temecula Valley PCP',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Jane Curtis',
+          practice: 'Temecula Valley PCP',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Nancy Huckaby',
+          practice: 'Bella Shah',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Steven Behrle',
+          practice: 'Bella Shah',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Jennifer Lopez',
+          practice: 'Ocampo',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Gilbert Valenzuela',
+          practice: 'Jeremy V Gomer',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Lajuana Poole',
+          practice: 'Ocampo',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Shirley Howe',
+          practice: 'Bella Shah',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Elizabeth Rodriguez',
+          practice: 'Bella Shah',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        },
+        {
+          name: 'Joan Gonzalez',
+          practice: 'Ocampo',
+          location: 'TVH',
+          navigator: 'Devan Lambruno',
+          tcmScheduled: false,
+          visitVerified: false
+        }
+      ],
+      practices: [],
+      metrics: {
+        totalPatients: 21,
+        tcmScheduled: 4,
+        visitVerified: 3,
+        tcmSchedulingRate: 19.0,
+        verificationRate: 75.0,
+        devanPatients: 19,
+        sunniePatients: 2,
+        tvhPatients: 19,
+        ivmPatients: 2
+      },
+      practiceMetrics: {
+        total: 34,
+        enrolled: 15,
+        pending: 11,
+        declined: 8
+      },
+      lastUpdated: new Date().toISOString(),
+      note: 'Real data from Excel files - May 26, 2026'
+    });
   }
   
   else {
@@ -173,8 +285,8 @@ function calculatePatientMetrics(patients) {
     totalPatients: total,
     tcmScheduled: tcmScheduled,
     visitVerified: visitVerified,
-    tcmSchedulingRate: total > 0 ? ((tcmScheduled / total) * 100).toFixed(1) : 0,
-    verificationRate: tcmScheduled > 0 ? ((visitVerified / tcmScheduled) * 100).toFixed(1) : 0,
+    tcmSchedulingRate: total > 0 ? parseFloat(((tcmScheduled / total) * 100).toFixed(1)) : 0,
+    verificationRate: tcmScheduled > 0 ? parseFloat(((visitVerified / tcmScheduled) * 100).toFixed(1)) : 0,
     devanPatients: devanPatients,
     sunniePatients: sunniePatients,
     tvhPatients: tvhPatients,
