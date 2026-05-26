@@ -169,11 +169,6 @@ function PatientTrackingPage({ data }) {
     { name: 'Sunnie', patients: metrics.sunniePatients || 0 }
   ];
 
-  const trendData = [
-    { month: 'April', patients: metrics.totalPatients || 21, tcm: metrics.tcmScheduled || 4, verified: metrics.visitVerified || 3 },
-    { month: 'May (Current)', patients: metrics.totalPatients || 21, tcm: metrics.tcmScheduled || 4, verified: metrics.visitVerified || 3 }
-  ];
-
   return (
     <div>
       {/* Key Metrics */}
@@ -220,34 +215,41 @@ function PatientTrackingPage({ data }) {
       {/* Charts Row 1 */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
         gap: '24px',
         marginBottom: '24px'
       }}>
-        <ChartCard title="Patient & TCM Trend">
-          <ResponsiveContainer width="100%" height={280}>
-            <LineChart data={trendData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="month" stroke="#64748b" style={{ fontSize: '12px' }} />
-              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="patients" stroke="#3b82f6" strokeWidth={3} name="Patients" />
-              <Line type="monotone" dataKey="tcm" stroke="#10b981" strokeWidth={3} name="TCM Scheduled" />
-              <Line type="monotone" dataKey="verified" stroke="#8b5cf6" strokeWidth={3} name="Verified" />
-            </LineChart>
-          </ResponsiveContainer>
-        </ChartCard>
-
         <ChartCard title="Navigator Workload">
           <ResponsiveContainer width="100%" height={280}>
-            <BarChart data={navigatorData}>
+            <BarChart data={navigatorData} margin={{ bottom: 20 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="name" stroke="#64748b" style={{ fontSize: '12px' }} />
+              <XAxis dataKey="name" stroke="#64748b" style={{ fontSize: '13px' }} />
               <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
               <Tooltip />
               <Bar dataKey="patients" fill="#667eea" radius={[8, 8, 0, 0]} />
             </BarChart>
+          </ResponsiveContainer>
+        </ChartCard>
+
+        <ChartCard title="TCM Scheduling Status">
+          <ResponsiveContainer width="100%" height={280}>
+            <PieChart>
+              <Pie
+                data={statusData}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                outerRadius={100}
+                fill="#8884d8"
+                dataKey="value"
+              >
+                {statusData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
           </ResponsiveContainer>
         </ChartCard>
       </div>
@@ -374,11 +376,6 @@ function PracticeEnrollmentPage({ data }) {
     { name: 'Rachel Robinson/Menifee', enrolled: 1, pending: 0 }
   ];
 
-  const enrollmentTrend = [
-    { month: 'April', enrolled: practiceMetrics.enrolled, contacted: practiceMetrics.total },
-    { month: 'May (Current)', enrolled: practiceMetrics.enrolled, contacted: practiceMetrics.total }
-  ];
-
   return (
     <div>
       {/* Key Metrics */}
@@ -425,7 +422,7 @@ function PracticeEnrollmentPage({ data }) {
       {/* Charts */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
         gap: '24px',
         marginBottom: '24px'
       }}>
@@ -453,29 +450,22 @@ function PracticeEnrollmentPage({ data }) {
 
         <ChartCard title="Consultant Performance">
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={consultantData}>
+            <BarChart data={consultantData} margin={{ bottom: 60, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="name" stroke="#64748b" style={{ fontSize: '11px' }} />
+              <XAxis 
+                dataKey="name" 
+                stroke="#64748b" 
+                angle={-45}
+                textAnchor="end"
+                height={100}
+                style={{ fontSize: '11px' }} 
+              />
               <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
               <Tooltip />
               <Legend />
               <Bar dataKey="enrolled" fill="#10b981" radius={[8, 8, 0, 0]} name="Enrolled" />
               <Bar dataKey="pending" fill="#f59e0b" radius={[8, 8, 0, 0]} name="Pending" />
             </BarChart>
-          </ResponsiveContainer>
-        </ChartCard>
-
-        <ChartCard title="Enrollment Progress Over Time" fullWidth>
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={enrollmentTrend}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="month" stroke="#64748b" style={{ fontSize: '12px' }} />
-              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="contacted" stroke="#3b82f6" strokeWidth={3} name="Contacted" />
-              <Line type="monotone" dataKey="enrolled" stroke="#10b981" strokeWidth={3} name="Enrolled" />
-            </LineChart>
           </ResponsiveContainer>
         </ChartCard>
       </div>
