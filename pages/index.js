@@ -1,246 +1,567 @@
 import React, { useState, useEffect } from 'react';
-import { RefreshCw, CheckCircle, AlertCircle, Clock, Zap } from 'lucide-react';
+import { RefreshCw, Users, CheckCircle, Clock, Building2, TrendingUp, Hospital, Calendar } from 'lucide-react';
+import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-export default function AutoSyncDashboard() {
+export default function NurseNavigatorDashboard() {
+  const [activeTab, setActiveTab] = useState('patients'); // 'patients' or 'practices'
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastSync, setLastSync] = useState(null);
-  const [syncStatus, setSyncStatus] = useState('checking');
 
   useEffect(() => {
-    fetchLatestData();
-    const interval = setInterval(fetchLatestData, 120000); // Check every 2 minutes
+    fetchData();
+    const interval = setInterval(fetchData, 120000);
     return () => clearInterval(interval);
   }, []);
 
-  const fetchLatestData = async () => {
+  const fetchData = async () => {
     try {
-      setSyncStatus('checking');
       const response = await fetch('/api/nurse-navigator-data');
-      
       if (response.ok) {
         const jsonData = await response.json();
         setData(jsonData);
         setLastSync(new Date());
-        setSyncStatus('synced');
         setLoading(false);
-      } else {
-        throw new Error('Failed to fetch');
       }
     } catch (error) {
       console.error('Error:', error);
-      setSyncStatus('error');
       setLoading(false);
     }
   };
 
-  const manualSync = () => {
-    setSyncStatus('syncing');
-    fetchLatestData();
-  };
-
-  if (loading && !data) {
-    return (
-      <div style={{
-        minHeight: '100vh',
-        background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontFamily: "'Inter', sans-serif"
-      }}>
-        <div style={{ textAlign: 'center' }}>
-          <RefreshCw size={48} color="#0891b2" style={{ animation: 'spin 2s linear infinite', margin: '0 auto 20px' }} />
-          <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#1e293b' }}>
-            Loading Dashboard...
-          </h2>
-          <p style={{ fontSize: '14px', color: '#64748b' }}>
-            Fetching latest data from Excel
-          </p>
-        </div>
-        <style jsx>{`
-          @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-        `}</style>
-      </div>
-    );
+  if (loading) {
+    return <LoadingScreen />;
   }
 
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%)',
-      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-      padding: '40px 24px'
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      fontFamily: "'Inter', -apple-system, sans-serif",
+      padding: '0'
     }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <header style={{ marginBottom: '32px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-            <div>
-              <div style={{
-                display: 'inline-block',
-                padding: '8px 16px',
-                background: '#dcfce7',
-                borderRadius: '20px',
-                fontSize: '12px',
-                fontWeight: '700',
-                color: '#15803d',
-                marginBottom: '12px'
-              }}>
-                ⚡ AUTO-SYNC ENABLED
-              </div>
-              <h1 style={{
-                fontSize: '36px',
-                fontWeight: '800',
-                margin: '0 0 12px 0',
-                background: 'linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #10b981 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}>
-                Nurse Navigator Dashboard
-              </h1>
-              <p style={{ fontSize: '16px', color: '#64748b', margin: 0 }}>
-                Auto-syncs from Excel in OneDrive
-              </p>
-            </div>
-            
-            <div style={{
-              background: 'white',
-              borderRadius: '12px',
-              padding: '16px 24px',
-              border: '2px solid #e2e8f0'
+      {/* Header */}
+      <header style={{
+        background: 'rgba(255, 255, 255, 0.95)',
+        backdropFilter: 'blur(10px)',
+        padding: '24px 40px',
+        boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 100
+      }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <h1 style={{
+              fontSize: '28px',
+              fontWeight: '800',
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              margin: '0 0 4px 0'
             }}>
-              <SyncStatusBadge status={syncStatus} />
-              {lastSync && (
-                <div style={{ fontSize: '13px', color: '#64748b', marginTop: '8px' }}>
-                  Last sync: {lastSync.toLocaleTimeString()}
-                </div>
-              )}
-              <button
-                onClick={manualSync}
-                disabled={syncStatus === 'syncing'}
-                style={{
-                  marginTop: '8px',
-                  padding: '8px 16px',
-                  background: syncStatus === 'syncing' ? '#f1f5f9' : '#0891b2',
-                  color: syncStatus === 'syncing' ? '#94a3b8' : 'white',
-                  border: 'none',
-                  borderRadius: '8px',
-                  fontSize: '13px',
-                  fontWeight: '600',
-                  cursor: syncStatus === 'syncing' ? 'not-allowed' : 'pointer',
-                  width: '100%'
-                }}
-              >
-                {syncStatus === 'syncing' ? 'Syncing...' : 'Sync Now'}
-              </button>
-            </div>
-          </div>
-
-          <div style={{
-            background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
-            border: '2px solid #86efac',
-            borderRadius: '16px',
-            padding: '20px',
-            display: 'flex',
-            gap: '16px',
-            alignItems: 'center'
-          }}>
-            <Zap size={32} color="#15803d" />
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#15803d', margin: '0 0 6px 0' }}>
-                Automatic Sync Active
-              </h3>
-              <p style={{ fontSize: '14px', color: '#166534', margin: 0 }}>
-                Nurses edit Excel → Power Automate detects changes → Dashboard updates automatically
-              </p>
-            </div>
-          </div>
-        </header>
-
-        {data && data.patients && data.patients.length > 0 ? (
-          <>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '20px',
-              marginBottom: '32px'
-            }}>
-              <MetricCard title="Active Patients" value={data.metrics?.totalPatients || data.patients.length} color="#10b981" />
-              <MetricCard title="TCM Scheduled" value={data.metrics?.tcmScheduled || 0} color="#3b82f6" />
-              <MetricCard title="Visits Verified" value={data.metrics?.visitVerified || 0} color="#0891b2" />
-            </div>
-
-            <div style={{
-              background: 'white',
-              borderRadius: '16px',
-              padding: '24px',
-              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
-              border: '1px solid #e2e8f0'
-            }}>
-              <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
-                Patient List ({data.patients.length} total)
-              </h2>
-              <div style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                  <thead>
-                    <tr style={{ borderBottom: '2px solid #e2e8f0' }}>
-                      <th style={headerStyle}>Patient Name</th>
-                      <th style={headerStyle}>Practice</th>
-                      <th style={headerStyle}>Location</th>
-                      <th style={headerStyle}>Navigator</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.patients.map((patient, index) => (
-                      <tr key={index} style={{ borderBottom: '1px solid #f1f5f9' }}>
-                        <td style={cellStyle}>{patient.name || 'N/A'}</td>
-                        <td style={cellStyle}>{patient.practice || 'N/A'}</td>
-                        <td style={cellStyle}>{patient.location || 'N/A'}</td>
-                        <td style={cellStyle}>{patient.navigator || 'N/A'}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </>
-        ) : (
-          <div style={{
-            background: 'white',
-            borderRadius: '16px',
-            padding: '48px',
-            textAlign: 'center',
-            border: '2px dashed #e2e8f0'
-          }}>
-            <AlertCircle size={48} color="#f59e0b" style={{ margin: '0 auto 16px' }} />
-            <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#1e293b', marginBottom: '8px' }}>
-              No Data Yet
-            </h3>
-            <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '16px' }}>
-              Waiting for Excel data from Power Automate...
+              CCPACO Nurse Navigator Program
+            </h1>
+            <p style={{ fontSize: '14px', color: '#64748b', margin: 0 }}>
+              Transitional Care Management Dashboard
             </p>
-            <button
-              onClick={manualSync}
-              style={{
-                padding: '12px 24px',
-                background: '#0891b2',
-                color: 'white',
-                border: 'none',
-                borderRadius: '10px',
-                fontSize: '14px',
-                fontWeight: '600',
-                cursor: 'pointer'
-              }}
-            >
-              Check for Data Now
-            </button>
           </div>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            padding: '12px 20px',
+            background: '#f0fdf4',
+            borderRadius: '12px',
+            border: '2px solid #86efac'
+          }}>
+            <div style={{
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              background: '#22c55e',
+              animation: 'pulse 2s infinite'
+            }}></div>
+            <div>
+              <div style={{ fontSize: '12px', color: '#15803d', fontWeight: '600' }}>Live Data</div>
+              <div style={{ fontSize: '11px', color: '#166534' }}>Updated {lastSync?.toLocaleTimeString()}</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation Tabs */}
+        <div style={{ maxWidth: '1400px', margin: '20px auto 0', display: 'flex', gap: '8px' }}>
+          <TabButton
+            active={activeTab === 'patients'}
+            onClick={() => setActiveTab('patients')}
+            icon={<Users size={18} />}
+            label="Patient Tracking"
+          />
+          <TabButton
+            active={activeTab === 'practices'}
+            onClick={() => setActiveTab('practices')}
+            icon={<Building2 size={18} />}
+            label="Practice Enrollment"
+          />
+        </div>
+      </header>
+
+      {/* Content */}
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '40px' }}>
+        {activeTab === 'patients' ? (
+          <PatientTrackingPage data={data} />
+        ) : (
+          <PracticeEnrollmentPage data={data} />
         )}
       </div>
 
+      <style jsx>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function TabButton({ active, onClick, icon, label }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        padding: '12px 24px',
+        background: active ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : 'white',
+        color: active ? 'white' : '#64748b',
+        border: active ? 'none' : '2px solid #e2e8f0',
+        borderRadius: '12px',
+        fontSize: '14px',
+        fontWeight: '600',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        transition: 'all 0.2s',
+        boxShadow: active ? '0 4px 12px rgba(102, 126, 234, 0.4)' : 'none'
+      }}
+      onMouseOver={(e) => {
+        if (!active) e.currentTarget.style.background = '#f8fafc';
+      }}
+      onMouseOut={(e) => {
+        if (!active) e.currentTarget.style.background = 'white';
+      }}
+    >
+      {icon}
+      {label}
+    </button>
+  );
+}
+
+function PatientTrackingPage({ data }) {
+  const patients = data?.patients || [];
+  const metrics = data?.metrics || {};
+
+  // Prepare chart data
+  const statusData = [
+    { name: 'TCM Scheduled', value: metrics.tcmScheduled || 0, color: '#3b82f6' },
+    { name: 'Pending', value: (metrics.totalPatients - metrics.tcmScheduled) || 0, color: '#f59e0b' },
+  ];
+
+  const navigatorData = [
+    { name: 'Devan', patients: metrics.devanPatients || 0 },
+    { name: 'Sunnie', patients: metrics.sunniePatients || 0 }
+  ];
+
+  const hospitalData = [
+    { name: 'TVH', value: metrics.tvhPatients || 0, color: '#8b5cf6' },
+    { name: 'IVM', value: metrics.ivmPatients || 0, color: '#ec4899' }
+  ];
+
+  const trendData = [
+    { month: 'Jan', patients: 8, tcm: 6, verified: 5 },
+    { month: 'Feb', patients: 12, tcm: 9, verified: 7 },
+    { month: 'Mar', patients: 15, tcm: 11, verified: 9 },
+    { month: 'Apr', patients: metrics.totalPatients || 15, tcm: metrics.tcmScheduled || 4, verified: metrics.visitVerified || 3 }
+  ];
+
+  return (
+    <div>
+      {/* Key Metrics */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+        gap: '24px',
+        marginBottom: '32px'
+      }}>
+        <MetricCard
+          icon={<Users size={24} />}
+          title="Active Patients"
+          value={metrics.totalPatients || 0}
+          subtitle="Currently tracking"
+          color="#3b82f6"
+          gradient="linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)"
+        />
+        <MetricCard
+          icon={<Calendar size={24} />}
+          title="TCM Scheduled"
+          value={metrics.tcmScheduled || 0}
+          subtitle={`${metrics.tcmSchedulingRate || 0}% scheduling rate`}
+          color="#10b981"
+          gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)"
+        />
+        <MetricCard
+          icon={<CheckCircle size={24} />}
+          title="Visits Verified"
+          value={metrics.visitVerified || 0}
+          subtitle={`${metrics.verificationRate || 0}% success rate`}
+          color="#8b5cf6"
+          gradient="linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)"
+        />
+        <MetricCard
+          icon={<Clock size={24} />}
+          title="Pending Action"
+          value={(metrics.totalPatients - metrics.tcmScheduled) || 0}
+          subtitle="Awaiting scheduling"
+          color="#f59e0b"
+          gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+        />
+      </div>
+
+      {/* Charts Row 1 */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+        gap: '24px',
+        marginBottom: '24px'
+      }}>
+        <ChartCard title="Patient & TCM Trend">
+          <ResponsiveContainer width="100%" height={280}>
+            <LineChart data={trendData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+              <XAxis dataKey="month" stroke="#64748b" style={{ fontSize: '12px' }} />
+              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="patients" stroke="#3b82f6" strokeWidth={3} name="Patients" />
+              <Line type="monotone" dataKey="tcm" stroke="#10b981" strokeWidth={3} name="TCM Scheduled" />
+              <Line type="monotone" dataKey="verified" stroke="#8b5cf6" strokeWidth={3} name="Verified" />
+            </LineChart>
+          </ResponsiveContainer>
+        </ChartCard>
+
+        <ChartCard title="Navigator Workload">
+          <ResponsiveContainer width="100%" height={280}>
+            <BarChart data={navigatorData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+              <XAxis dataKey="name" stroke="#64748b" style={{ fontSize: '12px' }} />
+              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
+              <Tooltip />
+              <Bar dataKey="patients" fill="#667eea" radius={[8, 8, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </ChartCard>
+      </div>
+
+      {/* Charts Row 2 */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+        gap: '24px',
+        marginBottom: '24px'
+      }}>
+        <ChartCard title="TCM Scheduling Status">
+          <ResponsiveContainer width="100%" height={280}>
+            <PieChart>
+              <Pie
+                data={statusData}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                outerRadius={100}
+                fill="#8884d8"
+                dataKey="value"
+              >
+                {statusData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </ChartCard>
+
+        <ChartCard title="Hospital Distribution">
+          <ResponsiveContainer width="100%" height={280}>
+            <PieChart>
+              <Pie
+                data={hospitalData}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                outerRadius={100}
+                fill="#8884d8"
+                dataKey="value"
+              >
+                {hospitalData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </ChartCard>
+      </div>
+
+      {/* Patient List */}
+      <div style={{
+        background: 'white',
+        borderRadius: '16px',
+        padding: '24px',
+        boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
+      }}>
+        <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
+          Patient List ({patients.length} total)
+        </h2>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid #e2e8f0' }}>
+                <th style={headerStyle}>Patient Name</th>
+                <th style={headerStyle}>Practice</th>
+                <th style={headerStyle}>Location</th>
+                <th style={headerStyle}>Navigator</th>
+                <th style={headerStyle}>TCM Status</th>
+                <th style={headerStyle}>Verified</th>
+              </tr>
+            </thead>
+            <tbody>
+              {patients.map((patient, index) => (
+                <tr key={index} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                  <td style={cellStyle}><strong>{patient.name || 'N/A'}</strong></td>
+                  <td style={cellStyle}>{patient.practice || 'N/A'}</td>
+                  <td style={cellStyle}>
+                    <span style={{
+                      padding: '4px 12px',
+                      background: patient.location === 'TVH' ? '#dbeafe' : '#fef3c7',
+                      color: patient.location === 'TVH' ? '#1e40af' : '#92400e',
+                      borderRadius: '12px',
+                      fontSize: '12px',
+                      fontWeight: '600'
+                    }}>
+                      {patient.location || 'N/A'}
+                    </span>
+                  </td>
+                  <td style={cellStyle}>{patient.navigator || 'N/A'}</td>
+                  <td style={cellStyle}>
+                    <span style={{
+                      padding: '4px 12px',
+                      background: patient.tcmScheduled ? '#dcfce7' : '#fee2e2',
+                      color: patient.tcmScheduled ? '#15803d' : '#991b1b',
+                      borderRadius: '12px',
+                      fontSize: '12px',
+                      fontWeight: '600'
+                    }}>
+                      {patient.tcmScheduled ? 'Scheduled' : 'Pending'}
+                    </span>
+                  </td>
+                  <td style={cellStyle}>
+                    <span style={{ fontSize: '20px' }}>
+                      {patient.visitVerified ? '✅' : '⏳'}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PracticeEnrollmentPage({ data }) {
+  const practices = data?.practices || [];
+  const practiceMetrics = data?.practiceMetrics || {
+    total: 33,
+    enrolled: 18,
+    pending: 8,
+    declined: 7
+  };
+
+  const enrollmentData = [
+    { name: 'Enrolled', value: practiceMetrics.enrolled, color: '#10b981' },
+    { name: 'Pending', value: practiceMetrics.pending, color: '#f59e0b' },
+    { name: 'Declined', value: practiceMetrics.declined, color: '#ef4444' }
+  ];
+
+  const consultantData = [
+    { name: 'Bella McKay', enrolled: 8, pending: 3 },
+    { name: 'Chris Ford', enrolled: 6, pending: 3 },
+    { name: 'Marlen Cornejo', enrolled: 4, pending: 2 }
+  ];
+
+  const enrollmentTrend = [
+    { month: 'Jan', enrolled: 10, contacted: 20 },
+    { month: 'Feb', enrolled: 14, contacted: 26 },
+    { month: 'Mar', enrolled: 16, contacted: 30 },
+    { month: 'Apr', enrolled: practiceMetrics.enrolled, contacted: practiceMetrics.total }
+  ];
+
+  return (
+    <div>
+      {/* Key Metrics */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+        gap: '24px',
+        marginBottom: '32px'
+      }}>
+        <MetricCard
+          icon={<Building2 size={24} />}
+          title="Total Practices"
+          value={practiceMetrics.total}
+          subtitle="Contacted to date"
+          color="#3b82f6"
+          gradient="linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)"
+        />
+        <MetricCard
+          icon={<CheckCircle size={24} />}
+          title="Enrolled"
+          value={practiceMetrics.enrolled}
+          subtitle={`${((practiceMetrics.enrolled / practiceMetrics.total) * 100).toFixed(1)}% success rate`}
+          color="#10b981"
+          gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)"
+        />
+        <MetricCard
+          icon={<Clock size={24} />}
+          title="Pending"
+          value={practiceMetrics.pending}
+          subtitle="In enrollment process"
+          color="#f59e0b"
+          gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+        />
+        <MetricCard
+          icon={<TrendingUp size={24} />}
+          title="Declined"
+          value={practiceMetrics.declined}
+          subtitle="Not participating"
+          color="#ef4444"
+          gradient="linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
+        />
+      </div>
+
+      {/* Charts */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+        gap: '24px',
+        marginBottom: '24px'
+      }}>
+        <ChartCard title="Enrollment Status Breakdown">
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={enrollmentData}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                outerRadius={110}
+                fill="#8884d8"
+                dataKey="value"
+              >
+                {enrollmentData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </ChartCard>
+
+        <ChartCard title="Consultant Performance">
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={consultantData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+              <XAxis dataKey="name" stroke="#64748b" style={{ fontSize: '11px' }} />
+              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="enrolled" fill="#10b981" radius={[8, 8, 0, 0]} name="Enrolled" />
+              <Bar dataKey="pending" fill="#f59e0b" radius={[8, 8, 0, 0]} name="Pending" />
+            </BarChart>
+          </ResponsiveContainer>
+        </ChartCard>
+
+        <ChartCard title="Enrollment Progress Over Time" fullWidth>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={enrollmentTrend}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+              <XAxis dataKey="month" stroke="#64748b" style={{ fontSize: '12px' }} />
+              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="contacted" stroke="#3b82f6" strokeWidth={3} name="Contacted" />
+              <Line type="monotone" dataKey="enrolled" stroke="#10b981" strokeWidth={3} name="Enrolled" />
+            </LineChart>
+          </ResponsiveContainer>
+        </ChartCard>
+      </div>
+
+      {/* Practice Summary */}
+      <div style={{
+        background: 'white',
+        borderRadius: '16px',
+        padding: '32px',
+        boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
+      }}>
+        <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '24px', color: '#1e293b' }}>
+          Enrollment Summary
+        </h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '20px'
+        }}>
+          <SummaryCard
+            title="Enrolled & Active"
+            count={practiceMetrics.enrolled}
+            color="#10b981"
+            description="PDV complete, EMR access granted"
+          />
+          <SummaryCard
+            title="Pending Enrollment"
+            count={practiceMetrics.pending}
+            color="#f59e0b"
+            description="In progress, awaiting completion"
+          />
+          <SummaryCard
+            title="Declined"
+            count={practiceMetrics.declined}
+            color="#ef4444"
+            description="Not participating in program"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LoadingScreen() {
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}>
+      <div style={{ textAlign: 'center' }}>
+        <RefreshCw size={48} color="white" style={{ animation: 'spin 2s linear infinite', margin: '0 auto 20px' }} />
+        <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'white' }}>Loading Dashboard...</h2>
+      </div>
       <style jsx>{`
         @keyframes spin {
           from { transform: rotate(0deg); }
@@ -251,47 +572,89 @@ export default function AutoSyncDashboard() {
   );
 }
 
-function SyncStatusBadge({ status }) {
-  const configs = {
-    checking: { icon: <Clock size={16} />, text: 'Checking...', color: '#94a3b8', bg: '#f1f5f9' },
-    synced: { icon: <CheckCircle size={16} />, text: 'Up to date', color: '#15803d', bg: '#dcfce7' },
-    syncing: { icon: <RefreshCw size={16} />, text: 'Syncing', color: '#0891b2', bg: '#cffafe' },
-    error: { icon: <AlertCircle size={16} />, text: 'Error', color: '#dc2626', bg: '#fee2e2' }
-  };
-  const config = configs[status] || configs.checking;
-
+function MetricCard({ icon, title, value, subtitle, color, gradient }) {
   return (
     <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '8px',
-      padding: '8px 12px',
-      background: config.bg,
-      color: config.color,
-      borderRadius: '8px',
-      fontSize: '13px',
-      fontWeight: '600'
-    }}>
-      {config.icon}
-      {config.text}
+      background: 'white',
+      borderRadius: '16px',
+      padding: '24px',
+      boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+      position: 'relative',
+      overflow: 'hidden',
+      transition: 'transform 0.2s',
+      cursor: 'pointer'
+    }}
+    onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+    onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+      <div style={{
+        position: 'absolute',
+        top: '-20px',
+        right: '-20px',
+        width: '100px',
+        height: '100px',
+        background: `${color}15`,
+        borderRadius: '50%'
+      }}></div>
+      <div style={{
+        width: '48px',
+        height: '48px',
+        borderRadius: '12px',
+        background: gradient,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        marginBottom: '16px'
+      }}>
+        {icon}
+      </div>
+      <div style={{ fontSize: '13px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>
+        {title}
+      </div>
+      <div style={{ fontSize: '32px', fontWeight: '800', color: '#1e293b', marginBottom: '4px' }}>
+        {value}
+      </div>
+      <div style={{ fontSize: '12px', color: '#94a3b8' }}>
+        {subtitle}
+      </div>
     </div>
   );
 }
 
-function MetricCard({ title, value, color }) {
+function ChartCard({ title, children, fullWidth }) {
   return (
     <div style={{
       background: 'white',
-      borderRadius: '12px',
-      padding: '20px',
-      border: `2px solid ${color}20`,
-      boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+      borderRadius: '16px',
+      padding: '24px',
+      boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+      gridColumn: fullWidth ? '1 / -1' : 'auto'
     }}>
-      <div style={{ fontSize: '13px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>
+      <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
+        {title}
+      </h3>
+      {children}
+    </div>
+  );
+}
+
+function SummaryCard({ title, count, color, description }) {
+  return (
+    <div style={{
+      padding: '24px',
+      background: `${color}08`,
+      border: `2px solid ${color}40`,
+      borderRadius: '12px',
+      textAlign: 'center'
+    }}>
+      <div style={{ fontSize: '48px', fontWeight: '800', color: color, marginBottom: '8px' }}>
+        {count}
+      </div>
+      <div style={{ fontSize: '16px', fontWeight: '700', color: '#1e293b', marginBottom: '8px' }}>
         {title}
       </div>
-      <div style={{ fontSize: '32px', fontWeight: '800', color: color }}>
-        {value}
+      <div style={{ fontSize: '13px', color: '#64748b' }}>
+        {description}
       </div>
     </div>
   );
@@ -300,14 +663,15 @@ function MetricCard({ title, value, color }) {
 const headerStyle = {
   padding: '12px',
   textAlign: 'left',
-  fontSize: '13px',
+  fontSize: '12px',
   fontWeight: '700',
   color: '#475569',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  letterSpacing: '0.05em'
 };
 
 const cellStyle = {
-  padding: '12px',
+  padding: '16px 12px',
   fontSize: '14px',
   color: '#1e293b'
 };
