@@ -169,6 +169,15 @@ function PatientTrackingPage({ data }) {
     { name: 'Sunnie', patients: metrics.sunniePatients || 0 }
   ];
 
+  const weeklyTrendData = [
+    { week: 'Apr 13-19', patients: 3, tcm: 1, verified: 1 },
+    { week: 'Apr 20-26', patients: 8, tcm: 2, verified: 2 },
+    { week: 'Apr 27-May 3', patients: 11, tcm: 3, verified: 2 },
+    { week: 'May 4-10', patients: 16, tcm: 3, verified: 2 },
+    { week: 'May 11-17', patients: 19, tcm: 3, verified: 3 },
+    { week: 'May 18-24', patients: 21, tcm: 4, verified: 3 }
+  ];
+
   return (
     <div>
       {/* Key Metrics */}
@@ -219,7 +228,30 @@ function PatientTrackingPage({ data }) {
         gap: '24px',
         marginBottom: '24px'
       }}>
-        <ChartCard title="Navigator Workload">
+        <ChartCard title="Weekly Patient & TCM Trend" fullWidth>
+          <ResponsiveContainer width="100%" height={280}>
+            <LineChart data={weeklyTrendData} margin={{ bottom: 40 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+              <XAxis 
+                dataKey="week" 
+                stroke="#64748b" 
+                angle={-45}
+                textAnchor="end"
+                height={80}
+                style={{ fontSize: '11px' }} 
+              />
+              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="patients" stroke="#3b82f6" strokeWidth={3} name="Patients" />
+              <Line type="monotone" dataKey="tcm" stroke="#10b981" strokeWidth={3} name="TCM Scheduled" />
+              <Line type="monotone" dataKey="verified" stroke="#8b5cf6" strokeWidth={3} name="Verified" />
+            </LineChart>
+          </ResponsiveContainer>
+        </ChartCard>
+      </div>
+
+      {/* Charts Row 2 */}
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={navigatorData} margin={{ bottom: 20 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -450,60 +482,27 @@ function PracticeEnrollmentPage({ data }) {
 
         <ChartCard title="Consultant Performance">
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={consultantData} margin={{ bottom: 60, left: 0 }}>
+            <BarChart 
+              data={consultantData} 
+              layout="vertical"
+              margin={{ left: 180, right: 20 }}
+            >
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis 
+              <XAxis type="number" stroke="#64748b" style={{ fontSize: '12px' }} />
+              <YAxis 
                 dataKey="name" 
+                type="category"
                 stroke="#64748b" 
-                angle={-45}
-                textAnchor="end"
-                height={100}
-                style={{ fontSize: '11px' }} 
+                width={140}
+                style={{ fontSize: '12px' }} 
               />
-              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
               <Tooltip />
               <Legend />
-              <Bar dataKey="enrolled" fill="#10b981" radius={[8, 8, 0, 0]} name="Enrolled" />
-              <Bar dataKey="pending" fill="#f59e0b" radius={[8, 8, 0, 0]} name="Pending" />
+              <Bar dataKey="enrolled" fill="#10b981" radius={[0, 8, 8, 0]} name="Enrolled" />
+              <Bar dataKey="pending" fill="#f59e0b" radius={[0, 8, 8, 0]} name="Pending" />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
-      </div>
-
-      {/* Practice Summary */}
-      <div style={{
-        background: 'white',
-        borderRadius: '16px',
-        padding: '32px',
-        boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
-      }}>
-        <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '24px', color: '#1e293b' }}>
-          Enrollment Summary
-        </h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '20px'
-        }}>
-          <SummaryCard
-            title="Enrolled & Active"
-            count={practiceMetrics.enrolled}
-            color="#10b981"
-            description="PDV complete, EMR access granted"
-          />
-          <SummaryCard
-            title="Pending Enrollment"
-            count={practiceMetrics.pending}
-            color="#f59e0b"
-            description="In progress, awaiting completion"
-          />
-          <SummaryCard
-            title="Declined"
-            count={practiceMetrics.declined}
-            color="#ef4444"
-            description="Not participating in program"
-          />
-        </div>
       </div>
     </div>
   );
@@ -598,27 +597,6 @@ function ChartCard({ title, children, fullWidth }) {
   );
 }
 
-function SummaryCard({ title, count, color, description }) {
-  return (
-    <div style={{
-      padding: '24px',
-      background: `${color}08`,
-      border: `2px solid ${color}40`,
-      borderRadius: '12px',
-      textAlign: 'center'
-    }}>
-      <div style={{ fontSize: '48px', fontWeight: '800', color: color, marginBottom: '8px' }}>
-        {count}
-      </div>
-      <div style={{ fontSize: '16px', fontWeight: '700', color: '#1e293b', marginBottom: '8px' }}>
-        {title}
-      </div>
-      <div style={{ fontSize: '13px', color: '#64748b' }}>
-        {description}
-      </div>
-    </div>
-  );
-}
 
 const headerStyle = {
   padding: '12px',
