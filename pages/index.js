@@ -3,7 +3,7 @@ import { RefreshCw, Users, CheckCircle, Clock, Building2, TrendingUp, Hospital, 
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export default function NurseNavigatorDashboard() {
-  const [activeTab, setActiveTab] = useState('patients'); // 'patients' or 'practices'
+  const [activeTab, setActiveTab] = useState('patients');
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastSync, setLastSync] = useState(null);
@@ -40,7 +40,6 @@ export default function NurseNavigatorDashboard() {
       fontFamily: "'Inter', -apple-system, sans-serif",
       padding: '0'
     }}>
-      {/* Header */}
       <header style={{
         background: 'rgba(255, 255, 255, 0.95)',
         backdropFilter: 'blur(10px)',
@@ -86,7 +85,6 @@ export default function NurseNavigatorDashboard() {
           </div>
         </div>
 
-        {/* Navigation Tabs */}
         <div style={{ maxWidth: '1400px', margin: '20px auto 0', display: 'flex', gap: '8px' }}>
           <TabButton
             active={activeTab === 'patients'}
@@ -103,7 +101,6 @@ export default function NurseNavigatorDashboard() {
         </div>
       </header>
 
-      {/* Content */}
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '40px' }}>
         {activeTab === 'patients' ? (
           <PatientTrackingPage data={data} />
@@ -141,12 +138,6 @@ function TabButton({ active, onClick, icon, label }) {
         transition: 'all 0.2s',
         boxShadow: active ? '0 4px 12px rgba(102, 126, 234, 0.4)' : 'none'
       }}
-      onMouseOver={(e) => {
-        if (!active) e.currentTarget.style.background = '#f8fafc';
-      }}
-      onMouseOut={(e) => {
-        if (!active) e.currentTarget.style.background = 'white';
-      }}
     >
       {icon}
       {label}
@@ -158,7 +149,6 @@ function PatientTrackingPage({ data }) {
   const patients = data?.patients || [];
   const metrics = data?.metrics || {};
 
-  // Prepare chart data
   const statusData = [
     { name: 'TCM Scheduled', value: metrics.tcmScheduled || 0, color: '#3b82f6' },
     { name: 'Pending', value: (metrics.totalPatients - metrics.tcmScheduled) || 0, color: '#f59e0b' },
@@ -180,7 +170,6 @@ function PatientTrackingPage({ data }) {
 
   return (
     <div>
-      {/* Key Metrics */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
@@ -221,25 +210,17 @@ function PatientTrackingPage({ data }) {
         />
       </div>
 
-      {/* Charts Row 1 */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+        gridTemplateColumns: '1fr',
         gap: '24px',
         marginBottom: '24px'
       }}>
-        <ChartCard title="Weekly Patient & TCM Trend" fullWidth>
+        <ChartCard title="Weekly Patient & TCM Trend">
           <ResponsiveContainer width="100%" height={280}>
-            <LineChart data={weeklyTrendData} margin={{ bottom: 40 }}>
+            <LineChart data={weeklyTrendData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis 
-                dataKey="week" 
-                stroke="#64748b" 
-                angle={-45}
-                textAnchor="end"
-                height={80}
-                style={{ fontSize: '11px' }} 
-              />
+              <XAxis dataKey="week" stroke="#64748b" style={{ fontSize: '12px' }} />
               <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
               <Tooltip />
               <Legend />
@@ -251,11 +232,17 @@ function PatientTrackingPage({ data }) {
         </ChartCard>
       </div>
 
-      {/* Charts Row 2 */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+        gap: '24px',
+        marginBottom: '24px'
+      }}>
+        <ChartCard title="Navigator Workload">
           <ResponsiveContainer width="100%" height={280}>
-            <BarChart data={navigatorData} margin={{ bottom: 20 }}>
+            <BarChart data={navigatorData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="name" stroke="#64748b" style={{ fontSize: '13px' }} />
+              <XAxis dataKey="name" stroke="#64748b" style={{ fontSize: '12px' }} />
               <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
               <Tooltip />
               <Bar dataKey="patients" fill="#667eea" radius={[8, 8, 0, 0]} />
@@ -286,37 +273,6 @@ function PatientTrackingPage({ data }) {
         </ChartCard>
       </div>
 
-      {/* Charts Row 2 */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-        gap: '24px',
-        marginBottom: '24px'
-      }}>
-        <ChartCard title="TCM Scheduling Status">
-          <ResponsiveContainer width="100%" height={280}>
-            <PieChart>
-              <Pie
-                data={statusData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                outerRadius={100}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {statusData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-        </ChartCard>
-      </div>
-
-      {/* Patient List */}
       <div style={{
         background: 'white',
         borderRadius: '16px',
@@ -384,12 +340,11 @@ function PatientTrackingPage({ data }) {
 }
 
 function PracticeEnrollmentPage({ data }) {
-  const practices = data?.practices || [];
   const practiceMetrics = data?.practiceMetrics || {
-    total: 33,
-    enrolled: 18,
-    pending: 8,
-    declined: 7
+    total: 34,
+    enrolled: 15,
+    pending: 11,
+    declined: 8
   };
 
   const enrollmentData = [
@@ -410,7 +365,6 @@ function PracticeEnrollmentPage({ data }) {
 
   return (
     <div>
-      {/* Key Metrics */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
@@ -451,7 +405,6 @@ function PracticeEnrollmentPage({ data }) {
         />
       </div>
 
-      {/* Charts */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
@@ -493,8 +446,8 @@ function PracticeEnrollmentPage({ data }) {
                 dataKey="name" 
                 type="category"
                 stroke="#64748b" 
-                width={140}
-                style={{ fontSize: '12px' }} 
+                width={170}
+                style={{ fontSize: '11px' }} 
               />
               <Tooltip />
               <Legend />
@@ -580,14 +533,13 @@ function MetricCard({ icon, title, value, subtitle, color, gradient }) {
   );
 }
 
-function ChartCard({ title, children, fullWidth }) {
+function ChartCard({ title, children }) {
   return (
     <div style={{
       background: 'white',
       borderRadius: '16px',
       padding: '24px',
-      boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-      gridColumn: fullWidth ? '1 / -1' : 'auto'
+      boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
     }}>
       <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
         {title}
@@ -596,7 +548,6 @@ function ChartCard({ title, children, fullWidth }) {
     </div>
   );
 }
-
 
 const headerStyle = {
   padding: '12px',
