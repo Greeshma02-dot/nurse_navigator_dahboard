@@ -170,10 +170,8 @@ function PatientTrackingPage({ data }) {
   ];
 
   const trendData = [
-    { month: 'Jan', patients: 8, tcm: 6, verified: 5 },
-    { month: 'Feb', patients: 12, tcm: 9, verified: 7 },
-    { month: 'Mar', patients: 15, tcm: 11, verified: 9 },
-    { month: 'Apr', patients: metrics.totalPatients || 15, tcm: metrics.tcmScheduled || 4, verified: metrics.visitVerified || 3 }
+    { month: 'April', patients: metrics.totalPatients || 21, tcm: metrics.tcmScheduled || 4, verified: metrics.visitVerified || 3 },
+    { month: 'May (Current)', patients: metrics.totalPatients || 21, tcm: metrics.tcmScheduled || 4, verified: metrics.visitVerified || 3 }
   ];
 
   return (
@@ -367,16 +365,18 @@ function PracticeEnrollmentPage({ data }) {
   ];
 
   const consultantData = [
-    { name: 'Bella McKay', enrolled: 8, pending: 3 },
-    { name: 'Chris Ford', enrolled: 6, pending: 3 },
-    { name: 'Marlen Cornejo', enrolled: 4, pending: 2 }
+    { name: 'Rachel Robinson', enrolled: 7, pending: 4 },
+    { name: 'Marlen Cornejo', enrolled: 2, pending: 4 },
+    { name: 'Bella McKay', enrolled: 2, pending: 0 },
+    { name: 'Trysh Logan', enrolled: 1, pending: 0 },
+    { name: 'Chris Ford', enrolled: 1, pending: 0 },
+    { name: 'Sheyenne Powers', enrolled: 1, pending: 0 },
+    { name: 'Rachel Robinson/Menifee', enrolled: 1, pending: 0 }
   ];
 
   const enrollmentTrend = [
-    { month: 'Jan', enrolled: 10, contacted: 20 },
-    { month: 'Feb', enrolled: 14, contacted: 26 },
-    { month: 'Mar', enrolled: 16, contacted: 30 },
-    { month: 'Apr', enrolled: practiceMetrics.enrolled, contacted: practiceMetrics.total }
+    { month: 'April', enrolled: practiceMetrics.enrolled, contacted: practiceMetrics.total },
+    { month: 'May (Current)', enrolled: practiceMetrics.enrolled, contacted: practiceMetrics.total }
   ];
 
   return (
