@@ -9,8 +9,6 @@ import {
   Calendar,
 } from "lucide-react";
 import {
-  LineChart,
-  Line,
   BarChart,
   Bar,
   PieChart,
@@ -33,6 +31,7 @@ const EMPTY_DATA = {
     scheduledRate: 0,
     missed14DayWindow: 0,
     completedWithinWindow: 0,
+    nurseCounts: {},
   },
   patients: [],
   practiceMetrics: {
@@ -74,7 +73,7 @@ export default function NurseNavigatorDashboard() {
     return "";
   };
 
-  const readSheetWithHeaderRow = (sheet, XLSX, headerRowIndex, maxCols = 20) => {
+  const readSheetWithHeaderRow = (sheet, XLSX, headerRowIndex, maxCols = 25) => {
     const raw = XLSX.utils.sheet_to_json(sheet, {
       header: 1,
       defval: "",
@@ -94,10 +93,40 @@ export default function NurseNavigatorDashboard() {
         });
         return obj;
       })
-      .filter((row) => {
-        const values = Object.values(row).map(clean);
-        return values.some((v) => v !== "");
-      });
+      .filter((row) => Object.values(row).some((v) => clean(v) !== ""));
+  };
+
+  const findBestHeaderRow = (sheet, XLSX) => {
+    const raw = XLSX.utils.sheet_to_json(sheet, {
+      header: 1,
+      defval: "",
+      blankrows: false,
+    });
+
+    let bestIndex = 0;
+    let bestScore = -1;
+
+    raw.slice(0, 10).forEach((row, index) => {
+      const joined = row.map((c) => normalize(c)).join(" ");
+      let score = 0;
+
+      if (joined.includes("patient")) score += 3;
+      if (joined.includes("nurse")) score += 3;
+      if (joined.includes("navigator")) score += 3;
+      if (joined.includes("tcm")) score += 3;
+      if (joined.includes("practice")) score += 2;
+      if (joined.includes("completed")) score += 2;
+
+      const nonEmpty = row.filter((c) => clean(c) !== "").length;
+      score += nonEmpty;
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestIndex = index;
+      }
+    });
+
+    return bestIndex;
   };
 
   const isYes = (val) => {
@@ -108,42 +137,63 @@ export default function NurseNavigatorDashboard() {
       s === "true" ||
       s === "1" ||
       s === "scheduled" ||
-      s === "verified" ||
       s === "complete" ||
       s === "completed" ||
+      s === "verified" ||
+      s === "done" ||
       s === "x" ||
       s === "✓"
     );
   };
 
+  const isNoOrBlank = (val) => {
+    const s = normalize(val);
+    return s === "" || s === "no" || s === "n" || s === "not yet scheduled";
+  };
+
   const processPatientRows = (patientRows) => {
     const patients = patientRows.map((p) => {
-      const tcmValue = getCell(p, [
-        "TCM Appt Scheduled",
-        "TCM Scheduled",
-        "TCM",
-      ]);
+      const navigator = clean(
+        getCell(p, ["Nurse Navigator", "Navigator", "Assigned Nurse", "Nurse"])
+      );
 
-      const completedValue = getCell(p, [
-        "Completed Within Window",
-        "Visit Verified",
-        "Verified",
-      ]);
+      const tcmStatus = clean(
+        getCell(p, [
+          "TCM Appt Scheduled",
+          "TCM Appointment Scheduled",
+          "TCM Scheduled",
+          "TCM Appt",
+          "TCM",
+        ])
+      );
 
-      const missedValue = getCell(p, [
-        "Missed 14-Day Window",
-        "Missed Window",
-      ]);
+      const completedStatus = clean(
+        getCell(p, [
+          "Completed Within Window",
+          "Completed w/in Window",
+          "Visit Verified",
+          "Verified",
+          "Completed",
+        ])
+      );
+
+      const missedStatus = clean(
+        getCell(p, [
+          "Missed 14-Day Window",
+          "Missed 14 Day Window",
+          "Missed Window",
+        ])
+      );
 
       return {
         name: clean(getCell(p, ["Patient Name", "Name", "Patient"])),
-        practice: clean(getCell(p, ["Practice"])),
-        location: clean(getCell(p, ["Location", "Site"])),
-        navigator: clean(getCell(p, ["Nurse Navigator", "Navigator"])),
-        tcmScheduled: isYes(tcmValue),
-        completedWithinWindow: isYes(completedValue),
-        missed14DayWindow: isYes(missedValue),
-        rawStatus: clean(tcmValue),
+        practice: clean(getCell(p, ["Practice", "Practice Name"])),
+        location: clean(getCell(p, ["Location", "Site", "Market"])),
+        navigator: navigator || "N/A",
+        tcmScheduled: isYes(tcmStatus),
+        completedWithinWindow: isYes(completedStatus),
+        missed14DayWindow: isYes(missedStatus),
+        rawTcmStatus: tcmStatus,
       };
     });
 
@@ -154,6 +204,11 @@ export default function NurseNavigatorDashboard() {
     const completedWithinWindow = patients.filter(
       (p) => p.completedWithinWindow
     ).length;
+
+    const nurseCounts = {};
+    patients.forEach((p) => {
+      nurseCounts[p.navigator] = (nurseCounts[p.navigator] || 0) + 1;
+    });
 
     return {
       totalPatients,
@@ -166,6 +221,7 @@ export default function NurseNavigatorDashboard() {
           : 0,
       missed14DayWindow,
       completedWithinWindow,
+      nurseCounts,
       patients,
     };
   };
@@ -183,10 +239,7 @@ export default function NurseNavigatorDashboard() {
         hospitals: clean(getCell(p, ["Facility Participants", "Hospitals"])),
         pdvStatus,
         emrAccess: clean(
-          getCell(p, [
-            "Nurse Navigator EMR Access granted",
-            "EMR Access",
-          ])
+          getCell(p, ["Nurse Navigator EMR Access granted", "EMR Access"])
         ),
         login: clean(getCell(p, ["Nurse Navigator EMR Access Login"])),
         contact: clean(getCell(p, ["Direct Office Contact", "Contact"])),
@@ -204,7 +257,6 @@ export default function NurseNavigatorDashboard() {
     ).length;
 
     const tbd = practices.filter((p) => normalize(p.pdvStatus) === "tbd").length;
-
     const pending = practices.length - enrolled - declined - tbd;
 
     return {
@@ -232,21 +284,20 @@ export default function NurseNavigatorDashboard() {
         const buffer = await file.arrayBuffer();
         const workbook = XLSX.read(buffer, { type: "array" });
         const fileName = file.name.toLowerCase();
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
-        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-
-        if (
+        const isPracticeFile =
           fileName.includes("ccpaco") ||
           fileName.includes("practice") ||
-          fileName.includes("tracking")
-        ) {
-          const practiceRows = readSheetWithHeaderRow(
-            firstSheet,
-            XLSX,
-            2,
-            10
-          );
+          fileName.includes("tracking");
 
+        const isPatientFile =
+          fileName.includes("patient") ||
+          fileName.includes("patients") ||
+          fileName.includes("enrollment");
+
+        if (isPracticeFile && !isPatientFile) {
+          const practiceRows = readSheetWithHeaderRow(sheet, XLSX, 2, 10);
           const result = processPracticeRows(practiceRows);
 
           newData.practiceMetrics = {
@@ -259,7 +310,8 @@ export default function NurseNavigatorDashboard() {
 
           newData.practices = result.practices;
         } else {
-          const patientRows = readSheetWithHeaderRow(firstSheet, XLSX, 0, 20);
+          const headerRow = findBestHeaderRow(sheet, XLSX);
+          const patientRows = readSheetWithHeaderRow(sheet, XLSX, headerRow, 25);
           const result = processPatientRows(patientRows);
 
           newData.metrics = {
@@ -270,6 +322,7 @@ export default function NurseNavigatorDashboard() {
             scheduledRate: result.scheduledRate,
             missed14DayWindow: result.missed14DayWindow,
             completedWithinWindow: result.completedWithinWindow,
+            nurseCounts: result.nurseCounts,
           };
 
           newData.patients = result.patients;
@@ -293,13 +346,7 @@ export default function NurseNavigatorDashboard() {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
+    <div style={pageStyle}>
       <input
         ref={fileInputRef}
         type="file"
@@ -309,101 +356,35 @@ export default function NurseNavigatorDashboard() {
         style={{ display: "none" }}
       />
 
-      <header
-        style={{
-          background: "rgba(255,255,255,0.96)",
-          padding: "24px 40px",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.08)",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1400px",
-            margin: "0 auto",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "16px",
-            flexWrap: "wrap",
-          }}
-        >
-          <h1
-            style={{
-              fontSize: "30px",
-              fontWeight: "800",
-              margin: 0,
-              color: "#5b5fc7",
-            }}
-          >
-            Nurse Navigator Program
-          </h1>
+      <header style={headerStyle}>
+        <div style={headerInnerStyle}>
+          <h1 style={titleStyle}>Nurse Navigator Program</h1>
 
           <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
             <button
               onClick={() => fileInputRef.current.click()}
               disabled={syncing}
-              style={{
-                padding: "12px 24px",
-                background: "linear-gradient(135deg, #667eea, #764ba2)",
-                color: "white",
-                border: "none",
-                borderRadius: "10px",
-                fontWeight: "700",
-                cursor: syncing ? "wait" : "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
+              style={buttonStyle}
             >
               <Upload size={18} />
               {syncing ? "Syncing..." : "Sync from SharePoint"}
             </button>
 
-            <div
-              style={{
-                padding: "10px 18px",
-                background: "#f0fdf4",
-                border: "2px solid #86efac",
-                borderRadius: "12px",
-                color: "#166534",
-                fontSize: "12px",
-                fontWeight: "700",
-              }}
-            >
+            <div style={liveStyle}>
               Live Data
               <br />
               <span style={{ fontWeight: "400" }}>
-                {lastSync ? `Updated ${lastSync.toLocaleTimeString()}` : "No file uploaded"}
+                {lastSync
+                  ? `Updated ${lastSync.toLocaleTimeString()}`
+                  : "No file uploaded"}
               </span>
             </div>
           </div>
         </div>
 
-        {syncMessage && (
-          <div
-            style={{
-              maxWidth: "1400px",
-              margin: "16px auto 0",
-              padding: "12px",
-              background: "#dbeafe",
-              borderRadius: "10px",
-              color: "#1e40af",
-              textAlign: "center",
-              fontWeight: "700",
-            }}
-          >
-            {syncMessage}
-          </div>
-        )}
+        {syncMessage && <div style={messageStyle}>{syncMessage}</div>}
 
-        <div
-          style={{
-            maxWidth: "1400px",
-            margin: "24px auto 0",
-            display: "flex",
-            gap: "10px",
-          }}
-        >
+        <div style={tabsStyle}>
           <TabButton
             active={activeTab === "patients"}
             onClick={() => setActiveTab("patients")}
@@ -419,7 +400,7 @@ export default function NurseNavigatorDashboard() {
         </div>
       </header>
 
-      <main style={{ maxWidth: "1400px", margin: "0 auto", padding: "40px" }}>
+      <main style={mainStyle}>
         {activeTab === "patients" ? (
           <PatientTrackingPage data={data} />
         ) : (
@@ -462,23 +443,49 @@ function PatientTrackingPage({ data }) {
     { name: "Not Yet Scheduled", value: m.notYetScheduled, color: "#f59e0b" },
   ];
 
-  const trendData = [
-    {
-      name: "Current",
-      total: m.totalPatients,
-      scheduled: m.tcmScheduled,
-      completed: m.completedWithinWindow,
-    },
-  ];
+  const nurseData = Object.entries(m.nurseCounts || {}).map(([name, count]) => ({
+    name,
+    count,
+  }));
 
   return (
     <div>
       <div style={gridStyle}>
-        <MetricCard icon={<Users />} title="Total Patients" value={m.totalPatients} subtitle="From uploaded file" color="#3b82f6" />
-        <MetricCard icon={<Calendar />} title="TCM Appt Scheduled" value={m.tcmScheduled} subtitle={`${m.scheduledRate}% scheduled`} color="#10b981" />
-        <MetricCard icon={<Clock />} title="Not Yet Scheduled" value={m.notYetScheduled} subtitle="Awaiting scheduling" color="#f59e0b" />
-        <MetricCard icon={<TrendingUp />} title="Missed 14-Day Window" value={m.missed14DayWindow} subtitle="Missed window" color="#ef4444" />
-        <MetricCard icon={<CheckCircle />} title="Completed Within Window" value={m.completedWithinWindow} subtitle="Completed on time" color="#8b5cf6" />
+        <MetricCard
+          icon={<Users />}
+          title="Total Patients"
+          value={m.totalPatients}
+          subtitle="From uploaded file"
+          color="#3b82f6"
+        />
+        <MetricCard
+          icon={<Calendar />}
+          title="TCM Appt Scheduled"
+          value={m.tcmScheduled}
+          subtitle={`${m.scheduledRate}% scheduled`}
+          color="#10b981"
+        />
+        <MetricCard
+          icon={<Clock />}
+          title="Not Yet Scheduled"
+          value={m.notYetScheduled}
+          subtitle="Awaiting scheduling"
+          color="#f59e0b"
+        />
+        <MetricCard
+          icon={<TrendingUp />}
+          title="Missed 14-Day Window"
+          value={m.missed14DayWindow}
+          subtitle="Missed window"
+          color="#ef4444"
+        />
+        <MetricCard
+          icon={<CheckCircle />}
+          title="Completed Within Window"
+          value={m.completedWithinWindow}
+          subtitle="Completed on time"
+          color="#8b5cf6"
+        />
       </div>
 
       <div style={chartGridStyle}>
@@ -491,21 +498,20 @@ function PatientTrackingPage({ data }) {
                 ))}
               </Pie>
               <Tooltip />
+              <Legend />
             </PieChart>
           </ResponsiveContainer>
         </ChartCard>
 
-        <ChartCard title="Patient KPI Summary">
+        <ChartCard title="Nurse Counts">
           <ResponsiveContainer width="100%" height={280}>
-            <BarChart data={trendData}>
+            <BarChart data={nurseData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
-              <YAxis />
+              <YAxis allowDecimals={false} />
               <Tooltip />
               <Legend />
-              <Bar dataKey="total" fill="#3b82f6" />
-              <Bar dataKey="scheduled" fill="#10b981" />
-              <Bar dataKey="completed" fill="#8b5cf6" />
+              <Bar dataKey="count" fill="#667eea" name="Patients" />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
@@ -513,7 +519,15 @@ function PatientTrackingPage({ data }) {
 
       <DataTable
         title={`Patient Drilldown (${patients.length})`}
-        columns={["Patient Name", "Practice", "Location", "Navigator", "TCM Scheduled", "Completed"]}
+        columns={[
+          "Patient Name",
+          "Practice",
+          "Location",
+          "Navigator",
+          "TCM Scheduled",
+          "Completed",
+          "Missed 14-Day Window",
+        ]}
         rows={patients.map((p) => [
           p.name,
           p.practice,
@@ -521,6 +535,7 @@ function PatientTrackingPage({ data }) {
           p.navigator,
           p.tcmScheduled ? "Scheduled" : "Not Yet Scheduled",
           p.completedWithinWindow ? "Yes" : "No",
+          p.missed14DayWindow ? "Yes" : "No",
         ])}
       />
     </div>
@@ -543,7 +558,10 @@ function PracticeEnrollmentPage({ data }) {
   const consultantMap = {};
   practices.forEach((p) => {
     const c = p.consultant || "N/A";
-    if (!consultantMap[c]) consultantMap[c] = { name: c, complete: 0, pending: 0 };
+    if (!consultantMap[c]) {
+      consultantMap[c] = { name: c, complete: 0, pending: 0 };
+    }
+
     const s = (p.pdvStatus || "").toLowerCase();
     if (s === "complete") consultantMap[c].complete += 1;
     else consultantMap[c].pending += 1;
@@ -574,11 +592,41 @@ function PracticeEnrollmentPage({ data }) {
   return (
     <div>
       <div style={gridStyle}>
-        <MetricCard icon={<Building2 />} title="Total Practices" value={m.total} subtitle="From uploaded file" color="#3b82f6" />
-        <MetricCard icon={<CheckCircle />} title="Enrolled" value={m.enrolled} subtitle={`${m.total ? ((m.enrolled / m.total) * 100).toFixed(1) : 0}% success rate`} color="#10b981" />
-        <MetricCard icon={<Clock />} title="Pending" value={m.pending} subtitle="In process / blank" color="#f59e0b" />
-        <MetricCard icon={<TrendingUp />} title="Declined" value={m.declined} subtitle="Not participating" color="#ef4444" />
-        <MetricCard icon={<Clock />} title="TBD" value={m.tbd} subtitle="To be determined" color="#8b5cf6" />
+        <MetricCard
+          icon={<Building2 />}
+          title="Total Practices"
+          value={m.total}
+          subtitle="From uploaded file"
+          color="#3b82f6"
+        />
+        <MetricCard
+          icon={<CheckCircle />}
+          title="Enrolled"
+          value={m.enrolled}
+          subtitle={`${m.total ? ((m.enrolled / m.total) * 100).toFixed(1) : 0}% success rate`}
+          color="#10b981"
+        />
+        <MetricCard
+          icon={<Clock />}
+          title="Pending"
+          value={m.pending}
+          subtitle="In process / blank"
+          color="#f59e0b"
+        />
+        <MetricCard
+          icon={<TrendingUp />}
+          title="Declined"
+          value={m.declined}
+          subtitle="Not participating"
+          color="#ef4444"
+        />
+        <MetricCard
+          icon={<Clock />}
+          title="TBD"
+          value={m.tbd}
+          subtitle="To be determined"
+          color="#8b5cf6"
+        />
       </div>
 
       <div style={chartGridStyle}>
@@ -591,6 +639,7 @@ function PracticeEnrollmentPage({ data }) {
                 ))}
               </Pie>
               <Tooltip />
+              <Legend />
             </PieChart>
           </ResponsiveContainer>
         </ChartCard>
@@ -599,20 +648,23 @@ function PracticeEnrollmentPage({ data }) {
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={consultantData} layout="vertical" margin={{ left: 140 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" />
+              <XAxis type="number" allowDecimals={false} />
               <YAxis dataKey="name" type="category" width={130} />
               <Tooltip />
               <Legend />
-              <Bar dataKey="complete" fill="#10b981" />
-              <Bar dataKey="pending" fill="#f59e0b" />
+              <Bar dataKey="complete" fill="#10b981" name="Complete" />
+              <Bar dataKey="pending" fill="#f59e0b" name="Pending" />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
       </div>
 
       <div style={tableWrapStyle}>
-        <div style={{ display: "flex", justifyContent: "space-between", gap: "12px", flexWrap: "wrap" }}>
-          <h2>Practice Drilldown ({filtered.length} of {practices.length})</h2>
+        <div style={tableHeaderStyle}>
+          <h2>
+            Practice Drilldown ({filtered.length} of {practices.length})
+          </h2>
+
           <div style={{ display: "flex", gap: "12px" }}>
             <input
               placeholder="Search practice or consultant..."
@@ -620,7 +672,12 @@ function PracticeEnrollmentPage({ data }) {
               onChange={(e) => setSearch(e.target.value)}
               style={inputStyle}
             />
-            <select value={filter} onChange={(e) => setFilter(e.target.value)} style={inputStyle}>
+
+            <select
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+              style={inputStyle}
+            >
               <option value="all">All Status</option>
               <option value="complete">Complete</option>
               <option value="pending">Pending</option>
@@ -631,7 +688,15 @@ function PracticeEnrollmentPage({ data }) {
         </div>
 
         <Table
-          columns={["Practice", "Consultant", "City", "Facility", "PDV Forms Completed", "EMR Access", "Contact"]}
+          columns={[
+            "Practice",
+            "Consultant",
+            "City",
+            "Facility",
+            "PDV Forms Completed",
+            "EMR Access",
+            "Contact",
+          ]}
           rows={filtered.map((p) => [
             p.name,
             p.consultant,
@@ -665,12 +730,15 @@ function MetricCard({ icon, title, value, subtitle, color }) {
       >
         {icon}
       </div>
+
       <div style={{ fontSize: "14px", color: "#475569", fontWeight: "700" }}>
         {title}
       </div>
+
       <div style={{ fontSize: "34px", fontWeight: "800", marginTop: "8px" }}>
         {value}
       </div>
+
       <div style={{ fontSize: "12px", color: "#64748b", marginTop: "6px" }}>
         {subtitle}
       </div>
@@ -699,14 +767,17 @@ function DataTable({ title, columns, rows }) {
 function Table({ columns, rows }) {
   return (
     <div style={{ overflowX: "auto" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "16px" }}>
+      <table style={tableStyle}>
         <thead>
           <tr>
             {columns.map((c) => (
-              <th key={c} style={thStyle}>{c}</th>
+              <th key={c} style={thStyle}>
+                {c}
+              </th>
             ))}
           </tr>
         </thead>
+
         <tbody>
           {rows.length === 0 ? (
             <tr>
@@ -718,7 +789,9 @@ function Table({ columns, rows }) {
             rows.map((row, i) => (
               <tr key={i}>
                 {row.map((cell, j) => (
-                  <td key={j} style={tdStyle}>{cell || "N/A"}</td>
+                  <td key={j} style={tdStyle}>
+                    {cell || "N/A"}
+                  </td>
                 ))}
               </tr>
             ))
@@ -728,6 +801,82 @@ function Table({ columns, rows }) {
     </div>
   );
 }
+
+const pageStyle = {
+  minHeight: "100vh",
+  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  fontFamily: "Arial, sans-serif",
+};
+
+const headerStyle = {
+  background: "rgba(255,255,255,0.96)",
+  padding: "24px 40px",
+  boxShadow: "0 4px 8px rgba(0,0,0,0.08)",
+};
+
+const headerInnerStyle = {
+  maxWidth: "1400px",
+  margin: "0 auto",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  gap: "16px",
+  flexWrap: "wrap",
+};
+
+const titleStyle = {
+  fontSize: "30px",
+  fontWeight: "800",
+  margin: 0,
+  color: "#5b5fc7",
+};
+
+const buttonStyle = {
+  padding: "12px 24px",
+  background: "linear-gradient(135deg, #667eea, #764ba2)",
+  color: "white",
+  border: "none",
+  borderRadius: "10px",
+  fontWeight: "700",
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  gap: "8px",
+};
+
+const liveStyle = {
+  padding: "10px 18px",
+  background: "#f0fdf4",
+  border: "2px solid #86efac",
+  borderRadius: "12px",
+  color: "#166534",
+  fontSize: "12px",
+  fontWeight: "700",
+};
+
+const messageStyle = {
+  maxWidth: "1400px",
+  margin: "16px auto 0",
+  padding: "12px",
+  background: "#dbeafe",
+  borderRadius: "10px",
+  color: "#1e40af",
+  textAlign: "center",
+  fontWeight: "700",
+};
+
+const tabsStyle = {
+  maxWidth: "1400px",
+  margin: "24px auto 0",
+  display: "flex",
+  gap: "10px",
+};
+
+const mainStyle = {
+  maxWidth: "1400px",
+  margin: "0 auto",
+  padding: "40px",
+};
 
 const gridStyle = {
   display: "grid",
@@ -756,6 +905,19 @@ const tableWrapStyle = {
   padding: "24px",
   boxShadow: "0 4px 8px rgba(0,0,0,0.08)",
   marginTop: "24px",
+};
+
+const tableHeaderStyle = {
+  display: "flex",
+  justifyContent: "space-between",
+  gap: "12px",
+  flexWrap: "wrap",
+};
+
+const tableStyle = {
+  width: "100%",
+  borderCollapse: "collapse",
+  marginTop: "16px",
 };
 
 const thStyle = {
