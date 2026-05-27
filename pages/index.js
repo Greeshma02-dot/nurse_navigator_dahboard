@@ -1,22 +1,220 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { RefreshCw, Users, CheckCircle, Clock, Building2, TrendingUp, Calendar, Upload } from 'lucide-react';
-import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, { useState, useRef } from "react";
+import {
+  Upload,
+  Users,
+  CheckCircle,
+  Clock,
+  Building2,
+  TrendingUp,
+  Calendar,
+} from "lucide-react";
+import {
+  LineChart,
+  Line,
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+
+const EMPTY_DATA = {
+  metrics: {
+    totalPatients: 0,
+    tcmScheduled: 0,
+    notYetScheduled: 0,
+    pending: 0,
+    scheduledRate: 0,
+    missed14DayWindow: 0,
+    completedWithinWindow: 0,
+  },
+  patients: [],
+  practiceMetrics: {
+    total: 0,
+    enrolled: 0,
+    pending: 0,
+    declined: 0,
+    tbd: 0,
+  },
+  practices: [],
+};
 
 export default function NurseNavigatorDashboard() {
-  const [activeTab, setActiveTab] = useState('patients');
-  const [data, setData] = useState({
-    metrics: { totalPatients: 21, tcmScheduled: 4, visitVerified: 3, tcmSchedulingRate: 19.0, verificationRate: 75.0, devanPatients: 19, sunniePatients: 2 },
-    patients: [],
-    practiceMetrics: { total: 34, enrolled: 15, pending: 11, declined: 8 },
-    practices: []
-  });
-  const [lastSync, setLastSync] = useState(new Date());
+  const [activeTab, setActiveTab] = useState("patients");
+  const [data, setData] = useState(EMPTY_DATA);
+  const [lastSync, setLastSync] = useState(null);
   const [syncing, setSyncing] = useState(false);
-  const [syncMessage, setSyncMessage] = useState('');
+  const [syncMessage, setSyncMessage] = useState("");
   const fileInputRef = useRef(null);
 
-  const handleSyncClick = () => {
-    fileInputRef.current.click();
+  const clean = (v) =>
+    v === null || v === undefined ? "" : String(v).trim();
+
+  const normalize = (v) => clean(v).toLowerCase();
+
+  const getCell = (row, names) => {
+    const keys = Object.keys(row || {});
+
+    for (const name of names) {
+      const found = keys.find((k) => normalize(k) === normalize(name));
+      if (found) return row[found];
+    }
+
+    for (const name of names) {
+      const found = keys.find((k) => normalize(k).includes(normalize(name)));
+      if (found) return row[found];
+    }
+
+    return "";
+  };
+
+  const readSheetWithHeaderRow = (sheet, XLSX, headerRowIndex, maxCols = 20) => {
+    const raw = XLSX.utils.sheet_to_json(sheet, {
+      header: 1,
+      defval: "",
+      blankrows: false,
+    });
+
+    const headers = (raw[headerRowIndex] || [])
+      .slice(0, maxCols)
+      .map((h) => clean(h));
+
+    return raw
+      .slice(headerRowIndex + 1)
+      .map((row) => {
+        const obj = {};
+        headers.forEach((h, i) => {
+          if (h) obj[h] = row[i] ?? "";
+        });
+        return obj;
+      })
+      .filter((row) => {
+        const values = Object.values(row).map(clean);
+        return values.some((v) => v !== "");
+      });
+  };
+
+  const isYes = (val) => {
+    const s = normalize(val);
+    return (
+      s === "yes" ||
+      s === "y" ||
+      s === "true" ||
+      s === "1" ||
+      s === "scheduled" ||
+      s === "verified" ||
+      s === "complete" ||
+      s === "completed" ||
+      s === "x" ||
+      s === "✓"
+    );
+  };
+
+  const processPatientRows = (patientRows) => {
+    const patients = patientRows.map((p) => {
+      const tcmValue = getCell(p, [
+        "TCM Appt Scheduled",
+        "TCM Scheduled",
+        "TCM",
+      ]);
+
+      const completedValue = getCell(p, [
+        "Completed Within Window",
+        "Visit Verified",
+        "Verified",
+      ]);
+
+      const missedValue = getCell(p, [
+        "Missed 14-Day Window",
+        "Missed Window",
+      ]);
+
+      return {
+        name: clean(getCell(p, ["Patient Name", "Name", "Patient"])),
+        practice: clean(getCell(p, ["Practice"])),
+        location: clean(getCell(p, ["Location", "Site"])),
+        navigator: clean(getCell(p, ["Nurse Navigator", "Navigator"])),
+        tcmScheduled: isYes(tcmValue),
+        completedWithinWindow: isYes(completedValue),
+        missed14DayWindow: isYes(missedValue),
+        rawStatus: clean(tcmValue),
+      };
+    });
+
+    const totalPatients = patients.length;
+    const tcmScheduled = patients.filter((p) => p.tcmScheduled).length;
+    const notYetScheduled = totalPatients - tcmScheduled;
+    const missed14DayWindow = patients.filter((p) => p.missed14DayWindow).length;
+    const completedWithinWindow = patients.filter(
+      (p) => p.completedWithinWindow
+    ).length;
+
+    return {
+      totalPatients,
+      tcmScheduled,
+      notYetScheduled,
+      pending: notYetScheduled,
+      scheduledRate:
+        totalPatients > 0
+          ? Number(((tcmScheduled / totalPatients) * 100).toFixed(1))
+          : 0,
+      missed14DayWindow,
+      completedWithinWindow,
+      patients,
+    };
+  };
+
+  const processPracticeRows = (practiceRows) => {
+    const practices = practiceRows.map((p) => {
+      const pdvStatus = clean(
+        getCell(p, ["PDV Forms Completed", "PDV Status", "PDV"])
+      );
+
+      return {
+        name: clean(getCell(p, ["Practice Participants", "Practice"])),
+        consultant: clean(getCell(p, ["Consultant"])),
+        location: clean(getCell(p, ["City", "Location"])),
+        hospitals: clean(getCell(p, ["Facility Participants", "Hospitals"])),
+        pdvStatus,
+        emrAccess: clean(
+          getCell(p, [
+            "Nurse Navigator EMR Access granted",
+            "EMR Access",
+          ])
+        ),
+        login: clean(getCell(p, ["Nurse Navigator EMR Access Login"])),
+        contact: clean(getCell(p, ["Direct Office Contact", "Contact"])),
+        networkAccess: clean(getCell(p, ["Network Management Access"])),
+        notes: clean(getCell(p, ["Notes"])),
+      };
+    });
+
+    const enrolled = practices.filter(
+      (p) => normalize(p.pdvStatus) === "complete"
+    ).length;
+
+    const declined = practices.filter((p) =>
+      normalize(p.pdvStatus).includes("declined")
+    ).length;
+
+    const tbd = practices.filter((p) => normalize(p.pdvStatus) === "tbd").length;
+
+    const pending = practices.length - enrolled - declined - tbd;
+
+    return {
+      total: practices.length,
+      enrolled,
+      pending,
+      declined,
+      tbd,
+      practices,
+    };
   };
 
   const handleFileUpload = async (event) => {
@@ -24,250 +222,231 @@ export default function NurseNavigatorDashboard() {
     if (!files || files.length === 0) return;
 
     setSyncing(true);
-    setSyncMessage('Reading Excel files...');
+    setSyncMessage("Reading uploaded Excel file...");
 
     try {
-      const XLSX = await import('xlsx');
-      let patientRows = null;
-      let practiceRows = null;
+      const XLSX = await import("xlsx");
+      let newData = JSON.parse(JSON.stringify(EMPTY_DATA));
 
       for (const file of files) {
-        const arrayBuffer = await file.arrayBuffer();
-        const workbook = XLSX.read(arrayBuffer);
-        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-        
-        // Get the range of actual data
-        const range = XLSX.utils.decode_range(firstSheet['!ref'] || 'A1:A1');
-        
-        // Read as 2D array
-        const rawData = XLSX.utils.sheet_to_json(firstSheet, { 
-          defval: '', 
-          header: 1,
-          range: range
-        });
-        
-        // Find header row (the one with most non-empty string cells)
-        let headerRowIndex = 0;
-        let maxScore = 0;
-        for (let i = 0; i < Math.min(10, rawData.length); i++) {
-          const row = rawData[i] || [];
-          const score = row.filter(c => 
-            c !== '' && c !== null && c !== undefined && typeof c === 'string' && c.length > 0 && c.length < 100
-          ).length;
-          if (score > maxScore) {
-            maxScore = score;
-            headerRowIndex = i;
-          }
-        }
-
-        // Get headers and filter out empty ones
-        const rawHeaders = rawData[headerRowIndex] || [];
-        const headers = [];
-        const headerIndices = [];
-        rawHeaders.forEach((h, idx) => {
-          if (h !== '' && h !== null && h !== undefined && typeof h === 'string' && h.trim().length > 0) {
-            headers.push(h.trim());
-            headerIndices.push(idx);
-          }
-        });
-
-        // Get data rows, filter out completely empty ones
-        const dataRows = rawData.slice(headerRowIndex + 1)
-          .filter(row => {
-            if (!row || row.length === 0) return false;
-            // Check if row has actual content in the columns we care about
-            return headerIndices.some(idx => {
-              const val = row[idx];
-              return val !== '' && val !== null && val !== undefined;
-            });
-          });
-
-        // Convert to objects using only valid headers
-        const jsonData = dataRows.map(row => {
-          const obj = {};
-          headers.forEach((header, i) => {
-            const idx = headerIndices[i];
-            obj[header] = row[idx] !== undefined ? row[idx] : '';
-          });
-          return obj;
-        });
-
-        // Filter out rows where the first column (usually Name/Practice) is empty
-        const cleanedData = jsonData.filter(row => {
-          const firstKey = headers[0];
-          const firstVal = row[firstKey];
-          return firstVal !== '' && firstVal !== null && firstVal !== undefined;
-        });
-
+        const buffer = await file.arrayBuffer();
+        const workbook = XLSX.read(buffer, { type: "array" });
         const fileName = file.name.toLowerCase();
-        if (fileName.includes('patient')) {
-          patientRows = cleanedData;
-          console.log('PATIENT DATA:', cleanedData);
-          console.log('PATIENT HEADERS:', headers);
-          setSyncMessage(`Patient file: ${cleanedData.length} rows loaded`);
-        } else if (fileName.includes('ccpaco') || fileName.includes('tracking') || fileName.includes('practice')) {
-          practiceRows = cleanedData;
-          console.log('PRACTICE DATA:', cleanedData);
-          console.log('PRACTICE HEADERS:', headers);
-          setSyncMessage(`Practice file: ${cleanedData.length} rows loaded`);
+
+        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+
+        if (
+          fileName.includes("ccpaco") ||
+          fileName.includes("practice") ||
+          fileName.includes("tracking")
+        ) {
+          const practiceRows = readSheetWithHeaderRow(
+            firstSheet,
+            XLSX,
+            2,
+            10
+          );
+
+          const result = processPracticeRows(practiceRows);
+
+          newData.practiceMetrics = {
+            total: result.total,
+            enrolled: result.enrolled,
+            pending: result.pending,
+            declined: result.declined,
+            tbd: result.tbd,
+          };
+
+          newData.practices = result.practices;
+        } else {
+          const patientRows = readSheetWithHeaderRow(firstSheet, XLSX, 0, 20);
+          const result = processPatientRows(patientRows);
+
+          newData.metrics = {
+            totalPatients: result.totalPatients,
+            tcmScheduled: result.tcmScheduled,
+            notYetScheduled: result.notYetScheduled,
+            pending: result.pending,
+            scheduledRate: result.scheduledRate,
+            missed14DayWindow: result.missed14DayWindow,
+            completedWithinWindow: result.completedWithinWindow,
+          };
+
+          newData.patients = result.patients;
         }
       }
 
-      const updatedData = processExcelData(patientRows, practiceRows);
-      setData(updatedData);
+      setData(newData);
       setLastSync(new Date());
-      setSyncMessage('✓ Sync complete! Data updated.');
-      
-      setTimeout(() => {
-        setSyncing(false);
-        setSyncMessage('');
-      }, 2500);
-
+      setSyncMessage("✓ Sync complete. Dashboard updated from uploaded file.");
     } catch (error) {
-      console.error('Sync error:', error);
-      setSyncMessage('Error: ' + error.message);
-      setTimeout(() => {
-        setSyncing(false);
-        setSyncMessage('');
-      }, 3000);
+      console.error(error);
+      setSyncMessage("Error reading file: " + error.message);
     }
 
-    event.target.value = '';
-  };
+    setTimeout(() => {
+      setSyncing(false);
+      setSyncMessage("");
+    }, 3000);
 
-  const findCol = (row, possibleNames) => {
-    if (!row) return '';
-    const keys = Object.keys(row);
-    for (const name of possibleNames) {
-      const match = keys.find(k => k && k.toLowerCase().trim() === name.toLowerCase().trim());
-      if (match) return row[match];
-    }
-    for (const name of possibleNames) {
-      const match = keys.find(k => k && k.toLowerCase().includes(name.toLowerCase()));
-      if (match) return row[match];
-    }
-    return '';
-  };
-
-  const isYes = (val) => {
-    if (val === null || val === undefined) return false;
-    const s = val.toString().toLowerCase().trim();
-    return s === 'yes' || s === 'y' || s === 'true' || s === '1' || 
-           s === 'scheduled' || s === 'verified' || s === 'complete' || s === '✓' || s === 'x';
-  };
-
-  const processExcelData = (patientRows, practiceRows) => {
-    const result = { ...data };
-
-    if (patientRows && patientRows.length > 0) {
-      const tcmScheduled = patientRows.filter(p => isYes(findCol(p, ['TCM Scheduled', 'TCM_Scheduled', 'TCM']))).length;
-      const visitVerified = patientRows.filter(p => isYes(findCol(p, ['Visit Verified', 'Visit_Verified', 'Verified']))).length;
-      const devanCount = patientRows.filter(p => (findCol(p, ['Nurse Navigator', 'Navigator']) || '').toString().toLowerCase().includes('devan')).length;
-      const sunnieCount = patientRows.filter(p => (findCol(p, ['Nurse Navigator', 'Navigator']) || '').toString().toLowerCase().includes('sunnie')).length;
-      const totalPatients = patientRows.length;
-
-      result.metrics = {
-        totalPatients,
-        tcmScheduled,
-        visitVerified,
-        tcmSchedulingRate: totalPatients > 0 ? ((tcmScheduled / totalPatients) * 100).toFixed(1) : 0,
-        verificationRate: tcmScheduled > 0 ? ((visitVerified / tcmScheduled) * 100).toFixed(1) : 0,
-        devanPatients: devanCount,
-        sunniePatients: sunnieCount
-      };
-
-      result.patients = patientRows.map(p => ({
-        name: (findCol(p, ['Patient Name', 'Name', 'Patient']) || 'N/A').toString(),
-        practice: (findCol(p, ['Practice']) || 'N/A').toString(),
-        location: (findCol(p, ['Location', 'Site']) || 'N/A').toString(),
-        navigator: (findCol(p, ['Nurse Navigator', 'Navigator']) || 'N/A').toString(),
-        tcmScheduled: isYes(findCol(p, ['TCM Scheduled', 'TCM'])),
-        visitVerified: isYes(findCol(p, ['Visit Verified', 'Verified']))
-      }));
-    }
-
-    if (practiceRows && practiceRows.length > 0) {
-      const enrolled = practiceRows.filter(p => isYes(findCol(p, ['PDV Status', 'PDV_Status', 'PDV']))).length;
-      const pending = practiceRows.filter(p => {
-        const status = (findCol(p, ['Status']) || '').toString().toLowerCase();
-        return status.includes('pending') || status.includes('progress') || status.includes('contact');
-      }).length;
-      const declined = practiceRows.filter(p => {
-        const status = (findCol(p, ['Status']) || '').toString().toLowerCase();
-        return status.includes('declined') || status === 'no' || status.includes('not interested');
-      }).length;
-
-      result.practiceMetrics = { 
-        total: practiceRows.length, 
-        enrolled, 
-        pending, 
-        declined 
-      };
-
-      result.practices = practiceRows.map(p => ({
-        name: (findCol(p, ['Practice']) || 'N/A').toString(),
-        consultant: (findCol(p, ['Consultant']) || 'N/A').toString(),
-        location: (findCol(p, ['Location']) || 'N/A').toString(),
-        hospitals: (findCol(p, ['Hospitals', 'Hospital']) || 'N/A').toString(),
-        status: (findCol(p, ['Status']) || 'N/A').toString(),
-        pdvStatus: (findCol(p, ['PDV Status', 'PDV']) || 'N/A').toString(),
-        emrAccess: (findCol(p, ['EMR Access', 'EMR']) || 'N/A').toString(),
-        contact: (findCol(p, ['Contact']) || 'N/A').toString(),
-        notes: (findCol(p, ['Notes', 'Comment']) || '').toString()
-      }));
-    }
-
-    return result;
+    event.target.value = "";
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', fontFamily: "'Inter', -apple-system, sans-serif" }}>
-      <input ref={fileInputRef} type="file" accept=".xlsx,.xls" multiple onChange={handleFileUpload} style={{ display: 'none' }} />
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".xlsx,.xls"
+        multiple
+        onChange={handleFileUpload}
+        style={{ display: "none" }}
+      />
 
-      <header style={{ background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(10px)', padding: '24px 40px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', position: 'sticky', top: 0, zIndex: 100 }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: '800', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0 }}>
+      <header
+        style={{
+          background: "rgba(255,255,255,0.96)",
+          padding: "24px 40px",
+          boxShadow: "0 4px 8px rgba(0,0,0,0.08)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1400px",
+            margin: "0 auto",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: "16px",
+            flexWrap: "wrap",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "30px",
+              fontWeight: "800",
+              margin: 0,
+              color: "#5b5fc7",
+            }}
+          >
             Nurse Navigator Program
           </h1>
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-            <button onClick={handleSyncClick} disabled={syncing} style={{ padding: '12px 24px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: '700', cursor: syncing ? 'wait' : 'pointer', display: 'flex', alignItems: 'center', gap: '8px', boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)', opacity: syncing ? 0.7 : 1 }}>
+
+          <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+            <button
+              onClick={() => fileInputRef.current.click()}
+              disabled={syncing}
+              style={{
+                padding: "12px 24px",
+                background: "linear-gradient(135deg, #667eea, #764ba2)",
+                color: "white",
+                border: "none",
+                borderRadius: "10px",
+                fontWeight: "700",
+                cursor: syncing ? "wait" : "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
               <Upload size={18} />
-              {syncing ? 'Syncing...' : 'Sync from SharePoint'}
+              {syncing ? "Syncing..." : "Sync from SharePoint"}
             </button>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 20px', background: '#f0fdf4', borderRadius: '12px', border: '2px solid #86efac' }}>
-              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e', animation: 'pulse 2s infinite' }}></div>
-              <div>
-                <div style={{ fontSize: '12px', color: '#15803d', fontWeight: '600' }}>Live Data</div>
-                <div style={{ fontSize: '11px', color: '#166534' }}>Updated {lastSync?.toLocaleTimeString()}</div>
-              </div>
+
+            <div
+              style={{
+                padding: "10px 18px",
+                background: "#f0fdf4",
+                border: "2px solid #86efac",
+                borderRadius: "12px",
+                color: "#166534",
+                fontSize: "12px",
+                fontWeight: "700",
+              }}
+            >
+              Live Data
+              <br />
+              <span style={{ fontWeight: "400" }}>
+                {lastSync ? `Updated ${lastSync.toLocaleTimeString()}` : "No file uploaded"}
+              </span>
             </div>
           </div>
         </div>
 
         {syncMessage && (
-          <div style={{ maxWidth: '1400px', margin: '12px auto 0', padding: '12px 20px', background: '#dbeafe', borderRadius: '12px', color: '#1e40af', fontSize: '14px', fontWeight: '600', textAlign: 'center' }}>
+          <div
+            style={{
+              maxWidth: "1400px",
+              margin: "16px auto 0",
+              padding: "12px",
+              background: "#dbeafe",
+              borderRadius: "10px",
+              color: "#1e40af",
+              textAlign: "center",
+              fontWeight: "700",
+            }}
+          >
             {syncMessage}
           </div>
         )}
 
-        <div style={{ maxWidth: '1400px', margin: '20px auto 0', display: 'flex', gap: '8px' }}>
-          <TabButton active={activeTab === 'patients'} onClick={() => setActiveTab('patients')} icon={<Users size={18} />} label="Patient Tracking" />
-          <TabButton active={activeTab === 'practices'} onClick={() => setActiveTab('practices')} icon={<Building2 size={18} />} label="Practice Enrollment" />
+        <div
+          style={{
+            maxWidth: "1400px",
+            margin: "24px auto 0",
+            display: "flex",
+            gap: "10px",
+          }}
+        >
+          <TabButton
+            active={activeTab === "patients"}
+            onClick={() => setActiveTab("patients")}
+            icon={<Users size={18} />}
+            label="Patient Tracking"
+          />
+          <TabButton
+            active={activeTab === "practices"}
+            onClick={() => setActiveTab("practices")}
+            icon={<Building2 size={18} />}
+            label="Practice Enrollment"
+          />
         </div>
       </header>
 
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '40px' }}>
-        {activeTab === 'patients' ? <PatientTrackingPage data={data} /> : <PracticeEnrollmentPage data={data} />}
-      </div>
-
-      <style jsx>{`@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }`}</style>
+      <main style={{ maxWidth: "1400px", margin: "0 auto", padding: "40px" }}>
+        {activeTab === "patients" ? (
+          <PatientTrackingPage data={data} />
+        ) : (
+          <PracticeEnrollmentPage data={data} />
+        )}
+      </main>
     </div>
   );
 }
 
 function TabButton({ active, onClick, icon, label }) {
   return (
-    <button onClick={onClick} style={{ padding: '12px 24px', background: active ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : 'white', color: active ? 'white' : '#64748b', border: active ? 'none' : '2px solid #e2e8f0', borderRadius: '12px', fontSize: '14px', fontWeight: '600', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.2s', boxShadow: active ? '0 4px 12px rgba(102, 126, 234, 0.4)' : 'none' }}>
+    <button
+      onClick={onClick}
+      style={{
+        padding: "12px 24px",
+        background: active ? "linear-gradient(135deg, #667eea, #764ba2)" : "white",
+        color: active ? "white" : "#64748b",
+        border: active ? "none" : "2px solid #e2e8f0",
+        borderRadius: "10px",
+        fontWeight: "700",
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        gap: "8px",
+      }}
+    >
       {icon}
       {label}
     </button>
@@ -275,210 +454,141 @@ function TabButton({ active, onClick, icon, label }) {
 }
 
 function PatientTrackingPage({ data }) {
-  const patients = data?.patients || [];
-  const metrics = data?.metrics || {};
+  const m = data.metrics;
+  const patients = data.patients;
 
-  const statusData = [
-    { name: 'TCM Scheduled', value: metrics.tcmScheduled || 0, color: '#3b82f6' },
-    { name: 'Pending', value: (metrics.totalPatients - metrics.tcmScheduled) || 0, color: '#f59e0b' },
+  const pieData = [
+    { name: "Scheduled", value: m.tcmScheduled, color: "#10b981" },
+    { name: "Not Yet Scheduled", value: m.notYetScheduled, color: "#f59e0b" },
   ];
 
-  const navigatorData = [
-    { name: 'Devan', patients: metrics.devanPatients || 0 },
-    { name: 'Sunnie', patients: metrics.sunniePatients || 0 }
-  ];
-
-  const weeklyTrendData = [
-    { week: 'Apr 13-19', patients: 3, tcm: 1, verified: 1 },
-    { week: 'Apr 20-26', patients: 8, tcm: 2, verified: 2 },
-    { week: 'Apr 27-May 3', patients: 11, tcm: 3, verified: 2 },
-    { week: 'May 4-10', patients: 16, tcm: 3, verified: 2 },
-    { week: 'May 11-17', patients: 19, tcm: 3, verified: 3 },
-    { week: 'May 18-24', patients: 21, tcm: 4, verified: 3 }
+  const trendData = [
+    {
+      name: "Current",
+      total: m.totalPatients,
+      scheduled: m.tcmScheduled,
+      completed: m.completedWithinWindow,
+    },
   ];
 
   return (
     <div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px', marginBottom: '32px' }}>
-        <MetricCard icon={<Users size={24} />} title="Active Patients" value={metrics.totalPatients || 0} subtitle="Currently tracking" color="#3b82f6" gradient="linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)" />
-        <MetricCard icon={<Calendar size={24} />} title="TCM Scheduled" value={metrics.tcmScheduled || 0} subtitle={`${metrics.tcmSchedulingRate || 0}% scheduling rate`} color="#10b981" gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)" />
-        <MetricCard icon={<CheckCircle size={24} />} title="Visits Verified" value={metrics.visitVerified || 0} subtitle={`${metrics.verificationRate || 0}% success rate`} color="#8b5cf6" gradient="linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)" />
-        <MetricCard icon={<Clock size={24} />} title="Pending Action" value={(metrics.totalPatients - metrics.tcmScheduled) || 0} subtitle="Awaiting scheduling" color="#f59e0b" gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)" />
+      <div style={gridStyle}>
+        <MetricCard icon={<Users />} title="Total Patients" value={m.totalPatients} subtitle="From uploaded file" color="#3b82f6" />
+        <MetricCard icon={<Calendar />} title="TCM Appt Scheduled" value={m.tcmScheduled} subtitle={`${m.scheduledRate}% scheduled`} color="#10b981" />
+        <MetricCard icon={<Clock />} title="Not Yet Scheduled" value={m.notYetScheduled} subtitle="Awaiting scheduling" color="#f59e0b" />
+        <MetricCard icon={<TrendingUp />} title="Missed 14-Day Window" value={m.missed14DayWindow} subtitle="Missed window" color="#ef4444" />
+        <MetricCard icon={<CheckCircle />} title="Completed Within Window" value={m.completedWithinWindow} subtitle="Completed on time" color="#8b5cf6" />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', marginBottom: '24px' }}>
-        <ChartCard title="Weekly Patient & TCM Trend">
-          <ResponsiveContainer width="100%" height={280}>
-            <LineChart data={weeklyTrendData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="week" stroke="#64748b" style={{ fontSize: '12px' }} />
-              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="patients" stroke="#3b82f6" strokeWidth={3} name="Patients" />
-              <Line type="monotone" dataKey="tcm" stroke="#10b981" strokeWidth={3} name="TCM Scheduled" />
-              <Line type="monotone" dataKey="verified" stroke="#8b5cf6" strokeWidth={3} name="Verified" />
-            </LineChart>
-          </ResponsiveContainer>
-        </ChartCard>
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '24px', marginBottom: '24px' }}>
-        <ChartCard title="Navigator Workload">
-          <ResponsiveContainer width="100%" height={280}>
-            <BarChart data={navigatorData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="name" stroke="#64748b" style={{ fontSize: '12px' }} />
-              <YAxis stroke="#64748b" style={{ fontSize: '12px' }} />
-              <Tooltip />
-              <Bar dataKey="patients" fill="#667eea" radius={[8, 8, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </ChartCard>
-
+      <div style={chartGridStyle}>
         <ChartCard title="TCM Scheduling Status">
           <ResponsiveContainer width="100%" height={280}>
             <PieChart>
-              <Pie data={statusData} cx="50%" cy="50%" labelLine={false} label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`} outerRadius={100} fill="#8884d8" dataKey="value">
-                {statusData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
+              <Pie data={pieData} dataKey="value" outerRadius={100} label>
+                {pieData.map((e, i) => (
+                  <Cell key={i} fill={e.color} />
+                ))}
               </Pie>
               <Tooltip />
             </PieChart>
           </ResponsiveContainer>
         </ChartCard>
+
+        <ChartCard title="Patient KPI Summary">
+          <ResponsiveContainer width="100%" height={280}>
+            <BarChart data={trendData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="total" fill="#3b82f6" />
+              <Bar dataKey="scheduled" fill="#10b981" />
+              <Bar dataKey="completed" fill="#8b5cf6" />
+            </BarChart>
+          </ResponsiveContainer>
+        </ChartCard>
       </div>
 
-      <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
-        <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
-          Patient List ({patients.length} total)
-        </h2>
-        <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '2px solid #e2e8f0' }}>
-                <th style={headerStyle}>Patient Name</th>
-                <th style={headerStyle}>Practice</th>
-                <th style={headerStyle}>Location</th>
-                <th style={headerStyle}>Navigator</th>
-                <th style={headerStyle}>TCM Status</th>
-                <th style={headerStyle}>Verified</th>
-              </tr>
-            </thead>
-            <tbody>
-              {patients.map((patient, index) => (
-                <tr key={index} style={{ borderBottom: '1px solid #f1f5f9' }}>
-                  <td style={cellStyle}><strong>{patient.name}</strong></td>
-                  <td style={cellStyle}>{patient.practice}</td>
-                  <td style={cellStyle}>
-                    <span style={{ padding: '4px 12px', background: patient.location === 'TVH' ? '#dbeafe' : '#fef3c7', color: patient.location === 'TVH' ? '#1e40af' : '#92400e', borderRadius: '12px', fontSize: '12px', fontWeight: '600' }}>
-                      {patient.location}
-                    </span>
-                  </td>
-                  <td style={cellStyle}>{patient.navigator}</td>
-                  <td style={cellStyle}>
-                    <span style={{ padding: '4px 12px', background: patient.tcmScheduled ? '#dcfce7' : '#fee2e2', color: patient.tcmScheduled ? '#15803d' : '#991b1b', borderRadius: '12px', fontSize: '12px', fontWeight: '600' }}>
-                      {patient.tcmScheduled ? 'Scheduled' : 'Pending'}
-                    </span>
-                  </td>
-                  <td style={cellStyle}>
-                    <span style={{ fontSize: '20px' }}>{patient.visitVerified ? '✅' : '⏳'}</span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <DataTable
+        title={`Patient Drilldown (${patients.length})`}
+        columns={["Patient Name", "Practice", "Location", "Navigator", "TCM Scheduled", "Completed"]}
+        rows={patients.map((p) => [
+          p.name,
+          p.practice,
+          p.location,
+          p.navigator,
+          p.tcmScheduled ? "Scheduled" : "Not Yet Scheduled",
+          p.completedWithinWindow ? "Yes" : "No",
+        ])}
+      />
     </div>
   );
 }
 
 function PracticeEnrollmentPage({ data }) {
-  const practiceMetrics = data?.practiceMetrics || { total: 0, enrolled: 0, pending: 0, declined: 0 };
-  const practices = data?.practices || [];
-  const [filterStatus, setFilterStatus] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
+  const m = data.practiceMetrics;
+  const practices = data.practices;
+  const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
 
-  const enrollmentData = [
-    { name: 'Enrolled', value: practiceMetrics.enrolled, color: '#10b981' },
-    { name: 'Pending', value: practiceMetrics.pending, color: '#f59e0b' },
-    { name: 'Declined', value: practiceMetrics.declined, color: '#ef4444' }
+  const statusData = [
+    { name: "Complete", value: m.enrolled, color: "#10b981" },
+    { name: "Pending", value: m.pending, color: "#f59e0b" },
+    { name: "Declined", value: m.declined, color: "#ef4444" },
+    { name: "TBD", value: m.tbd, color: "#8b5cf6" },
   ];
 
-  // Build consultant data from real practices
   const consultantMap = {};
-  practices.forEach(p => {
-    const c = (p.consultant || 'Unknown').toString().trim();
-    if (!c || c === 'N/A') return;
-    if (!consultantMap[c]) consultantMap[c] = { name: c, enrolled: 0, pending: 0 };
-    const pdvLower = (p.pdvStatus || '').toString().toLowerCase();
-    const statusLower = (p.status || '').toString().toLowerCase();
-    if (pdvLower.includes('complete') || pdvLower === 'yes') {
-      consultantMap[c].enrolled++;
-    } else if (statusLower.includes('pending') || statusLower.includes('progress')) {
-      consultantMap[c].pending++;
-    }
-  });
-  
-  const consultantData = Object.values(consultantMap)
-    .filter(c => c.enrolled > 0 || c.pending > 0)
-    .sort((a, b) => (b.enrolled + b.pending) - (a.enrolled + a.pending))
-    .slice(0, 10);
-  
-  const finalConsultantData = consultantData.length > 0 ? consultantData : [
-    { name: 'Rachel Robinson', enrolled: 7, pending: 4 },
-    { name: 'Marlen Cornejo', enrolled: 2, pending: 4 },
-    { name: 'Bella McKay', enrolled: 2, pending: 0 },
-    { name: 'Trysh Logan', enrolled: 1, pending: 0 },
-    { name: 'Chris Ford', enrolled: 1, pending: 0 },
-    { name: 'Sheyenne Powers', enrolled: 1, pending: 0 }
-  ];
-
-  const filteredPractices = practices.filter(p => {
-    const matchesSearch = !searchTerm || 
-      (p.name && p.name.toString().toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (p.consultant && p.consultant.toString().toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    if (filterStatus === 'all') return matchesSearch;
-    
-    const pdv = (p.pdvStatus || '').toString().toLowerCase();
-    const status = (p.status || '').toString().toLowerCase();
-    
-    if (filterStatus === 'enrolled') return matchesSearch && (pdv.includes('complete') || pdv === 'yes');
-    if (filterStatus === 'pending') return matchesSearch && (status.includes('pending') || status.includes('progress'));
-    if (filterStatus === 'declined') return matchesSearch && (status.includes('declined') || status === 'no');
-    return matchesSearch;
+  practices.forEach((p) => {
+    const c = p.consultant || "N/A";
+    if (!consultantMap[c]) consultantMap[c] = { name: c, complete: 0, pending: 0 };
+    const s = (p.pdvStatus || "").toLowerCase();
+    if (s === "complete") consultantMap[c].complete += 1;
+    else consultantMap[c].pending += 1;
   });
 
-  const getStatusBadge = (practice) => {
-    const pdv = (practice.pdvStatus || '').toString().toLowerCase();
-    const status = (practice.status || '').toString().toLowerCase();
-    
-    if (pdv.includes('complete') || pdv === 'yes') {
-      return { label: 'Enrolled', bg: '#dcfce7', color: '#15803d' };
-    } else if (status.includes('declined') || status === 'no') {
-      return { label: 'Declined', bg: '#fee2e2', color: '#991b1b' };
-    } else if (status.includes('pending') || status.includes('progress')) {
-      return { label: 'Pending', bg: '#fef3c7', color: '#92400e' };
+  const consultantData = Object.values(consultantMap);
+
+  const filtered = practices.filter((p) => {
+    const searchMatch =
+      !search ||
+      p.name.toLowerCase().includes(search.toLowerCase()) ||
+      p.consultant.toLowerCase().includes(search.toLowerCase());
+
+    if (!searchMatch) return false;
+
+    const status = (p.pdvStatus || "").toLowerCase();
+
+    if (filter === "complete") return status === "complete";
+    if (filter === "declined") return status.includes("declined");
+    if (filter === "tbd") return status === "tbd";
+    if (filter === "pending") {
+      return status !== "complete" && !status.includes("declined") && status !== "tbd";
     }
-    return { label: status || 'Unknown', bg: '#e2e8f0', color: '#475569' };
-  };
+
+    return true;
+  });
 
   return (
     <div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px', marginBottom: '32px' }}>
-        <MetricCard icon={<Building2 size={24} />} title="Total Practices" value={practiceMetrics.total} subtitle="Contacted to date" color="#3b82f6" gradient="linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)" />
-        <MetricCard icon={<CheckCircle size={24} />} title="Enrolled" value={practiceMetrics.enrolled} subtitle={`${practiceMetrics.total > 0 ? ((practiceMetrics.enrolled / practiceMetrics.total) * 100).toFixed(1) : 0}% success rate`} color="#10b981" gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)" />
-        <MetricCard icon={<Clock size={24} />} title="Pending" value={practiceMetrics.pending} subtitle="In enrollment process" color="#f59e0b" gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)" />
-        <MetricCard icon={<TrendingUp size={24} />} title="Declined" value={practiceMetrics.declined} subtitle="Not participating" color="#ef4444" gradient="linear-gradient(135deg, #ef4444 0%, #dc2626 100%)" />
+      <div style={gridStyle}>
+        <MetricCard icon={<Building2 />} title="Total Practices" value={m.total} subtitle="From uploaded file" color="#3b82f6" />
+        <MetricCard icon={<CheckCircle />} title="Enrolled" value={m.enrolled} subtitle={`${m.total ? ((m.enrolled / m.total) * 100).toFixed(1) : 0}% success rate`} color="#10b981" />
+        <MetricCard icon={<Clock />} title="Pending" value={m.pending} subtitle="In process / blank" color="#f59e0b" />
+        <MetricCard icon={<TrendingUp />} title="Declined" value={m.declined} subtitle="Not participating" color="#ef4444" />
+        <MetricCard icon={<Clock />} title="TBD" value={m.tbd} subtitle="To be determined" color="#8b5cf6" />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '24px', marginBottom: '24px' }}>
+      <div style={chartGridStyle}>
         <ChartCard title="Enrollment Status Breakdown">
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
-              <Pie data={enrollmentData} cx="50%" cy="50%" labelLine={false} label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`} outerRadius={110} fill="#8884d8" dataKey="value">
-                {enrollmentData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
+              <Pie data={statusData} dataKey="value" outerRadius={110} label>
+                {statusData.map((e, i) => (
+                  <Cell key={i} fill={e.color} />
+                ))}
               </Pie>
               <Tooltip />
             </PieChart>
@@ -487,107 +597,187 @@ function PracticeEnrollmentPage({ data }) {
 
         <ChartCard title="Consultant Performance">
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={finalConsultantData} layout="vertical" margin={{ left: 180, right: 20 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis type="number" stroke="#64748b" style={{ fontSize: '12px' }} />
-              <YAxis dataKey="name" type="category" stroke="#64748b" width={170} style={{ fontSize: '11px' }} />
+            <BarChart data={consultantData} layout="vertical" margin={{ left: 140 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="number" />
+              <YAxis dataKey="name" type="category" width={130} />
               <Tooltip />
               <Legend />
-              <Bar dataKey="enrolled" fill="#10b981" radius={[0, 8, 8, 0]} name="Enrolled" />
-              <Bar dataKey="pending" fill="#f59e0b" radius={[0, 8, 8, 0]} name="Pending" />
+              <Bar dataKey="complete" fill="#10b981" />
+              <Bar dataKey="pending" fill="#f59e0b" />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
       </div>
 
-      <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '16px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: '700', color: '#1e293b', margin: 0 }}>
-            Practice Drilldown ({filteredPractices.length} of {practices.length})
-          </h2>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <input type="text" placeholder="Search practice or consultant..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} style={{ padding: '8px 16px', border: '2px solid #e2e8f0', borderRadius: '8px', fontSize: '14px', width: '250px', outline: 'none' }} />
-            <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)} style={{ padding: '8px 16px', border: '2px solid #e2e8f0', borderRadius: '8px', fontSize: '14px', background: 'white', cursor: 'pointer', outline: 'none' }}>
+      <div style={tableWrapStyle}>
+        <div style={{ display: "flex", justifyContent: "space-between", gap: "12px", flexWrap: "wrap" }}>
+          <h2>Practice Drilldown ({filtered.length} of {practices.length})</h2>
+          <div style={{ display: "flex", gap: "12px" }}>
+            <input
+              placeholder="Search practice or consultant..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              style={inputStyle}
+            />
+            <select value={filter} onChange={(e) => setFilter(e.target.value)} style={inputStyle}>
               <option value="all">All Status</option>
-              <option value="enrolled">Enrolled Only</option>
-              <option value="pending">Pending Only</option>
-              <option value="declined">Declined Only</option>
+              <option value="complete">Complete</option>
+              <option value="pending">Pending</option>
+              <option value="declined">Declined</option>
+              <option value="tbd">TBD</option>
             </select>
           </div>
         </div>
 
-        {practices.length === 0 ? (
-          <div style={{ padding: '40px', textAlign: 'center', color: '#94a3b8' }}>
-            <Building2 size={48} style={{ margin: '0 auto 16px', opacity: 0.5 }} />
-            <p style={{ fontSize: '16px', fontWeight: '600' }}>No practice data yet</p>
-            <p style={{ fontSize: '14px', marginTop: '8px' }}>Click "Sync from SharePoint" to load practice data!</p>
-          </div>
-        ) : (
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-              <thead>
-                <tr style={{ borderBottom: '2px solid #e2e8f0' }}>
-                  <th style={headerStyle}>Practice Name</th>
-                  <th style={headerStyle}>Consultant</th>
-                  <th style={headerStyle}>Location</th>
-                  <th style={headerStyle}>Hospitals</th>
-                  <th style={headerStyle}>Status</th>
-                  <th style={headerStyle}>EMR Access</th>
-                  <th style={headerStyle}>Contact</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredPractices.map((practice, index) => {
-                  const badge = getStatusBadge(practice);
-                  return (
-                    <tr key={index} style={{ borderBottom: '1px solid #f1f5f9' }}>
-                      <td style={cellStyle}><strong>{practice.name}</strong></td>
-                      <td style={cellStyle}>{practice.consultant}</td>
-                      <td style={cellStyle}>{practice.location}</td>
-                      <td style={cellStyle}>{practice.hospitals}</td>
-                      <td style={cellStyle}>
-                        <span style={{ padding: '4px 12px', background: badge.bg, color: badge.color, borderRadius: '12px', fontSize: '12px', fontWeight: '600' }}>
-                          {badge.label}
-                        </span>
-                      </td>
-                      <td style={cellStyle}>{practice.emrAccess}</td>
-                      <td style={cellStyle}>{practice.contact}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        )}
+        <Table
+          columns={["Practice", "Consultant", "City", "Facility", "PDV Forms Completed", "EMR Access", "Contact"]}
+          rows={filtered.map((p) => [
+            p.name,
+            p.consultant,
+            p.location,
+            p.hospitals,
+            p.pdvStatus,
+            p.emrAccess,
+            p.contact,
+          ])}
+        />
       </div>
     </div>
   );
 }
 
-function MetricCard({ icon, title, value, subtitle, color, gradient }) {
+function MetricCard({ icon, title, value, subtitle, color }) {
   return (
-    <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', position: 'relative', overflow: 'hidden', transition: 'transform 0.2s', cursor: 'pointer' }}
-      onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-      onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-      <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '100px', height: '100px', background: `${color}15`, borderRadius: '50%' }}></div>
-      <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', marginBottom: '16px' }}>
+    <div style={cardStyle}>
+      <div
+        style={{
+          width: "48px",
+          height: "48px",
+          borderRadius: "12px",
+          background: color,
+          color: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: "16px",
+        }}
+      >
         {icon}
       </div>
-      <div style={{ fontSize: '13px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>{title}</div>
-      <div style={{ fontSize: '32px', fontWeight: '800', color: '#1e293b', marginBottom: '4px' }}>{value}</div>
-      <div style={{ fontSize: '12px', color: '#94a3b8' }}>{subtitle}</div>
+      <div style={{ fontSize: "14px", color: "#475569", fontWeight: "700" }}>
+        {title}
+      </div>
+      <div style={{ fontSize: "34px", fontWeight: "800", marginTop: "8px" }}>
+        {value}
+      </div>
+      <div style={{ fontSize: "12px", color: "#64748b", marginTop: "6px" }}>
+        {subtitle}
+      </div>
     </div>
   );
 }
 
 function ChartCard({ title, children }) {
   return (
-    <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
-      <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>{title}</h3>
+    <div style={cardStyle}>
+      <h3>{title}</h3>
       {children}
     </div>
   );
 }
 
-const headerStyle = { padding: '12px', textAlign: 'left', fontSize: '12px', fontWeight: '700', color: '#475569', textTransform: 'uppercase', letterSpacing: '0.05em' };
-const cellStyle = { padding: '16px 12px', fontSize: '14px', color: '#1e293b' };
+function DataTable({ title, columns, rows }) {
+  return (
+    <div style={tableWrapStyle}>
+      <h2>{title}</h2>
+      <Table columns={columns} rows={rows} />
+    </div>
+  );
+}
+
+function Table({ columns, rows }) {
+  return (
+    <div style={{ overflowX: "auto" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "16px" }}>
+        <thead>
+          <tr>
+            {columns.map((c) => (
+              <th key={c} style={thStyle}>{c}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.length === 0 ? (
+            <tr>
+              <td colSpan={columns.length} style={tdStyle}>
+                No uploaded data yet.
+              </td>
+            </tr>
+          ) : (
+            rows.map((row, i) => (
+              <tr key={i}>
+                {row.map((cell, j) => (
+                  <td key={j} style={tdStyle}>{cell || "N/A"}</td>
+                ))}
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+const gridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+  gap: "24px",
+  marginBottom: "32px",
+};
+
+const chartGridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(420px, 1fr))",
+  gap: "24px",
+  marginBottom: "24px",
+};
+
+const cardStyle = {
+  background: "white",
+  borderRadius: "16px",
+  padding: "24px",
+  boxShadow: "0 4px 8px rgba(0,0,0,0.08)",
+};
+
+const tableWrapStyle = {
+  background: "white",
+  borderRadius: "16px",
+  padding: "24px",
+  boxShadow: "0 4px 8px rgba(0,0,0,0.08)",
+  marginTop: "24px",
+};
+
+const thStyle = {
+  padding: "12px",
+  textAlign: "left",
+  fontSize: "12px",
+  fontWeight: "800",
+  color: "#475569",
+  textTransform: "uppercase",
+  borderBottom: "2px solid #e2e8f0",
+};
+
+const tdStyle = {
+  padding: "14px 12px",
+  fontSize: "14px",
+  color: "#1e293b",
+  borderBottom: "1px solid #f1f5f9",
+};
+
+const inputStyle = {
+  padding: "10px 14px",
+  border: "2px solid #e2e8f0",
+  borderRadius: "8px",
+  fontSize: "14px",
+};
