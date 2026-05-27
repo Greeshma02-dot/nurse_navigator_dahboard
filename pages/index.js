@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { RefreshCw, Users, CheckCircle, Clock, Building2, TrendingUp, Hospital, Calendar } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { RefreshCw, Users, CheckCircle, Clock, Building2, TrendingUp, Hospital, Calendar, Upload } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export default function NurseNavigatorDashboard() {
@@ -7,26 +7,148 @@ export default function NurseNavigatorDashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastSync, setLastSync] = useState(null);
+  const [syncing, setSyncing] = useState(false);
+  const [syncMessage, setSyncMessage] = useState('');
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
-    fetchData();
-    const interval = setInterval(fetchData, 120000);
-    return () => clearInterval(interval);
+    loadInitialData();
   }, []);
 
-  const fetchData = async () => {
+  const loadInitialData = async () => {
     try {
       const response = await fetch('/api/nurse-navigator-data');
       if (response.ok) {
         const jsonData = await response.json();
         setData(jsonData);
         setLastSync(new Date());
-        setLoading(false);
       }
     } catch (error) {
       console.error('Error:', error);
+    } finally {
       setLoading(false);
     }
+  };
+
+  const handleSyncClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileUpload = async (event) => {
+    const files = event.target.files;
+    if (!files || files.length === 0) return;
+
+    setSyncing(true);
+    setSyncMessage('Reading Excel files...');
+
+    try {
+      const XLSX = await import('xlsx');
+      let newPatientData = null;
+      let newPracticeData = null;
+
+      for (const file of files) {
+        const data = await file.arrayBuffer();
+        const workbook = XLSX.read(data);
+        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+        const jsonData = XLSX.utils.sheet_to_json(firstSheet, { defval: '' });
+
+        if (file.name.toLowerCase().includes('patient')) {
+          newPatientData = jsonData;
+          setSyncMessage('Patient file processed!');
+        } else if (file.name.toLowerCase().includes('ccpaco') || file.name.toLowerCase().includes('tracking') || file.name.toLowerCase().includes('practice')) {
+          newPracticeData = jsonData;
+          setSyncMessage('Practice file processed!');
+        }
+      }
+
+      const updatedData = processExcelData(newPatientData, newPracticeData);
+      setData(updatedData);
+      setLastSync(new Date());
+      setSyncMessage('Sync complete!');
+      
+      setTimeout(() => {
+        setSyncing(false);
+        setSyncMessage('');
+      }, 2000);
+
+    } catch (error) {
+      console.error('Sync error:', error);
+      setSyncMessage('Error syncing data. Check console.');
+      setTimeout(() => {
+        setSyncing(false);
+        setSyncMessage('');
+      }, 3000);
+    }
+
+    event.target.value = '';
+  };
+
+  const processExcelData = (patientRows, practiceRows) => {
+    const result = { ...data };
+
+    if (patientRows && patientRows.length > 0) {
+      const totalPatients = patientRows.length;
+      const tcmScheduled = patientRows.filter(p => {
+        const val = p['TCM Scheduled'] || p['TCM scheduled'] || p['tcm_scheduled'] || '';
+        return val.toString().toLowerCase().includes('yes') || val.toString().toLowerCase().includes('scheduled');
+      }).length;
+      
+      const visitVerified = patientRows.filter(p => {
+        const val = p['Visit Verified'] || p['Visit verified'] || p['visit_verified'] || '';
+        return val.toString().toLowerCase().includes('yes') || val.toString().toLowerCase().includes('verified');
+      }).length;
+
+      const devanCount = patientRows.filter(p => {
+        const nav = (p['Nurse Navigator'] || p['Navigator'] || '').toString().toLowerCase();
+        return nav.includes('devan');
+      }).length;
+
+      const sunnieCount = patientRows.filter(p => {
+        const nav = (p['Nurse Navigator'] || p['Navigator'] || '').toString().toLowerCase();
+        return nav.includes('sunnie');
+      }).length;
+
+      result.metrics = {
+        totalPatients,
+        tcmScheduled,
+        visitVerified,
+        tcmSchedulingRate: ((tcmScheduled / totalPatients) * 100).toFixed(1),
+        verificationRate: tcmScheduled > 0 ? ((visitVerified / tcmScheduled) * 100).toFixed(1) : 0,
+        devanPatients: devanCount,
+        sunniePatients: sunnieCount
+      };
+
+      result.patients = patientRows.map(p => ({
+        name: p['Patient Name'] || p['Name'] || p['patient_name'] || 'N/A',
+        practice: p['Practice'] || p['practice'] || 'N/A',
+        location: p['Location'] || p['location'] || 'N/A',
+        navigator: p['Nurse Navigator'] || p['Navigator'] || 'N/A',
+        tcmScheduled: (p['TCM Scheduled'] || '').toString().toLowerCase().includes('yes'),
+        visitVerified: (p['Visit Verified'] || '').toString().toLowerCase().includes('yes')
+      }));
+    }
+
+    if (practiceRows && practiceRows.length > 0) {
+      const total = practiceRows.length;
+      const enrolled = practiceRows.filter(p => {
+        const status = (p['PDV Status'] || p['PDV_Status'] || p['Status'] || '').toString().toLowerCase();
+        return status.includes('complete') || status.includes('enrolled');
+      }).length;
+      
+      const pending = practiceRows.filter(p => {
+        const status = (p['Status'] || '').toString().toLowerCase();
+        return status.includes('pending') || status.includes('progress');
+      }).length;
+
+      const declined = practiceRows.filter(p => {
+        const status = (p['Status'] || '').toString().toLowerCase();
+        return status.includes('declined') || status.includes('no');
+      }).length;
+
+      result.practiceMetrics = { total, enrolled, pending, declined };
+    }
+
+    return result;
   };
 
   if (loading) {
@@ -37,9 +159,17 @@ export default function NurseNavigatorDashboard() {
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      fontFamily: "'Inter', -apple-system, sans-serif",
-      padding: '0'
+      fontFamily: "'Inter', -apple-system, sans-serif"
     }}>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".xlsx,.xls"
+        multiple
+        onChange={handleFileUpload}
+        style={{ display: 'none' }}
+      />
+
       <header style={{
         background: 'rgba(255, 255, 255, 0.95)',
         backdropFilter: 'blur(10px)',
@@ -50,40 +180,78 @@ export default function NurseNavigatorDashboard() {
         zIndex: 100
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div>
-            <h1 style={{
-              fontSize: '28px',
-              fontWeight: '800',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              margin: 0
-            }}>
-              Nurse Navigator Program
-            </h1>
-          </div>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            padding: '12px 20px',
-            background: '#f0fdf4',
-            borderRadius: '12px',
-            border: '2px solid #86efac'
+          <h1 style={{
+            fontSize: '28px',
+            fontWeight: '800',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            margin: 0
           }}>
+            Nurse Navigator Program
+          </h1>
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <button
+              onClick={handleSyncClick}
+              disabled={syncing}
+              style={{
+                padding: '12px 24px',
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                color: 'white',
+                border: 'none',
+                borderRadius: '12px',
+                fontSize: '14px',
+                fontWeight: '700',
+                cursor: syncing ? 'wait' : 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
+                opacity: syncing ? 0.7 : 1
+              }}
+            >
+              <Upload size={18} />
+              {syncing ? 'Syncing...' : 'Sync from SharePoint'}
+            </button>
             <div style={{
-              width: '8px',
-              height: '8px',
-              borderRadius: '50%',
-              background: '#22c55e',
-              animation: 'pulse 2s infinite'
-            }}></div>
-            <div>
-              <div style={{ fontSize: '12px', color: '#15803d', fontWeight: '600' }}>Live Data</div>
-              <div style={{ fontSize: '11px', color: '#166534' }}>Updated {lastSync?.toLocaleTimeString()}</div>
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px 20px',
+              background: '#f0fdf4',
+              borderRadius: '12px',
+              border: '2px solid #86efac'
+            }}>
+              <div style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                background: '#22c55e',
+                animation: 'pulse 2s infinite'
+              }}></div>
+              <div>
+                <div style={{ fontSize: '12px', color: '#15803d', fontWeight: '600' }}>Live Data</div>
+                <div style={{ fontSize: '11px', color: '#166534' }}>Updated {lastSync?.toLocaleTimeString()}</div>
+              </div>
             </div>
           </div>
         </div>
+
+        {syncMessage && (
+          <div style={{
+            maxWidth: '1400px',
+            margin: '12px auto 0',
+            padding: '12px 20px',
+            background: '#dbeafe',
+            borderRadius: '12px',
+            color: '#1e40af',
+            fontSize: '14px',
+            fontWeight: '600',
+            textAlign: 'center'
+          }}>
+            {syncMessage}
+          </div>
+        )}
 
         <div style={{ maxWidth: '1400px', margin: '20px auto 0', display: 'flex', gap: '8px' }}>
           <TabButton
@@ -210,12 +378,7 @@ function PatientTrackingPage({ data }) {
         />
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr',
-        gap: '24px',
-        marginBottom: '24px'
-      }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', marginBottom: '24px' }}>
         <ChartCard title="Weekly Patient & TCM Trend">
           <ResponsiveContainer width="100%" height={280}>
             <LineChart data={weeklyTrendData}>
