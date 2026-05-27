@@ -1,34 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { RefreshCw, Users, CheckCircle, Clock, Building2, TrendingUp, Hospital, Calendar, Upload } from 'lucide-react';
+import { RefreshCw, Users, CheckCircle, Clock, Building2, TrendingUp, Calendar, Upload } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export default function NurseNavigatorDashboard() {
   const [activeTab, setActiveTab] = useState('patients');
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [lastSync, setLastSync] = useState(null);
+  const [data, setData] = useState({
+    metrics: { totalPatients: 21, tcmScheduled: 4, visitVerified: 3, tcmSchedulingRate: 19.0, verificationRate: 75.0, devanPatients: 19, sunniePatients: 2 },
+    patients: [],
+    practiceMetrics: { total: 34, enrolled: 15, pending: 11, declined: 8 },
+    practices: []
+  });
+  const [loading, setLoading] = useState(false);
+  const [lastSync, setLastSync] = useState(new Date());
   const [syncing, setSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState('');
   const fileInputRef = useRef(null);
-
-  useEffect(() => {
-    loadInitialData();
-  }, []);
-
-  const loadInitialData = async () => {
-    try {
-      const response = await fetch('/api/nurse-navigator-data');
-      if (response.ok) {
-        const jsonData = await response.json();
-        setData(jsonData);
-        setLastSync(new Date());
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleSyncClick = () => {
     fileInputRef.current.click();
@@ -43,37 +29,64 @@ export default function NurseNavigatorDashboard() {
 
     try {
       const XLSX = await import('xlsx');
-      let newPatientData = null;
-      let newPracticeData = null;
+      let patientRows = null;
+      let practiceRows = null;
 
       for (const file of files) {
-        const data = await file.arrayBuffer();
-        const workbook = XLSX.read(data);
+        const arrayBuffer = await file.arrayBuffer();
+        const workbook = XLSX.read(arrayBuffer);
         const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-        const jsonData = XLSX.utils.sheet_to_json(firstSheet, { defval: '' });
+        
+        // Try with header row detection (skip metadata rows)
+        const rawData = XLSX.utils.sheet_to_json(firstSheet, { defval: '', header: 1 });
+        
+        // Find the actual header row (look for row with most non-empty cells)
+        let headerRowIndex = 0;
+        let maxNonEmpty = 0;
+        for (let i = 0; i < Math.min(5, rawData.length); i++) {
+          const nonEmpty = rawData[i].filter(c => c !== '').length;
+          if (nonEmpty > maxNonEmpty) {
+            maxNonEmpty = nonEmpty;
+            headerRowIndex = i;
+          }
+        }
 
-        if (file.name.toLowerCase().includes('patient')) {
-          newPatientData = jsonData;
+        const headers = rawData[headerRowIndex];
+        const dataRows = rawData.slice(headerRowIndex + 1).filter(row => 
+          row.some(cell => cell !== '' && cell !== null)
+        );
+
+        const jsonData = dataRows.map(row => {
+          const obj = {};
+          headers.forEach((header, idx) => {
+            if (header) obj[header] = row[idx] || '';
+          });
+          return obj;
+        });
+
+        const fileName = file.name.toLowerCase();
+        if (fileName.includes('patient')) {
+          patientRows = jsonData;
           setSyncMessage('Patient file processed!');
-        } else if (file.name.toLowerCase().includes('ccpaco') || file.name.toLowerCase().includes('tracking') || file.name.toLowerCase().includes('practice')) {
-          newPracticeData = jsonData;
+        } else if (fileName.includes('ccpaco') || fileName.includes('tracking') || fileName.includes('practice')) {
+          practiceRows = jsonData;
           setSyncMessage('Practice file processed!');
         }
       }
 
-      const updatedData = processExcelData(newPatientData, newPracticeData);
+      const updatedData = processExcelData(patientRows, practiceRows);
       setData(updatedData);
       setLastSync(new Date());
-      setSyncMessage('Sync complete!');
+      setSyncMessage('Sync complete! Data updated.');
       
       setTimeout(() => {
         setSyncing(false);
         setSyncMessage('');
-      }, 2000);
+      }, 2500);
 
     } catch (error) {
       console.error('Sync error:', error);
-      setSyncMessage('Error syncing data. Check console.');
+      setSyncMessage('Error: ' + error.message);
       setTimeout(() => {
         setSyncing(false);
         setSyncMessage('');
@@ -83,77 +96,107 @@ export default function NurseNavigatorDashboard() {
     event.target.value = '';
   };
 
+  const findColumn = (row, possibleNames) => {
+    for (const name of possibleNames) {
+      const keys = Object.keys(row);
+      const match = keys.find(k => k && k.toLowerCase().includes(name.toLowerCase()));
+      if (match) return row[match];
+    }
+    return '';
+  };
+
+  const isYes = (val) => {
+    const s = (val || '').toString().toLowerCase().trim();
+    return s === 'yes' || s === 'y' || s === 'true' || s === '1' || s === 'scheduled' || s === 'verified' || s === 'complete';
+  };
+
   const processExcelData = (patientRows, practiceRows) => {
     const result = { ...data };
 
     if (patientRows && patientRows.length > 0) {
-      const totalPatients = patientRows.length;
-      const tcmScheduled = patientRows.filter(p => {
-        const val = p['TCM Scheduled'] || p['TCM scheduled'] || p['tcm_scheduled'] || '';
-        return val.toString().toLowerCase().includes('yes') || val.toString().toLowerCase().includes('scheduled');
-      }).length;
+      console.log('Patient rows:', patientRows);
+      console.log('Patient columns:', Object.keys(patientRows[0]));
+
+      const tcmScheduled = patientRows.filter(p => 
+        isYes(findColumn(p, ['TCM Scheduled', 'TCM scheduled', 'tcm']))
+      ).length;
       
-      const visitVerified = patientRows.filter(p => {
-        const val = p['Visit Verified'] || p['Visit verified'] || p['visit_verified'] || '';
-        return val.toString().toLowerCase().includes('yes') || val.toString().toLowerCase().includes('verified');
-      }).length;
+      const visitVerified = patientRows.filter(p => 
+        isYes(findColumn(p, ['Visit Verified', 'verified', 'visit']))
+      ).length;
 
       const devanCount = patientRows.filter(p => {
-        const nav = (p['Nurse Navigator'] || p['Navigator'] || '').toString().toLowerCase();
+        const nav = (findColumn(p, ['Nurse Navigator', 'Navigator', 'nurse']) || '').toString().toLowerCase();
         return nav.includes('devan');
       }).length;
 
       const sunnieCount = patientRows.filter(p => {
-        const nav = (p['Nurse Navigator'] || p['Navigator'] || '').toString().toLowerCase();
+        const nav = (findColumn(p, ['Nurse Navigator', 'Navigator', 'nurse']) || '').toString().toLowerCase();
         return nav.includes('sunnie');
       }).length;
+
+      const totalPatients = patientRows.length;
 
       result.metrics = {
         totalPatients,
         tcmScheduled,
         visitVerified,
-        tcmSchedulingRate: ((tcmScheduled / totalPatients) * 100).toFixed(1),
+        tcmSchedulingRate: totalPatients > 0 ? ((tcmScheduled / totalPatients) * 100).toFixed(1) : 0,
         verificationRate: tcmScheduled > 0 ? ((visitVerified / tcmScheduled) * 100).toFixed(1) : 0,
         devanPatients: devanCount,
         sunniePatients: sunnieCount
       };
 
       result.patients = patientRows.map(p => ({
-        name: p['Patient Name'] || p['Name'] || p['patient_name'] || 'N/A',
-        practice: p['Practice'] || p['practice'] || 'N/A',
-        location: p['Location'] || p['location'] || 'N/A',
-        navigator: p['Nurse Navigator'] || p['Navigator'] || 'N/A',
-        tcmScheduled: (p['TCM Scheduled'] || '').toString().toLowerCase().includes('yes'),
-        visitVerified: (p['Visit Verified'] || '').toString().toLowerCase().includes('yes')
+        name: findColumn(p, ['Patient Name', 'Name', 'patient']) || 'N/A',
+        practice: findColumn(p, ['Practice', 'practice']) || 'N/A',
+        location: findColumn(p, ['Location', 'location', 'site']) || 'N/A',
+        navigator: findColumn(p, ['Nurse Navigator', 'Navigator', 'nurse']) || 'N/A',
+        tcmScheduled: isYes(findColumn(p, ['TCM Scheduled', 'tcm'])),
+        visitVerified: isYes(findColumn(p, ['Visit Verified', 'verified', 'visit']))
       }));
     }
 
     if (practiceRows && practiceRows.length > 0) {
-      const total = practiceRows.length;
-      const enrolled = practiceRows.filter(p => {
-        const status = (p['PDV Status'] || p['PDV_Status'] || p['Status'] || '').toString().toLowerCase();
-        return status.includes('complete') || status.includes('enrolled');
-      }).length;
+      console.log('Practice rows:', practiceRows);
+      console.log('Practice columns:', Object.keys(practiceRows[0]));
+
+      const enrolled = practiceRows.filter(p => 
+        isYes(findColumn(p, ['PDV Status', 'PDV_Status', 'PDV']))
+      ).length;
       
       const pending = practiceRows.filter(p => {
-        const status = (p['Status'] || '').toString().toLowerCase();
-        return status.includes('pending') || status.includes('progress');
+        const status = (findColumn(p, ['Status']) || '').toString().toLowerCase();
+        return status.includes('pending') || status.includes('progress') || status.includes('contact');
       }).length;
 
       const declined = practiceRows.filter(p => {
-        const status = (p['Status'] || '').toString().toLowerCase();
-        return status.includes('declined') || status.includes('no');
+        const status = (findColumn(p, ['Status']) || '').toString().toLowerCase();
+        return status.includes('declined') || status.includes('no') || status.includes('not');
       }).length;
 
-      result.practiceMetrics = { total, enrolled, pending, declined };
+      result.practiceMetrics = { 
+        total: practiceRows.length, 
+        enrolled, 
+        pending, 
+        declined 
+      };
+
+      result.practices = practiceRows.map(p => ({
+        name: findColumn(p, ['Practice', 'practice', 'name']) || 'N/A',
+        consultant: findColumn(p, ['Consultant', 'consultant']) || 'N/A',
+        location: findColumn(p, ['Location', 'location']) || 'N/A',
+        hospitals: findColumn(p, ['Hospitals', 'hospital']) || 'N/A',
+        status: findColumn(p, ['Status']) || 'N/A',
+        pdvStatus: findColumn(p, ['PDV Status', 'PDV_Status', 'PDV']) || 'N/A',
+        emrAccess: findColumn(p, ['EMR Access', 'EMR', 'emr']) || 'N/A',
+        contact: findColumn(p, ['Contact', 'contact']) || 'N/A',
+        notes: findColumn(p, ['Notes', 'notes', 'comment']) || ''
+      }));
     }
 
     return result;
   };
-
-  if (loading) {
-    return <LoadingScreen />;
-  }
 
   return (
     <div style={{
@@ -344,38 +387,10 @@ function PatientTrackingPage({ data }) {
         gap: '24px',
         marginBottom: '32px'
       }}>
-        <MetricCard
-          icon={<Users size={24} />}
-          title="Active Patients"
-          value={metrics.totalPatients || 0}
-          subtitle="Currently tracking"
-          color="#3b82f6"
-          gradient="linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)"
-        />
-        <MetricCard
-          icon={<Calendar size={24} />}
-          title="TCM Scheduled"
-          value={metrics.tcmScheduled || 0}
-          subtitle={`${metrics.tcmSchedulingRate || 0}% scheduling rate`}
-          color="#10b981"
-          gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)"
-        />
-        <MetricCard
-          icon={<CheckCircle size={24} />}
-          title="Visits Verified"
-          value={metrics.visitVerified || 0}
-          subtitle={`${metrics.verificationRate || 0}% success rate`}
-          color="#8b5cf6"
-          gradient="linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)"
-        />
-        <MetricCard
-          icon={<Clock size={24} />}
-          title="Pending Action"
-          value={(metrics.totalPatients - metrics.tcmScheduled) || 0}
-          subtitle="Awaiting scheduling"
-          color="#f59e0b"
-          gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
-        />
+        <MetricCard icon={<Users size={24} />} title="Active Patients" value={metrics.totalPatients || 0} subtitle="Currently tracking" color="#3b82f6" gradient="linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)" />
+        <MetricCard icon={<Calendar size={24} />} title="TCM Scheduled" value={metrics.tcmScheduled || 0} subtitle={`${metrics.tcmSchedulingRate || 0}% scheduling rate`} color="#10b981" gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)" />
+        <MetricCard icon={<CheckCircle size={24} />} title="Visits Verified" value={metrics.visitVerified || 0} subtitle={`${metrics.verificationRate || 0}% success rate`} color="#8b5cf6" gradient="linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)" />
+        <MetricCard icon={<Clock size={24} />} title="Pending Action" value={(metrics.totalPatients - metrics.tcmScheduled) || 0} subtitle="Awaiting scheduling" color="#f59e0b" gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)" />
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', marginBottom: '24px' }}>
@@ -395,12 +410,7 @@ function PatientTrackingPage({ data }) {
         </ChartCard>
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '24px',
-        marginBottom: '24px'
-      }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '24px', marginBottom: '24px' }}>
         <ChartCard title="Navigator Workload">
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={navigatorData}>
@@ -416,19 +426,8 @@ function PatientTrackingPage({ data }) {
         <ChartCard title="TCM Scheduling Status">
           <ResponsiveContainer width="100%" height={280}>
             <PieChart>
-              <Pie
-                data={statusData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                outerRadius={100}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {statusData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
+              <Pie data={statusData} cx="50%" cy="50%" labelLine={false} label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`} outerRadius={100} fill="#8884d8" dataKey="value">
+                {statusData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
               </Pie>
               <Tooltip />
             </PieChart>
@@ -436,12 +435,7 @@ function PatientTrackingPage({ data }) {
         </ChartCard>
       </div>
 
-      <div style={{
-        background: 'white',
-        borderRadius: '16px',
-        padding: '24px',
-        boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
-      }}>
+      <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
         <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
           Patient List ({patients.length} total)
         </h2>
@@ -463,34 +457,18 @@ function PatientTrackingPage({ data }) {
                   <td style={cellStyle}><strong>{patient.name || 'N/A'}</strong></td>
                   <td style={cellStyle}>{patient.practice || 'N/A'}</td>
                   <td style={cellStyle}>
-                    <span style={{
-                      padding: '4px 12px',
-                      background: patient.location === 'TVH' ? '#dbeafe' : '#fef3c7',
-                      color: patient.location === 'TVH' ? '#1e40af' : '#92400e',
-                      borderRadius: '12px',
-                      fontSize: '12px',
-                      fontWeight: '600'
-                    }}>
+                    <span style={{ padding: '4px 12px', background: patient.location === 'TVH' ? '#dbeafe' : '#fef3c7', color: patient.location === 'TVH' ? '#1e40af' : '#92400e', borderRadius: '12px', fontSize: '12px', fontWeight: '600' }}>
                       {patient.location || 'N/A'}
                     </span>
                   </td>
                   <td style={cellStyle}>{patient.navigator || 'N/A'}</td>
                   <td style={cellStyle}>
-                    <span style={{
-                      padding: '4px 12px',
-                      background: patient.tcmScheduled ? '#dcfce7' : '#fee2e2',
-                      color: patient.tcmScheduled ? '#15803d' : '#991b1b',
-                      borderRadius: '12px',
-                      fontSize: '12px',
-                      fontWeight: '600'
-                    }}>
+                    <span style={{ padding: '4px 12px', background: patient.tcmScheduled ? '#dcfce7' : '#fee2e2', color: patient.tcmScheduled ? '#15803d' : '#991b1b', borderRadius: '12px', fontSize: '12px', fontWeight: '600' }}>
                       {patient.tcmScheduled ? 'Scheduled' : 'Pending'}
                     </span>
                   </td>
                   <td style={cellStyle}>
-                    <span style={{ fontSize: '20px' }}>
-                      {patient.visitVerified ? '✅' : '⏳'}
-                    </span>
+                    <span style={{ fontSize: '20px' }}>{patient.visitVerified ? '✅' : '⏳'}</span>
                   </td>
                 </tr>
               ))}
@@ -503,12 +481,10 @@ function PatientTrackingPage({ data }) {
 }
 
 function PracticeEnrollmentPage({ data }) {
-  const practiceMetrics = data?.practiceMetrics || {
-    total: 34,
-    enrolled: 15,
-    pending: 11,
-    declined: 8
-  };
+  const practiceMetrics = data?.practiceMetrics || { total: 0, enrolled: 0, pending: 0, declined: 0 };
+  const practices = data?.practices || [];
+  const [filterStatus, setFilterStatus] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const enrollmentData = [
     { name: 'Enrolled', value: practiceMetrics.enrolled, color: '#10b981' },
@@ -516,80 +492,79 @@ function PracticeEnrollmentPage({ data }) {
     { name: 'Declined', value: practiceMetrics.declined, color: '#ef4444' }
   ];
 
-  const consultantData = [
+  // Build consultant data from real practices data
+  const consultantMap = {};
+  practices.forEach(p => {
+    const c = p.consultant || 'Unknown';
+    if (!consultantMap[c]) consultantMap[c] = { name: c, enrolled: 0, pending: 0, total: 0 };
+    consultantMap[c].total++;
+    const pdvLower = (p.pdvStatus || '').toString().toLowerCase();
+    const statusLower = (p.status || '').toString().toLowerCase();
+    if (pdvLower.includes('complete') || pdvLower.includes('yes')) {
+      consultantMap[c].enrolled++;
+    } else if (statusLower.includes('pending') || statusLower.includes('progress')) {
+      consultantMap[c].pending++;
+    }
+  });
+  
+  const consultantData = Object.values(consultantMap).sort((a, b) => b.enrolled - a.enrolled).slice(0, 10);
+  
+  // If no real data, use default
+  const finalConsultantData = consultantData.length > 0 ? consultantData : [
     { name: 'Rachel Robinson', enrolled: 7, pending: 4 },
     { name: 'Marlen Cornejo', enrolled: 2, pending: 4 },
     { name: 'Bella McKay', enrolled: 2, pending: 0 },
     { name: 'Trysh Logan', enrolled: 1, pending: 0 },
     { name: 'Chris Ford', enrolled: 1, pending: 0 },
-    { name: 'Sheyenne Powers', enrolled: 1, pending: 0 },
-    { name: 'Rachel Robinson/Menifee', enrolled: 1, pending: 0 }
+    { name: 'Sheyenne Powers', enrolled: 1, pending: 0 }
   ];
+
+  // Filter practices
+  const filteredPractices = practices.filter(p => {
+    const matchesSearch = !searchTerm || 
+      (p.name && p.name.toString().toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (p.consultant && p.consultant.toString().toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    if (filterStatus === 'all') return matchesSearch;
+    
+    const pdv = (p.pdvStatus || '').toString().toLowerCase();
+    const status = (p.status || '').toString().toLowerCase();
+    
+    if (filterStatus === 'enrolled') return matchesSearch && (pdv.includes('complete') || pdv.includes('yes'));
+    if (filterStatus === 'pending') return matchesSearch && (status.includes('pending') || status.includes('progress'));
+    if (filterStatus === 'declined') return matchesSearch && (status.includes('declined') || status.includes('no'));
+    return matchesSearch;
+  });
+
+  const getStatusBadge = (practice) => {
+    const pdv = (practice.pdvStatus || '').toString().toLowerCase();
+    const status = (practice.status || '').toString().toLowerCase();
+    
+    if (pdv.includes('complete') || pdv.includes('yes')) {
+      return { label: 'Enrolled', bg: '#dcfce7', color: '#15803d' };
+    } else if (status.includes('declined') || status.includes('no')) {
+      return { label: 'Declined', bg: '#fee2e2', color: '#991b1b' };
+    } else if (status.includes('pending') || status.includes('progress')) {
+      return { label: 'Pending', bg: '#fef3c7', color: '#92400e' };
+    }
+    return { label: status || 'Unknown', bg: '#e2e8f0', color: '#475569' };
+  };
 
   return (
     <div>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-        gap: '24px',
-        marginBottom: '32px'
-      }}>
-        <MetricCard
-          icon={<Building2 size={24} />}
-          title="Total Practices"
-          value={practiceMetrics.total}
-          subtitle="Contacted to date"
-          color="#3b82f6"
-          gradient="linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)"
-        />
-        <MetricCard
-          icon={<CheckCircle size={24} />}
-          title="Enrolled"
-          value={practiceMetrics.enrolled}
-          subtitle={`${((practiceMetrics.enrolled / practiceMetrics.total) * 100).toFixed(1)}% success rate`}
-          color="#10b981"
-          gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)"
-        />
-        <MetricCard
-          icon={<Clock size={24} />}
-          title="Pending"
-          value={practiceMetrics.pending}
-          subtitle="In enrollment process"
-          color="#f59e0b"
-          gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
-        />
-        <MetricCard
-          icon={<TrendingUp size={24} />}
-          title="Declined"
-          value={practiceMetrics.declined}
-          subtitle="Not participating"
-          color="#ef4444"
-          gradient="linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
-        />
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px', marginBottom: '32px' }}>
+        <MetricCard icon={<Building2 size={24} />} title="Total Practices" value={practiceMetrics.total} subtitle="Contacted to date" color="#3b82f6" gradient="linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)" />
+        <MetricCard icon={<CheckCircle size={24} />} title="Enrolled" value={practiceMetrics.enrolled} subtitle={`${practiceMetrics.total > 0 ? ((practiceMetrics.enrolled / practiceMetrics.total) * 100).toFixed(1) : 0}% success rate`} color="#10b981" gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)" />
+        <MetricCard icon={<Clock size={24} />} title="Pending" value={practiceMetrics.pending} subtitle="In enrollment process" color="#f59e0b" gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)" />
+        <MetricCard icon={<TrendingUp size={24} />} title="Declined" value={practiceMetrics.declined} subtitle="Not participating" color="#ef4444" gradient="linear-gradient(135deg, #ef4444 0%, #dc2626 100%)" />
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '24px',
-        marginBottom: '24px'
-      }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '24px', marginBottom: '24px' }}>
         <ChartCard title="Enrollment Status Breakdown">
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
-              <Pie
-                data={enrollmentData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                outerRadius={110}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {enrollmentData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
+              <Pie data={enrollmentData} cx="50%" cy="50%" labelLine={false} label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`} outerRadius={110} fill="#8884d8" dataKey="value">
+                {enrollmentData.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
               </Pie>
               <Tooltip />
             </PieChart>
@@ -598,20 +573,10 @@ function PracticeEnrollmentPage({ data }) {
 
         <ChartCard title="Consultant Performance">
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart 
-              data={consultantData} 
-              layout="vertical"
-              margin={{ left: 180, right: 20 }}
-            >
+            <BarChart data={finalConsultantData} layout="vertical" margin={{ left: 180, right: 20 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
               <XAxis type="number" stroke="#64748b" style={{ fontSize: '12px' }} />
-              <YAxis 
-                dataKey="name" 
-                type="category"
-                stroke="#64748b" 
-                width={170}
-                style={{ fontSize: '11px' }} 
-              />
+              <YAxis dataKey="name" type="category" stroke="#64748b" width={170} style={{ fontSize: '11px' }} />
               <Tooltip />
               <Legend />
               <Bar dataKey="enrolled" fill="#10b981" radius={[0, 8, 8, 0]} name="Enrolled" />
@@ -620,93 +585,117 @@ function PracticeEnrollmentPage({ data }) {
           </ResponsiveContainer>
         </ChartCard>
       </div>
-    </div>
-  );
-}
 
-function LoadingScreen() {
-  return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <RefreshCw size={48} color="white" style={{ animation: 'spin 2s linear infinite', margin: '0 auto 20px' }} />
-        <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'white' }}>Loading Dashboard...</h2>
+      {/* PRACTICE DRILLDOWN TABLE */}
+      <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '16px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: '700', color: '#1e293b', margin: 0 }}>
+            Practice Drilldown ({filteredPractices.length} of {practices.length})
+          </h2>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <input
+              type="text"
+              placeholder="Search practice or consultant..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              style={{
+                padding: '8px 16px',
+                border: '2px solid #e2e8f0',
+                borderRadius: '8px',
+                fontSize: '14px',
+                width: '250px',
+                outline: 'none'
+              }}
+            />
+            <select
+              value={filterStatus}
+              onChange={(e) => setFilterStatus(e.target.value)}
+              style={{
+                padding: '8px 16px',
+                border: '2px solid #e2e8f0',
+                borderRadius: '8px',
+                fontSize: '14px',
+                background: 'white',
+                cursor: 'pointer',
+                outline: 'none'
+              }}
+            >
+              <option value="all">All Status</option>
+              <option value="enrolled">Enrolled Only</option>
+              <option value="pending">Pending Only</option>
+              <option value="declined">Declined Only</option>
+            </select>
+          </div>
+        </div>
+
+        {practices.length === 0 ? (
+          <div style={{ padding: '40px', textAlign: 'center', color: '#94a3b8' }}>
+            <Building2 size={48} style={{ margin: '0 auto 16px', opacity: 0.5 }} />
+            <p style={{ fontSize: '16px', fontWeight: '600' }}>No practice data yet</p>
+            <p style={{ fontSize: '14px', marginTop: '8px' }}>Click "Sync from SharePoint" to load practice data!</p>
+          </div>
+        ) : (
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <thead>
+                <tr style={{ borderBottom: '2px solid #e2e8f0' }}>
+                  <th style={headerStyle}>Practice Name</th>
+                  <th style={headerStyle}>Consultant</th>
+                  <th style={headerStyle}>Location</th>
+                  <th style={headerStyle}>Hospitals</th>
+                  <th style={headerStyle}>Status</th>
+                  <th style={headerStyle}>EMR Access</th>
+                  <th style={headerStyle}>Contact</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredPractices.map((practice, index) => {
+                  const badge = getStatusBadge(practice);
+                  return (
+                    <tr key={index} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                      <td style={cellStyle}><strong>{practice.name}</strong></td>
+                      <td style={cellStyle}>{practice.consultant}</td>
+                      <td style={cellStyle}>{practice.location}</td>
+                      <td style={cellStyle}>{practice.hospitals}</td>
+                      <td style={cellStyle}>
+                        <span style={{ padding: '4px 12px', background: badge.bg, color: badge.color, borderRadius: '12px', fontSize: '12px', fontWeight: '600' }}>
+                          {badge.label}
+                        </span>
+                      </td>
+                      <td style={cellStyle}>{practice.emrAccess}</td>
+                      <td style={cellStyle}>{practice.contact}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
-      <style jsx>{`
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
     </div>
   );
 }
 
 function MetricCard({ icon, title, value, subtitle, color, gradient }) {
   return (
-    <div style={{
-      background: 'white',
-      borderRadius: '16px',
-      padding: '24px',
-      boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-      position: 'relative',
-      overflow: 'hidden',
-      transition: 'transform 0.2s',
-      cursor: 'pointer'
-    }}
-    onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-    onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-      <div style={{
-        position: 'absolute',
-        top: '-20px',
-        right: '-20px',
-        width: '100px',
-        height: '100px',
-        background: `${color}15`,
-        borderRadius: '50%'
-      }}></div>
-      <div style={{
-        width: '48px',
-        height: '48px',
-        borderRadius: '12px',
-        background: gradient,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'white',
-        marginBottom: '16px'
-      }}>
+    <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', position: 'relative', overflow: 'hidden', transition: 'transform 0.2s', cursor: 'pointer' }}
+      onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+      onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+      <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '100px', height: '100px', background: `${color}15`, borderRadius: '50%' }}></div>
+      <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', marginBottom: '16px' }}>
         {icon}
       </div>
-      <div style={{ fontSize: '13px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>
-        {title}
-      </div>
-      <div style={{ fontSize: '32px', fontWeight: '800', color: '#1e293b', marginBottom: '4px' }}>
-        {value}
-      </div>
-      <div style={{ fontSize: '12px', color: '#94a3b8' }}>
-        {subtitle}
-      </div>
+      <div style={{ fontSize: '13px', color: '#64748b', fontWeight: '600', marginBottom: '8px' }}>{title}</div>
+      <div style={{ fontSize: '32px', fontWeight: '800', color: '#1e293b', marginBottom: '4px' }}>{value}</div>
+      <div style={{ fontSize: '12px', color: '#94a3b8' }}>{subtitle}</div>
     </div>
   );
 }
 
 function ChartCard({ title, children }) {
   return (
-    <div style={{
-      background: 'white',
-      borderRadius: '16px',
-      padding: '24px',
-      boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
-    }}>
-      <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
-        {title}
-      </h3>
+    <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+      <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>{title}</h3>
       {children}
     </div>
   );
