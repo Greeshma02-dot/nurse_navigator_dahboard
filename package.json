@@ -1,18 +1,15 @@
 {
-  "name": "nurse-navigator-dashboard",
-  "version": "1.0.0",
-  "private": true,
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest",
+    "recharts": "latest",
+    "xlsx": "latest"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
-  },
-  "dependencies": {
-    "next": "14.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "lucide-react": "0.263.1",
-    "recharts": "2.5.0",
-    "xlsx": "0.18.5"
   }
 }
