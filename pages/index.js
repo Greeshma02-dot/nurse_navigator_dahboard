@@ -561,7 +561,7 @@ function PracticeEnrollmentPage({ data, openModal }) {
           </ResponsiveContainer>
         </ChartCard>
 
-        <ChartCard title="Consultant Performance">
+        <ChartCard title="Practice Enrolled by Consultant">
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={consultantData} layout="vertical" margin={{ left: 140 }}>
               <CartesianGrid strokeDasharray="3 3" />
