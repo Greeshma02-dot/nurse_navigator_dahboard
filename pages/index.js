@@ -25,7 +25,7 @@ export default function NurseNavigatorDashboard() {
   const [lastSync, setLastSync]   = useState(null);
   const [syncing, setSyncing]     = useState(false);
   const [syncMessage, setSyncMessage] = useState("");
-  const [modal, setModal]         = useState(null); // { title, columns, rows }
+  const [modal, setModal]         = useState(null);
   const fileInputRef = useRef(null);
 
   const openModal = (title, columns, rows) => setModal({ title, columns, rows });
@@ -94,16 +94,17 @@ export default function NurseNavigatorDashboard() {
       missed14DayWindow:     isYes(getCell(p, ["Missed 14-Day Window","Missed 14 Day Window","Missed Window"])),
     }));
 
-    const totalPatients          = patients.length;
-    const tcmScheduled           = patients.filter((p) => p.tcmScheduled).length;
-    const notYetScheduled        = totalPatients - tcmScheduled;
-    const missed14DayWindow      = patients.filter((p) => p.missed14DayWindow).length;
-    const completedWithinWindow  = patients.filter((p) => p.completedWithinWindow).length;
+    const totalPatients         = patients.length;
+    const tcmScheduled          = patients.filter((p) => p.tcmScheduled).length;
+    const notYetScheduled       = totalPatients - tcmScheduled;
+    const missed14DayWindow     = patients.filter((p) => p.missed14DayWindow).length;
+    const completedWithinWindow = patients.filter((p) => p.completedWithinWindow).length;
     const nurseCounts = {};
     patients.forEach((p) => { nurseCounts[p.navigator] = (nurseCounts[p.navigator] || 0) + 1; });
 
     return {
-      totalPatients, tcmScheduled, notYetScheduled, pending: notYetScheduled,
+      totalPatients, tcmScheduled, notYetScheduled,
+      pending: notYetScheduled,
       scheduledRate: totalPatients > 0 ? Number(((tcmScheduled / totalPatients) * 100).toFixed(1)) : 0,
       missed14DayWindow, completedWithinWindow, nurseCounts, patients,
     };
@@ -142,8 +143,8 @@ export default function NurseNavigatorDashboard() {
     setSyncMessage("Reading uploaded Excel file...");
 
     try {
-      const XLSX   = await import("xlsx");
-      let newData  = JSON.parse(JSON.stringify(EMPTY_DATA));
+      const XLSX  = await import("xlsx");
+      let newData = JSON.parse(JSON.stringify(EMPTY_DATA));
 
       for (const file of files) {
         const buffer   = await file.arrayBuffer();
@@ -157,14 +158,22 @@ export default function NurseNavigatorDashboard() {
         if (isPracticeFile && !isPatientFile) {
           const practiceRows = readSheetWithHeaderRow(sheet, XLSX, 2, 10);
           const result       = processPracticeRows(practiceRows);
-          newData.practiceMetrics = { total: result.total, enrolled: result.enrolled, pending: result.pending, declined: result.declined, tbd: result.tbd };
+          newData.practiceMetrics = {
+            total: result.total, enrolled: result.enrolled,
+            pending: result.pending, declined: result.declined, tbd: result.tbd,
+          };
           newData.practices = result.practices;
         } else {
-          const headerRow  = findBestHeaderRow(sheet, XLSX);
+          const headerRow   = findBestHeaderRow(sheet, XLSX);
           const patientRows = readSheetWithHeaderRow(sheet, XLSX, headerRow, 25);
           const result      = processPatientRows(patientRows);
-          newData.metrics   = { totalPatients: result.totalPatients, tcmScheduled: result.tcmScheduled, notYetScheduled: result.notYetScheduled, pending: result.pending, scheduledRate: result.scheduledRate, missed14DayWindow: result.missed14DayWindow, completedWithinWindow: result.completedWithinWindow, nurseCounts: result.nurseCounts };
-          newData.patients  = result.patients;
+          newData.metrics   = {
+            totalPatients: result.totalPatients, tcmScheduled: result.tcmScheduled,
+            notYetScheduled: result.notYetScheduled, pending: result.pending,
+            scheduledRate: result.scheduledRate, missed14DayWindow: result.missed14DayWindow,
+            completedWithinWindow: result.completedWithinWindow, nurseCounts: result.nurseCounts,
+          };
+          newData.patients = result.patients;
         }
       }
 
@@ -184,7 +193,6 @@ export default function NurseNavigatorDashboard() {
     <div style={pageStyle}>
       <input ref={fileInputRef} type="file" accept=".xlsx,.xls" multiple onChange={handleFileUpload} style={{ display: "none" }} />
 
-      {/* MODAL */}
       {modal && <Modal title={modal.title} columns={modal.columns} rows={modal.rows} onClose={closeModal} />}
 
       <header style={headerStyle}>
@@ -238,7 +246,6 @@ function Modal({ title, columns, rows, onClose }) {
         onClick={(e) => e.stopPropagation()}
         style={{ background: "white", borderRadius: "20px", width: "100%", maxWidth: "900px", maxHeight: "80vh", display: "flex", flexDirection: "column", boxShadow: "0 25px 50px rgba(0,0,0,0.3)", overflow: "hidden" }}
       >
-        {/* Modal header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px 28px", borderBottom: "2px solid #e2e8f0", background: "linear-gradient(135deg, #667eea, #764ba2)" }}>
           <h2 style={{ margin: 0, color: "white", fontSize: "20px", fontWeight: "800" }}>{title}</h2>
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -249,7 +256,6 @@ function Modal({ title, columns, rows, onClose }) {
           </div>
         </div>
 
-        {/* Modal body */}
         <div style={{ overflowY: "auto", padding: "8px 0" }}>
           {rows.length === 0 ? (
             <div style={{ padding: "60px", textAlign: "center", color: "#94a3b8" }}>
@@ -258,17 +264,13 @@ function Modal({ title, columns, rows, onClose }) {
           ) : (
             <table style={{ ...tableStyle, margin: 0 }}>
               <thead style={{ position: "sticky", top: 0, background: "#f8fafc" }}>
-                <tr>
-                  {columns.map((c) => <th key={c} style={thStyle}>{c}</th>)}
-                </tr>
+                <tr>{columns.map((c) => <th key={c} style={thStyle}>{c}</th>)}</tr>
               </thead>
               <tbody>
                 {rows.map((row, i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f8fafc" }}>
                     {row.map((cell, j) => (
-                      <td key={j} style={tdStyle}>
-                        {typeof cell === "object" ? cell : (cell || "N/A")}
-                      </td>
+                      <td key={j} style={tdStyle}>{typeof cell === "object" ? cell : (cell || "N/A")}</td>
                     ))}
                   </tr>
                 ))}
@@ -311,12 +313,16 @@ function PatientTrackingPage({ data, openModal }) {
 
   const toRows = (list) => list.map((p) => [
     p.name, p.practice, p.location, p.navigator,
-    <Badge key="tcm" text={p.tcmScheduled ? "✓ Scheduled" : "⏳ Not Yet"} bg={p.tcmScheduled ? "#dcfce7" : "#fef9c3"} color={p.tcmScheduled ? "#15803d" : "#b45309"} />,
+    <Badge key="tcm"  text={p.tcmScheduled ? "✓ Scheduled" : "⏳ Not Yet"} bg={p.tcmScheduled ? "#dcfce7" : "#fef9c3"} color={p.tcmScheduled ? "#15803d" : "#b45309"} />,
     <Badge key="comp" text={p.completedWithinWindow ? "✓ Yes" : "–"} bg={p.completedWithinWindow ? "#ede9fe" : "#f1f5f9"} color={p.completedWithinWindow ? "#7c3aed" : "#94a3b8"} />,
     p.missed14DayWindow ? <Badge key="miss" text="⚠ Missed" bg="#fee2e2" color="#b91c1c" /> : <span style={{ color: "#94a3b8" }}>–</span>,
   ]);
 
   const navigators = ["all", ...Array.from(new Set(patients.map((p) => p.navigator).filter(Boolean)))];
+
+  const pendingPatients    = patients.filter((p) => !p.tcmScheduled);
+  const scheduledPatients  = patients.filter((p) => p.tcmScheduled);
+  const missedPatients     = patients.filter((p) => p.missed14DayWindow);
 
   const filtered = patients
     .filter((p) => {
@@ -347,31 +353,37 @@ function PatientTrackingPage({ data, openModal }) {
 
   return (
     <div>
-      {/* KPI Cards — CLICKABLE */}
+      {/* ── KPI CARDS ── */}
       <div style={gridStyle}>
         <MetricCard
-          icon={<Users />} title="Total Patients" value={m.totalPatients} subtitle="Click to view all" color="#3b82f6"
+          icon={<Users />} title="Total Patients" value={m.totalPatients}
+          subtitle="Click to view all" color="#3b82f6"
           onClick={() => openModal(`All Patients (${patients.length})`, PATIENT_COLS, toRows(patients))}
         />
         <MetricCard
-          icon={<Calendar />} title="TCM Appt Scheduled" value={m.tcmScheduled} subtitle={`${m.scheduledRate}% · Click to view`} color="#10b981"
-          onClick={() => openModal(`TCM Scheduled (${patients.filter(p=>p.tcmScheduled).length})`, PATIENT_COLS, toRows(patients.filter(p=>p.tcmScheduled)))}
+          icon={<Calendar />} title="TCM Appt Scheduled" value={m.tcmScheduled}
+          subtitle={`${m.scheduledRate}% · Click to view`} color="#10b981"
+          onClick={() => openModal(`TCM Scheduled (${scheduledPatients.length})`, PATIENT_COLS, toRows(scheduledPatients))}
         />
         <MetricCard
-          icon={<Clock />} title="Not Yet Scheduled" value={m.notYetScheduled} subtitle="Click to view" color="#f59e0b"
-          onClick={() => openModal(`Not Yet Scheduled (${patients.filter(p=>!p.tcmScheduled).length})`, PATIENT_COLS, toRows(patients.filter(p=>!p.tcmScheduled)))}
+          icon={<Clock />} title="Not Yet Scheduled" value={m.notYetScheduled}
+          subtitle="Click to view" color="#f59e0b"
+          onClick={() => openModal(`Not Yet Scheduled (${pendingPatients.length})`, PATIENT_COLS, toRows(pendingPatients))}
         />
         <MetricCard
-          icon={<TrendingUp />} title="Missed 14-Day Window" value={m.missed14DayWindow} subtitle="Click to view" color="#ef4444"
-          onClick={() => openModal(`Missed 14-Day Window (${patients.filter(p=>p.missed14DayWindow).length})`, PATIENT_COLS, toRows(patients.filter(p=>p.missed14DayWindow)))}
+          icon={<TrendingUp />} title="Missed 14-Day Window" value={m.missed14DayWindow}
+          subtitle="Click to view" color="#ef4444"
+          onClick={() => openModal(`Missed 14-Day Window (${missedPatients.length})`, PATIENT_COLS, toRows(missedPatients))}
         />
+        {/* ── PENDING card (replaces Completed Within Window) ── */}
         <MetricCard
-          icon={<CheckCircle />} title="Completed Within Window" value={m.completedWithinWindow} subtitle="Click to view" color="#8b5cf6"
-          onClick={() => openModal(`Completed Within Window (${patients.filter(p=>p.completedWithinWindow).length})`, PATIENT_COLS, toRows(patients.filter(p=>p.completedWithinWindow)))}
+          icon={<Clock />} title="Pending" value={m.pending}
+          subtitle="Awaiting action · Click to view" color="#f59e0b"
+          onClick={() => openModal(`Pending Patients (${pendingPatients.length})`, PATIENT_COLS, toRows(pendingPatients))}
         />
       </div>
 
-      {/* Charts */}
+      {/* ── CHARTS ── */}
       <div style={chartGridStyle}>
         <ChartCard title="TCM Scheduling Status">
           <ResponsiveContainer width="100%" height={280}>
@@ -396,7 +408,7 @@ function PatientTrackingPage({ data, openModal }) {
         </ChartCard>
       </div>
 
-      {/* Interactive Drilldown Table */}
+      {/* ── INTERACTIVE DRILLDOWN ── */}
       <div style={tableWrapStyle}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px", marginBottom: "16px" }}>
           <h2 style={{ margin: 0 }}>
@@ -408,16 +420,15 @@ function PatientTrackingPage({ data, openModal }) {
 
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
             {[
-              { label: "Scheduled",     list: patients.filter(p=>p.tcmScheduled),          color: "#15803d", bg: "#dcfce7" },
-              { label: "Not Scheduled", list: patients.filter(p=>!p.tcmScheduled),         color: "#b45309", bg: "#fef9c3" },
-              { label: "Completed",     list: patients.filter(p=>p.completedWithinWindow), color: "#7c3aed", bg: "#ede9fe" },
-              { label: "Missed Window", list: patients.filter(p=>p.missed14DayWindow),     color: "#b91c1c", bg: "#fee2e2" },
+              { label: "Scheduled",     list: scheduledPatients,                                  color: "#15803d", bg: "#dcfce7" },
+              { label: "Not Scheduled", list: pendingPatients,                                    color: "#b45309", bg: "#fef9c3" },
+              { label: "Completed",     list: patients.filter((p) => p.completedWithinWindow),    color: "#7c3aed", bg: "#ede9fe" },
+              { label: "Missed Window", list: missedPatients,                                     color: "#b91c1c", bg: "#fee2e2" },
             ].map((b) => (
               <span
                 key={b.label}
                 onClick={() => openModal(`${b.label} (${b.list.length})`, PATIENT_COLS, toRows(b.list))}
                 style={{ padding: "4px 14px", borderRadius: "20px", background: b.bg, color: b.color, fontSize: "12px", fontWeight: "700", cursor: "pointer" }}
-                title="Click to view details"
               >
                 {b.label}: {b.list.length}
               </span>
@@ -425,23 +436,34 @@ function PatientTrackingPage({ data, openModal }) {
           </div>
         </div>
 
+        {/* Filters */}
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "16px" }}>
-          <input placeholder="Search name, practice, navigator…" value={search} onChange={(e) => setSearch(e.target.value)} style={{ ...inputStyle, minWidth: "260px", flex: 1 }} />
+          <input
+            placeholder="Search name, practice, navigator…"
+            value={search} onChange={(e) => setSearch(e.target.value)}
+            style={{ ...inputStyle, minWidth: "260px", flex: 1 }}
+          />
           <select value={tcmFilter} onChange={(e) => setTcmFilter(e.target.value)} style={inputStyle}>
             <option value="all">All TCM Status</option>
             <option value="scheduled">Scheduled</option>
             <option value="not_scheduled">Not Yet Scheduled</option>
           </select>
           <select value={navFilter} onChange={(e) => setNavFilter(e.target.value)} style={inputStyle}>
-            {navigators.map((n) => <option key={n} value={n}>{n === "all" ? "All Navigators" : n}</option>)}
+            {navigators.map((n) => (
+              <option key={n} value={n}>{n === "all" ? "All Navigators" : n}</option>
+            ))}
           </select>
           {(search || tcmFilter !== "all" || navFilter !== "all") && (
-            <button onClick={() => { setSearch(""); setTcmFilter("all"); setNavFilter("all"); }} style={{ ...inputStyle, background: "#f1f5f9", cursor: "pointer", border: "2px solid #e2e8f0", color: "#64748b", whiteSpace: "nowrap" }}>
+            <button
+              onClick={() => { setSearch(""); setTcmFilter("all"); setNavFilter("all"); }}
+              style={{ ...inputStyle, background: "#f1f5f9", cursor: "pointer", border: "2px solid #e2e8f0", color: "#64748b", whiteSpace: "nowrap" }}
+            >
               ✕ Clear
             </button>
           )}
         </div>
 
+        {/* Table */}
         <div style={{ overflowX: "auto" }}>
           <table style={tableStyle}>
             <thead>
@@ -455,7 +477,11 @@ function PatientTrackingPage({ data, openModal }) {
                   { label: "Completed",    col: null },
                   { label: "Missed Window",col: null },
                 ].map(({ label, col }) => (
-                  <th key={label} onClick={() => col && handleSort(col)} style={{ ...thStyle, cursor: col ? "pointer" : "default" }}>
+                  <th
+                    key={label}
+                    onClick={() => col && handleSort(col)}
+                    style={{ ...thStyle, cursor: col ? "pointer" : "default" }}
+                  >
                     {label}{col ? (sortCol === col ? (sortDir === "asc" ? " ↑" : " ↓") : " ↕") : ""}
                   </th>
                 ))}
@@ -463,27 +489,41 @@ function PatientTrackingPage({ data, openModal }) {
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={7} style={{ ...tdStyle, textAlign: "center", color: "#94a3b8", padding: "40px" }}>No patients match the current filters.</td></tr>
+                <tr>
+                  <td colSpan={7} style={{ ...tdStyle, textAlign: "center", color: "#94a3b8", padding: "40px" }}>
+                    No patients match the current filters.
+                  </td>
+                </tr>
               ) : (
                 filtered.map((p, i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f8fafc", cursor: "pointer" }}
-                    onClick={() => openModal(`Patient: ${p.name}`, ["Field","Value"], [
-                      ["Name",           p.name],
-                      ["Practice",       p.practice],
-                      ["Location",       p.location],
-                      ["Navigator",      p.navigator],
-                      ["TCM Scheduled",  p.tcmScheduled ? "✓ Yes" : "✗ No"],
-                      ["Completed",      p.completedWithinWindow ? "✓ Yes" : "–"],
-                      ["Missed Window",  p.missed14DayWindow ? "⚠ Yes" : "–"],
+                  <tr
+                    key={i}
+                    style={{ background: i % 2 === 0 ? "white" : "#f8fafc", cursor: "pointer" }}
+                    onClick={() => openModal(`Patient: ${p.name}`, ["Field", "Value"], [
+                      ["Name",          p.name],
+                      ["Practice",      p.practice],
+                      ["Location",      p.location],
+                      ["Navigator",     p.navigator],
+                      ["TCM Scheduled", p.tcmScheduled ? "✓ Yes" : "✗ No"],
+                      ["Completed",     p.completedWithinWindow ? "✓ Yes" : "–"],
+                      ["Missed Window", p.missed14DayWindow ? "⚠ Yes" : "–"],
                     ])}
                   >
                     <td style={{ ...tdStyle, fontWeight: "700" }}>{p.name || "N/A"}</td>
                     <td style={tdStyle}>{p.practice || "N/A"}</td>
                     <td style={tdStyle}>{p.location || "N/A"}</td>
                     <td style={tdStyle}>{p.navigator || "N/A"}</td>
-                    <td style={tdStyle}><Badge text={p.tcmScheduled ? "✓ Scheduled" : "⏳ Not Yet"} bg={p.tcmScheduled ? "#dcfce7" : "#fef9c3"} color={p.tcmScheduled ? "#15803d" : "#b45309"} /></td>
-                    <td style={tdStyle}><Badge text={p.completedWithinWindow ? "✓ Yes" : "–"} bg={p.completedWithinWindow ? "#ede9fe" : "#f1f5f9"} color={p.completedWithinWindow ? "#7c3aed" : "#94a3b8"} /></td>
-                    <td style={tdStyle}>{p.missed14DayWindow ? <Badge text="⚠ Missed" bg="#fee2e2" color="#b91c1c" /> : <span style={{ color: "#94a3b8" }}>–</span>}</td>
+                    <td style={tdStyle}>
+                      <Badge text={p.tcmScheduled ? "✓ Scheduled" : "⏳ Not Yet"} bg={p.tcmScheduled ? "#dcfce7" : "#fef9c3"} color={p.tcmScheduled ? "#15803d" : "#b45309"} />
+                    </td>
+                    <td style={tdStyle}>
+                      <Badge text={p.completedWithinWindow ? "✓ Yes" : "–"} bg={p.completedWithinWindow ? "#ede9fe" : "#f1f5f9"} color={p.completedWithinWindow ? "#7c3aed" : "#94a3b8"} />
+                    </td>
+                    <td style={tdStyle}>
+                      {p.missed14DayWindow
+                        ? <Badge text="⚠ Missed" bg="#fee2e2" color="#b91c1c" />
+                        : <span style={{ color: "#94a3b8" }}>–</span>}
+                    </td>
                   </tr>
                 ))
               )}
@@ -505,6 +545,16 @@ function PracticeEnrollmentPage({ data, openModal }) {
   const PRACTICE_COLS = ["Practice","Consultant","City","Facility","PDV Status","EMR Access","Contact"];
   const toRows = (list) => list.map((p) => [p.name, p.consultant, p.location, p.hospitals, p.pdvStatus, p.emrAccess, p.contact]);
 
+  const enrolledPractices  = practices.filter((p) => normalize(p.pdvStatus) === "complete");
+  const declinedPractices  = practices.filter((p) => normalize(p.pdvStatus).includes("declined"));
+  const tbdPractices       = practices.filter((p) => normalize(p.pdvStatus) === "tbd");
+  const pendingPractices   = practices.filter((p) => {
+    const s = normalize(p.pdvStatus);
+    return s !== "complete" && !s.includes("declined") && s !== "tbd";
+  });
+
+  const normalize = (v) => (v === null || v === undefined ? "" : String(v).trim().toLowerCase());
+
   const statusData = [
     { name: "Complete", value: m.enrolled,  color: "#10b981" },
     { name: "Pending",  value: m.pending,   color: "#f59e0b" },
@@ -523,32 +573,40 @@ function PracticeEnrollmentPage({ data, openModal }) {
   const consultantData = Object.values(consultantMap);
 
   const filtered = practices.filter((p) => {
-    const searchMatch = !search || p.name.toLowerCase().includes(search.toLowerCase()) || p.consultant.toLowerCase().includes(search.toLowerCase());
+    const searchMatch = !search ||
+      p.name.toLowerCase().includes(search.toLowerCase()) ||
+      p.consultant.toLowerCase().includes(search.toLowerCase());
     if (!searchMatch) return false;
-    const status = (p.pdvStatus || "").toLowerCase();
-    if (filter === "complete") return status === "complete";
-    if (filter === "declined") return status.includes("declined");
-    if (filter === "tbd")      return status === "tbd";
-    if (filter === "pending")  return status !== "complete" && !status.includes("declined") && status !== "tbd";
+    const s = (p.pdvStatus || "").toLowerCase();
+    if (filter === "complete") return s === "complete";
+    if (filter === "declined") return s.includes("declined");
+    if (filter === "tbd")      return s === "tbd";
+    if (filter === "pending")  return s !== "complete" && !s.includes("declined") && s !== "tbd";
     return true;
   });
 
   return (
     <div>
-      {/* KPI Cards — CLICKABLE */}
+      {/* ── KPI CARDS ── */}
       <div style={gridStyle}>
-        <MetricCard icon={<Building2 />}   title="Total Practices" value={m.total}    subtitle="Click to view all"  color="#3b82f6"
+        <MetricCard icon={<Building2 />}   title="Total Practices" value={m.total}
+          subtitle="Click to view all" color="#3b82f6"
           onClick={() => openModal(`All Practices (${practices.length})`, PRACTICE_COLS, toRows(practices))} />
-        <MetricCard icon={<CheckCircle />} title="Enrolled"        value={m.enrolled} subtitle={`${m.total ? ((m.enrolled/m.total)*100).toFixed(1) : 0}% · Click to view`} color="#10b981"
-          onClick={() => openModal(`Enrolled Practices (${practices.filter(p=>p.pdvStatus.toLowerCase()==="complete").length})`, PRACTICE_COLS, toRows(practices.filter(p=>p.pdvStatus.toLowerCase()==="complete")))} />
-        <MetricCard icon={<Clock />}       title="Pending"         value={m.pending}  subtitle="Click to view"     color="#f59e0b"
-          onClick={() => { const s=(p)=>(p.pdvStatus||"").toLowerCase(); openModal(`Pending Practices (${m.pending})`, PRACTICE_COLS, toRows(practices.filter(p=>s(p)!=="complete"&&!s(p).includes("declined")&&s(p)!=="tbd"))); }} />
-        <MetricCard icon={<TrendingUp />}  title="Declined"        value={m.declined} subtitle="Click to view"     color="#ef4444"
-          onClick={() => openModal(`Declined Practices (${m.declined})`, PRACTICE_COLS, toRows(practices.filter(p=>(p.pdvStatus||"").toLowerCase().includes("declined"))))} />
-        <MetricCard icon={<Clock />}       title="TBD"             value={m.tbd}      subtitle="Click to view"     color="#8b5cf6"
-          onClick={() => openModal(`TBD Practices (${m.tbd})`, PRACTICE_COLS, toRows(practices.filter(p=>(p.pdvStatus||"").toLowerCase()==="tbd")))} />
+        <MetricCard icon={<CheckCircle />} title="Enrolled" value={m.enrolled}
+          subtitle={`${m.total ? ((m.enrolled/m.total)*100).toFixed(1) : 0}% · Click to view`} color="#10b981"
+          onClick={() => openModal(`Enrolled Practices (${enrolledPractices.length})`, PRACTICE_COLS, toRows(enrolledPractices))} />
+        <MetricCard icon={<Clock />}       title="Pending" value={m.pending}
+          subtitle="Click to view" color="#f59e0b"
+          onClick={() => openModal(`Pending Practices (${pendingPractices.length})`, PRACTICE_COLS, toRows(pendingPractices))} />
+        <MetricCard icon={<TrendingUp />}  title="Declined" value={m.declined}
+          subtitle="Click to view" color="#ef4444"
+          onClick={() => openModal(`Declined Practices (${declinedPractices.length})`, PRACTICE_COLS, toRows(declinedPractices))} />
+        <MetricCard icon={<Clock />}       title="TBD" value={m.tbd}
+          subtitle="Click to view" color="#8b5cf6"
+          onClick={() => openModal(`TBD Practices (${tbdPractices.length})`, PRACTICE_COLS, toRows(tbdPractices))} />
       </div>
 
+      {/* ── CHARTS ── */}
       <div style={chartGridStyle}>
         <ChartCard title="Enrollment Status Breakdown">
           <ResponsiveContainer width="100%" height={300}>
@@ -569,20 +627,24 @@ function PracticeEnrollmentPage({ data, openModal }) {
               <YAxis dataKey="name" type="category" width={130} />
               <Tooltip /><Legend />
               <Bar dataKey="complete" fill="#10b981" name="Complete"
-                onClick={(d) => openModal(`${d.name} — Complete`, PRACTICE_COLS, toRows(practices.filter(p=>p.consultant===d.name&&(p.pdvStatus||"").toLowerCase()==="complete")))} />
+                onClick={(d) => openModal(`${d.name} — Complete`, PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus || "").toLowerCase() === "complete")))} />
               <Bar dataKey="pending"  fill="#f59e0b" name="Pending"
-                onClick={(d) => openModal(`${d.name} — Pending`, PRACTICE_COLS, toRows(practices.filter(p=>p.consultant===d.name&&(p.pdvStatus||"").toLowerCase()!=="complete")))} />
+                onClick={(d) => openModal(`${d.name} — Pending`,  PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus || "").toLowerCase() !== "complete")))} />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
       </div>
 
-      {/* Practice Drilldown */}
+      {/* ── PRACTICE DRILLDOWN ── */}
       <div style={tableWrapStyle}>
         <div style={tableHeaderStyle}>
           <h2>Practice Drilldown ({filtered.length} of {practices.length})</h2>
           <div style={{ display: "flex", gap: "12px" }}>
-            <input placeholder="Search practice or consultant..." value={search} onChange={(e) => setSearch(e.target.value)} style={inputStyle} />
+            <input
+              placeholder="Search practice or consultant..."
+              value={search} onChange={(e) => setSearch(e.target.value)}
+              style={inputStyle}
+            />
             <select value={filter} onChange={(e) => setFilter(e.target.value)} style={inputStyle}>
               <option value="all">All Status</option>
               <option value="complete">Complete</option>
@@ -596,27 +658,31 @@ function PracticeEnrollmentPage({ data, openModal }) {
         <div style={{ overflowX: "auto" }}>
           <table style={tableStyle}>
             <thead>
-              <tr>
-                {PRACTICE_COLS.map((c) => <th key={c} style={thStyle}>{c}</th>)}
-              </tr>
+              <tr>{PRACTICE_COLS.map((c) => <th key={c} style={thStyle}>{c}</th>)}</tr>
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={7} style={{ ...tdStyle, textAlign: "center", color: "#94a3b8", padding: "40px" }}>No data. Upload your Excel files.</td></tr>
+                <tr>
+                  <td colSpan={7} style={{ ...tdStyle, textAlign: "center", color: "#94a3b8", padding: "40px" }}>
+                    No data. Upload your Excel files.
+                  </td>
+                </tr>
               ) : (
                 filtered.map((p, i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f8fafc", cursor: "pointer" }}
-                    onClick={() => openModal(`Practice: ${p.name}`, ["Field","Value"], [
-                      ["Practice Name",  p.name],
-                      ["Consultant",     p.consultant],
-                      ["City",          p.location],
-                      ["Facility",      p.hospitals],
-                      ["PDV Status",    p.pdvStatus],
-                      ["EMR Access",    p.emrAccess],
-                      ["Login",         p.login],
-                      ["Contact",       p.contact],
-                      ["Network Access",p.networkAccess],
-                      ["Notes",         p.notes],
+                  <tr
+                    key={i}
+                    style={{ background: i % 2 === 0 ? "white" : "#f8fafc", cursor: "pointer" }}
+                    onClick={() => openModal(`Practice: ${p.name}`, ["Field", "Value"], [
+                      ["Practice Name",   p.name],
+                      ["Consultant",      p.consultant],
+                      ["City",            p.location],
+                      ["Facility",        p.hospitals],
+                      ["PDV Status",      p.pdvStatus],
+                      ["EMR Access",      p.emrAccess],
+                      ["Login",           p.login],
+                      ["Contact",         p.contact],
+                      ["Network Access",  p.networkAccess],
+                      ["Notes",           p.notes],
                     ])}
                   >
                     <td style={{ ...tdStyle, fontWeight: "700" }}>{p.name || "N/A"}</td>
@@ -666,8 +732,7 @@ function MetricCard({ icon, title, value, subtitle, color, onClick }) {
       <div style={{ fontSize: "14px", color: "#475569", fontWeight: "700" }}>{title}</div>
       <div style={{ fontSize: "34px", fontWeight: "800", marginTop: "8px" }}>{value}</div>
       <div style={{ fontSize: "12px", color: hovered && onClick ? color : "#64748b", marginTop: "6px", display: "flex", alignItems: "center", gap: "4px" }}>
-        {subtitle}
-        {onClick && hovered && <ChevronRight size={12} />}
+        {subtitle}{onClick && hovered && <ChevronRight size={12} />}
       </div>
     </div>
   );
