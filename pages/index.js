@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   Upload, Users, CheckCircle, Clock,
-  Building2, TrendingUp, Calendar, X, ChevronRight,
-  AlertTriangle, Activity, Filter,
+  Building2, TrendingUp, Calendar, X, ChevronRight, AlertTriangle, Activity,
 } from "lucide-react";
 import {
   BarChart, Bar, PieChart, Pie, Cell,
@@ -12,16 +11,13 @@ import {
 const EMPTY_DATA = {
   metrics: {
     totalPatients: 0, currentlyAdmitted: 0, discharged: 0,
-    tcmScheduled: 0, notYetScheduled: 0, visitVerified: 0,
-    missed14DayWindow: 0, pending: 0, scheduledRate: 0, nurseCounts: {},
+    tcmScheduled: 0, tcmPending: 0, notYetScheduled: 0,
+    visitVerified: 0, missed14DayWindow: 0, scheduledRate: 0, nurseCounts: {},
   },
   patients: [],
   practiceMetrics: { total: 0, enrolled: 0, pending: 0, declined: 0, tbd: 0 },
   practices: [],
 };
-
-// Program launch date - patients before this are excluded
-const PROGRAM_LAUNCH_DATE = new Date("2026-03-18");
 
 export default function NurseNavigatorDashboard() {
   const [activeTab, setActiveTab] = useState("patients");
@@ -33,10 +29,8 @@ export default function NurseNavigatorDashboard() {
   const [showLagWarning, setShowLagWarning] = useState(false);
   const fileInputRef = useRef(null);
 
-  // Check if today is Monday (possible weekend lag)
   useEffect(() => {
-    const day = new Date().getDay();
-    if (day === 1) setShowLagWarning(true); // Monday = possible weekend lag
+    if (new Date().getDay() === 1) setShowLagWarning(true);
   }, []);
 
   const openModal  = (title, columns, rows) => setModal({ title, columns, rows });
@@ -49,16 +43,69 @@ export default function NurseNavigatorDashboard() {
     const keys = Object.keys(row || {});
     for (const name of names) {
       const found = keys.find((k) => normalize(k) === normalize(name));
-      if (found) return row[found];
+      if (found !== undefined) return row[found];
     }
     for (const name of names) {
       const found = keys.find((k) => normalize(k).includes(normalize(name)));
-      if (found) return row[found];
+      if (found !== undefined) return row[found];
     }
     return "";
   };
 
-  const readSheetWithHeaderRow = (sheet, XLSX, headerRowIndex, maxCols = 30) => {
+  // ── FIXED DATE PARSER ──────────────────────────────────────
+  // Handles: JS Date objects, Excel serial numbers, ISO strings, 
+  // "N/A see notes", empty values — all safely
+  const parseDate = (val) => {
+    if (val === null || val === undefined || val === "") return null;
+
+    // Already a proper JS Date
+    if (val instanceof Date) {
+      return isNaN(val.getTime()) ? null : val;
+    }
+
+    // Excel serial number → JS Date
+    // Formula: (serial - 25569) * 86400000 ms
+    if (typeof val === "number") {
+      if (val <= 0 || val > 200000) return null;       // out of realistic range
+      const d = new Date(Math.round((val - 25569) * 86400 * 1000));
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    // String value
+    if (typeof val === "string") {
+      const s = val.trim();
+      if (!s) return null;
+      const lower = s.toLowerCase();
+      // Reject non-date strings
+      if (
+        lower === "n/a" || lower.includes("see notes") ||
+        lower.includes("tbd") || lower.includes("pending")
+      ) return null;
+
+      // Try to parse as date string
+      const d = new Date(s);
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    return null;
+  };
+
+  const formatDate = (d) => {
+    if (!d) return "N/A";
+    return d.toLocaleDateString("en-US", { month: "2-digit", day: "2-digit", year: "numeric" });
+  };
+
+  const daysBetween = (d1, d2) => {
+    if (!d1 || !d2) return null;
+    return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+  };
+
+  const isYes = (val) => {
+    const s = normalize(val);
+    return ["yes","y","true","1","complete","completed","verified","done","x","✓"].includes(s);
+  };
+
+  const readSheetWithHeaderRow = (sheet, XLSX, headerRowIndex, maxCols = 16) => {
     const raw = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "", blankrows: false });
     const headers = (raw[headerRowIndex] || []).slice(0, maxCols).map((h) => clean(h));
     return raw
@@ -77,102 +124,89 @@ export default function NurseNavigatorDashboard() {
     raw.slice(0, 10).forEach((row, index) => {
       const joined = row.map((c) => normalize(c)).join(" ");
       let score = 0;
-      if (joined.includes("patient"))   score += 3;
-      if (joined.includes("nurse"))     score += 3;
-      if (joined.includes("navigator")) score += 3;
-      if (joined.includes("tcm"))       score += 3;
-      if (joined.includes("practice"))  score += 2;
-      if (joined.includes("admission")) score += 2;
-      if (joined.includes("discharge")) score += 2;
+      if (joined.includes("patient"))          score += 4;
+      if (joined.includes("navigator assign")) score += 4;
+      if (joined.includes("tcm"))              score += 4;
+      if (joined.includes("discharge"))        score += 3;
+      if (joined.includes("practice"))         score += 2;
+      if (joined.includes("verified"))         score += 2;
       score += row.filter((c) => clean(c) !== "").length;
       if (score > bestScore) { bestScore = score; bestIndex = index; }
     });
     return bestIndex;
   };
 
-  const isYes = (val) => {
-    const s = normalize(val);
-    return ["yes","y","true","1","scheduled","complete","completed","verified","done","x","✓"].includes(s);
-  };
-
-  const parseDate = (val) => {
-    if (!val) return null;
-    const d = new Date(val);
-    return isNaN(d.getTime()) ? null : d;
-  };
-
-  const daysBetween = (d1, d2) => {
-    if (!d1 || !d2) return null;
-    return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
-  };
-
   const processPatientRows = (patientRows) => {
     const today = new Date();
 
-    const patients = patientRows
-      .map((p) => {
-        const admissionDate  = parseDate(getCell(p, ["Admission Date","Admit Date","Admitted"]));
-        const dischargeDate  = parseDate(getCell(p, ["Discharge Date","Discharged","Discharge"]));
-        const tcmStatus      = clean(getCell(p, ["TCM Appt Scheduled","TCM Appointment Scheduled","TCM Scheduled","TCM Appt","TCM"]));
-        const programStatus  = clean(getCell(p, ["Program Status","Status","Patient Status"]));
-        const facility       = clean(getCell(p, ["Facility","Hospital","Location","Site","Market"]));
-        const tin            = clean(getCell(p, ["TIN","Tax ID","Practice ID"]));
-        const practice       = clean(getCell(p, ["Practice","Practice Name"]));
-        const navigator      = clean(getCell(p, ["Nurse Navigator","Navigator","Assigned Nurse","Nurse"])) || "N/A";
+    const patients = patientRows.map((p) => {
+      // ── EXACT COLUMN NAMES FROM YOUR EXCEL ──
+      const anticipatedDischarge = parseDate(getCell(p, ["Anticipated Discharge","Anticipated Discharg","Anticipated"]));
+      const actualDischarge      = parseDate(getCell(p, ["Actual Discharge Date","Actual Discharge Dat","Actual Discharge","Discharge Date","Discharged","Discharge"]));
+      const tcmRaw               = clean(getCell(p, ["TCM Appt Scheduled?","TCM Appt Scheduled","TCM Appt Sch","TCM Scheduled","TCM Appt","TCM"]));
+      const tcmDate              = parseDate(getCell(p, ["TCM Appt Date","TCM Appt Dat","TCM Date"]));
+      const apptType             = clean(getCell(p, ["Appt Type","Appointment Type"]));
+      const verifiedRaw          = clean(getCell(p, ["Visit Verified","Verified"]));
+      const windowStatus         = clean(getCell(p, ["14-Day Window Status","14-Dag Window St","14 Day Window","14-Day Window","Missed 14-Day Window","Missed Window"]));
+      const call2                = clean(getCell(p, ["2-Day Call Attempt","2-Dag Call Atte","2 Day Call"]));
+      const call7                = clean(getCell(p, ["7-Day Call Attempt","7-Dag Call Atte","7 Day Call"]));
+      const navigator            = clean(getCell(p, ["Navigator Assigned","Navigator Assign","Nurse Navigator","Navigator","Assigned Nurse"]));
+      const practice             = clean(getCell(p, ["Practice"]));
+      const location             = clean(getCell(p, ["Location","Facility","Site"]));
+      const room                 = clean(getCell(p, ["Room #","Room"]));
+      const notes                = clean(getCell(p, ["Notes"]));
 
-        const tcmScheduled          = isYes(tcmStatus);
-        const visitVerified         = isYes(getCell(p, ["Visit Verified","Verified","Completed Within Window","Completed w/in Window","Completed"]));
-        const missed14DayWindow     = isYes(getCell(p, ["Missed 14-Day Window","Missed 14 Day Window","Missed Window"]));
+      const tcmScheduled = isYes(tcmRaw);
+      const tcmPending   = normalize(tcmRaw) === "pending";
+      const visitVerified = isYes(verifiedRaw);
+      const missed14Day  = normalize(windowStatus).includes("missed") || normalize(windowStatus).includes("no");
 
-        // Determine patient status
-        let status = programStatus || "Unknown";
-        if (!programStatus) {
-          if (visitVerified)     status = "Visit Verified";
-          else if (tcmScheduled) status = "Scheduled";
-          else if (dischargeDate) status = "Discharged";
-          else                   status = "Admitted";
-        }
+      // Days since actual discharge
+      const daysSinceDischarge = actualDischarge ? daysBetween(actualDischarge, today) : null;
 
-        // Days since discharge for TCM window tracking
-        const daysSinceDischarge = dischargeDate ? daysBetween(dischargeDate, today) : null;
+      // Status logic
+      let status = "Unknown";
+      if (visitVerified)                      status = "Visit Verified";
+      else if (tcmScheduled)                  status = "Scheduled";
+      else if (tcmPending)                    status = "Pending";
+      else if (actualDischarge && !tcmScheduled) status = "Discharged - No TCM";
+      else if (!actualDischarge)              status = "Admitted";
 
-        // Validate discharge before admission (ADT issue from requirement #1)
-        const hasDateError = admissionDate && dischargeDate && dischargeDate < admissionDate;
+      return {
+        name:                  clean(getCell(p, ["Patient Name","Name","Patient"])),
+        practice,
+        location,
+        room,
+        navigator:             navigator || "N/A",
+        anticipatedDischarge,
+        actualDischarge,
+        anticipatedStr:        formatDate(anticipatedDischarge),
+        actualDischargeStr:    formatDate(actualDischarge),
+        tcmRaw,
+        tcmScheduled,
+        tcmPending,
+        tcmDate,
+        tcmDateStr:            formatDate(tcmDate),
+        apptType,
+        visitVerified,
+        missed14Day,
+        windowStatus,
+        call2,
+        call7,
+        daysSinceDischarge,
+        status,
+        notes,
+      };
+    }).filter((p) => p.name); // remove empty rows
 
-        return {
-          name:              clean(getCell(p, ["Patient Name","Name","Patient"])),
-          practice,
-          facility,
-          tin,
-          location:          facility || clean(getCell(p, ["Location"])),
-          navigator,
-          admissionDate,
-          dischargeDate,
-          admissionDateStr:  admissionDate ? admissionDate.toLocaleDateString() : "N/A",
-          dischargeDateStr:  dischargeDate ? dischargeDate.toLocaleDateString() : "N/A",
-          daysSinceDischarge,
-          tcmScheduled,
-          visitVerified,
-          missed14DayWindow,
-          status,
-          hasDateError,
-          isEnrolledPractice: true, // Can be filtered based on practice enrollment
-        };
-      })
-      // Exclude pre-launch patients (Requirement #9)
-      .filter((p) => {
-        if (!p.admissionDate) return true; // Keep if no date (can't determine)
-        return p.admissionDate >= PROGRAM_LAUNCH_DATE;
-      });
-
-    const totalPatients      = patients.length;
-    const currentlyAdmitted  = patients.filter((p) => !p.dischargeDate || p.status === "Admitted").length;
-    const discharged         = patients.filter((p) => p.dischargeDate && p.status !== "Visit Verified").length;
-    const tcmScheduled       = patients.filter((p) => p.tcmScheduled).length;
-    const visitVerified      = patients.filter((p) => p.visitVerified).length;
-    const missed14DayWindow  = patients.filter((p) => p.missed14DayWindow).length;
-    const notYetScheduled    = patients.filter((p) => !p.tcmScheduled && !p.visitVerified).length;
-    const dateErrors         = patients.filter((p) => p.hasDateError).length;
+    const totalPatients     = patients.length;
+    const tcmScheduled      = patients.filter((p) => p.tcmScheduled).length;
+    const tcmPendingCount   = patients.filter((p) => p.tcmPending).length;
+    const visitVerified     = patients.filter((p) => p.visitVerified).length;
+    const missed14Day       = patients.filter((p) => p.missed14Day).length;
+    const notYetScheduled   = patients.filter((p) => !p.tcmScheduled && !p.tcmPending && !p.visitVerified).length;
+    const currentlyAdmitted = patients.filter((p) => !p.actualDischarge).length;
+    const discharged        = patients.filter((p) => p.actualDischarge && !p.visitVerified).length;
 
     const nurseCounts = {};
     patients.forEach((p) => {
@@ -182,11 +216,11 @@ export default function NurseNavigatorDashboard() {
     });
 
     return {
-      totalPatients, currentlyAdmitted, discharged, tcmScheduled,
-      visitVerified, missed14DayWindow, notYetScheduled,
-      pending: notYetScheduled,
+      totalPatients, tcmScheduled, tcmPending: tcmPendingCount,
+      visitVerified, missed14Day, missed14DayWindow: missed14Day,
+      notYetScheduled, currentlyAdmitted, discharged,
       scheduledRate: totalPatients > 0 ? Number(((tcmScheduled / totalPatients) * 100).toFixed(1)) : 0,
-      nurseCounts, dateErrors, patients,
+      nurseCounts, patients,
     };
   };
 
@@ -206,72 +240,58 @@ export default function NurseNavigatorDashboard() {
         notes:         clean(getCell(p, ["Notes"])),
       };
     });
-
     const enrolled = practices.filter((p) => normalize(p.pdvStatus) === "complete").length;
     const declined = practices.filter((p) => normalize(p.pdvStatus).includes("declined")).length;
     const tbd      = practices.filter((p) => normalize(p.pdvStatus) === "tbd").length;
     const pending  = practices.length - enrolled - declined - tbd;
-
     return { total: practices.length, enrolled, pending, declined, tbd, practices };
   };
 
   const handleFileUpload = async (event) => {
     const files = event.target.files;
     if (!files || files.length === 0) return;
-
     setSyncing(true);
     setSyncMessage("Reading uploaded Excel file...");
-
     try {
       const XLSX  = await import("xlsx");
       let newData = JSON.parse(JSON.stringify(EMPTY_DATA));
 
       for (const file of files) {
         const buffer   = await file.arrayBuffer();
-        const workbook = XLSX.read(buffer, { type: "array" });
+        const workbook = XLSX.read(buffer, { type: "array", cellDates: true }); // cellDates: true = parse dates properly
         const fileName = file.name.toLowerCase();
         const sheet    = workbook.Sheets[workbook.SheetNames[0]];
 
         const isPracticeFile = fileName.includes("ccpaco") || fileName.includes("practice") || fileName.includes("tracking");
-        const isPatientFile  = fileName.includes("patient") || fileName.includes("patients") || fileName.includes("enrollment");
+        const isPatientFile  = fileName.includes("patient") || fileName.includes("tracker") || fileName.includes("navigator");
 
         if (isPracticeFile && !isPatientFile) {
           const practiceRows = readSheetWithHeaderRow(sheet, XLSX, 2, 10);
           const result       = processPracticeRows(practiceRows);
-          newData.practiceMetrics = {
-            total: result.total, enrolled: result.enrolled,
-            pending: result.pending, declined: result.declined, tbd: result.tbd,
-          };
+          newData.practiceMetrics = { total: result.total, enrolled: result.enrolled, pending: result.pending, declined: result.declined, tbd: result.tbd };
           newData.practices = result.practices;
         } else {
+          // Patient tracker: header is on row 3 (index 2) — rows 1-2 are title/section headers
           const headerRow   = findBestHeaderRow(sheet, XLSX);
-          const patientRows = readSheetWithHeaderRow(sheet, XLSX, headerRow, 30);
+          const patientRows = readSheetWithHeaderRow(sheet, XLSX, headerRow, 16);
           const result      = processPatientRows(patientRows);
           newData.metrics   = {
-            totalPatients: result.totalPatients,
-            currentlyAdmitted: result.currentlyAdmitted,
-            discharged: result.discharged,
-            tcmScheduled: result.tcmScheduled,
-            visitVerified: result.visitVerified,
-            notYetScheduled: result.notYetScheduled,
-            missed14DayWindow: result.missed14DayWindow,
-            pending: result.pending,
-            scheduledRate: result.scheduledRate,
-            nurseCounts: result.nurseCounts,
-            dateErrors: result.dateErrors,
+            totalPatients: result.totalPatients, currentlyAdmitted: result.currentlyAdmitted,
+            discharged: result.discharged, tcmScheduled: result.tcmScheduled,
+            tcmPending: result.tcmPending, visitVerified: result.visitVerified,
+            notYetScheduled: result.notYetScheduled, missed14DayWindow: result.missed14Day,
+            scheduledRate: result.scheduledRate, nurseCounts: result.nurseCounts,
           };
           newData.patients = result.patients;
         }
       }
-
       setData(newData);
       setLastSync(new Date());
-      setSyncMessage(`✓ Sync complete. ${newData.patients.length} patients loaded (pre-launch excluded).`);
+      setSyncMessage(`✓ Sync complete. ${newData.patients.length} patients loaded.`);
     } catch (error) {
       console.error(error);
-      setSyncMessage("Error reading file: " + error.message);
+      setSyncMessage("Error: " + error.message);
     }
-
     setTimeout(() => { setSyncing(false); setSyncMessage(""); }, 4000);
     event.target.value = "";
   };
@@ -279,34 +299,26 @@ export default function NurseNavigatorDashboard() {
   return (
     <div style={pageStyle}>
       <input ref={fileInputRef} type="file" accept=".xlsx,.xls" multiple onChange={handleFileUpload} style={{ display: "none" }} />
-
       {modal && <Modal title={modal.title} columns={modal.columns} rows={modal.rows} onClose={closeModal} />}
 
       <header style={headerStyle}>
         <div style={headerInnerStyle}>
-          <div>
-            <h1 style={titleStyle}>Nurse Navigator Program</h1>
-            
-          </div>
+          <h1 style={titleStyle}>Nurse Navigator Program</h1>
           <div style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
             <button onClick={() => fileInputRef.current.click()} disabled={syncing} style={buttonStyle}>
-              <Upload size={18} />
-              {syncing ? "Syncing..." : "Sync from SharePoint"}
+              <Upload size={18} />{syncing ? "Syncing..." : "Sync from SharePoint"}
             </button>
             <div style={liveStyle}>
               Live Data<br />
-              <span style={{ fontWeight: "400" }}>
-                {lastSync ? `Updated ${lastSync.toLocaleTimeString()}` : "No file uploaded"}
-              </span>
+              <span style={{ fontWeight: "400" }}>{lastSync ? `Updated ${lastSync.toLocaleTimeString()}` : "No file uploaded"}</span>
             </div>
           </div>
         </div>
 
-        {/* Weekend lag warning */}
         {showLagWarning && (
           <div style={{ maxWidth: "1400px", margin: "12px auto 0", padding: "10px 16px", background: "#fef9c3", border: "2px solid #fbbf24", borderRadius: "10px", color: "#92400e", fontSize: "13px", fontWeight: "600", display: "flex", alignItems: "center", gap: "8px" }}>
             <AlertTriangle size={16} />
-            ⚠ Monday reminder: Weekend admissions (Fri–Sun) may be delayed 2–3 days in Care Compass. Verify directly with facilities for patients admitted over the weekend.
+            Monday reminder: Weekend admissions (Fri–Sun) may be delayed 2–3 days in Care Compass. Verify directly with facilities.
             <button onClick={() => setShowLagWarning(false)} style={{ marginLeft: "auto", background: "none", border: "none", cursor: "pointer", color: "#92400e" }}>✕</button>
           </div>
         )}
@@ -335,9 +347,9 @@ export default function NurseNavigatorDashboard() {
 // ─── MODAL ───────────────────────────────────────────────────
 function Modal({ title, columns, rows, onClose }) {
   useEffect(() => {
-    const handleKey = (e) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
+    const k = (e) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
   }, [onClose]);
 
   return (
@@ -347,9 +359,7 @@ function Modal({ title, columns, rows, onClose }) {
           <h2 style={{ margin: 0, color: "white", fontSize: "20px", fontWeight: "800" }}>{title}</h2>
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <span style={{ color: "rgba(255,255,255,0.8)", fontSize: "13px" }}>{rows.length} records</span>
-            <button onClick={onClose} style={{ background: "rgba(255,255,255,0.2)", border: "none", borderRadius: "8px", padding: "6px", cursor: "pointer", color: "white", display: "flex" }}>
-              <X size={18} />
-            </button>
+            <button onClick={onClose} style={{ background: "rgba(255,255,255,0.2)", border: "none", borderRadius: "8px", padding: "6px", cursor: "pointer", color: "white", display: "flex" }}><X size={18} /></button>
           </div>
         </div>
         <div style={{ overflowY: "auto" }}>
@@ -359,13 +369,12 @@ function Modal({ title, columns, rows, onClose }) {
             </thead>
             <tbody>
               {rows.length === 0
-                ? <tr><td colSpan={columns.length} style={{ ...tdStyle, textAlign: "center", color: "#94a3b8", padding: "40px" }}>No records to show.</td></tr>
+                ? <tr><td colSpan={columns.length} style={{ ...tdStyle, textAlign: "center", color: "#94a3b8", padding: "40px" }}>No records.</td></tr>
                 : rows.map((row, i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f8fafc" }}>
-                    {row.map((cell, j) => <td key={j} style={tdStyle}>{typeof cell === "object" ? cell : (cell || "N/A")}</td>)}
+                    {row.map((cell, j) => <td key={j} style={tdStyle}>{typeof cell === "object" && cell !== null ? cell : (cell || "N/A")}</td>)}
                   </tr>
-                ))
-              }
+                ))}
             </tbody>
           </table>
         </div>
@@ -377,7 +386,6 @@ function Modal({ title, columns, rows, onClose }) {
   );
 }
 
-// ─── TAB BUTTON ──────────────────────────────────────────────
 function TabButton({ active, onClick, icon, label }) {
   return (
     <button onClick={onClick} style={{ padding: "12px 24px", background: active ? "linear-gradient(135deg,#667eea,#764ba2)" : "white", color: active ? "white" : "#64748b", border: active ? "none" : "2px solid #e2e8f0", borderRadius: "10px", fontWeight: "700", cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>
@@ -391,46 +399,56 @@ function PatientTrackingPage({ data, openModal }) {
   const m        = data.metrics;
   const patients = data.patients;
 
-  const [search,       setSearch]       = useState("");
-  const [statusFilter, setStatusFilter] = useState("all");
-  const [navFilter,    setNavFilter]    = useState("all");
-  const [facilityFilter, setFacilityFilter] = useState("all");
-  const [sortCol,      setSortCol]      = useState(null);
-  const [sortDir,      setSortDir]      = useState("asc");
+  const [search,         setSearch]         = useState("");
+  const [statusFilter,   setStatusFilter]   = useState("all");
+  const [navFilter,      setNavFilter]      = useState("all");
+  const [locationFilter, setLocationFilter] = useState("all");
+  const [sortCol,        setSortCol]        = useState(null);
+  const [sortDir,        setSortDir]        = useState("asc");
 
-  const PATIENT_COLS = ["Patient","Practice","Facility","Navigator","Admit Date","Discharge Date","Days Since D/C","Status","TCM Scheduled","Visit Verified","Missed Window"];
+  const COLS = ["Patient","Practice","Location","Room","Navigator","Anticipated D/C","Actual Discharge","Days Since D/C","Status","TCM Appt","TCM Date","Appt Type","Visit Verified","14-Day Status","Notes"];
 
   const statusBadge = (p) => {
     const map = {
-      "Visit Verified": { bg: "#ede9fe", color: "#7c3aed" },
-      "Scheduled":      { bg: "#dcfce7", color: "#15803d" },
-      "Discharged":     { bg: "#fef9c3", color: "#b45309" },
-      "Admitted":       { bg: "#dbeafe", color: "#1e40af" },
+      "Visit Verified":      { bg: "#ede9fe", color: "#7c3aed" },
+      "Scheduled":           { bg: "#dcfce7", color: "#15803d" },
+      "Pending":             { bg: "#dbeafe", color: "#1e40af" },
+      "Discharged - No TCM": { bg: "#fef9c3", color: "#b45309" },
+      "Admitted":            { bg: "#e0f2fe", color: "#0369a1" },
     };
-    const style = map[p.status] || { bg: "#f1f5f9", color: "#64748b" };
-    return <Badge key="s" text={p.status} bg={style.bg} color={style.color} />;
+    const s = map[p.status] || { bg: "#f1f5f9", color: "#64748b" };
+    return <Badge text={p.status} bg={s.bg} color={s.color} />;
   };
 
   const toRows = (list) => list.map((p) => [
-    p.name, p.practice, p.location || p.facility || "N/A", p.navigator,
-    p.admissionDateStr, p.dischargeDateStr,
-    p.daysSinceDischarge !== null ? `${p.daysSinceDischarge}d` : "–",
+    p.name,
+    p.practice,
+    p.location,
+    p.room || "–",
+    p.navigator,
+    p.anticipatedStr,
+    p.actualDischargeStr,
+    p.daysSinceDischarge !== null
+      ? <span style={{ fontWeight: "700", color: p.daysSinceDischarge > 14 ? "#ef4444" : p.daysSinceDischarge > 10 ? "#f59e0b" : "#10b981" }}>{p.daysSinceDischarge}d</span>
+      : "–",
     statusBadge(p),
-    <Badge key="tcm"  text={p.tcmScheduled ? "✓ Yes" : "No"} bg={p.tcmScheduled ? "#dcfce7" : "#fee2e2"} color={p.tcmScheduled ? "#15803d" : "#991b1b"} />,
-    <Badge key="vv"   text={p.visitVerified ? "✓ Yes" : "–"} bg={p.visitVerified ? "#ede9fe" : "#f1f5f9"} color={p.visitVerified ? "#7c3aed" : "#94a3b8"} />,
-    p.missed14DayWindow ? <Badge key="m" text="⚠ Missed" bg="#fee2e2" color="#b91c1c" /> : <span style={{ color: "#94a3b8" }}>–</span>,
+    <Badge key="tcm" text={p.tcmRaw || "–"} bg={p.tcmScheduled ? "#dcfce7" : p.tcmPending ? "#dbeafe" : "#fee2e2"} color={p.tcmScheduled ? "#15803d" : p.tcmPending ? "#1e40af" : "#991b1b"} />,
+    p.tcmDateStr,
+    p.apptType || "–",
+    <Badge key="vv" text={p.visitVerified ? "✓ Yes" : "–"} bg={p.visitVerified ? "#ede9fe" : "#f1f5f9"} color={p.visitVerified ? "#7c3aed" : "#94a3b8"} />,
+    p.windowStatus || "–",
+    p.notes ? <span title={p.notes} style={{ maxWidth: "120px", display: "inline-block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{p.notes}</span> : "–",
   ]);
 
   const navigators = ["all", ...Array.from(new Set(patients.map((p) => p.navigator).filter(Boolean)))];
-  const facilities  = ["all", ...Array.from(new Set(patients.map((p) => p.location || p.facility).filter(Boolean)))];
+  const locations  = ["all", ...Array.from(new Set(patients.map((p) => p.location).filter(Boolean)))];
 
-  // Predefined status groups
-  const admitted      = patients.filter((p) => !p.dischargeDate || p.status === "Admitted");
-  const discharged    = patients.filter((p) => p.dischargeDate && p.status === "Discharged");
-  const scheduled = patients.filter((p) => p.tcmScheduled);
-  const visitVerified = patients.filter((p) => p.visitVerified);
-  const missed        = patients.filter((p) => p.missed14DayWindow);
-  const dateErrors    = patients.filter((p) => p.hasDateError);
+  const scheduledList  = patients.filter((p) => p.tcmScheduled && !p.visitVerified);
+  const verifiedList   = patients.filter((p) => p.visitVerified);
+  const pendingList    = patients.filter((p) => p.tcmPending);
+  const noTcmList      = patients.filter((p) => !p.tcmScheduled && !p.tcmPending && !p.visitVerified);
+  const admittedList   = patients.filter((p) => !p.actualDischarge);
+  const dischargedList = patients.filter((p) => p.actualDischarge && !p.visitVerified);
 
   const filtered = patients
     .filter((p) => {
@@ -439,21 +457,20 @@ function PatientTrackingPage({ data, openModal }) {
         p.name.toLowerCase().includes(q) ||
         p.practice.toLowerCase().includes(q) ||
         p.navigator.toLowerCase().includes(q) ||
-        (p.location || "").toLowerCase().includes(q);
+        p.location.toLowerCase().includes(q);
 
       const matchStatus =
         statusFilter === "all"           ? true :
-        statusFilter === "admitted"      ? (!p.dischargeDate || p.status === "Admitted") :
-        statusFilter === "discharged"    ? (p.dischargeDate && p.status === "Discharged") :
+        statusFilter === "admitted"      ? !p.actualDischarge :
+        statusFilter === "discharged"    ? (p.actualDischarge && !p.visitVerified) :
         statusFilter === "scheduled"     ? (p.tcmScheduled && !p.visitVerified) :
+        statusFilter === "pending"       ? p.tcmPending :
         statusFilter === "visit_verified"? p.visitVerified :
-        statusFilter === "missed"        ? p.missed14DayWindow :
-        statusFilter === "not_scheduled" ? (!p.tcmScheduled && !p.visitVerified) : true;
+        statusFilter === "no_tcm"        ? (!p.tcmScheduled && !p.tcmPending && !p.visitVerified) : true;
 
-      const matchNav      = navFilter === "all"      || p.navigator === navFilter;
-      const matchFacility = facilityFilter === "all" || (p.location || p.facility) === facilityFilter;
-
-      return matchSearch && matchStatus && matchNav && matchFacility;
+      const matchNav = navFilter === "all"      || p.navigator === navFilter;
+      const matchLoc = locationFilter === "all" || p.location === locationFilter;
+      return matchSearch && matchStatus && matchNav && matchLoc;
     })
     .sort((a, b) => {
       if (!sortCol) return 0;
@@ -468,41 +485,31 @@ function PatientTrackingPage({ data, openModal }) {
   };
 
   const pieData = [
-    { name: "Admitted",       value: admitted.length,      color: "#3b82f6" },
-    { name: "Discharged",     value: discharged.length,    color: "#f59e0b" },
-    { name: "Scheduled",      value: scheduled.length,     color: "#10b981" },
-    { name: "Visit Verified", value: visitVerified.length, color: "#8b5cf6" },
-  ];
+    { name: "Admitted",       value: admittedList.length,  color: "#3b82f6" },
+    { name: "Discharged",     value: dischargedList.length,color: "#f59e0b" },
+    { name: "Scheduled",      value: scheduledList.length, color: "#10b981" },
+    { name: "Visit Verified", value: verifiedList.length,  color: "#8b5cf6" },
+    { name: "Pending",        value: pendingList.length,   color: "#60a5fa" },
+  ].filter((d) => d.value > 0);
 
   const nurseData = Object.entries(m.nurseCounts || {}).map(([name, count]) => ({ name, count }));
 
   return (
     <div>
-      {/* ADT Date Error warning */}
-      {m.dateErrors > 0 && (
-        <div style={{ marginBottom: "24px", padding: "14px 20px", background: "#fee2e2", border: "2px solid #ef4444", borderRadius: "12px", color: "#991b1b", fontWeight: "700", display: "flex", alignItems: "center", gap: "10px" }}>
-          <AlertTriangle size={20} />
-          ⚠ ADT Data Issue: {m.dateErrors} patient(s) have discharge date BEFORE admission date. Please verify with Care Compass support (SUP-774).
-          <button onClick={() => openModal(`ADT Date Errors (${dateErrors.length})`, PATIENT_COLS, toRows(dateErrors))} style={{ marginLeft: "auto", padding: "6px 14px", background: "#ef4444", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: "700", fontSize: "12px" }}>
-            View {dateErrors.length} Records
-          </button>
-        </div>
-      )}
-
       {/* KPI CARDS */}
       <div style={gridStyle}>
-        <MetricCard icon={<Users />}         title="Total Patients"     value={m.totalPatients}     subtitle="Post-launch · Click to view" color="#3b82f6"
-          onClick={() => openModal(`All Patients (${patients.length})`, PATIENT_COLS, toRows(patients))} />
-        <MetricCard icon={<Activity />}      title="Currently Admitted" value={m.currentlyAdmitted} subtitle="Active in facility · Click"   color="#3b82f6"
-          onClick={() => openModal(`Currently Admitted (${admitted.length})`, PATIENT_COLS, toRows(admitted))} />
-        <MetricCard icon={<Calendar />}      title="TCM Scheduled"      value={m.tcmScheduled}      subtitle={`${m.scheduledRate}% rate · Click`} color="#10b981"
-          onClick={() => openModal(`TCM Scheduled (${scheduled.length})`, PATIENT_COLS, toRows(scheduled))} />
-        <MetricCard icon={<CheckCircle />}   title="Visit Verified"     value={m.visitVerified}     subtitle="Nurse Navigator verified · Click" color="#8b5cf6"
-          onClick={() => openModal(`Visit Verified (${visitVerified.length})`, PATIENT_COLS, toRows(visitVerified))} />
-        <MetricCard icon={<Clock />}         title="Not Yet Scheduled"  value={m.notYetScheduled}   subtitle="Awaiting outreach · Click"   color="#f59e0b"
-          onClick={() => openModal(`Not Yet Scheduled (${patients.filter(p=>!p.tcmScheduled&&!p.visitVerified).length})`, PATIENT_COLS, toRows(patients.filter(p=>!p.tcmScheduled&&!p.visitVerified)))} />
-        <MetricCard icon={<AlertTriangle />} title="Missed 14-Day Window" value={m.missed14DayWindow} subtitle="Click to review"           color="#ef4444"
-          onClick={() => openModal(`Missed 14-Day Window (${missed.length})`, PATIENT_COLS, toRows(missed))} />
+        <MetricCard icon={<Users />}         title="Total Patients"      value={m.totalPatients}     subtitle="Click to view all"          color="#3b82f6"
+          onClick={() => openModal(`All Patients (${patients.length})`, COLS, toRows(patients))} />
+        <MetricCard icon={<Activity />}      title="Currently Admitted"  value={m.currentlyAdmitted} subtitle="In facility · Click"         color="#0369a1"
+          onClick={() => openModal(`Currently Admitted (${admittedList.length})`, COLS, toRows(admittedList))} />
+        <MetricCard icon={<Calendar />}      title="TCM Scheduled"       value={m.tcmScheduled}      subtitle={`${m.scheduledRate}% rate · Click`} color="#10b981"
+          onClick={() => openModal(`TCM Scheduled (${scheduledList.length})`, COLS, toRows(scheduledList))} />
+        <MetricCard icon={<CheckCircle />}   title="Visit Verified"      value={m.visitVerified}     subtitle="NN verified · Click"          color="#8b5cf6"
+          onClick={() => openModal(`Visit Verified (${verifiedList.length})`, COLS, toRows(verifiedList))} />
+        <MetricCard icon={<Clock />}         title="Pending"             value={m.tcmPending}        subtitle="Pending TCM · Click"          color="#60a5fa"
+          onClick={() => openModal(`TCM Pending (${pendingList.length})`, COLS, toRows(pendingList))} />
+        <MetricCard icon={<TrendingUp />}    title="No TCM Scheduled"    value={m.notYetScheduled}   subtitle="Needs outreach · Click"       color="#ef4444"
+          onClick={() => openModal(`No TCM Scheduled (${noTcmList.length})`, COLS, toRows(noTcmList))} />
       </div>
 
       {/* CHARTS */}
@@ -530,26 +537,21 @@ function PatientTrackingPage({ data, openModal }) {
         </ChartCard>
       </div>
 
-      {/* INTERACTIVE DRILLDOWN */}
+      {/* DRILLDOWN TABLE */}
       <div style={tableWrapStyle}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px", marginBottom: "16px" }}>
           <h2 style={{ margin: 0 }}>
-            Patient Drilldown{" "}
-            <span style={{ fontSize: "14px", color: "#64748b", fontWeight: "400" }}>
-              ({filtered.length} of {patients.length})
-            </span>
+            Patient Drilldown <span style={{ fontSize: "14px", color: "#64748b", fontWeight: "400" }}>({filtered.length} of {patients.length})</span>
           </h2>
-
-          {/* Quick filter badges */}
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
             {[
-              { label: "Admitted",       list: admitted,      color: "#1e40af", bg: "#dbeafe" },
-              { label: "Discharged",     list: discharged,    color: "#b45309", bg: "#fef9c3" },
-              { label: "Scheduled",      list: scheduled,     color: "#15803d", bg: "#dcfce7" },
-              { label: "Visit Verified", list: visitVerified, color: "#7c3aed", bg: "#ede9fe" },
-              { label: "Missed Window",  list: missed,        color: "#b91c1c", bg: "#fee2e2" },
+              { label: "Admitted",       list: admittedList,  color: "#0369a1", bg: "#e0f2fe" },
+              { label: "Discharged",     list: dischargedList,color: "#b45309", bg: "#fef9c3" },
+              { label: "Scheduled",      list: scheduledList, color: "#15803d", bg: "#dcfce7" },
+              { label: "Visit Verified", list: verifiedList,  color: "#7c3aed", bg: "#ede9fe" },
+              { label: "Pending",        list: pendingList,   color: "#1e40af", bg: "#dbeafe" },
             ].map((b) => (
-              <span key={b.label} onClick={() => openModal(`${b.label} (${b.list.length})`, PATIENT_COLS, toRows(b.list))}
+              <span key={b.label} onClick={() => openModal(`${b.label} (${b.list.length})`, COLS, toRows(b.list))}
                 style={{ padding: "4px 14px", borderRadius: "20px", background: b.bg, color: b.color, fontSize: "12px", fontWeight: "700", cursor: "pointer" }}>
                 {b.label}: {b.list.length}
               </span>
@@ -557,44 +559,29 @@ function PatientTrackingPage({ data, openModal }) {
           </div>
         </div>
 
-        {/* Filters */}
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "16px" }}>
-          <input
-            placeholder="Search name, practice, facility, navigator…"
-            value={search} onChange={(e) => setSearch(e.target.value)}
-            style={{ ...inputStyle, minWidth: "260px", flex: 1 }}
-          />
-
-          {/* Status filter — covers Requirement #2 */}
+          <input placeholder="Search name, practice, facility, navigator…" value={search} onChange={(e) => setSearch(e.target.value)} style={{ ...inputStyle, minWidth: "240px", flex: 1 }} />
           <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)} style={inputStyle}>
             <option value="all">All Status</option>
             <option value="admitted">Currently Admitted</option>
             <option value="discharged">Discharged</option>
-            <option value="scheduled">Scheduled</option>
+            <option value="scheduled">TCM Scheduled</option>
+            <option value="pending">Pending</option>
             <option value="visit_verified">Visit Verified</option>
-            <option value="not_scheduled">Not Yet Scheduled</option>
-            <option value="missed">Missed Window</option>
+            <option value="no_tcm">No TCM Scheduled</option>
           </select>
-
-          {/* Navigator filter */}
           <select value={navFilter} onChange={(e) => setNavFilter(e.target.value)} style={inputStyle}>
             {navigators.map((n) => <option key={n} value={n}>{n === "all" ? "All Navigators" : n}</option>)}
           </select>
-
-          {/* Facility filter */}
-          <select value={facilityFilter} onChange={(e) => setFacilityFilter(e.target.value)} style={inputStyle}>
-            {facilities.map((f) => <option key={f} value={f}>{f === "all" ? "All Facilities" : f}</option>)}
+          <select value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)} style={inputStyle}>
+            {locations.map((l) => <option key={l} value={l}>{l === "all" ? "All Locations" : l}</option>)}
           </select>
-
-          {(search || statusFilter !== "all" || navFilter !== "all" || facilityFilter !== "all") && (
-            <button onClick={() => { setSearch(""); setStatusFilter("all"); setNavFilter("all"); setFacilityFilter("all"); }}
-              style={{ ...inputStyle, background: "#f1f5f9", cursor: "pointer", border: "2px solid #e2e8f0", color: "#64748b", whiteSpace: "nowrap" }}>
-              ✕ Clear
-            </button>
+          {(search || statusFilter !== "all" || navFilter !== "all" || locationFilter !== "all") && (
+            <button onClick={() => { setSearch(""); setStatusFilter("all"); setNavFilter("all"); setLocationFilter("all"); }}
+              style={{ ...inputStyle, background: "#f1f5f9", cursor: "pointer", border: "2px solid #e2e8f0", color: "#64748b", whiteSpace: "nowrap" }}>✕ Clear</button>
           )}
         </div>
 
-        {/* Table */}
         <div style={{ overflowX: "auto" }}>
           <table style={tableStyle}>
             <thead>
@@ -602,15 +589,16 @@ function PatientTrackingPage({ data, openModal }) {
                 {[
                   { label: "Patient",        col: "name" },
                   { label: "Practice",       col: "practice" },
-                  { label: "Facility",       col: "location" },
+                  { label: "Location",       col: "location" },
                   { label: "Navigator",      col: "navigator" },
-                  { label: "Admit Date",     col: null },
-                  { label: "Discharge Date", col: null },
+                  { label: "Anticipated D/C",col: null },
+                  { label: "Actual Discharge",col: null },
                   { label: "Days Since D/C", col: null },
                   { label: "Status",         col: null },
-                  { label: "TCM Scheduled",  col: null },
+                  { label: "TCM Appt",       col: null },
+                  { label: "Appt Date",      col: null },
+                  { label: "Type",           col: null },
                   { label: "Visit Verified", col: null },
-                  { label: "Missed Window",  col: null },
                 ].map(({ label, col }) => (
                   <th key={label} onClick={() => col && handleSort(col)} style={{ ...thStyle, cursor: col ? "pointer" : "default" }}>
                     {label}{col ? (sortCol === col ? (sortDir === "asc" ? " ↑" : " ↓") : " ↕") : ""}
@@ -620,52 +608,49 @@ function PatientTrackingPage({ data, openModal }) {
             </thead>
             <tbody>
               {filtered.length === 0 ? (
-                <tr><td colSpan={11} style={{ ...tdStyle, textAlign: "center", color: "#94a3b8", padding: "40px" }}>No patients match filters. Upload files or adjust filters.</td></tr>
+                <tr><td colSpan={12} style={{ ...tdStyle, textAlign: "center", color: "#94a3b8", padding: "40px" }}>No patients match filters. Upload files or adjust filters.</td></tr>
               ) : (
                 filtered.map((p, i) => (
-                  <tr key={i}
-                    style={{ background: p.hasDateError ? "#fff5f5" : (i % 2 === 0 ? "white" : "#f8fafc"), cursor: "pointer" }}
+                  <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f8fafc", cursor: "pointer" }}
                     onClick={() => openModal(`Patient: ${p.name}`, ["Field","Value"], [
-                      ["Name",              p.name],
-                      ["Practice",          p.practice],
-                      ["Facility",          p.location || "N/A"],
-                      ["TIN",               p.tin || "N/A"],
-                      ["Navigator",         p.navigator],
-                      ["Admission Date",    p.admissionDateStr],
-                      ["Discharge Date",    p.dischargeDateStr],
-                      ["Days Since D/C",    p.daysSinceDischarge !== null ? `${p.daysSinceDischarge} days` : "N/A"],
-                      ["Status",            p.status],
-                      ["TCM Scheduled",     p.tcmScheduled ? "✓ Yes" : "No"],
-                      ["Visit Verified",    p.visitVerified ? "✓ Yes" : "–"],
-                      ["Missed Window",     p.missed14DayWindow ? "⚠ Yes" : "–"],
-                      ["Date Error (ADT)",  p.hasDateError ? "⚠ Discharge before Admission" : "–"],
+                      ["Name",               p.name],
+                      ["Practice",           p.practice],
+                      ["Location/Facility",  p.location],
+                      ["Room",               p.room || "N/A"],
+                      ["Navigator",          p.navigator],
+                      ["Anticipated D/C",    p.anticipatedStr],
+                      ["Actual Discharge",   p.actualDischargeStr],
+                      ["Days Since D/C",     p.daysSinceDischarge !== null ? `${p.daysSinceDischarge} days` : "Still Admitted"],
+                      ["Status",             p.status],
+                      ["TCM Appt Scheduled", p.tcmRaw || "N/A"],
+                      ["TCM Appt Date",      p.tcmDateStr],
+                      ["Appt Type",          p.apptType || "N/A"],
+                      ["2-Day Call Attempt", p.call2 || "–"],
+                      ["7-Day Call Attempt", p.call7 || "–"],
+                      ["14-Day Window",      p.windowStatus || "–"],
+                      ["Visit Verified",     p.visitVerified ? "✓ Yes" : "No"],
+                      ["Notes",              p.notes || "–"],
                     ])}
                   >
-                    <td style={{ ...tdStyle, fontWeight: "700" }}>
-                      {p.hasDateError && <span title="ADT Date Error" style={{ marginRight: "6px", color: "#ef4444" }}>⚠</span>}
-                      {p.name || "N/A"}
-                    </td>
+                    <td style={{ ...tdStyle, fontWeight: "700" }}>{p.name || "N/A"}</td>
                     <td style={tdStyle}>{p.practice || "N/A"}</td>
                     <td style={tdStyle}>{p.location || "N/A"}</td>
                     <td style={tdStyle}>{p.navigator}</td>
-                    <td style={tdStyle}>{p.admissionDateStr}</td>
-                    <td style={tdStyle}>{p.dischargeDateStr}</td>
+                    <td style={tdStyle}>{p.anticipatedStr}</td>
+                    <td style={tdStyle}>{p.actualDischargeStr}</td>
                     <td style={tdStyle}>
-                      {p.daysSinceDischarge !== null ? (
-                        <span style={{ fontWeight: "700", color: p.daysSinceDischarge > 14 ? "#ef4444" : p.daysSinceDischarge > 10 ? "#f59e0b" : "#10b981" }}>
-                          {p.daysSinceDischarge}d
-                        </span>
-                      ) : "–"}
+                      {p.daysSinceDischarge !== null
+                        ? <span style={{ fontWeight: "700", color: p.daysSinceDischarge > 14 ? "#ef4444" : p.daysSinceDischarge > 10 ? "#f59e0b" : "#10b981" }}>{p.daysSinceDischarge}d</span>
+                        : <span style={{ color: "#94a3b8" }}>–</span>}
                     </td>
                     <td style={tdStyle}>{statusBadge(p)}</td>
                     <td style={tdStyle}>
-                      <Badge text={p.tcmScheduled ? "✓ Yes" : "No"} bg={p.tcmScheduled ? "#dcfce7" : "#fee2e2"} color={p.tcmScheduled ? "#15803d" : "#991b1b"} />
+                      <Badge text={p.tcmRaw || "–"} bg={p.tcmScheduled ? "#dcfce7" : p.tcmPending ? "#dbeafe" : "#fee2e2"} color={p.tcmScheduled ? "#15803d" : p.tcmPending ? "#1e40af" : "#991b1b"} />
                     </td>
+                    <td style={tdStyle}>{p.tcmDateStr}</td>
+                    <td style={tdStyle}>{p.apptType || "–"}</td>
                     <td style={tdStyle}>
                       <Badge text={p.visitVerified ? "✓ Yes" : "–"} bg={p.visitVerified ? "#ede9fe" : "#f1f5f9"} color={p.visitVerified ? "#7c3aed" : "#94a3b8"} />
-                    </td>
-                    <td style={tdStyle}>
-                      {p.missed14DayWindow ? <Badge text="⚠ Missed" bg="#fee2e2" color="#b91c1c" /> : <span style={{ color: "#94a3b8" }}>–</span>}
                     </td>
                   </tr>
                 ))
@@ -693,10 +678,7 @@ function PracticeEnrollmentPage({ data, openModal }) {
   const enrolledPractices = practices.filter((p) => normalize(p.pdvStatus) === "complete");
   const declinedPractices = practices.filter((p) => normalize(p.pdvStatus).includes("declined"));
   const tbdPractices      = practices.filter((p) => normalize(p.pdvStatus) === "tbd");
-  const pendingPractices  = practices.filter((p) => {
-    const s = normalize(p.pdvStatus);
-    return s !== "complete" && !s.includes("declined") && s !== "tbd";
-  });
+  const pendingPractices  = practices.filter((p) => { const s = normalize(p.pdvStatus); return s !== "complete" && !s.includes("declined") && s !== "tbd"; });
 
   const statusData = [
     { name: "Complete", value: m.enrolled,  color: "#10b981" },
@@ -709,16 +691,13 @@ function PracticeEnrollmentPage({ data, openModal }) {
   practices.forEach((p) => {
     const c = p.consultant || "N/A";
     if (!consultantMap[c]) consultantMap[c] = { name: c, complete: 0, pending: 0 };
-    const s = (p.pdvStatus || "").toLowerCase();
-    if (s === "complete") consultantMap[c].complete += 1;
+    if ((p.pdvStatus || "").toLowerCase() === "complete") consultantMap[c].complete += 1;
     else consultantMap[c].pending += 1;
   });
   const consultantData = Object.values(consultantMap);
 
   const filtered = practices.filter((p) => {
-    const searchMatch = !search ||
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.consultant.toLowerCase().includes(search.toLowerCase());
+    const searchMatch = !search || p.name.toLowerCase().includes(search.toLowerCase()) || p.consultant.toLowerCase().includes(search.toLowerCase());
     if (!searchMatch) return false;
     const s = (p.pdvStatus || "").toLowerCase();
     if (filter === "complete") return s === "complete";
@@ -731,21 +710,16 @@ function PracticeEnrollmentPage({ data, openModal }) {
   return (
     <div>
       <div style={gridStyle}>
-        <MetricCard icon={<Building2 />}   title="Total Practices" value={m.total}
-          subtitle="Click to view all" color="#3b82f6"
+        <MetricCard icon={<Building2 />}   title="Total Practices"      value={m.total}    subtitle="Click to view all"  color="#3b82f6"
           onClick={() => openModal(`All Practices (${practices.length})`, PRACTICE_COLS, toRows(practices))} />
-        <MetricCard icon={<CheckCircle />} title="Enrolled (Complete)" value={m.enrolled}
-          subtitle={`${m.total ? ((m.enrolled/m.total)*100).toFixed(1) : 0}% · Click`} color="#10b981"
-          onClick={() => openModal(`Enrolled Practices (${enrolledPractices.length})`, PRACTICE_COLS, toRows(enrolledPractices))} />
-        <MetricCard icon={<Clock />}       title="Pending" value={m.pending}
-          subtitle="Click to view" color="#f59e0b"
-          onClick={() => openModal(`Pending Practices (${pendingPractices.length})`, PRACTICE_COLS, toRows(pendingPractices))} />
-        <MetricCard icon={<TrendingUp />}  title="Declined" value={m.declined}
-          subtitle="Click to view" color="#ef4444"
-          onClick={() => openModal(`Declined Practices (${declinedPractices.length})`, PRACTICE_COLS, toRows(declinedPractices))} />
-        <MetricCard icon={<Clock />}       title="TBD" value={m.tbd}
-          subtitle="Click to view" color="#8b5cf6"
-          onClick={() => openModal(`TBD Practices (${tbdPractices.length})`, PRACTICE_COLS, toRows(tbdPractices))} />
+        <MetricCard icon={<CheckCircle />} title="Enrolled (Complete)"  value={m.enrolled} subtitle={`${m.total ? ((m.enrolled/m.total)*100).toFixed(1) : 0}% · Click`} color="#10b981"
+          onClick={() => openModal(`Enrolled (${enrolledPractices.length})`, PRACTICE_COLS, toRows(enrolledPractices))} />
+        <MetricCard icon={<Clock />}       title="Pending"              value={m.pending}  subtitle="Click to view"      color="#f59e0b"
+          onClick={() => openModal(`Pending (${pendingPractices.length})`, PRACTICE_COLS, toRows(pendingPractices))} />
+        <MetricCard icon={<TrendingUp />}  title="Declined"             value={m.declined} subtitle="Click to view"      color="#ef4444"
+          onClick={() => openModal(`Declined (${declinedPractices.length})`, PRACTICE_COLS, toRows(declinedPractices))} />
+        <MetricCard icon={<Clock />}       title="TBD"                  value={m.tbd}      subtitle="Click to view"      color="#8b5cf6"
+          onClick={() => openModal(`TBD (${tbdPractices.length})`, PRACTICE_COLS, toRows(tbdPractices))} />
       </div>
 
       <div style={chartGridStyle}>
@@ -769,8 +743,8 @@ function PracticeEnrollmentPage({ data, openModal }) {
               <Tooltip /><Legend />
               <Bar dataKey="complete" fill="#10b981" name="Complete"
                 onClick={(d) => openModal(`${d.name} — Complete`, PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() === "complete")))} />
-              <Bar dataKey="pending" fill="#f59e0b" name="Pending"
-                onClick={(d) => openModal(`${d.name} — Pending`, PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() !== "complete")))} />
+              <Bar dataKey="pending"  fill="#f59e0b" name="Pending"
+                onClick={(d) => openModal(`${d.name} — Pending`,  PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() !== "complete")))} />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>
@@ -802,16 +776,9 @@ function PracticeEnrollmentPage({ data, openModal }) {
                 : filtered.map((p, i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? "white" : "#f8fafc", cursor: "pointer" }}
                     onClick={() => openModal(`Practice: ${p.name}`, ["Field","Value"], [
-                      ["Practice Name",  p.name],
-                      ["Consultant",     p.consultant],
-                      ["City",           p.location],
-                      ["Facility",       p.hospitals],
-                      ["PDV Status",     p.pdvStatus],
-                      ["EMR Access",     p.emrAccess],
-                      ["Login",          p.login],
-                      ["Contact",        p.contact],
-                      ["Network Access", p.networkAccess],
-                      ["Notes",          p.notes],
+                      ["Practice Name",  p.name], ["Consultant", p.consultant], ["City", p.location],
+                      ["Facility", p.hospitals], ["PDV Status", p.pdvStatus], ["EMR Access", p.emrAccess],
+                      ["Login", p.login], ["Contact", p.contact], ["Network Access", p.networkAccess], ["Notes", p.notes],
                     ])}
                   >
                     <td style={{ ...tdStyle, fontWeight: "700" }}>{p.name || "N/A"}</td>
@@ -819,8 +786,7 @@ function PracticeEnrollmentPage({ data, openModal }) {
                     <td style={tdStyle}>{p.location || "N/A"}</td>
                     <td style={{ ...tdStyle, maxWidth: "160px", overflow: "hidden", textOverflow: "ellipsis" }}>{p.hospitals || "N/A"}</td>
                     <td style={tdStyle}>
-                      <Badge
-                        text={p.pdvStatus || "N/A"}
+                      <Badge text={p.pdvStatus || "N/A"}
                         bg={(p.pdvStatus||"").toLowerCase()==="complete" ? "#dcfce7" : (p.pdvStatus||"").toLowerCase().includes("declined") ? "#fee2e2" : (p.pdvStatus||"").toLowerCase()==="tbd" ? "#ede9fe" : "#fef9c3"}
                         color={(p.pdvStatus||"").toLowerCase()==="complete" ? "#15803d" : (p.pdvStatus||"").toLowerCase().includes("declined") ? "#b91c1c" : (p.pdvStatus||"").toLowerCase()==="tbd" ? "#7c3aed" : "#b45309"}
                       />
@@ -837,7 +803,7 @@ function PracticeEnrollmentPage({ data, openModal }) {
   );
 }
 
-// ─── SHARED COMPONENTS ────────────────────────────────────────
+// ─── SHARED ───────────────────────────────────────────────────
 function MetricCard({ icon, title, value, subtitle, color, onClick }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -861,7 +827,6 @@ function ChartCard({ title, children }) {
   return <div style={cardStyle}><h3 style={{ marginTop: 0 }}>{title}</h3>{children}</div>;
 }
 
-// ─── STYLES ───────────────────────────────────────────────────
 const pageStyle        = { minHeight: "100vh", background: "linear-gradient(135deg,#667eea 0%,#764ba2 100%)", fontFamily: "Arial, sans-serif" };
 const headerStyle      = { background: "rgba(255,255,255,0.96)", padding: "24px 40px", boxShadow: "0 4px 8px rgba(0,0,0,0.08)" };
 const headerInnerStyle = { maxWidth: "1400px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", flexWrap: "wrap" };
