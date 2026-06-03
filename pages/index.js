@@ -228,23 +228,19 @@ export default function NurseNavigatorDashboard() {
   };
 
   const processPracticeRows = (practiceRows) => {
-    const practices = practiceRows.map((p) => {
-      const pdvStatus  = clean(getCell(p, ["PDV Forms Completed","PDV Status","PDV"]));
-      const emrGranted = clean(getCell(p, ["Nurse Navigator EMR Access granted","EMR Access granted","EMR Access","EMR"]));
-      return {
-        name:          clean(getCell(p, ["Practice Participants","Practice"])),
-        consultant:    clean(getCell(p, ["Consultant"])),
-        location:      clean(getCell(p, ["City","Location"])),
-        hospitals:     clean(getCell(p, ["Facility Participants","Hospitals"])),
-        pdvStatus,
-        emrGranted,
-        emrAccess:     emrGranted,
-        login:         clean(getCell(p, ["Nurse Navigator EMR Access Login"])),
-        contact:       clean(getCell(p, ["Direct Office Contact","Contact"])),
-        networkAccess: clean(getCell(p, ["Network Management Access"])),
-        notes:         clean(getCell(p, ["Notes"])),
-      };
-    });
+    const practices = practiceRows.map((p) => ({
+      name:          p.name          || "",
+      consultant:    p.consultant    || "",
+      location:      p.location      || "",
+      hospitals:     p.hospitals     || "",
+      pdvStatus:     p.pdvStatus     || "",
+      emrGranted:    p.emrGranted    || "",
+      emrAccess:     p.emrAccess     || "",
+      login:         p.login         || "",
+      contact:       p.contact       || "",
+      networkAccess: p.networkAccess || "",
+      notes:         p.notes         || "",
+    }));
 
     // "Complete" or starts with "Complete" = enrolled
     const isPDVComplete  = (v) => normalize(v).startsWith("complete");
@@ -283,13 +279,47 @@ export default function NurseNavigatorDashboard() {
                                (fileName.includes("tracker") && !fileName.includes("ccpaco"));
 
         if (isPracticeFile && !isPatientFile) {
-          // Practice file: row 1=title, row 2=headers, row 3=empty, row 4+=data
-          // Use range:1 to skip title and use row 2 as headers directly
-          const practiceRows = XLSX.utils.sheet_to_json(sheet, {
-            defval: "",
-            blankrows: false,
-            range: 1,
+          // File structure:
+          // Row 0: "Column1, Column2..." (generic)
+          // Row 1: Title "CCPACO Nurse Navigator Program"
+          // Row 2: Headers "Practice Participants | PDV Forms Completed..."
+          // Row 3: EMPTY
+          // Row 4+: Actual data
+          const rawSheet = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "" });
+
+          // Step 1: Find the HEADER row (contains "Practice Participants")
+          const headerIdx = rawSheet.findIndex(row =>
+            String(row[0] || "").toLowerCase().includes("practice participants") ||
+            String(row[0] || "").toLowerCase().includes("practice")
+          );
+
+          // Step 2: Find FIRST DATA row = first non-empty row AFTER the header row
+          const dataStart = rawSheet.findIndex((row, idx) => {
+            if (idx <= headerIdx) return false;  // must be after header
+            const first = String(row[0] || "").trim();
+            if (!first) return false;             // skip empty rows
+            const lower = first.toLowerCase();
+            // Skip header-like rows
+            if (lower.includes("practice participants") || lower.startsWith("column")) return false;
+            return true;
           });
+
+          const practiceRows = rawSheet
+            .slice(dataStart >= 0 ? dataStart : headerIdx + 1)
+            .filter(row => row[0] && String(row[0]).trim().length > 0)
+            .map(row => ({
+              name:          String(row[0] || "").trim(),
+              consultant:    String(row[1] || "").trim(),
+              location:      String(row[2] || "").trim(),
+              hospitals:     String(row[3] || "").trim(),
+              pdvStatus:     String(row[4] || "").trim(),
+              emrGranted:    String(row[5] || "").trim(),
+              emrAccess:     String(row[5] || "").trim(),
+              login:         String(row[6] || "").trim(),
+              contact:       String(row[7] || "").trim(),
+              networkAccess: String(row[8] || "").trim(),
+              notes:         String(row[9] || "").trim(),
+            }));
           const result       = processPracticeRows(practiceRows);
           newData.practiceMetrics = { total: result.total, enrolled: result.enrolled, pending: result.pending, declined: result.declined, tbd: result.tbd, emrComplete: result.emrComplete || 0 };
           newData.practices = result.practices;
