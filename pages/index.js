@@ -262,8 +262,11 @@ export default function NurseNavigatorDashboard() {
         const fileName = file.name.toLowerCase();
         const sheet    = workbook.Sheets[workbook.SheetNames[0]];
 
-        const isPracticeFile = fileName.includes("ccpaco") || fileName.includes("practice") || fileName.includes("tracking");
-        const isPatientFile  = fileName.includes("patient") || fileName.includes("tracker") || fileName.includes("navigator");
+        // More specific detection to avoid filename conflicts
+        const isPracticeFile = fileName.includes("ccpaco") || 
+                               (fileName.includes("tracking") && !fileName.includes("patient"));
+        const isPatientFile  = fileName.includes("patient") || 
+                               (fileName.includes("tracker") && !fileName.includes("ccpaco"));
 
         if (isPracticeFile && !isPatientFile) {
           const practiceRows = readSheetWithHeaderRow(sheet, XLSX, 2, 10);
