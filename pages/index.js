@@ -429,7 +429,7 @@ function PatientTrackingPage({ data, openModal }) {
   // Predefined status groups
   const admitted      = patients.filter((p) => !p.dischargeDate || p.status === "Admitted");
   const discharged    = patients.filter((p) => p.dischargeDate && p.status === "Discharged");
-  const scheduled     = patients.filter((p) => p.tcmScheduled && !p.visitVerified);
+  const scheduled = patients.filter((p) => p.tcmScheduled);
   const visitVerified = patients.filter((p) => p.visitVerified);
   const missed        = patients.filter((p) => p.missed14DayWindow);
   const dateErrors    = patients.filter((p) => p.hasDateError);
