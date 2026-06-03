@@ -742,12 +742,12 @@ function PracticeEnrollmentPage({ data, openModal }) {
 
   const consultantMap = {};
   practices.forEach((p) => {
-    const c = p.consultant || "N/A";
-    if (!consultantMap[c]) consultantMap[c] = { name: c, complete: 0, pending: 0 };
-    if ((p.pdvStatus || "").toLowerCase() === "complete") consultantMap[c].complete += 1;
-    else consultantMap[c].pending += 1;
+    const c = (p.consultant || "N/A").trim();
+    if (!c || c === "N/A") return;
+    if (!consultantMap[c]) consultantMap[c] = { name: c, total: 0 };
+    consultantMap[c].total += 1;
   });
-  const consultantData = Object.values(consultantMap);
+  const consultantData = Object.values(consultantMap).sort((a,b) => b.total - a.total);
 
   const filtered = practices.filter((p) => {
     const searchMatch = !search || p.name.toLowerCase().includes(search.toLowerCase()) || p.consultant.toLowerCase().includes(search.toLowerCase());
@@ -801,15 +801,13 @@ function PracticeEnrollmentPage({ data, openModal }) {
             </div>
           ) : (
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={consultantData} layout="vertical" margin={{ left: 140 }}>
+              <BarChart data={consultantData} layout="vertical" margin={{ left: 170, right: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis type="number" allowDecimals={false} />
-                <YAxis dataKey="name" type="category" width={130} />
-                <Tooltip /><Legend />
-                <Bar dataKey="complete" fill="#10b981" name="Complete"
-                  onClick={(d) => openModal(`${d.name} — Complete`, PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() === "complete")))} />
-                <Bar dataKey="pending"  fill="#f59e0b" name="Pending"
-                  onClick={(d) => openModal(`${d.name} — Pending`,  PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() !== "complete")))} />
+                <YAxis dataKey="name" type="category" width={160} style={{ fontSize: "12px" }} />
+                <Tooltip />
+                <Bar dataKey="total" fill="#667eea" name="Practices" radius={[0,6,6,0]}
+                  onClick={(d) => openModal(`${d.name} — All Practices (${d.total})`, PRACTICE_COLS, toRows(practices.filter((p) => (p.consultant||"").trim() === d.name)))} />
               </BarChart>
             </ResponsiveContainer>
           )}
@@ -853,11 +851,16 @@ function PracticeEnrollmentPage({ data, openModal }) {
                     <td style={{ ...tdStyle, maxWidth: "160px", overflow: "hidden", textOverflow: "ellipsis" }}>{p.hospitals || "N/A"}</td>
                     <td style={tdStyle}>
                       <Badge text={p.pdvStatus || "N/A"}
-                        bg={(p.pdvStatus||"").toLowerCase()==="complete" ? "#dcfce7" : (p.pdvStatus||"").toLowerCase().includes("declined") ? "#fee2e2" : (p.pdvStatus||"").toLowerCase()==="tbd" ? "#ede9fe" : "#fef9c3"}
-                        color={(p.pdvStatus||"").toLowerCase()==="complete" ? "#15803d" : (p.pdvStatus||"").toLowerCase().includes("declined") ? "#b91c1c" : (p.pdvStatus||"").toLowerCase()==="tbd" ? "#7c3aed" : "#b45309"}
+                        bg={(p.pdvStatus||"").toLowerCase().startsWith("complete") ? "#dcfce7" : (p.pdvStatus||"").toLowerCase().includes("declined") ? "#fee2e2" : (p.pdvStatus||"").toLowerCase()==="tbd" ? "#ede9fe" : "#fef9c3"}
+                        color={(p.pdvStatus||"").toLowerCase().startsWith("complete") ? "#15803d" : (p.pdvStatus||"").toLowerCase().includes("declined") ? "#b91c1c" : (p.pdvStatus||"").toLowerCase()==="tbd" ? "#7c3aed" : "#b45309"}
                       />
                     </td>
-                    <td style={tdStyle}>{p.emrAccess || "N/A"}</td>
+                    <td style={tdStyle}>
+                      <Badge text={p.emrAccess || "N/A"}
+                        bg={(p.emrAccess||"").toLowerCase().startsWith("complete") ? "#dcfce7" : (p.emrAccess||"").toLowerCase().includes("declined") ? "#fee2e2" : (p.emrAccess||"").toLowerCase()==="tbd" ? "#ede9fe" : (p.emrAccess||"").toLowerCase()==="n/a" ? "#f1f5f9" : "#fef9c3"}
+                        color={(p.emrAccess||"").toLowerCase().startsWith("complete") ? "#15803d" : (p.emrAccess||"").toLowerCase().includes("declined") ? "#b91c1c" : (p.emrAccess||"").toLowerCase()==="tbd" ? "#7c3aed" : (p.emrAccess||"").toLowerCase()==="n/a" ? "#64748b" : "#b45309"}
+                      />
+                    </td>
                     <td style={tdStyle}>{p.contact || "N/A"}</td>
                   </tr>
                 ))}
