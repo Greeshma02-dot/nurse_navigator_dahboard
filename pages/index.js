@@ -652,6 +652,7 @@ function PatientTrackingPage({ data, openModal }) {
                   { label: "Appt Date",      col: null },
                   { label: "Type",           col: null },
                   { label: "Visit Verified", col: null },
+                  { label: "Notes",         col: null },
                 ].map(({ label, col }) => (
                   <th key={label} onClick={() => col && handleSort(col)} style={{ ...thStyle, cursor: col ? "pointer" : "default" }}>
                     {label}{col ? (sortCol === col ? (sortDir === "asc" ? " ↑" : " ↓") : " ↕") : ""}
@@ -704,6 +705,13 @@ function PatientTrackingPage({ data, openModal }) {
                     <td style={tdStyle}>{p.apptType || "–"}</td>
                     <td style={tdStyle}>
                       <Badge text={p.visitVerified ? "✓ Yes" : "–"} bg={p.visitVerified ? "#ede9fe" : "#f1f5f9"} color={p.visitVerified ? "#7c3aed" : "#94a3b8"} />
+                    </td>
+                    <td style={{ ...tdStyle, maxWidth: "220px" }}>
+                      {p.notes ? (
+                        <span title={p.notes} style={{ display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", color: "#475569", fontSize: "13px" }}>
+                          {p.notes}
+                        </span>
+                      ) : <span style={{ color: "#94a3b8" }}>–</span>}
                     </td>
                   </tr>
                 ))
