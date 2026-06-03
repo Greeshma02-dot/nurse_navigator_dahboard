@@ -685,7 +685,7 @@ function PracticeEnrollmentPage({ data, openModal }) {
     { name: "Pending",  value: m.pending,   color: "#f59e0b" },
     { name: "Declined", value: m.declined,  color: "#ef4444" },
     { name: "TBD",      value: m.tbd,       color: "#8b5cf6" },
-  ];
+  ].filter((d) => d.value > 0);
 
   const consultantMap = {};
   practices.forEach((p) => {
@@ -724,29 +724,42 @@ function PracticeEnrollmentPage({ data, openModal }) {
 
       <div style={chartGridStyle}>
         <ChartCard title="Enrollment Status Breakdown">
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie data={statusData} dataKey="value" outerRadius={110} label>
-                {statusData.map((e, i) => <Cell key={i} fill={e.color} />)}
-              </Pie>
-              <Tooltip /><Legend />
-            </PieChart>
-          </ResponsiveContainer>
+          {statusData.length === 0 ? (
+            <div style={{ padding: "60px", textAlign: "center", color: "#94a3b8" }}>
+              <Building2 size={40} style={{ margin: "0 auto 12px", opacity: 0.3 }} />
+              <p>Upload practice file to see data</p>
+            </div>
+          ) : (
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
+                <Pie data={statusData} dataKey="value" outerRadius={110} label>
+                  {statusData.map((e, i) => <Cell key={i} fill={e.color} />)}
+                </Pie>
+                <Tooltip /><Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          )}
         </ChartCard>
 
         <ChartCard title="Practice Enrolled by Consultant">
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={consultantData} layout="vertical" margin={{ left: 140 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" allowDecimals={false} />
-              <YAxis dataKey="name" type="category" width={130} />
-              <Tooltip /><Legend />
-              <Bar dataKey="complete" fill="#10b981" name="Complete"
-                onClick={(d) => openModal(`${d.name} — Complete`, PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() === "complete")))} />
-              <Bar dataKey="pending"  fill="#f59e0b" name="Pending"
-                onClick={(d) => openModal(`${d.name} — Pending`,  PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() !== "complete")))} />
-            </BarChart>
-          </ResponsiveContainer>
+          {consultantData.length === 0 ? (
+            <div style={{ padding: "60px", textAlign: "center", color: "#94a3b8" }}>
+              <p>Upload practice file to see data</p>
+            </div>
+          ) : (
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={consultantData} layout="vertical" margin={{ left: 140 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" allowDecimals={false} />
+                <YAxis dataKey="name" type="category" width={130} />
+                <Tooltip /><Legend />
+                <Bar dataKey="complete" fill="#10b981" name="Complete"
+                  onClick={(d) => openModal(`${d.name} — Complete`, PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() === "complete")))} />
+                <Bar dataKey="pending"  fill="#f59e0b" name="Pending"
+                  onClick={(d) => openModal(`${d.name} — Pending`,  PRACTICE_COLS, toRows(practices.filter((p) => p.consultant === d.name && (p.pdvStatus||"").toLowerCase() !== "complete")))} />
+              </BarChart>
+            </ResponsiveContainer>
+          )}
         </ChartCard>
       </div>
 
