@@ -269,7 +269,7 @@ export default function NurseNavigatorDashboard() {
                                (fileName.includes("tracker") && !fileName.includes("ccpaco"));
 
         if (isPracticeFile && !isPatientFile) {
-          const practiceRows = readSheetWithHeaderRow(sheet, XLSX, 2, 10);
+          const practiceRows = readSheetWithHeaderRow(sheet, XLSX, 1, 10);
           const result       = processPracticeRows(practiceRows);
           newData.practiceMetrics = { total: result.total, enrolled: result.enrolled, pending: result.pending, declined: result.declined, tbd: result.tbd };
           newData.practices = result.practices;
