@@ -15,7 +15,7 @@ const EMPTY_DATA = {
     visitVerified: 0, missed14DayWindow: 0, scheduledRate: 0, nurseCounts: {},
   },
   patients: [],
-  practiceMetrics: { total: 0, enrolled: 0, pending: 0, declined: 0, tbd: 0 },
+  practiceMetrics: { total: 0, enrolled: 0, pending: 0, declined: 0, tbd: 0, emrComplete: 0 },
   practices: [],
 };
 
@@ -128,7 +128,10 @@ export default function NurseNavigatorDashboard() {
       if (joined.includes("navigator assign")) score += 4;
       if (joined.includes("tcm"))              score += 4;
       if (joined.includes("discharge"))        score += 3;
+      if (joined.includes("practice participants")) score += 5;
+      if (joined.includes("pdv"))              score += 5;
       if (joined.includes("practice"))         score += 2;
+      if (joined.includes("consultant"))       score += 3;
       if (joined.includes("verified"))         score += 2;
       score += row.filter((c) => clean(c) !== "").length;
       if (score > bestScore) { bestScore = score; bestIndex = index; }
@@ -226,25 +229,36 @@ export default function NurseNavigatorDashboard() {
 
   const processPracticeRows = (practiceRows) => {
     const practices = practiceRows.map((p) => {
-      const pdvStatus = clean(getCell(p, ["PDV Forms Completed","PDV Status","PDV"]));
+      const pdvStatus  = clean(getCell(p, ["PDV Forms Completed","PDV Status","PDV"]));
+      const emrGranted = clean(getCell(p, ["Nurse Navigator EMR Access granted","EMR Access granted","EMR Access","EMR"]));
       return {
         name:          clean(getCell(p, ["Practice Participants","Practice"])),
         consultant:    clean(getCell(p, ["Consultant"])),
         location:      clean(getCell(p, ["City","Location"])),
         hospitals:     clean(getCell(p, ["Facility Participants","Hospitals"])),
         pdvStatus,
-        emrAccess:     clean(getCell(p, ["Nurse Navigator EMR Access granted","EMR Access"])),
+        emrGranted,
+        emrAccess:     emrGranted,
         login:         clean(getCell(p, ["Nurse Navigator EMR Access Login"])),
         contact:       clean(getCell(p, ["Direct Office Contact","Contact"])),
         networkAccess: clean(getCell(p, ["Network Management Access"])),
         notes:         clean(getCell(p, ["Notes"])),
       };
     });
-    const enrolled = practices.filter((p) => normalize(p.pdvStatus) === "complete").length;
-    const declined = practices.filter((p) => normalize(p.pdvStatus).includes("declined")).length;
-    const tbd      = practices.filter((p) => normalize(p.pdvStatus) === "tbd").length;
-    const pending  = practices.length - enrolled - declined - tbd;
-    return { total: practices.length, enrolled, pending, declined, tbd, practices };
+
+    // "Complete" or starts with "Complete" = enrolled
+    const isPDVComplete  = (v) => normalize(v).startsWith("complete");
+    const isEMRComplete  = (v) => normalize(v).startsWith("complete");
+    const isDeclined     = (v) => normalize(v).includes("declined");
+    const isTBD          = (v) => normalize(v) === "tbd";
+
+    const enrolled   = practices.filter((p) => isPDVComplete(p.pdvStatus)).length;
+    const declined   = practices.filter((p) => isDeclined(p.pdvStatus)).length;
+    const tbd        = practices.filter((p) => isTBD(p.pdvStatus)).length;
+    const pending    = practices.length - enrolled - declined - tbd;
+    const emrComplete = practices.filter((p) => isEMRComplete(p.emrGranted)).length;
+
+    return { total: practices.length, enrolled, pending, declined, tbd, emrComplete, practices };
   };
 
   const handleFileUpload = async (event) => {
@@ -269,9 +283,10 @@ export default function NurseNavigatorDashboard() {
                                (fileName.includes("tracker") && !fileName.includes("ccpaco"));
 
         if (isPracticeFile && !isPatientFile) {
-          const practiceRows = readSheetWithHeaderRow(sheet, XLSX, 1, 10);
+          const practiceHeaderRow = findBestHeaderRow(sheet, XLSX);
+          const practiceRows = readSheetWithHeaderRow(sheet, XLSX, practiceHeaderRow, 10);
           const result       = processPracticeRows(practiceRows);
-          newData.practiceMetrics = { total: result.total, enrolled: result.enrolled, pending: result.pending, declined: result.declined, tbd: result.tbd };
+          newData.practiceMetrics = { total: result.total, enrolled: result.enrolled, pending: result.pending, declined: result.declined, tbd: result.tbd, emrComplete: result.emrComplete || 0 };
           newData.practices = result.practices;
         } else {
           // Patient tracker: header is on row 3 (index 2) — rows 1-2 are title/section headers
@@ -713,16 +728,16 @@ function PracticeEnrollmentPage({ data, openModal }) {
   return (
     <div>
       <div style={gridStyle}>
-        <MetricCard icon={<Building2 />}   title="Total Practices"      value={m.total}    subtitle="Click to view all"  color="#3b82f6"
+        <MetricCard icon={<Building2 />}   title="Total Practices"       value={m.total}       subtitle="Click to view all"  color="#3b82f6"
           onClick={() => openModal(`All Practices (${practices.length})`, PRACTICE_COLS, toRows(practices))} />
-        <MetricCard icon={<CheckCircle />} title="Enrolled (Complete)"  value={m.enrolled} subtitle={`${m.total ? ((m.enrolled/m.total)*100).toFixed(1) : 0}% · Click`} color="#10b981"
-          onClick={() => openModal(`Enrolled (${enrolledPractices.length})`, PRACTICE_COLS, toRows(enrolledPractices))} />
-        <MetricCard icon={<Clock />}       title="Pending"              value={m.pending}  subtitle="Click to view"      color="#f59e0b"
-          onClick={() => openModal(`Pending (${pendingPractices.length})`, PRACTICE_COLS, toRows(pendingPractices))} />
-        <MetricCard icon={<TrendingUp />}  title="Declined"             value={m.declined} subtitle="Click to view"      color="#ef4444"
+        <MetricCard icon={<CheckCircle />} title="PDV Forms Completed"   value={m.enrolled}    subtitle={`${m.total ? ((m.enrolled/m.total)*100).toFixed(1) : 0}% · Click to view`} color="#10b981"
+          onClick={() => openModal(`PDV Complete (${enrolledPractices.length})`, PRACTICE_COLS, toRows(enrolledPractices))} />
+        <MetricCard icon={<Activity />}    title="EMR Access Granted"    value={m.emrComplete} subtitle="Click to view"      color="#8b5cf6"
+          onClick={() => openModal(`EMR Access Granted (${practices.filter(p=>normalize(p.emrGranted||"").startsWith("complete")).length})`, PRACTICE_COLS, toRows(practices.filter(p=>normalize(p.emrGranted||"").startsWith("complete"))))} />
+        <MetricCard icon={<TrendingUp />}  title="Declined"              value={m.declined}    subtitle="Click to view"      color="#ef4444"
           onClick={() => openModal(`Declined (${declinedPractices.length})`, PRACTICE_COLS, toRows(declinedPractices))} />
-        <MetricCard icon={<Clock />}       title="TBD"                  value={m.tbd}      subtitle="Click to view"      color="#8b5cf6"
-          onClick={() => openModal(`TBD (${tbdPractices.length})`, PRACTICE_COLS, toRows(tbdPractices))} />
+        <MetricCard icon={<Clock />}       title="Pending / TBD"         value={m.pending + m.tbd} subtitle="Click to view"  color="#f59e0b"
+          onClick={() => openModal(`Pending & TBD (${pendingPractices.length + tbdPractices.length})`, PRACTICE_COLS, toRows([...pendingPractices, ...tbdPractices]))} />
       </div>
 
       <div style={chartGridStyle}>
