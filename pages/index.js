@@ -286,9 +286,7 @@ export default function NurseNavigatorDashboard() {
         <div style={headerInnerStyle}>
           <div>
             <h1 style={titleStyle}>Nurse Navigator Program</h1>
-            <div style={{ fontSize: "12px", color: "#64748b", marginTop: "4px" }}>
-              Temporary Operations Dashboard · Program Start: Mar 18, 2026
-            </div>
+            
           </div>
           <div style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
             <button onClick={() => fileInputRef.current.click()} disabled={syncing} style={buttonStyle}>
