@@ -283,8 +283,13 @@ export default function NurseNavigatorDashboard() {
                                (fileName.includes("tracker") && !fileName.includes("ccpaco"));
 
         if (isPracticeFile && !isPatientFile) {
-          const practiceHeaderRow = findBestHeaderRow(sheet, XLSX);
-          const practiceRows = readSheetWithHeaderRow(sheet, XLSX, practiceHeaderRow, 10);
+          // Practice file: row 1=title, row 2=headers, row 3=empty, row 4+=data
+          // Use range:1 to skip title and use row 2 as headers directly
+          const practiceRows = XLSX.utils.sheet_to_json(sheet, {
+            defval: "",
+            blankrows: false,
+            range: 1,
+          });
           const result       = processPracticeRows(practiceRows);
           newData.practiceMetrics = { total: result.total, enrolled: result.enrolled, pending: result.pending, declined: result.declined, tbd: result.tbd, emrComplete: result.emrComplete || 0 };
           newData.practices = result.practices;
@@ -699,10 +704,10 @@ function PracticeEnrollmentPage({ data, openModal }) {
   const pendingPractices  = practices.filter((p) => { const s = normalize(p.pdvStatus); return s !== "complete" && !s.includes("declined") && s !== "tbd"; });
 
   const statusData = [
-    { name: "Complete", value: m.enrolled,  color: "#10b981" },
-    { name: "Pending",  value: m.pending,   color: "#f59e0b" },
-    { name: "Declined", value: m.declined,  color: "#ef4444" },
-    { name: "TBD",      value: m.tbd,       color: "#8b5cf6" },
+    { name: "PDV Complete",  value: m.enrolled,  color: "#10b981" },
+    { name: "Pending",       value: m.pending,   color: "#f59e0b" },
+    { name: "Declined",      value: m.declined,  color: "#ef4444" },
+    { name: "TBD",           value: m.tbd,       color: "#8b5cf6" },
   ].filter((d) => d.value > 0);
 
   const consultantMap = {};
@@ -728,7 +733,7 @@ function PracticeEnrollmentPage({ data, openModal }) {
   return (
     <div>
       <div style={gridStyle}>
-        <MetricCard icon={<Building2 />}   title="Total Practices"       value={m.total}       subtitle="Click to view all"  color="#3b82f6"
+        <MetricCard icon={<Building2 />}   title="Total Practices Enrolled" value={m.total}    subtitle="Click to view all"  color="#3b82f6"
           onClick={() => openModal(`All Practices (${practices.length})`, PRACTICE_COLS, toRows(practices))} />
         <MetricCard icon={<CheckCircle />} title="PDV Forms Completed"   value={m.enrolled}    subtitle={`${m.total ? ((m.enrolled/m.total)*100).toFixed(1) : 0}% · Click to view`} color="#10b981"
           onClick={() => openModal(`PDV Complete (${enrolledPractices.length})`, PRACTICE_COLS, toRows(enrolledPractices))} />
