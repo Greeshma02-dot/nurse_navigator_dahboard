@@ -955,9 +955,9 @@
       "anticipatedStr": "6/20/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -965,7 +965,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
+      "status": "Scheduled",
       "notes": ""
     },
     {
@@ -1082,12 +1082,12 @@
   "metrics": {
     "totalPatients": 49,
     "currentlyAdmitted": 22,
-    "tcmScheduled": 30,
-    "tcmPending": 12,
+    "tcmScheduled": 31,
+    "tcmPending": 11,
     "visitVerified": 9,
     "missed14DayWindow": 0,
     "notYetScheduled": 7,
-    "scheduledRate": 61.2,
+    "scheduledRate": 63.3,
     "nurseCounts": {
       "Devan Lambruno ": 2,
       "Sunnie Emberson": 23,
@@ -1546,6 +1546,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-19T17:58:04.773Z",
+  "lastUpdated": "2026-06-19T18:09:55.419Z",
   "source": "auto-sync"
 }
