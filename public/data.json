@@ -947,6 +947,28 @@
       "notes": "Spoke with patient's wife and she gave preferred appointment times. Called practice and was able to schedule patient for 6/23/2026 at 10 a.m."
     },
     {
+      "name": "Alfonso Valles",
+      "practice": "Citrus Valley",
+      "location": "CRM",
+      "room": "PCU 207 1P",
+      "navigator": "Sunnie Emberson",
+      "anticipatedStr": "6/20/2026",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
       "name": "Deborah Obrien",
       "practice": "Graybill Medical Clinic",
       "location": "TVH",
@@ -992,17 +1014,17 @@
     }
   ],
   "metrics": {
-    "totalPatients": 45,
-    "currentlyAdmitted": 18,
+    "totalPatients": 46,
+    "currentlyAdmitted": 19,
     "tcmScheduled": 30,
-    "tcmPending": 10,
+    "tcmPending": 11,
     "visitVerified": 9,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 66.7,
+    "scheduledRate": 65.2,
     "nurseCounts": {
       "Devan Lambruno ": 2,
-      "Sunnie Emberson": 19,
+      "Sunnie Emberson": 20,
       "Devan Lambruno": 23
     }
   },
@@ -1458,6 +1480,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-19T17:28:04.391Z",
+  "lastUpdated": "2026-06-19T17:43:04.607Z",
   "source": "auto-sync"
 }
