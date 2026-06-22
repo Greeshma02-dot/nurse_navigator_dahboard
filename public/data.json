@@ -1104,9 +1104,9 @@
       "name": "Lynda Slumpff",
       "practice": "Timothy Killeen",
       "location": "TVH",
-      "room": "",
+      "room": "5117",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "6/24/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1611,6 +1611,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-22T19:28:04.684Z",
+  "lastUpdated": "2026-06-22T19:43:04.547Z",
   "source": "auto-sync"
 }
