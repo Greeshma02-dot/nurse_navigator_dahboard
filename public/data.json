@@ -931,8 +931,8 @@
       "room": "121-2",
       "navigator": "Sunnie Emberson",
       "anticipatedStr": "6/18/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "6/19/2026",
+      "daysSinceDischarge": 4,
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
@@ -997,8 +997,8 @@
       "room": "210- 4P",
       "navigator": "Sunnie Emberson",
       "anticipatedStr": "6/13/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "6/20/2026",
+      "daysSinceDischarge": 3,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1057,6 +1057,50 @@
       "notes": "Called patient to attempt to schedule follow up appointment. No answer, voicemail left. Will attempt to call again."
     },
     {
+      "name": "Ronnie Thomsen",
+      "practice": "Timothy Killeen",
+      "location": "IVM",
+      "room": "",
+      "navigator": "Sunnie Emberson",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": ""
+    },
+    {
+      "name": "Donald Baranski",
+      "practice": "Graybill Medical Clinic",
+      "location": "IVM",
+      "room": "",
+      "navigator": "Sunnie Emberson",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": ""
+    },
+    {
       "name": "John Rosingana",
       "practice": "",
       "location": "",
@@ -1080,17 +1124,17 @@
     }
   ],
   "metrics": {
-    "totalPatients": 49,
+    "totalPatients": 51,
     "currentlyAdmitted": 22,
     "tcmScheduled": 31,
     "tcmPending": 13,
     "visitVerified": 9,
     "missed14DayWindow": 0,
-    "notYetScheduled": 5,
-    "scheduledRate": 63.3,
+    "notYetScheduled": 7,
+    "scheduledRate": 60.8,
     "nurseCounts": {
       "Devan Lambruno": 25,
-      "Sunnie Emberson": 23
+      "Sunnie Emberson": 25
     }
   },
   "practices": [
@@ -1545,6 +1589,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-22T16:28:04.810Z",
+  "lastUpdated": "2026-06-22T16:43:04.413Z",
   "source": "auto-sync"
 }
