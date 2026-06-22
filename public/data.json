@@ -1109,18 +1109,18 @@
       "anticipatedStr": "6/24/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "6/29/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "EDFF"
+      "status": "Scheduled",
+      "notes": "EDFF- called practice and scheduled patient for 6/29 at 845am. Practice informed of reason for admission. "
     },
     {
       "name": "John Rosingana",
@@ -1148,12 +1148,12 @@
   "metrics": {
     "totalPatients": 52,
     "currentlyAdmitted": 22,
-    "tcmScheduled": 31,
-    "tcmPending": 16,
+    "tcmScheduled": 32,
+    "tcmPending": 15,
     "visitVerified": 10,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 59.6,
+    "scheduledRate": 61.5,
     "nurseCounts": {
       "Devan Lambruno": 26,
       "Sunnie Emberson": 25
@@ -1611,6 +1611,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-22T19:58:04.740Z",
+  "lastUpdated": "2026-06-22T20:13:05.076Z",
   "source": "auto-sync"
 }
