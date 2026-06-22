@@ -1101,6 +1101,28 @@
       "notes": ""
     },
     {
+      "name": "Lynda Slumpff",
+      "practice": "Timothy Killeen",
+      "location": "TVH",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": "EDFF"
+    },
+    {
       "name": "John Rosingana",
       "practice": "",
       "location": "",
@@ -1124,16 +1146,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 51,
-    "currentlyAdmitted": 21,
+    "totalPatients": 52,
+    "currentlyAdmitted": 22,
     "tcmScheduled": 31,
-    "tcmPending": 15,
+    "tcmPending": 16,
     "visitVerified": 10,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 60.8,
+    "scheduledRate": 59.6,
     "nurseCounts": {
-      "Devan Lambruno": 25,
+      "Devan Lambruno": 26,
       "Sunnie Emberson": 25
     }
   },
@@ -1589,6 +1611,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-22T18:28:04.924Z",
+  "lastUpdated": "2026-06-22T18:43:04.676Z",
   "source": "auto-sync"
 }
