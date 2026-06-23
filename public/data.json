@@ -1123,6 +1123,50 @@
       "notes": "EDFF- called practice and scheduled patient for 6/29 at 845am. Practice informed of reason for admission. "
     },
     {
+      "name": "Delores Swanson",
+      "practice": "Brian Nguyen",
+      "location": "TVH",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "name": "Pamela Elftman",
+      "practice": "Graybill Medical Clinic",
+      "location": "TVH",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
       "name": "John Rosingana",
       "practice": "",
       "location": "",
@@ -1146,16 +1190,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 52,
-    "currentlyAdmitted": 22,
+    "totalPatients": 54,
+    "currentlyAdmitted": 24,
     "tcmScheduled": 32,
-    "tcmPending": 15,
+    "tcmPending": 17,
     "visitVerified": 10,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 61.5,
+    "scheduledRate": 59.3,
     "nurseCounts": {
-      "Devan Lambruno": 26,
+      "Devan Lambruno": 28,
       "Sunnie Emberson": 25
     }
   },
@@ -1611,6 +1655,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-23T18:13:12.871Z",
+  "lastUpdated": "2026-06-23T18:28:05.970Z",
   "source": "auto-sync"
 }
