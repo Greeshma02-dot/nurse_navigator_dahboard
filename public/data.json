@@ -1123,10 +1123,10 @@
       "notes": "EDFF- called practice and scheduled patient for 6/29 at 845am. Practice informed of reason for admission. "
     },
     {
-      "name": "Delores Swanson",
+      "name": "Dolores Swanson",
       "practice": "Brian Nguyen",
       "location": "TVH",
-      "room": "",
+      "room": "ED",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
@@ -1142,7 +1142,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "6/23/26-IP admit from ED 6/23/26, no pending discharge at this time, no anticipated discharge date at this time. admitted for management of acute pancreatitis.Dementia a+o x1"
     },
     {
       "name": "Pamela Elftman",
@@ -1655,6 +1655,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-23T18:43:03.807Z",
+  "lastUpdated": "2026-06-23T18:58:04.685Z",
   "source": "auto-sync"
 }
