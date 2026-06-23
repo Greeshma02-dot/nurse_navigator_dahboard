@@ -966,7 +966,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Patient is scheduled for follow up on 6/23/26 at 10a.m."
+      "notes": "Patient is scheduled for follow up on 6/23/26 at 10a.m. - Patient was readmitted to hospital 6/22//26. Will have to push out appointment."
     },
     {
       "name": "Deborah Obrien",
@@ -1611,6 +1611,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-22T20:58:04.599Z",
+  "lastUpdated": "2026-06-23T12:58:08.806Z",
   "source": "auto-sync"
 }
