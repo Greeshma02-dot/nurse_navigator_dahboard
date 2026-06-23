@@ -1148,7 +1148,7 @@
       "name": "Pamela Elftman",
       "practice": "Graybill Medical Clinic",
       "location": "TVH",
-      "room": "",
+      "room": "2102",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "6/24/2026",
       "actualDischargeStr": "N/A",
@@ -1655,6 +1655,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-23T19:43:08.969Z",
+  "lastUpdated": "2026-06-23T20:13:06.680Z",
   "source": "auto-sync"
 }
