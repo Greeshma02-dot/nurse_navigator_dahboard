@@ -1142,7 +1142,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "notify  pt"
+      "notes": ""
     },
     {
       "name": "Pamela Elftman",
@@ -1156,7 +1156,7 @@
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
-      "tcmDateStr": "7/7/2026",
+      "tcmDateStr": "7/8/2026",
       "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
@@ -1164,7 +1164,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "notify  pt"
+      "notes": ""
     },
     {
       "name": "Yolande Localio",
@@ -1699,6 +1699,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-26T17:58:04.854Z",
+  "lastUpdated": "2026-06-26T18:13:03.192Z",
   "source": "auto-sync"
 }
