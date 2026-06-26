@@ -1113,7 +1113,7 @@
       "tcmScheduled": true,
       "tcmPending": false,
       "tcmDateStr": "6/29/2026",
-      "apptType": "In-Person",
+      "apptType": "Telehealth",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
@@ -1677,6 +1677,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-26T15:43:03.912Z",
+  "lastUpdated": "2026-06-26T15:58:04.055Z",
   "source": "auto-sync"
 }
