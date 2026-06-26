@@ -1189,6 +1189,28 @@
       "notes": ""
     },
     {
+      "name": "Lois Maslow",
+      "practice": "Timothy Killeen",
+      "location": "TVH",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "6/29/2026",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
       "name": "John Rosingana",
       "practice": "",
       "location": "",
@@ -1212,16 +1234,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 55,
-    "currentlyAdmitted": 24,
+    "totalPatients": 56,
+    "currentlyAdmitted": 25,
     "tcmScheduled": 35,
-    "tcmPending": 15,
+    "tcmPending": 16,
     "visitVerified": 14,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 63.6,
+    "scheduledRate": 62.5,
     "nurseCounts": {
-      "Devan Lambruno": 29,
+      "Devan Lambruno": 30,
       "Sunnie Emberson": 25
     }
   },
@@ -1677,6 +1699,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-26T16:43:05.046Z",
+  "lastUpdated": "2026-06-26T17:43:04.768Z",
   "source": "auto-sync"
 }
