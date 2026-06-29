@@ -1211,6 +1211,28 @@
       "notes": ""
     },
     {
+      "name": "Kenavan Chawn",
+      "practice": "Douglas Carrasco",
+      "location": "TVH",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "6/29/2026",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
       "name": "John Rosingana",
       "practice": "",
       "location": "",
@@ -1234,16 +1256,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 56,
-    "currentlyAdmitted": 25,
+    "totalPatients": 57,
+    "currentlyAdmitted": 26,
     "tcmScheduled": 35,
-    "tcmPending": 16,
+    "tcmPending": 17,
     "visitVerified": 14,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 62.5,
+    "scheduledRate": 61.4,
     "nurseCounts": {
-      "Devan Lambruno": 30,
+      "Devan Lambruno": 31,
       "Sunnie Emberson": 25
     }
   },
@@ -1699,6 +1721,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-29T16:58:05.821Z",
+  "lastUpdated": "2026-06-29T17:58:04.915Z",
   "source": "auto-sync"
 }
