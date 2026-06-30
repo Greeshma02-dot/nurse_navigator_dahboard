@@ -1216,9 +1216,9 @@
       "location": "TVH",
       "room": "",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/29/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "anticipatedStr": "7/1/2026",
+      "actualDischargeStr": "6/29/2026",
+      "daysSinceDischarge": 2,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1230,7 +1230,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "follow up schedule pt"
     },
     {
       "name": "James Morse",
@@ -1324,9 +1324,9 @@
       "name": "Diane Prewitt",
       "practice": "Reenaben Patel",
       "location": "IVM",
-      "room": "",
+      "room": "I2CE 02",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "6/30/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1346,9 +1346,9 @@
       "name": "Neil Edwards",
       "practice": "Brian Nguyen",
       "location": "RSM",
-      "room": "",
+      "room": "r1EA r127",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/3/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1362,15 +1362,15 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "follow up schedule pt"
     },
     {
       "name": "Milton Takeguchi",
       "practice": "Jeremy V Gomer",
       "location": "TVH",
-      "room": "",
+      "room": "ICUU 2112",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/1/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1384,15 +1384,15 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "follow up schedule pt"
     },
     {
       "name": "Robert Madore",
       "practice": "Ocampo",
       "location": "TVH",
-      "room": "",
+      "room": "MS3, 3125",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "6/30/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1406,7 +1406,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "follow up schedule pt"
     },
     {
       "name": "John Rosingana",
@@ -1433,7 +1433,7 @@
   ],
   "metrics": {
     "totalPatients": 65,
-    "currentlyAdmitted": 33,
+    "currentlyAdmitted": 32,
     "tcmScheduled": 36,
     "tcmPending": 24,
     "visitVerified": 14,
@@ -1897,6 +1897,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-30T19:43:04.713Z",
+  "lastUpdated": "2026-06-30T19:58:05.235Z",
   "source": "auto-sync"
 }
