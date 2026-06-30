@@ -922,7 +922,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Patient to be notified"
+      "notes": ""
     },
     {
       "name": "Dennis Rushford",
@@ -1351,18 +1351,18 @@
       "anticipatedStr": "7/3/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/8/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "follow up schedule pt"
+      "status": "Scheduled",
+      "notes": "notify pt"
     },
     {
       "name": "Milton Takeguchi",
@@ -1434,12 +1434,12 @@
   "metrics": {
     "totalPatients": 65,
     "currentlyAdmitted": 32,
-    "tcmScheduled": 38,
-    "tcmPending": 22,
+    "tcmScheduled": 39,
+    "tcmPending": 21,
     "visitVerified": 14,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 58.5,
+    "scheduledRate": 60,
     "nurseCounts": {
       "Devan Lambruno": 39,
       "Sunnie Emberson": 25
@@ -1897,6 +1897,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-30T20:28:05.802Z",
+  "lastUpdated": "2026-06-30T20:43:03.838Z",
   "source": "auto-sync"
 }
