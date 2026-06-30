@@ -1211,7 +1211,7 @@
       "notes": "keep calling pt"
     },
     {
-      "name": "Kenavan Chawn",
+      "name": "Chawn Kenavan",
       "practice": "Douglas Carrasco",
       "location": "TVH",
       "room": "",
@@ -1263,9 +1263,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -1273,7 +1273,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
       "notes": ""
     },
     {
@@ -1285,9 +1285,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -1295,7 +1295,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
       "notes": ""
     },
     {
@@ -1307,9 +1307,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -1317,7 +1317,51 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "name": "Diane Prewitt",
+      "practice": "Reenaben Patel",
+      "location": "IVM",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "name": "Neil Edwards",
+      "practice": "Brian Nguyen",
+      "location": "RSM",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
       "notes": ""
     },
     {
@@ -1344,16 +1388,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 61,
-    "currentlyAdmitted": 29,
+    "totalPatients": 63,
+    "currentlyAdmitted": 31,
     "tcmScheduled": 36,
-    "tcmPending": 17,
+    "tcmPending": 22,
     "visitVerified": 14,
     "missed14DayWindow": 0,
-    "notYetScheduled": 8,
-    "scheduledRate": 59,
+    "notYetScheduled": 5,
+    "scheduledRate": 57.1,
     "nurseCounts": {
-      "Devan Lambruno": 35,
+      "Devan Lambruno": 37,
       "Sunnie Emberson": 25
     }
   },
@@ -1809,6 +1853,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-06-30T19:13:04.942Z",
+  "lastUpdated": "2026-06-30T19:28:03.991Z",
   "source": "auto-sync"
 }
