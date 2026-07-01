@@ -1436,7 +1436,7 @@
       "location": "TVH",
       "room": "",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/3/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1985,6 +1985,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-01T20:43:06.001Z",
+  "lastUpdated": "2026-07-01T20:58:05.732Z",
   "source": "auto-sync"
 }
