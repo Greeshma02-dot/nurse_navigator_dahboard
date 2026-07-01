@@ -1362,7 +1362,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "notify pt"
+      "notes": ""
     },
     {
       "name": "Milton Takeguchi",
@@ -1384,7 +1384,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "notify pt"
+      "notes": "cancel appt"
     },
     {
       "name": "Robert Madore",
@@ -1406,7 +1406,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "notify pt"
+      "notes": ""
     },
     {
       "name": "John Rosingana",
@@ -1897,6 +1897,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-01T13:43:06.187Z",
+  "lastUpdated": "2026-07-01T13:58:06.013Z",
   "source": "auto-sync"
 }
