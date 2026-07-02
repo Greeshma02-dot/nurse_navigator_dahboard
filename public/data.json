@@ -900,7 +900,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": ""
+      "notes": "patient deceased 6/27/26"
     },
     {
       "name": "Carrie Alexander",
@@ -1318,7 +1318,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch"
     },
     {
       "name": "Diane Prewitt",
@@ -1417,18 +1417,18 @@
       "anticipatedStr": "7/2/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/28/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "status": "Scheduled",
+      "notes": "Not ACO? Not showing in CC??"
     },
     {
       "name": "Antonio Ramos",
@@ -1472,7 +1472,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "pending practice approval"
     },
     {
       "name": "Donna Slavin",
@@ -1522,12 +1522,12 @@
   "metrics": {
     "totalPatients": 69,
     "currentlyAdmitted": 36,
-    "tcmScheduled": 40,
-    "tcmPending": 24,
+    "tcmScheduled": 41,
+    "tcmPending": 23,
     "visitVerified": 14,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 58,
+    "scheduledRate": 59.4,
     "nurseCounts": {
       "Devan Lambruno": 43,
       "Sunnie Emberson": 25
@@ -1985,6 +1985,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-02T06:03:07.731Z",
+  "lastUpdated": "2026-07-02T12:41:37.682Z",
   "source": "auto-sync"
 }
