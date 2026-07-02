@@ -1274,7 +1274,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch"
     },
     {
       "name": "Marylou Peralta",
@@ -1296,7 +1296,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "CC"
     },
     {
       "name": "Jacquelyn Kirkis",
@@ -1304,7 +1304,7 @@
       "location": "IVM",
       "room": "IPCU I268",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/3/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1985,6 +1985,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-01T21:13:03.789Z",
+  "lastUpdated": "2026-07-02T06:03:07.731Z",
   "source": "auto-sync"
 }
