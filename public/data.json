@@ -1437,8 +1437,8 @@
       "room": "5112",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/3/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/1/2026",
+      "daysSinceDischarge": 6,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1481,8 +1481,8 @@
       "room": "4112",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/4/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/2/2026",
+      "daysSinceDischarge": 5,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1609,7 +1609,7 @@
   ],
   "metrics": {
     "totalPatients": 73,
-    "currentlyAdmitted": 39,
+    "currentlyAdmitted": 37,
     "tcmScheduled": 41,
     "tcmPending": 27,
     "visitVerified": 14,
@@ -2073,6 +2073,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-06T20:43:04.970Z",
+  "lastUpdated": "2026-07-06T20:58:04.971Z",
   "source": "auto-sync"
 }
