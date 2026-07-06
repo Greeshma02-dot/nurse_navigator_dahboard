@@ -1305,8 +1305,8 @@
       "room": "IPCU I268",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/3/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/4/2026",
+      "daysSinceDischarge": 3,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1609,7 +1609,7 @@
   ],
   "metrics": {
     "totalPatients": 73,
-    "currentlyAdmitted": 40,
+    "currentlyAdmitted": 39,
     "tcmScheduled": 41,
     "tcmPending": 27,
     "visitVerified": 14,
@@ -2073,6 +2073,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-06T20:28:06.473Z",
+  "lastUpdated": "2026-07-06T20:43:04.970Z",
   "source": "auto-sync"
 }
