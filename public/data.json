@@ -1263,18 +1263,18 @@
       "anticipatedStr": "7/4/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/9/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "sch"
+      "status": "Scheduled",
+      "notes": "patient is notified"
     },
     {
       "name": "Marylou Peralta",
@@ -1654,12 +1654,12 @@
   "metrics": {
     "totalPatients": 75,
     "currentlyAdmitted": 39,
-    "tcmScheduled": 41,
-    "tcmPending": 29,
+    "tcmScheduled": 42,
+    "tcmPending": 28,
     "visitVerified": 15,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 54.7,
+    "scheduledRate": 56,
     "nurseCounts": {
       "Devan Lambruno": 49,
       "Sunnie Emberson": 25
@@ -2117,6 +2117,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-07T16:13:04.968Z",
+  "lastUpdated": "2026-07-07T16:28:06.497Z",
   "source": "auto-sync"
 }
