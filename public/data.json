@@ -1277,28 +1277,6 @@
       "notes": "patient is notified"
     },
     {
-      "name": "Marylou Peralta",
-      "practice": "Riverside Medical Clinic",
-      "location": "IVM",
-      "room": "ED",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": "CC"
-    },
-    {
       "name": "Jacquelyn Kirkis",
       "practice": "Douglas Carrasco",
       "location": "IVM",
@@ -1593,18 +1571,18 @@
       "anticipatedStr": "7/10/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/16/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "status": "Scheduled",
+      "notes": "notify pt and CM"
     },
     {
       "name": "Tali Manthey",
@@ -1615,18 +1593,18 @@
       "anticipatedStr": "7/8/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/17/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "status": "Scheduled",
+      "notes": "notify pt and CM"
     },
     {
       "name": "John Rosingana",
@@ -1652,16 +1630,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 75,
-    "currentlyAdmitted": 39,
-    "tcmScheduled": 45,
-    "tcmPending": 25,
+    "totalPatients": 74,
+    "currentlyAdmitted": 38,
+    "tcmScheduled": 47,
+    "tcmPending": 22,
     "visitVerified": 15,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 60,
+    "scheduledRate": 63.5,
     "nurseCounts": {
-      "Devan Lambruno": 49,
+      "Devan Lambruno": 48,
       "Sunnie Emberson": 25
     }
   },
@@ -2117,6 +2095,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-07T18:58:08.580Z",
+  "lastUpdated": "2026-07-07T19:13:08.384Z",
   "source": "auto-sync"
 }
