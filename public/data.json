@@ -1318,7 +1318,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "sch"
+      "notes": "not found in pract EMR- unable to reach practice"
     },
     {
       "name": "Diane Prewitt",
@@ -1527,9 +1527,9 @@
       "anticipatedStr": "7/7/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
       "tcmDateStr": "7/14/2026",
       "apptType": "Telehealth",
       "visitVerified": false,
@@ -1537,7 +1537,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
+      "status": "Scheduled",
       "notes": "notify pt and CM"
     },
     {
@@ -1654,12 +1654,12 @@
   "metrics": {
     "totalPatients": 75,
     "currentlyAdmitted": 39,
-    "tcmScheduled": 42,
-    "tcmPending": 28,
+    "tcmScheduled": 43,
+    "tcmPending": 27,
     "visitVerified": 15,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 56,
+    "scheduledRate": 57.3,
     "nurseCounts": {
       "Devan Lambruno": 49,
       "Sunnie Emberson": 25
@@ -2117,6 +2117,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-07T16:28:06.497Z",
+  "lastUpdated": "2026-07-07T17:21:49.201Z",
   "source": "auto-sync"
 }
