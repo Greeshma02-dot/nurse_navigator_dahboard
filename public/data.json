@@ -916,12 +916,12 @@
       "tcmPending": false,
       "tcmDateStr": "6/25/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": ""
     },
     {
@@ -1530,15 +1530,15 @@
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmDateStr": "7/14/2026",
+      "apptType": "Telehealth",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "notify pt and CM"
     },
     {
       "name": "Michael Hinckley",
@@ -1612,7 +1612,7 @@
     "currentlyAdmitted": 37,
     "tcmScheduled": 41,
     "tcmPending": 27,
-    "visitVerified": 14,
+    "visitVerified": 15,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
     "scheduledRate": 56.2,
@@ -2073,6 +2073,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-06T20:58:04.971Z",
+  "lastUpdated": "2026-07-07T12:58:09.826Z",
   "source": "auto-sync"
 }
