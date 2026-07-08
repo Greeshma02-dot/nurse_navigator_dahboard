@@ -1252,7 +1252,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "Call practice again"
+      "notes": "pending practice approval "
     },
     {
       "name": "Georgette Faulk",
@@ -1494,7 +1494,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "pending practice approval "
     },
     {
       "name": "Donna Dahlgren",
@@ -2161,6 +2161,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-08T19:43:06.672Z",
+  "lastUpdated": "2026-07-08T19:58:03.703Z",
   "source": "auto-sync"
 }
