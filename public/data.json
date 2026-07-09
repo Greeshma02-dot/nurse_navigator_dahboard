@@ -1610,9 +1610,9 @@
       "name": "Ronald Dittmer",
       "practice": "Sylvia Gisi",
       "location": "TVH",
-      "room": "",
+      "room": "3104",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/9/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1626,15 +1626,15 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch- CC"
     },
     {
       "name": "Richard Layton",
       "practice": "Timothy Killeen",
       "location": "TVH",
-      "room": "",
+      "room": "4120",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/12/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1648,13 +1648,13 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch-not dc until 12th- CC"
     },
     {
       "name": "Kathleen Parkes",
       "practice": "Silvia Gisi",
       "location": "TVH",
-      "room": "",
+      "room": "ED",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
@@ -1670,7 +1670,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "no dc at this time- CC"
     },
     {
       "name": "John Rosingana",
@@ -2161,6 +2161,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-09T12:58:20.935Z",
+  "lastUpdated": "2026-07-09T13:13:05.263Z",
   "source": "auto-sync"
 }
