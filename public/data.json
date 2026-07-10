@@ -419,28 +419,6 @@
       "notes": ""
     },
     {
-      "name": "Carmen Avila",
-      "practice": "Ocampo",
-      "location": "TVH",
-      "room": "MS5",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "5/31/2026",
-      "daysSinceDischarge": 40,
-      "tcmRaw": "No",
-      "tcmScheduled": false,
-      "tcmPending": false,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Discharged - No TCM",
-      "notes": ""
-    },
-    {
       "name": "Jose Guzman",
       "practice": "Jeremy V Gomer",
       "location": "TVH",
@@ -1626,7 +1604,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "sch- CC"
+      "notes": "sch- CC- patient is dc to SNF per hosp CM"
     },
     {
       "name": "Richard Layton",
@@ -1696,16 +1674,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 77,
+    "totalPatients": 76,
     "currentlyAdmitted": 41,
     "tcmScheduled": 48,
     "tcmPending": 24,
     "visitVerified": 16,
     "missed14DayWindow": 0,
-    "notYetScheduled": 5,
-    "scheduledRate": 62.3,
+    "notYetScheduled": 4,
+    "scheduledRate": 63.2,
     "nurseCounts": {
-      "Devan Lambruno": 51,
+      "Devan Lambruno": 50,
       "Sunnie Emberson": 25
     }
   },
@@ -2161,6 +2139,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-10T12:58:06.946Z",
+  "lastUpdated": "2026-07-10T13:13:05.297Z",
   "source": "auto-sync"
 }
