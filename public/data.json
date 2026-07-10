@@ -1714,7 +1714,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "Office closed fridays"
     },
     {
       "name": "Gary Kazanjian",
@@ -2205,6 +2205,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-10T19:58:05.219Z",
+  "lastUpdated": "2026-07-10T20:13:04.921Z",
   "source": "auto-sync"
 }
