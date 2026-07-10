@@ -1648,7 +1648,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "pending practice approval "
     },
     {
       "name": "Lynda Slumpff",
@@ -1681,18 +1681,18 @@
       "anticipatedStr": "7/11/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/20/2026",
       "apptType": "",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "status": "Scheduled",
+      "notes": "10:45 erin starr temecula"
     },
     {
       "name": "Gloria Mattos",
@@ -1742,12 +1742,12 @@
   "metrics": {
     "totalPatients": 79,
     "currentlyAdmitted": 44,
-    "tcmScheduled": 48,
-    "tcmPending": 28,
+    "tcmScheduled": 49,
+    "tcmPending": 27,
     "visitVerified": 16,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 60.8,
+    "scheduledRate": 62,
     "nurseCounts": {
       "Devan Lambruno": 54,
       "Sunnie Emberson": 25
@@ -2205,6 +2205,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-10T18:58:02.879Z",
+  "lastUpdated": "2026-07-10T19:13:03.169Z",
   "source": "auto-sync"
 }
