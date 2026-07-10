@@ -1737,39 +1737,17 @@
       "call7": "",
       "status": "Pending",
       "notes": ""
-    },
-    {
-      "name": "John Rosingana",
-      "practice": "",
-      "location": "",
-      "room": "",
-      "navigator": "N/A",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "",
-      "tcmScheduled": false,
-      "tcmPending": false,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Admitted",
-      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 80,
-    "currentlyAdmitted": 45,
+    "totalPatients": 79,
+    "currentlyAdmitted": 44,
     "tcmScheduled": 48,
     "tcmPending": 28,
     "visitVerified": 16,
     "missed14DayWindow": 0,
-    "notYetScheduled": 4,
-    "scheduledRate": 60,
+    "notYetScheduled": 3,
+    "scheduledRate": 60.8,
     "nurseCounts": {
       "Devan Lambruno": 54,
       "Sunnie Emberson": 25
@@ -2227,6 +2205,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-10T18:28:09.612Z",
+  "lastUpdated": "2026-07-10T18:43:05.573Z",
   "source": "auto-sync"
 }
