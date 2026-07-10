@@ -1505,18 +1505,18 @@
       "anticipatedStr": "7/8/2026",
       "actualDischargeStr": "7/7/2026",
       "daysSinceDischarge": 4,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/13/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "status": "Scheduled",
+      "notes": "CC"
     },
     {
       "name": "Cynthia Polsgrove",
@@ -1538,7 +1538,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": ""
+      "notes": "CC"
     },
     {
       "name": "Gail Gamet",
@@ -1676,7 +1676,7 @@
       "name": "Ira Spell",
       "practice": "Brian Nguyen",
       "location": "TVH",
-      "room": "",
+      "room": "5119",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/11/2026",
       "actualDischargeStr": "N/A",
@@ -1692,7 +1692,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "10:45 erin starr temecula"
+      "notes": "CC"
     },
     {
       "name": "Gloria Mattos",
@@ -1720,7 +1720,7 @@
       "name": "Gary Kazanjian",
       "practice": "Brian Nguyen",
       "location": "TVH",
-      "room": "",
+      "room": "3105",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/12/2026",
       "actualDischargeStr": "N/A",
@@ -1742,12 +1742,12 @@
   "metrics": {
     "totalPatients": 79,
     "currentlyAdmitted": 43,
-    "tcmScheduled": 50,
-    "tcmPending": 26,
+    "tcmScheduled": 51,
+    "tcmPending": 25,
     "visitVerified": 16,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 63.3,
+    "scheduledRate": 64.6,
     "nurseCounts": {
       "Devan Lambruno": 54,
       "Sunnie Emberson": 25
@@ -2205,6 +2205,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-10T19:28:04.559Z",
+  "lastUpdated": "2026-07-10T19:43:03.408Z",
   "source": "auto-sync"
 }
