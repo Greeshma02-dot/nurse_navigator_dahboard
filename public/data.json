@@ -1615,18 +1615,18 @@
       "anticipatedStr": "7/12/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/30/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "sch-not dc until 12th- CC"
+      "status": "Scheduled",
+      "notes": "CC"
     },
     {
       "name": "Kathleen Parkes",
@@ -1659,18 +1659,18 @@
       "anticipatedStr": "7/13/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/14/2026",
+      "apptType": "Telehealth",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "Office closed fridays"
+      "status": "Scheduled",
+      "notes": "CC"
     },
     {
       "name": "Ira Spell",
@@ -1714,7 +1714,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "Office closed fridays"
+      "notes": ""
     },
     {
       "name": "Gary Kazanjian",
@@ -1769,9 +1769,9 @@
       "anticipatedStr": "7/14/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -1779,8 +1779,8 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "status": "Scheduled",
+      "notes": "CC"
     },
     {
       "name": "Robert Dunn",
@@ -1808,12 +1808,12 @@
   "metrics": {
     "totalPatients": 82,
     "currentlyAdmitted": 46,
-    "tcmScheduled": 51,
-    "tcmPending": 28,
+    "tcmScheduled": 54,
+    "tcmPending": 25,
     "visitVerified": 16,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 62.2,
+    "scheduledRate": 65.9,
     "nurseCounts": {
       "Devan Lambruno": 57,
       "Sunnie Emberson": 25
@@ -2271,6 +2271,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-13T18:13:08.281Z",
+  "lastUpdated": "2026-07-13T18:28:02.872Z",
   "source": "auto-sync"
 }
