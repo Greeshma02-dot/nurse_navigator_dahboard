@@ -1737,19 +1737,41 @@
       "call7": "",
       "status": "Scheduled",
       "notes": ""
+    },
+    {
+      "name": "Jane Burnsed",
+      "practice": "Riverside Medical Clinic",
+      "location": "IVM",
+      "room": "270",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 79,
-    "currentlyAdmitted": 43,
+    "totalPatients": 80,
+    "currentlyAdmitted": 44,
     "tcmScheduled": 51,
-    "tcmPending": 25,
+    "tcmPending": 26,
     "visitVerified": 16,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 64.6,
+    "scheduledRate": 63.7,
     "nurseCounts": {
-      "Devan Lambruno": 54,
+      "Devan Lambruno": 55,
       "Sunnie Emberson": 25
     }
   },
@@ -2205,6 +2227,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-13T16:13:08.991Z",
+  "lastUpdated": "2026-07-13T16:28:02.766Z",
   "source": "auto-sync"
 }
