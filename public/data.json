@@ -1619,7 +1619,7 @@
       "tcmScheduled": true,
       "tcmPending": false,
       "tcmDateStr": "7/30/2026",
-      "apptType": "In-Person",
+      "apptType": "Telehealth",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
@@ -1662,8 +1662,8 @@
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
-      "tcmDateStr": "7/14/2026",
-      "apptType": "Telehealth",
+      "tcmDateStr": "N/A",
+      "apptType": "",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
@@ -1758,7 +1758,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "cc"
     },
     {
       "name": "Kathy Colby",
@@ -1780,7 +1780,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "CC"
+      "notes": ""
     },
     {
       "name": "Robert Dunn",
@@ -2271,6 +2271,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-13T20:28:05.700Z",
+  "lastUpdated": "2026-07-13T20:58:05.676Z",
   "source": "auto-sync"
 }
