@@ -1759,19 +1759,63 @@
       "call7": "",
       "status": "Pending",
       "notes": ""
+    },
+    {
+      "name": "Kathy Colby",
+      "practice": "Timothy Killeen",
+      "location": "TVH",
+      "room": "3136",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "7/14/2026",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "name": "Robert Dunn",
+      "practice": "Riverside Medical Clinic",
+      "location": "CRM",
+      "room": "262",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "7/15/2026",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 80,
-    "currentlyAdmitted": 44,
+    "totalPatients": 82,
+    "currentlyAdmitted": 46,
     "tcmScheduled": 51,
-    "tcmPending": 26,
+    "tcmPending": 28,
     "visitVerified": 16,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 63.7,
+    "scheduledRate": 62.2,
     "nurseCounts": {
-      "Devan Lambruno": 55,
+      "Devan Lambruno": 57,
       "Sunnie Emberson": 25
     }
   },
@@ -2227,6 +2271,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-13T16:43:02.911Z",
+  "lastUpdated": "2026-07-13T16:58:05.628Z",
   "source": "auto-sync"
 }
