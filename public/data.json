@@ -1714,7 +1714,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "NN to inform PCP of facility placement when details become available. "
     },
     {
       "name": "Gary Kazanjian",
@@ -2271,6 +2271,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-13T18:28:02.872Z",
+  "lastUpdated": "2026-07-13T18:43:03.131Z",
   "source": "auto-sync"
 }
