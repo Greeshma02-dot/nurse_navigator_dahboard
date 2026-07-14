@@ -1670,7 +1670,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "CC"
+      "notes": ""
     },
     {
       "name": "Ira Spell",
@@ -2271,6 +2271,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-13T20:58:05.676Z",
+  "lastUpdated": "2026-07-14T12:58:12.940Z",
   "source": "auto-sync"
 }
