@@ -1791,26 +1791,26 @@
       "anticipatedStr": "7/15/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/21/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "cc"
+      "status": "Scheduled",
+      "notes": ""
     },
     {
       "name": "Leroy Wirth",
       "practice": "Richard Uhler",
       "location": "TVH",
-      "room": "",
+      "room": "3144",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/19/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1824,15 +1824,15 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "wait to sch for more updayes"
     },
     {
       "name": "Jesse Lopez",
       "practice": "Richard Uhler",
       "location": "TVH",
-      "room": "",
+      "room": "4126",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/16/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1852,12 +1852,12 @@
   "metrics": {
     "totalPatients": 84,
     "currentlyAdmitted": 48,
-    "tcmScheduled": 54,
-    "tcmPending": 27,
+    "tcmScheduled": 55,
+    "tcmPending": 26,
     "visitVerified": 17,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 64.3,
+    "scheduledRate": 65.5,
     "nurseCounts": {
       "Devan Lambruno": 59,
       "Sunnie Emberson": 25
@@ -2315,6 +2315,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-14T16:43:06.161Z",
+  "lastUpdated": "2026-07-14T17:12:22.077Z",
   "source": "auto-sync"
 }
