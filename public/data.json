@@ -1208,7 +1208,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "call to notify pt"
+      "notes": ""
     },
     {
       "name": "James Morse",
@@ -1417,9 +1417,9 @@
       "anticipatedStr": "7/2/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
       "tcmDateStr": "7/13/2026",
       "apptType": "",
       "visitVerified": true,
@@ -1824,7 +1824,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "wait to sch for more updayes"
+      "notes": "wait to sch for more update"
     },
     {
       "name": "Jesse Lopez",
@@ -1852,12 +1852,12 @@
   "metrics": {
     "totalPatients": 84,
     "currentlyAdmitted": 48,
-    "tcmScheduled": 55,
-    "tcmPending": 26,
+    "tcmScheduled": 56,
+    "tcmPending": 25,
     "visitVerified": 20,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 65.5,
+    "scheduledRate": 66.7,
     "nurseCounts": {
       "Devan Lambruno": 59,
       "Sunnie Emberson": 25
@@ -2315,6 +2315,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-14T18:43:02.668Z",
+  "lastUpdated": "2026-07-14T18:58:03.042Z",
   "source": "auto-sync"
 }
