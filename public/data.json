@@ -1208,7 +1208,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": ""
+      "notes": "visit verify from 7/14"
     },
     {
       "name": "James Morse",
@@ -2315,6 +2315,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-14T19:58:05.440Z",
+  "lastUpdated": "2026-07-14T20:13:05.079Z",
   "source": "auto-sync"
 }
