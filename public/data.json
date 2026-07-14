@@ -958,15 +958,15 @@
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
-      "tcmDateStr": "7/6/2026",
-      "apptType": "",
-      "visitVerified": false,
+      "tcmDateStr": "7/2/2026",
+      "apptType": "In-Person",
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
-      "notes": ""
+      "status": "Visit Verified",
+      "notes": "7/6 appt was cancelled, 7/2 showed to appt"
     },
     {
       "name": "Frances Walder",
@@ -1136,12 +1136,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/8/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": ""
     },
     {
@@ -1420,14 +1420,14 @@
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
-      "tcmDateStr": "N/A",
+      "tcmDateStr": "7/13/2026",
       "apptType": "",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
+      "status": "Visit Verified",
       "notes": "pending practice approval "
     },
     {
@@ -1854,7 +1854,7 @@
     "currentlyAdmitted": 48,
     "tcmScheduled": 55,
     "tcmPending": 26,
-    "visitVerified": 17,
+    "visitVerified": 20,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
     "scheduledRate": 65.5,
@@ -2315,6 +2315,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-14T18:28:05.047Z",
+  "lastUpdated": "2026-07-14T18:43:02.668Z",
   "source": "auto-sync"
 }
