@@ -1824,7 +1824,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "wait to sch for more update"
+      "notes": "wait for dc and add most recent update into cc"
     },
     {
       "name": "Jesse Lopez",
@@ -2337,6 +2337,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-15T16:13:31.143Z",
+  "lastUpdated": "2026-07-15T16:28:06.429Z",
   "source": "auto-sync"
 }
