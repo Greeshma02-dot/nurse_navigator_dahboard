@@ -1202,12 +1202,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/7/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "visit verify from 7/14"
     },
     {
@@ -1758,7 +1758,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "cc"
+      "notes": "cc- nn to inform pcp of snf facility"
     },
     {
       "name": "Kathy Colby",
@@ -1852,9 +1852,9 @@
       "name": "Rasheeda Chaudhri",
       "practice": "Riverside Medical Clinic",
       "location": "CRM",
-      "room": "",
+      "room": "118",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/17/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1876,7 +1876,7 @@
     "currentlyAdmitted": 48,
     "tcmScheduled": 56,
     "tcmPending": 26,
-    "visitVerified": 21,
+    "visitVerified": 22,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
     "scheduledRate": 65.9,
@@ -2337,6 +2337,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-15T16:28:06.429Z",
+  "lastUpdated": "2026-07-15T17:08:28.927Z",
   "source": "auto-sync"
 }
