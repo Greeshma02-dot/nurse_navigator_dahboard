@@ -1114,13 +1114,13 @@
       "tcmPending": false,
       "tcmDateStr": "7/1/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
-      "notes": ""
+      "status": "Visit Verified",
+      "notes": "next appt dec"
     },
     {
       "name": "Pamela Elftman",
@@ -1318,7 +1318,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": ""
+      "notes": "Practice to reschedule pt didn’t show"
     },
     {
       "name": "Milton Takeguchi",
@@ -1442,7 +1442,7 @@
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
-      "tcmDateStr": "7/9/2026",
+      "tcmDateStr": "7/14/2026",
       "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
@@ -1450,7 +1450,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "patient aware"
+      "notes": "Call back to verify today 7/14"
     },
     {
       "name": "Frances Valles",
@@ -1525,8 +1525,8 @@
       "room": "r171 02",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/9/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/11/2026",
+      "daysSinceDischarge": 4,
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
@@ -1851,10 +1851,10 @@
   ],
   "metrics": {
     "totalPatients": 84,
-    "currentlyAdmitted": 48,
+    "currentlyAdmitted": 47,
     "tcmScheduled": 56,
     "tcmPending": 25,
-    "visitVerified": 20,
+    "visitVerified": 21,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
     "scheduledRate": 66.7,
@@ -2315,6 +2315,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-15T12:58:10.825Z",
+  "lastUpdated": "2026-07-15T13:13:06.090Z",
   "source": "auto-sync"
 }
