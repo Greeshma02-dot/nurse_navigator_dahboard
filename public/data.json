@@ -1,147 +1,15 @@
 {
   "patients": [
     {
-      "name": "Kellie Woodis",
-      "practice": "Brian Nguyen",
-      "location": "TVH",
-      "room": "3102",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "4/20/2026",
-      "actualDischargeStr": "4/21/2026",
-      "daysSinceDischarge": 86,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "4/28/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Sally Borra",
-      "practice": "David H Nguyen",
-      "location": "IVM",
+      "name": "Patients reviewed as a part of HHA Programs (485, HHA LOS < 30, HHA Partnership Updates) to share with Consultants and Providers ",
+      "practice": "",
+      "location": "",
       "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "4/13/2026",
-      "actualDischargeStr": "4/13/2026",
-      "daysSinceDischarge": 94,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "4/16/2026",
-      "apptType": "Telehealth",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Jamal Safa",
-      "practice": "Temecula Valley PCP",
-      "location": "IVM",
-      "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "4/22/2026",
-      "actualDischargeStr": "4/22/2026",
-      "daysSinceDischarge": 85,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "4/23/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Mary Rouse",
-      "practice": "Jeremy V Gomer",
-      "location": "TVH",
-      "room": "5104",
-      "navigator": "Devan Lambruno",
+      "navigator": "N/A",
       "anticipatedStr": "N/A",
-      "actualDischargeStr": "4/15/2026",
-      "daysSinceDischarge": 92,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "4/22/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Penelope Litonjua",
-      "practice": "Ocampo",
-      "location": "TVH",
-      "room": "4106",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "5/21/2026",
-      "actualDischargeStr": "5/20/2026",
-      "daysSinceDischarge": 57,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "5/27/2026",
-      "apptType": "",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Mary Reed",
-      "practice": "Sylvia Gisi",
-      "location": "TVH",
-      "room": "4107",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "5/24/2026",
-      "actualDischargeStr": "5/24/2026",
-      "daysSinceDischarge": 53,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Suraya Glenna",
-      "practice": "Ocampo",
-      "location": "TVH",
-      "room": "MS5, 5M38",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "5/22/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "No",
+      "tcmRaw": "",
       "tcmScheduled": false,
       "tcmPending": false,
       "tcmDateStr": "N/A",
@@ -155,215 +23,17 @@
       "notes": ""
     },
     {
-      "name": "Doris Mahoney",
-      "practice": "Ocampo",
-      "location": "TVH",
-      "room": "3104",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "5/23/2026",
-      "actualDischargeStr": "5/22/2026",
-      "daysSinceDischarge": 55,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Susan Kazda",
-      "practice": "Temecula Valley PCP",
-      "location": "TVH",
-      "room": "ACU 25",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "5/23/2026",
-      "daysSinceDischarge": 54,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Gloria Timms",
-      "practice": "Ocampo",
-      "location": "TVH",
-      "room": "4132",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "5/25/2026",
-      "actualDischargeStr": "5/23/2026",
-      "daysSinceDischarge": 54,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "5/27/2026",
-      "apptType": "",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Francis Luca",
-      "practice": "Richard Uhler",
-      "location": "IVM",
+      "name": "Tracker for Reviewing 485s and Home Health Documents",
+      "practice": "",
+      "location": "",
       "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "5/27/2026",
-      "actualDischargeStr": "5/27/2026",
-      "daysSinceDischarge": 50,
-      "tcmRaw": "No",
-      "tcmScheduled": false,
-      "tcmPending": false,
-      "tcmDateStr": "6/1/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Discharged - No TCM",
-      "notes": ""
-    },
-    {
-      "name": "Roberta Downey",
-      "practice": "Riverside Medical Clinic",
-      "location": "IVM",
-      "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "5/22/2026",
-      "daysSinceDischarge": 55,
-      "tcmRaw": "No",
-      "tcmScheduled": false,
-      "tcmPending": false,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Discharged - No TCM",
-      "notes": "X"
-    },
-    {
-      "name": "David Green",
-      "practice": "Graybill Medical Clinic",
-      "location": "TVH",
-      "room": "",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "5/29/2026",
-      "actualDischargeStr": "5/26/2026",
-      "daysSinceDischarge": 51,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/1/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Mary White",
-      "practice": "Living Waters",
-      "location": "RSM",
-      "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "5/31/2026",
-      "daysSinceDischarge": 46,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/3/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Wendy Lorack",
-      "practice": "Brian Nguyen",
-      "location": "RSM",
-      "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/5/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Robert Scarcella",
-      "practice": "Temecula Valley PCP",
-      "location": "IVM",
-      "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/2/2026",
-      "actualDischargeStr": "6/3/2026",
-      "daysSinceDischarge": 43,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/8/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Beulah Farmer",
-      "practice": "Riverside Medical Clinic",
-      "location": "IVM",
-      "room": "",
-      "navigator": "Sunnie Emberson",
+      "navigator": "N/A",
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
+      "tcmRaw": "",
       "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -371,21 +41,21 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
+      "status": "Admitted",
       "notes": ""
     },
     {
-      "name": "Richard James D'Angelo",
-      "practice": "Brian Nguyen",
-      "location": "IVM",
+      "name": "CARE Partners for 2026 with previous 2025 partners listed",
+      "practice": "",
+      "location": "",
       "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/3/2026",
-      "actualDischargeStr": "6/4/2026",
-      "daysSinceDischarge": 42,
-      "tcmRaw": "Pending",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
       "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -393,1384 +63,20 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
+      "status": "Admitted",
       "notes": ""
     },
     {
-      "name": "Debbie Lombard",
-      "practice": "Citrus Valley",
-      "location": "TVH",
-      "room": "4126",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/4/2026",
-      "actualDischargeStr": "6/2/2026",
-      "daysSinceDischarge": 44,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/8/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Jose Guzman",
-      "practice": "Jeremy V Gomer",
-      "location": "TVH",
-      "room": "5108",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/7/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/10/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Linda Knoll",
-      "practice": "Living Waters",
-      "location": "TVH",
-      "room": "4143",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/4/2026",
-      "actualDischargeStr": "6/4/2026",
-      "daysSinceDischarge": 42,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/15/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": "f/u 8/28 "
-    },
-    {
-      "name": "John Mahanes",
-      "practice": "Richard Uhler",
-      "location": "IVM",
-      "room": "IERH 05",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "6/6/2026",
-      "daysSinceDischarge": 40,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/12/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Robert Scarcella",
-      "practice": "Temecula Valley PCP",
-      "location": "TVH",
-      "room": "3101",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/8/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Victor Acosta",
-      "practice": "Living Waters",
-      "location": "TVH",
-      "room": "3120",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/7/2026",
-      "actualDischargeStr": "6/7/2026",
-      "daysSinceDischarge": 39,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/15/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "Per practice, patient did not show to 6/15 appointment. Was rescheduled to 6/23 and this visit was confirmed."
-    },
-    {
-      "name": "Violet Cook",
-      "practice": "Graybill Medical Clinic",
-      "location": "TVH",
-      "room": "4128",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "6/13/2026",
-      "daysSinceDischarge": 33,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/16/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Gaytha Westfall",
-      "practice": "HEMCHAND KOLLI",
-      "location": "TVH",
-      "room": "5116",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/8/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/12/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Delores Staker",
-      "practice": "David Nguyen",
-      "location": "IVM",
-      "room": "521",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/13/2026",
-      "actualDischargeStr": "6/11/2026",
-      "daysSinceDischarge": 35,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/18/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Homer Corrodi",
-      "practice": "Richard Uhler",
-      "location": "TVH",
+      "name": "Survey Results of Network Management Vetting for CARE Program in Excel",
+      "practice": "",
+      "location": "",
       "room": "",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/11/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Emerita Macatangay",
-      "practice": "Ocampo",
-      "location": "IVM",
-      "room": "701",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "6/12/2026",
-      "daysSinceDischarge": 34,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/17/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Sally Pizzo",
-      "practice": "RMC",
-      "location": "IVM",
-      "room": "",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/11/2026",
-      "actualDischargeStr": "6/10/2026",
-      "daysSinceDischarge": 36,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/17/2026",
-      "apptType": "Telehealth",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Terry Bridge",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "3145",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/12/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/22/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": "Mon Aug 03 2026 00:00:00 GMT-0400 (Eastern Daylight Time)"
-    },
-    {
-      "name": "Gene Little",
-      "practice": "RMC",
-      "location": "IVM",
-      "room": "ICU 5",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "6/14/2026",
-      "daysSinceDischarge": 32,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/18/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Dora Ramirez",
-      "practice": "RMC",
-      "location": "IVM",
-      "room": "206",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "6/12/2026",
-      "daysSinceDischarge": 34,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/19/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Elaine Sikula",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "4118",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/12/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/24/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "John Rosingana",
-      "practice": "Graybill Medical Clinic",
-      "location": "TVH",
-      "room": "4136",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/14/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/26/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Juanito Sabejon",
-      "practice": "Brian Nguyen",
-      "location": "RSM",
-      "room": "121-1",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/26/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Richard Barrett",
-      "practice": "Living Waters",
-      "location": "IVM",
-      "room": "408",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/22/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Nancy Edwards",
-      "practice": "Brian Nguyen",
-      "location": "IVM",
-      "room": "243-2",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/17/2026",
-      "actualDischargeStr": "6/17/2026",
-      "daysSinceDischarge": 29,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/26/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Pamela Couey",
-      "practice": "Graybill Medical Clinic",
-      "location": "TVH",
-      "room": "3103",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/18/2026",
-      "actualDischargeStr": "6/17/2026",
-      "daysSinceDischarge": 29,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Dora Ramirez",
-      "practice": "Riverside Medical Clinic",
-      "location": "TVH",
-      "room": "3142",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/20/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/29/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "patient deceased 6/27/26"
-    },
-    {
-      "name": "Carrie Alexander",
-      "practice": "HEMCHAND KOLLI",
-      "location": "TVH",
-      "room": "ERHD",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/19/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/25/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Dennis Rushford",
-      "practice": "Citrus Valley",
-      "location": "CRM",
-      "room": "121-2",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/18/2026",
-      "actualDischargeStr": "6/19/2026",
-      "daysSinceDischarge": 27,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/23/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Alfonso Valles",
-      "practice": "Citrus Valley",
-      "location": "CRM",
-      "room": "PCU 207 1P",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/20/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/23/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Deborah Obrien",
-      "practice": "Graybill Medical Clinic",
-      "location": "TVH",
-      "room": "MS3",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/22/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/2/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": "7/6 appt was cancelled, 7/2 showed to appt"
-    },
-    {
-      "name": "Frances Walder",
-      "practice": "RMC",
-      "location": "CRM",
-      "room": "210- 4P",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/13/2026",
-      "actualDischargeStr": "6/20/2026",
-      "daysSinceDischarge": 26,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Barbara Cohen Fraler",
-      "practice": "Brian Nguyen",
-      "location": "IVM",
-      "room": "706",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/24/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Gloria Haslam",
-      "practice": "David Nguyen",
-      "location": "IVM",
-      "room": "242-2",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/19/2026",
-      "actualDischargeStr": "6/19/2026",
-      "daysSinceDischarge": 27,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Ronnie Thomsen",
-      "practice": "Timothy Killeen",
-      "location": "IVM",
-      "room": "257-1",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/23/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Donald Baranski",
-      "practice": "Graybill Medical Clinic",
-      "location": "IVM",
-      "room": "ICU 3",
-      "navigator": "Sunnie Emberson",
-      "anticipatedStr": "6/28/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Lynda Slumpff",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "5117",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/24/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "6/29/2026",
-      "apptType": "Telehealth",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Dolores Swanson",
-      "practice": "Brian Nguyen",
-      "location": "TVH",
-      "room": "5112",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/26/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/1/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": "next appt dec"
-    },
-    {
-      "name": "Pamela Elftman",
-      "practice": "Graybill Medical Clinic",
-      "location": "TVH",
-      "room": "4124",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/24/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/8/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Yolande Localio",
-      "practice": "Graybill Medical Clinic",
-      "location": "TVH",
-      "room": "ms5",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/26/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Lois Maslow",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/29/2026",
-      "actualDischargeStr": "6/27/2026",
-      "daysSinceDischarge": 19,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/1/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "keep calling pt"
-    },
-    {
-      "name": "Chawn Kenavan",
-      "practice": "Douglas Carrasco",
-      "location": "TVH",
-      "room": "",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/1/2026",
-      "actualDischargeStr": "6/29/2026",
-      "daysSinceDischarge": 17,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/7/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": "visit verify from 7/14"
-    },
-    {
-      "name": "James Morse",
-      "practice": "Citrus Valley",
-      "location": "CRM",
-      "room": "MST1 115",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/2/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": "pending practice approval "
-    },
-    {
-      "name": "Georgette Faulk",
-      "practice": "David Nguyen",
-      "location": "IVM",
-      "room": "IERH 15",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/4/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/9/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "patient is notified"
-    },
-    {
-      "name": "Jacquelyn Kirkis",
-      "practice": "Douglas Carrasco",
-      "location": "IVM",
-      "room": "IPCU I268",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/3/2026",
-      "actualDischargeStr": "7/4/2026",
-      "daysSinceDischarge": 12,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": "not found in pract EMR- unable to reach practice"
-    },
-    {
-      "name": "Diane Prewitt",
-      "practice": "Reenaben Patel",
-      "location": "IVM",
-      "room": "I2CE 02",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/30/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
-      "name": "Neil Edwards",
-      "practice": "Brian Nguyen",
-      "location": "RSM",
-      "room": "r1EA r127",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/3/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/8/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "Practice to reschedule pt didn’t show"
-    },
-    {
-      "name": "Milton Takeguchi",
-      "practice": "Jeremy V Gomer",
-      "location": "TVH",
-      "room": "ICUU 2112",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/1/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/13/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "appt was cancelled due to patient preference"
-    },
-    {
-      "name": "Robert Madore",
-      "practice": "Ocampo",
-      "location": "TVH",
-      "room": "MS3, 3125",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "6/30/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/7/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Donna Tolle",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "ACU 29",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/2/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/28/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "Not ACO? Not showing in CC??"
-    },
-    {
-      "name": "Antonio Ramos",
-      "practice": "Ocampo",
-      "location": "TVH",
-      "room": "5112",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/3/2026",
-      "actualDischargeStr": "7/1/2026",
-      "daysSinceDischarge": 15,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/6/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "John Lemcke",
-      "practice": "Graybill Medical Clinic",
-      "location": "TVH",
-      "room": "5124",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/2/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/13/2026",
-      "apptType": "",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": "pending practice approval "
-    },
-    {
-      "name": "Donna Slavin",
-      "practice": "Brian Nguyen",
-      "location": "TVH",
-      "room": "4112",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/4/2026",
-      "actualDischargeStr": "7/2/2026",
-      "daysSinceDischarge": 14,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/14/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "Call back to verify today 7/14"
-    },
-    {
-      "name": "Frances Valles",
-      "practice": "Citrus Valley",
-      "location": "CRM",
-      "room": "210",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/6/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": "pending practice approval "
-    },
-    {
-      "name": "Donna Dahlgren",
-      "practice": "HEMCHAND KOLLI",
-      "location": "TVH",
-      "room": "3122",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/7/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/14/2026",
-      "apptType": "Telehealth",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Michael Hinckley",
-      "practice": "Riverside Medical Clinic",
-      "location": "CRM",
-      "room": "208",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/8/2026",
-      "actualDischargeStr": "7/7/2026",
-      "daysSinceDischarge": 9,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/13/2026",
-      "apptType": "In-Person",
-      "visitVerified": true,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Visit Verified",
-      "notes": ""
-    },
-    {
-      "name": "Cynthia Polsgrove",
-      "practice": "Brian Nguyen",
-      "location": "RSM",
-      "room": "r171 02",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/9/2026",
-      "actualDischargeStr": "7/11/2026",
-      "daysSinceDischarge": 5,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/15/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "CC"
-    },
-    {
-      "name": "Gail Gamet",
-      "practice": "Richard Uhler",
-      "location": "TVH",
-      "room": "4142",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/10/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/16/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "not tcm eligible"
-    },
-    {
-      "name": "Tali Manthey",
-      "practice": "Richard Uhler",
-      "location": "IVM",
-      "room": "I622, 01",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/8/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/17/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Ronald Dittmer",
-      "practice": "Sylvia Gisi",
-      "location": "TVH",
-      "room": "3104",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/9/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": "sch- CC- patient is dc to SNF per hosp CM"
-    },
-    {
-      "name": "Richard Layton",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "4120",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/12/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/30/2026",
-      "apptType": "Telehealth",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Kathleen Parkes",
-      "practice": "Silvia Gisi",
-      "location": "TVH",
-      "room": "5127",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/11/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": "pending practice approval "
-    },
-    {
-      "name": "Lynda Slumpff",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "4106",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/13/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Ira Spell",
-      "practice": "Brian Nguyen",
-      "location": "TVH",
-      "room": "5119",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/11/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/20/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Gloria Mattos",
-      "practice": "HEMCHAND KOLLI",
-      "location": "IVM",
-      "room": "",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/15/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": "NN to inform PCP of facility placement when details become available. "
-    },
-    {
-      "name": "Gary Kazanjian",
-      "practice": "Brian Nguyen",
-      "location": "TVH",
-      "room": "3105",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/12/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/20/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": ""
-    },
-    {
-      "name": "Jane Burnsed",
-      "practice": "Riverside Medical Clinic",
-      "location": "IVM",
-      "room": "270",
-      "navigator": "Devan Lambruno",
+      "navigator": "N/A",
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
+      "tcmRaw": "",
       "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": "cc- nn to inform pcp of snf facility"
-    },
-    {
-      "name": "Kathy Colby",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "3136",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/14/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
       "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
@@ -1779,43 +85,43 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
-      "notes": "fu on status of appt"
+      "status": "Admitted",
+      "notes": ""
     },
     {
-      "name": "Robert Dunn",
-      "practice": "Riverside Medical Clinic",
-      "location": "CRM",
-      "room": "262",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/15/2026",
+      "name": "Survey for Network Management Vetting for CARE Program",
+      "practice": "",
+      "location": "",
+      "room": "",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
+      "tcmRaw": "",
+      "tcmScheduled": false,
       "tcmPending": false,
-      "tcmDateStr": "7/21/2026",
-      "apptType": "In-Person",
+      "tcmDateStr": "N/A",
+      "apptType": "",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Admitted",
       "notes": ""
     },
     {
-      "name": "Leroy Wirth",
-      "practice": "Richard Uhler",
-      "location": "TVH",
-      "room": "3144",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/20/2026",
+      "name": "Shared folders with facility partners, with patients lists and agendas",
+      "practice": "",
+      "location": "",
+      "room": "",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
+      "tcmRaw": "",
       "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -1823,43 +129,21 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "wait for dc and add most recent update into cc"
-    },
-    {
-      "name": "Jesse Lopez",
-      "practice": "Richard Uhler",
-      "location": "TVH",
-      "room": "4126",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/16/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
+      "status": "Admitted",
       "notes": ""
     },
     {
-      "name": "Rasheeda Chaudhri",
-      "practice": "Riverside Medical Clinic",
-      "location": "CRM",
-      "room": "118",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/17/2026",
+      "name": "Master List of all Partnered Facility Contacts for Home Health, SNF, Therapy at Home and Hospice",
+      "practice": "",
+      "location": "",
+      "room": "",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
+      "tcmRaw": "",
       "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -1867,23 +151,64 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
+      "status": "Admitted",
+      "notes": ""
+    },
+    {
+      "name": "Master List of all ACOs and all Providers, with fax, address, POD, and consultant",
+      "practice": "",
+      "location": "",
+      "room": "",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": ""
+    },
+    {
+      "name": "Salesforce excel to send to support on Fridays for Consutlant tasks from HHA Programs such as 485, HHA LOS < 30, HHA Partnership Updates",
+      "practice": "",
+      "location": "",
+      "room": "",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
       "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 85,
-    "currentlyAdmitted": 48,
-    "tcmScheduled": 56,
-    "tcmPending": 26,
-    "visitVerified": 23,
+    "totalPatients": 9,
+    "currentlyAdmitted": 9,
+    "tcmScheduled": 0,
+    "tcmPending": 0,
+    "visitVerified": 0,
     "missed14DayWindow": 0,
-    "notYetScheduled": 3,
-    "scheduledRate": 65.9,
-    "nurseCounts": {
-      "Devan Lambruno": 60,
-      "Sunnie Emberson": 25
-    }
+    "notYetScheduled": 9,
+    "scheduledRate": 0,
+    "nurseCounts": {}
   },
   "practices": [
     {
@@ -1897,7 +222,11 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "Care Compass Messaging to: Chris R",
       "networkAccess": "",
-      "notes": "Data agreement signed. Jamie working with IT."
+      "notes": "Data agreement signed. Jamie working with IT.",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "LIVINGWATER'S MEDICAL CLINIC, INC.",
@@ -1910,7 +239,9 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "N/A",
       "networkAccess": "N/A",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "KAMRAN QURESHI",
@@ -1923,7 +254,12 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "N/A",
       "networkAccess": "N/A",
-      "notes": "Complete for both Sunnie and Devan as of 3/13"
+      "notes": "Complete for both Sunnie and Devan as of 3/13",
+      "emrAccessNurses": [
+        "Devan",
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "KAMALDEEP PANACH, M.D., INC.",
@@ -1936,7 +272,9 @@
       "login": "Declined",
       "contact": "951-672-1911 (Chely)",
       "networkAccess": "",
-      "notes": "TIN wants nurse to call the office to schedule; no EMR access, not PAC-Assist due to PAC team issues."
+      "notes": "TIN wants nurse to call the office to schedule; no EMR access, not PAC-Assist due to PAC team issues.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "HEMCHAND KOLLI, MD INC",
@@ -1949,7 +287,9 @@
       "login": "N/A",
       "contact": "Jackie Moran - (951) 438-0889",
       "networkAccess": "N/A",
-      "notes": "Practice is with Promise Care and is blocked from sharing EMR access via NextGen."
+      "notes": "Practice is with Promise Care and is blocked from sharing EMR access via NextGen.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "GRACE FAMILY HEALTH, INC.",
@@ -1962,7 +302,9 @@
       "login": "TBD",
       "contact": "951-231-1385 Office/ 951-704-4099 (Niki Wolff, if Office doesn't answer)",
       "networkAccess": "",
-      "notes": "New EMR transition ETA 5/1, will request at mtg ; Nurses can call for now until new EMR is fully transitioned."
+      "notes": "New EMR transition ETA 5/1, will request at mtg ; Nurses can call for now until new EMR is fully transitioned.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "REENABEN PATEL MD A PROFESSIONAL MEDICAL CORPORATION",
@@ -1975,7 +317,9 @@
       "login": "TBD",
       "contact": "N/A",
       "networkAccess": "",
-      "notes": "5/5- practice wants to meet Sunnie in person prior to signing off"
+      "notes": "5/5- practice wants to meet Sunnie in person prior to signing off",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "GEORGE N CHIDI MD PA",
@@ -1988,7 +332,9 @@
       "login": "Declined",
       "contact": "(951) 272-5900 (Laura)",
       "networkAccess": "",
-      "notes": "5/5- Would like a phone call instead; many pts are UC only & would like to approve PDV first"
+      "notes": "5/5- Would like a phone call instead; many pts are UC only & would like to approve PDV first",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "FAMILY MEDICINE MARY CHAU DO INC",
@@ -2001,7 +347,9 @@
       "login": "TBD",
       "contact": "N/A",
       "networkAccess": "",
-      "notes": "5/5- Pending next mtg; Onboarding mtg on 4/22"
+      "notes": "5/5- Pending next mtg; Onboarding mtg on 4/22",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "RICHARD C. LAM, M.D., INC.",
@@ -2014,7 +362,9 @@
       "login": "TBD",
       "contact": "N/A",
       "networkAccess": "",
-      "notes": "5/5-unengaged"
+      "notes": "5/5-unengaged",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "Riverside Medical Clinic",
@@ -2027,7 +377,12 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "N/A",
       "networkAccess": "",
-      "notes": "Complete"
+      "notes": "Complete",
+      "emrAccessNurses": [
+        "Devan",
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "Citrus Valley Medical Associates Inc.",
@@ -2040,7 +395,12 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "N/A",
       "networkAccess": "",
-      "notes": "Access complete as of 4/30"
+      "notes": "Access complete as of 4/30",
+      "emrAccessNurses": [
+        "Devan",
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "RICHARD GUZMAN",
@@ -2053,7 +413,9 @@
       "login": "Declined",
       "contact": "951- 697-7824 (Maxine)",
       "networkAccess": "",
-      "notes": "TIN wants nurse to call the office to schedule; Refuses EMR Access; does not use PAC Team."
+      "notes": "TIN wants nurse to call the office to schedule; Refuses EMR Access; does not use PAC Team.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "PATRICIA ANN BOGEMA DO INC",
@@ -2066,7 +428,9 @@
       "login": "Declined",
       "contact": "951-268-1001 (Ashleigh)",
       "networkAccess": "",
-      "notes": "TIN Refuses EMR Access; does not use PAC Team."
+      "notes": "TIN Refuses EMR Access; does not use PAC Team.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "RUPAL B, SHAH, MD., INC",
@@ -2079,7 +443,9 @@
       "login": "Declined",
       "contact": "951-738-0303 (Rose)",
       "networkAccess": "",
-      "notes": "TIN Refuses EMR Access; does not use PAC Team."
+      "notes": "TIN Refuses EMR Access; does not use PAC Team.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "JEREMY V GOMER MD PHD PROFESSIONAL MEDICAL CORPORATION",
@@ -2092,7 +458,9 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "N/A",
       "networkAccess": "Taylor Only",
-      "notes": "Complete"
+      "notes": "Complete",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "BRIAN L NGUYEN MD INC",
@@ -2105,7 +473,12 @@
       "login": "Yes - Devan has access. Sunnie has access",
       "contact": "Danielle/Winnie",
       "networkAccess": "Devan EMR access",
-      "notes": "Complete"
+      "notes": "Complete",
+      "emrAccessNurses": [
+        "Devan",
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "RHODA ESTRELLA-ITCHON, M.D., INC.",
@@ -2118,7 +491,9 @@
       "login": "TBD",
       "contact": "Veronica",
       "networkAccess": "",
-      "notes": "05/06 - Rachel provided a list of all ACO access needed, including both Nurses. 04/10 Trying to provide PAC access and has had roadblock so NN is on the backburner"
+      "notes": "05/06 - Rachel provided a list of all ACO access needed, including both Nurses. 04/10 Trying to provide PAC access and has had roadblock so NN is on the backburner",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "SYLVIA A GISI, M.D. INC.",
@@ -2131,7 +506,9 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "N/A",
       "networkAccess": "",
-      "notes": "Awaiting \"domain name\" from Anita 05/01"
+      "notes": "Awaiting \"domain name\" from Anita 05/01",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "TIMOTHY J KILLEEN MD INC",
@@ -2144,7 +521,9 @@
       "login": "TBD",
       "contact": "Jazmin",
       "networkAccess": "",
-      "notes": "05/09 - Eileen claims Cerner keeps losiong her request, she sent another email. 05/1 Rachel sent Eileen a text - no response from email 04/24 Rachel sent email following up with status 03/18 Eilleen confirmed request was sent last week for both nurses to have access - she will send access directly to each of their emails"
+      "notes": "05/09 - Eileen claims Cerner keeps losiong her request, she sent another email. 05/1 Rachel sent Eileen a text - no response from email 04/24 Rachel sent email following up with status 03/18 Eilleen confirmed request was sent last week for both nurses to have access - she will send access directly to each of their emails",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "CONSUELO TERESA M OCAMPO MD INC",
@@ -2157,7 +536,12 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "N/A",
       "networkAccess": "Taylor EMR access",
-      "notes": "Complete"
+      "notes": "Complete",
+      "emrAccessNurses": [
+        "Devan",
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "DOUGLAS F. CARRASCO M.D. INC.",
@@ -2170,7 +554,11 @@
       "login": "Temecula: Complete for Devan & Sunnie Murrietta: Pending SSN request",
       "contact": "Jenaro",
       "networkAccess": "Devan EMR access",
-      "notes": "Temecula: Complete for Devan & Sunnie Murrietta: Pending SSN request"
+      "notes": "Temecula: Complete for Devan & Sunnie Murrietta: Pending SSN request",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "DAVID H NGUYEN MD INC",
@@ -2183,7 +571,11 @@
       "login": "Yes - Devan has access and Sunnie",
       "contact": "Keri/Michelle",
       "networkAccess": "Devan EMR access",
-      "notes": "05/07 - Sunnie has access now 05/1 - sent text to Keri confirming she created access 03/18 - will confirm Sunnie access today in person meeting."
+      "notes": "05/07 - Sunnie has access now 05/1 - sent text to Keri confirming she created access 03/18 - will confirm Sunnie access today in person meeting.",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "T D NGUYEN MD INC",
@@ -2196,7 +588,9 @@
       "login": "Yes - Devan has access and Sunnie",
       "contact": "Keri/Michelle",
       "networkAccess": "Devan EMR access",
-      "notes": "05/07 - Sunnie has access now 05/1 - sent text to Keri confirming she created access 03/18 - will confirm Sunnie access today in person meeting."
+      "notes": "05/07 - Sunnie has access now 05/1 - sent text to Keri confirming she created access 03/18 - will confirm Sunnie access today in person meeting.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "GHASB MEDICAL CORPORATION",
@@ -2209,7 +603,9 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "Lorena",
       "networkAccess": "Devan EMR access",
-      "notes": "Complete"
+      "notes": "Complete",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "KEVIN K NGUYEN MD INC",
@@ -2222,7 +618,9 @@
       "login": "Declined",
       "contact": "",
       "networkAccess": "",
-      "notes": "TIN Refuses EMR Access; does not use PAC Team."
+      "notes": "TIN Refuses EMR Access; does not use PAC Team.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "JAMES A KEATING MD",
@@ -2235,7 +633,9 @@
       "login": "Declined",
       "contact": "",
       "networkAccess": "PAC Team login",
-      "notes": "Dr. Keating declined program & no longer PAC Team due to stated scheduling issues with rep. Refuse EMR access."
+      "notes": "Dr. Keating declined program & no longer PAC Team due to stated scheduling issues with rep. Refuse EMR access.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "IVY SPRINGS MEDICAL CARE INC",
@@ -2248,7 +648,9 @@
       "login": "N/A",
       "contact": "Isabel (951)-677-2227",
       "networkAccess": "",
-      "notes": "Practice is with Promise Care and is blocked from sharing EMR access via NextGen."
+      "notes": "Practice is with Promise Care and is blocked from sharing EMR access via NextGen.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "MATHIAS PRIMARY CARE ASSOCIATES, INC",
@@ -2261,7 +663,9 @@
       "login": "N/A",
       "contact": "Angelina/Blanche (951) - 929-6003",
       "networkAccess": "",
-      "notes": "Practice is with Promise Care and is blocked from sharing EMR access via NextGen."
+      "notes": "Practice is with Promise Care and is blocked from sharing EMR access via NextGen.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "RICHARD E UHLER DO, INC",
@@ -2274,7 +678,12 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "N/A",
       "networkAccess": "Taylor, Sunnie & Devan all have access",
-      "notes": "Complete"
+      "notes": "Complete",
+      "emrAccessNurses": [
+        "Devan",
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "DAVID ZEBRACK DO INC (Temecula Valley PCPs)",
@@ -2287,7 +696,9 @@
       "login": "Completed for Devan and Sunnie",
       "contact": "Tammy Burgoa - OM: tamburgoa@gmail.com (incredibly responsive on email)",
       "networkAccess": "Generic with Taylor last name",
-      "notes": "Complete"
+      "notes": "Complete",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "CORONA MEDICAL CENTER, A PROFESSIONAL CORPORATION",
@@ -2300,7 +711,12 @@
       "login": "Yes - Devan has access. Sunnie access",
       "contact": "",
       "networkAccess": "",
-      "notes": "Trysha to request Sunnie's access at 2/19 mtg"
+      "notes": "Trysha to request Sunnie's access at 2/19 mtg",
+      "emrAccessNurses": [
+        "Sunnie",
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "name": "ABAYOMI A. ODUBELA, M.D., A PROFESSIONAL CORPORATION",
@@ -2313,7 +729,9 @@
       "login": "Declined",
       "contact": "951-676-4221 (Funmi)",
       "networkAccess": "Taylor EMR access",
-      "notes": "4/24 Funmi will be the contact 951-676-4221. 4/8- TIN Owner hesistant on granting anymore access; PC working on convincing TIN Owner"
+      "notes": "4/24 Funmi will be the contact 951-676-4221. 4/8- TIN Owner hesistant on granting anymore access; PC working on convincing TIN Owner",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "Peter D. Strutz",
@@ -2326,7 +744,9 @@
       "login": "Declined EMR Access",
       "contact": "760-728-8489 Jenni (or whoever picks up the phone)",
       "networkAccess": "",
-      "notes": "Phone only - No EMR Access"
+      "notes": "Phone only - No EMR Access",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     }
   ],
   "practiceMetrics": {
@@ -2346,7 +766,9 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Trysha Logan",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2356,7 +778,9 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2366,7 +790,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2376,7 +802,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2386,7 +814,9 @@
       "format": "",
       "emr": "",
       "consultant": "Curtis",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2396,7 +826,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2406,7 +838,9 @@
       "format": "",
       "emr": "",
       "consultant": "Gillian Connors",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2416,7 +850,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2426,7 +862,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2436,7 +874,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2446,7 +886,9 @@
       "format": "",
       "emr": "",
       "consultant": "OC/Curtis",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2456,7 +898,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2466,7 +910,9 @@
       "format": "",
       "emr": "",
       "consultant": "Gillian Connors",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2476,7 +922,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2486,7 +934,9 @@
       "format": "Care Compass Upload",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2496,7 +946,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2506,7 +958,9 @@
       "format": "",
       "emr": "",
       "consultant": "Curtis",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2516,7 +970,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2526,7 +982,9 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Gillian Connors",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2536,7 +994,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2546,7 +1006,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2556,7 +1018,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2566,7 +1030,9 @@
       "format": "",
       "emr": "",
       "consultant": "Curtis",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2576,7 +1042,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2586,7 +1054,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2596,7 +1066,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2606,7 +1078,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2616,7 +1090,11 @@
       "format": "EMR",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": "Allscripts/veradighm"
+      "notes": "Allscripts/veradighm",
+      "emrAccessNurses": [
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "HCPACO",
@@ -2626,7 +1104,9 @@
       "format": "",
       "emr": "Fax",
       "consultant": "Curtis",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2636,7 +1116,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2646,7 +1128,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2656,7 +1140,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2666,7 +1152,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2676,7 +1164,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2686,7 +1176,9 @@
       "format": "",
       "emr": "",
       "consultant": "Elisa",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2696,7 +1188,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2706,7 +1200,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2716,7 +1212,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2726,7 +1224,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2736,7 +1236,11 @@
       "format": "EMR",
       "emr": "Awaiting Intake",
       "consultant": "Jet Ramos",
-      "notes": "eCW"
+      "notes": "eCW",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "HCPACO",
@@ -2746,7 +1250,9 @@
       "format": "",
       "emr": "",
       "consultant": "Elisa",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2756,7 +1262,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2766,7 +1274,11 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "NJPACO",
@@ -2776,7 +1288,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2786,7 +1300,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2796,7 +1312,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2806,7 +1324,9 @@
       "format": "",
       "emr": "",
       "consultant": "Curtis",
-      "notes": "Said maybe; pending update from curtis"
+      "notes": "Said maybe; pending update from curtis",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2816,7 +1336,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2826,7 +1348,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Gillian Connors",
-      "notes": "Minimal Home Health admits"
+      "notes": "Minimal Home Health admits",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2836,7 +1360,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2846,7 +1372,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": "Pending intake form."
+      "notes": "Pending intake form.",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2856,7 +1384,11 @@
       "format": "EMR",
       "emr": "Tasks assigned",
       "consultant": "Jet Ramos",
-      "notes": "Practice Fusion"
+      "notes": "Practice Fusion",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "HCPACO",
@@ -2866,7 +1398,9 @@
       "format": "",
       "emr": "",
       "consultant": "Curtis",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2876,7 +1410,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2886,7 +1422,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2896,7 +1434,9 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2906,7 +1446,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2916,7 +1458,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2926,7 +1470,9 @@
       "format": "",
       "emr": "",
       "consultant": "N/A",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2936,7 +1482,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -2946,7 +1494,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -2956,7 +1506,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -2966,7 +1518,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -2976,7 +1530,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2986,7 +1542,9 @@
       "format": "",
       "emr": "",
       "consultant": "Elisa",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -2996,7 +1554,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3006,7 +1566,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3016,7 +1578,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3026,7 +1590,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": "Undecided. Met with on 1/30/2026. Prefers EMR, potential set up"
+      "notes": "Undecided. Met with on 1/30/2026. Prefers EMR, potential set up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3036,7 +1602,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -3046,7 +1614,9 @@
       "format": "",
       "emr": "",
       "consultant": "Curtis",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3056,7 +1626,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3066,7 +1638,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3076,7 +1650,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3086,7 +1662,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Lettman",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3096,7 +1674,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -3106,7 +1686,9 @@
       "format": "",
       "emr": "",
       "consultant": "Elisa",
-      "notes": "Open to program; pending update from Elisa"
+      "notes": "Open to program; pending update from Elisa",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3116,7 +1698,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3126,7 +1710,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Marlen Cornejo",
-      "notes": "Has in office clinical review: Nicole"
+      "notes": "Has in office clinical review: Nicole",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3136,7 +1722,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3146,7 +1734,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheri Borkowski",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3156,7 +1746,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -3166,7 +1758,9 @@
       "format": "",
       "emr": "",
       "consultant": "Elisa",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3176,7 +1770,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3186,7 +1782,11 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "NJPACO",
@@ -3196,7 +1796,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3206,7 +1808,9 @@
       "format": "Care Compass Upload",
       "emr": "",
       "consultant": "Sheri Borkowski",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3216,7 +1820,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -3226,7 +1832,9 @@
       "format": "",
       "emr": "",
       "consultant": "OC/Elisa",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3236,7 +1844,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3246,7 +1856,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3256,7 +1868,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3266,7 +1880,9 @@
       "format": "EMR",
       "emr": "Athena",
       "consultant": "Sheri Borkowski",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3276,7 +1892,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -3286,7 +1904,9 @@
       "format": "",
       "emr": "",
       "consultant": "Curtis",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3296,7 +1916,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3306,7 +1928,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": "Sally OM"
+      "notes": "Sally OM",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3316,7 +1940,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3326,7 +1952,11 @@
       "format": "EMR",
       "emr": "Practice Fusion",
       "consultant": "Amy McCaughey",
-      "notes": "Using Devan's Email"
+      "notes": "Using Devan's Email",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "CACO",
@@ -3336,7 +1966,11 @@
       "format": "EMR",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": "eCW"
+      "notes": "eCW",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "HCPACO",
@@ -3346,7 +1980,9 @@
       "format": "",
       "emr": "",
       "consultant": "Elisa",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3356,7 +1992,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3366,7 +2004,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3376,7 +2016,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3386,7 +2028,9 @@
       "format": "",
       "emr": "",
       "consultant": "Amy McCaughey",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3396,7 +2040,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -3406,7 +2052,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Elisa",
-      "notes": "Email shared link to jgould@3riversmed.com"
+      "notes": "Email shared link to jgould@3riversmed.com",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3416,7 +2064,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3426,7 +2076,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": "Most Likely Transition to Bot"
+      "notes": "Most Likely Transition to Bot",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3436,7 +2088,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3446,7 +2100,9 @@
       "format": "EMR",
       "emr": "Epic",
       "consultant": "Amy McCaughey",
-      "notes": "Awaiting EMR access confirmation"
+      "notes": "Awaiting EMR access confirmation",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3456,7 +2112,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3466,7 +2124,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3476,7 +2136,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": "Transition to Bot"
+      "notes": "Transition to Bot",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3486,7 +2148,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3496,7 +2160,11 @@
       "format": "EMR",
       "emr": "Practice Fusion",
       "consultant": "Amy McCaughey",
-      "notes": "Reassign task to MA associated with PCP"
+      "notes": "Reassign task to MA associated with PCP",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "CACO",
@@ -3506,7 +2174,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3516,7 +2186,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3526,7 +2198,9 @@
       "format": "",
       "emr": "",
       "consultant": "Marlen Cornejo",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3536,7 +2210,9 @@
       "format": "EMR",
       "emr": "",
       "consultant": "Hamdullah",
-      "notes": "Pending EMR access and intake form"
+      "notes": "Pending EMR access and intake form",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3546,7 +2222,9 @@
       "format": "",
       "emr": "",
       "consultant": "Amy McCaughey",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3556,7 +2234,11 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "OACO",
@@ -3566,7 +2248,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3576,7 +2260,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3586,7 +2272,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3596,7 +2284,11 @@
       "format": "EMR",
       "emr": "Practice Fusion",
       "consultant": "Amy McCaughey",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "CACO",
@@ -3606,7 +2298,11 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": "intake received - method unknown EMR unknown"
+      "notes": "intake received - method unknown EMR unknown",
+      "emrAccessNurses": [
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "OACO",
@@ -3616,7 +2312,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3626,7 +2324,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3636,7 +2336,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -3646,7 +2348,9 @@
       "format": "Care Compass Upload",
       "emr": "EPIC",
       "consultant": "Amy McCaughey",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3656,7 +2360,11 @@
       "format": "EMR",
       "emr": "Office Alley",
       "consultant": "Jet Ramos",
-      "notes": "Sunnie"
+      "notes": "Sunnie",
+      "emrAccessNurses": [
+        "Sunnie"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "OACO",
@@ -3666,7 +2374,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3676,7 +2386,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3686,7 +2398,9 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3696,7 +2410,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3706,7 +2422,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3716,7 +2434,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3726,7 +2446,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3736,7 +2458,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3746,7 +2470,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3756,7 +2482,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3766,7 +2494,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3776,7 +2506,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3786,7 +2518,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3796,7 +2530,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3806,7 +2542,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3816,7 +2554,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3826,7 +2566,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3836,7 +2578,9 @@
       "format": "",
       "emr": "",
       "consultant": "Gillian Connors",
-      "notes": "Reach out Ad Hoc"
+      "notes": "Reach out Ad Hoc",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3846,7 +2590,9 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3856,7 +2602,9 @@
       "format": "",
       "emr": "EMR",
       "consultant": "Candace",
-      "notes": "EMR credentials not issued yet"
+      "notes": "EMR credentials not issued yet",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3866,7 +2614,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3876,7 +2626,9 @@
       "format": "",
       "emr": "",
       "consultant": "Bella McKay",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3886,7 +2638,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3896,7 +2650,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3906,7 +2662,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3916,7 +2674,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3926,7 +2686,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3936,7 +2698,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3946,7 +2710,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3956,7 +2722,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3966,7 +2734,9 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3976,7 +2746,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3986,7 +2758,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -3996,7 +2770,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4006,7 +2782,9 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -4016,7 +2794,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -4026,7 +2806,9 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4036,7 +2818,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": "Transition to Bot"
+      "notes": "Transition to Bot",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4046,7 +2830,11 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "CACO",
@@ -4056,7 +2844,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -4066,7 +2856,9 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4076,7 +2868,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4086,7 +2880,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -4096,7 +2892,9 @@
       "format": "",
       "emr": "Fax",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4106,7 +2904,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4116,7 +2916,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -4126,7 +2928,9 @@
       "format": "",
       "emr": "EMR",
       "consultant": "Candace",
-      "notes": "No credentials issued yet"
+      "notes": "No credentials issued yet",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4136,7 +2940,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4146,7 +2952,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -4156,7 +2964,9 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4166,7 +2976,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4176,7 +2988,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -4186,7 +3000,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jet Ramos",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4196,7 +3012,9 @@
       "format": "EMR",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": "Reassign documents to Niki (OM) - New EMR"
+      "notes": "Reassign documents to Niki (OM) - New EMR",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4206,7 +3024,9 @@
       "format": "Fax",
       "emr": "?",
       "consultant": "Samantha Lipyanek",
-      "notes": "Peggy (OM) to contact via call or text if issues"
+      "notes": "Peggy (OM) to contact via call or text if issues",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4216,7 +3036,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4226,7 +3048,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4236,7 +3060,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4246,7 +3072,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4256,7 +3084,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4266,7 +3096,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4276,7 +3108,9 @@
       "format": "",
       "emr": "",
       "consultant": "Bella McKay/Lisa/Phil Schaefer",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4286,7 +3120,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4296,7 +3132,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4306,7 +3144,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": "Text 609-339-4631 when recommendations are sent"
+      "notes": "Text 609-339-4631 when recommendations are sent",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4316,7 +3156,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4326,7 +3168,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4336,7 +3180,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4346,7 +3192,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4356,7 +3204,9 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Jasmine Smith",
-      "notes": "Email jak7md@aol.com for notication that fax has been sent - small panel"
+      "notes": "Email jak7md@aol.com for notication that fax has been sent - small panel",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4366,7 +3216,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4376,7 +3228,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4386,7 +3240,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4396,7 +3252,11 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "NJPACO",
@@ -4406,7 +3266,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4416,7 +3278,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": "Sending only when questioning"
+      "notes": "Sending only when questioning",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4426,7 +3290,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4436,7 +3302,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4446,7 +3314,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4456,7 +3326,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4466,7 +3338,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4476,7 +3350,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4486,7 +3362,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4496,7 +3374,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4506,7 +3386,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4516,7 +3398,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4526,7 +3410,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4536,7 +3422,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Gillian Connors",
-      "notes": "Rhonda (OM) faxes orders for review"
+      "notes": "Rhonda (OM) faxes orders for review",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4546,7 +3434,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4556,7 +3446,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4566,7 +3458,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4576,7 +3470,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": "Bot"
+      "notes": "Bot",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4586,7 +3482,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4596,7 +3494,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4606,7 +3506,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4616,7 +3518,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4626,7 +3530,9 @@
       "format": "",
       "emr": "",
       "consultant": "Hamdullah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4636,7 +3542,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4646,7 +3554,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4656,7 +3566,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4666,7 +3578,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4676,7 +3590,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4686,7 +3602,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4696,7 +3614,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4706,7 +3626,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": "Mrs. Parhar (OM)"
+      "notes": "Mrs. Parhar (OM)",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4716,7 +3638,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4726,7 +3650,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4736,7 +3662,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4746,7 +3674,9 @@
       "format": "",
       "emr": "Pending confirmation from Hamdullah- practice does not want to participate if it cannot be billed the same as when the Dr reviews orders",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4756,7 +3686,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4766,7 +3698,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4776,7 +3710,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": "Wife Blanche Mathias (OM) email: docneed@aol.com"
+      "notes": "Wife Blanche Mathias (OM) email: docneed@aol.com",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4786,7 +3722,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4796,7 +3734,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4806,7 +3746,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4816,7 +3758,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4826,7 +3770,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": "Send text to Rachael (OM @908-278-5895) post faxing recomendations"
+      "notes": "Send text to Rachael (OM @908-278-5895) post faxing recomendations",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4836,7 +3782,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4846,7 +3794,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4856,7 +3806,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4866,7 +3818,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Hamdullah",
-      "notes": "Intake received- no intro yet"
+      "notes": "Intake received- no intro yet",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4876,7 +3830,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4886,7 +3842,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4896,7 +3854,9 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Gillian Connors",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4906,7 +3866,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4916,7 +3878,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4926,7 +3890,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4936,7 +3902,9 @@
       "format": "",
       "emr": "",
       "consultant": "Gillian Connors",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4946,7 +3914,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4956,7 +3926,9 @@
       "format": "",
       "emr": "",
       "consultant": "Gillian Connors",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4966,7 +3938,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4976,7 +3950,9 @@
       "format": "",
       "emr": "",
       "consultant": "Marlen Cornejo",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -4986,7 +3962,9 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -4996,7 +3974,9 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Gillian Connors",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5006,7 +3986,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5016,7 +3998,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": "Only using Ai Bot"
+      "notes": "Only using Ai Bot",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5026,7 +4010,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5036,7 +4022,11 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Bella McKay",
-      "notes": "Tag OM Kathy McCoy"
+      "notes": "Tag OM Kathy McCoy",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "NJPACO",
@@ -5046,7 +4036,9 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5056,7 +4048,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5066,7 +4060,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5076,7 +4072,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sierra Williams",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5086,7 +4084,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5096,7 +4096,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5106,7 +4108,9 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5116,7 +4120,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5126,7 +4132,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5136,7 +4144,9 @@
       "format": "",
       "emr": "",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5146,7 +4156,9 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5156,7 +4168,11 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Jasmine Smith",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "NJPACO",
@@ -5166,7 +4182,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5176,7 +4194,9 @@
       "format": "",
       "emr": "",
       "consultant": "Marlen Cornejo",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5186,7 +4206,9 @@
       "format": "",
       "emr": "",
       "consultant": "Marlen Cornejo",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5196,7 +4218,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5206,7 +4230,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5216,7 +4242,9 @@
       "format": "",
       "emr": "",
       "consultant": "Marlen Cornejo",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5226,7 +4254,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5236,7 +4266,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5246,7 +4278,9 @@
       "format": "Care Compass Upload",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5256,7 +4290,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5266,7 +4302,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5276,7 +4314,9 @@
       "format": "",
       "emr": "",
       "consultant": "Trysha Logan",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5286,7 +4326,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5296,7 +4338,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5306,7 +4350,9 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Gillian Connors",
-      "notes": "Pending Follow Up"
+      "notes": "Pending Follow Up",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5316,7 +4362,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5326,7 +4374,9 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5336,7 +4386,11 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Sheyenne Powers",
-      "notes": "Tammy (OM) primary contact"
+      "notes": "Tammy (OM) primary contact",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "CCPACO",
@@ -5346,7 +4400,9 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Rachel Robinson",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5356,7 +4412,9 @@
       "format": "",
       "emr": "",
       "consultant": "Gillian Connors",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5366,7 +4424,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5376,7 +4436,9 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Robinson/Lisa",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5386,7 +4448,11 @@
       "format": "EMR",
       "emr": "eCW",
       "consultant": "Sierra Williams",
-      "notes": "Recommendations sent in the messages section"
+      "notes": "Recommendations sent in the messages section",
+      "emrAccessNurses": [
+        "Devan"
+      ],
+      "emrAccessConfirmed": true
     },
     {
       "aco": "CCPACO",
@@ -5396,7 +4462,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5406,7 +4474,9 @@
       "format": "",
       "emr": "",
       "consultant": "Sheyenne Powers",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -5416,7 +4486,9 @@
       "format": "",
       "emr": "",
       "consultant": "Chris Ford",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     }
   ],
   "metrics485": {
@@ -5425,7 +4497,7 @@
     "notEnrolled": 224,
     "refused": 27,
     "inactive": 1,
-    "emrCount": 29,
+    "emrCount": 34,
     "byACO": [
       {
         "aco": "CCPACO",
@@ -8838,6 +7910,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-16T14:43:05.404Z",
+  "lastUpdated": "2026-07-16T14:54:30.036Z",
   "source": "auto-sync"
 }
