@@ -2339,16 +2339,6 @@
   },
   "practices485": [
     {
-      "aco": "ADACO",
-      "name": "Beena Koppuzha Md Pa (202065231)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Sheri Borkowski",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Abayomi A. Odubela M.D. A Professional Corporation (330896774)",
       "status": "Enrolled",
@@ -2366,16 +2356,6 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Abu Azizullah MD (205648886)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -2419,16 +2399,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Betsy E. Wood Do Pa (451780103)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Aescalapius Medici Inc (863099185)",
       "status": "Not Enrolled",
@@ -2446,16 +2416,6 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Ashley Valley Family Practice (203373192)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -2499,16 +2459,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Burnt Store Family Medicine Pl. (020609414)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Elisa Kiesling",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Ali Alamar Md A Professional Corp (330987592)",
       "status": "Not Enrolled",
@@ -2526,16 +2476,6 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Benjamin S Lee MD PA (813194982)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -2579,16 +2519,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Calvino Family Medicine, Pllc (882973512)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Andres Zimmermann (113794615)",
       "status": "Enrolled",
@@ -2606,16 +2536,6 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Chris Bunch MD (752550910)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -2659,16 +2579,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Charlotte Internal Medicine Associates Pa (650877646)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Elisa Kiesling",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Anuj Bansal Md Inc (844849885)",
       "status": "Not Enrolled",
@@ -2686,16 +2596,6 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Christina Picciano DO (145864698)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -2739,16 +2639,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Cypress Family Medical Center Pa (651154744)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Curtis Conard",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Arogya Med Care (923044104)",
       "status": "Not Enrolled",
@@ -2766,16 +2656,6 @@
       "format": "Fax",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Family Care Associates (474464169)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -2819,16 +2699,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "David J Gomeringer Do (592818868)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Elisa Kiesling",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Arwinnah Bautista Md, Pc. (462189534)",
       "status": "Refused",
@@ -2846,16 +2716,6 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Howard Offenberg MD (200324806)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -2899,16 +2759,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "David S Ballestas Md Pa (592627966)",
-      "status": "Refused",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Brian L Nguyen Md Inc (330833134)",
       "status": "Enrolled",
@@ -2926,16 +2776,6 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Israr Siddiqi MD (208715041)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -2979,16 +2819,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Dr. Rogers Medical Group Pa (200105769)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Curtis Conard",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Bruce J Sachs Md Professional Corporation (020591175)",
       "status": "Refused",
@@ -3006,16 +2836,6 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Joshua Medical Group (330558338)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -3059,16 +2879,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Elevate Health Solutions (205846534)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Eden Gebremariam",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Caring Physicians Medical Group, Inc. (330817357)",
       "status": "Not Enrolled",
@@ -3086,16 +2896,6 @@
       "format": "",
       "emr": "",
       "consultant": "Cierra Minter",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Kaushik Patel MD (272500153)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -3139,16 +2939,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Eric S Palosky, Do Pa (200183986)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Carlsbad Village Family Practice Medical Associates Inc (470923991)",
       "status": "Not Enrolled",
@@ -3166,16 +2956,6 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Marion Demers MD (341965318)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -3219,16 +2999,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Family Care Physician Group (813351950)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Chula Vista Internal Medicine (330336604)",
       "status": "Enrolled",
@@ -3246,16 +3016,6 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Pinellas County Primary Care and Hospitalists (474594025)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -3299,16 +3059,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Family Medical Group PA (592645885)",
-      "status": "Inactive",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Inactive",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Ciecal RC Inc (270769897)",
       "status": "Not Enrolled",
@@ -3326,16 +3076,6 @@
       "format": "",
       "emr": "",
       "consultant": "Samantha Lipyanek",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Ray Hsiao MD (954484988)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -3379,16 +3119,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Fort Myers Primary Care And Wellness (932349773)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Elisa Kiesling",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Citrus Valley Medical Associates Inc. (330842938)",
       "status": "Refused",
@@ -3406,16 +3136,6 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Robert Flores MD (330390695)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -3459,16 +3179,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Gary Wright Md Pa (650768029)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Elisa Kiesling",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Consuelo Teresa M Ocampo Md Inc (330814629)",
       "status": "Enrolled",
@@ -3486,16 +3196,6 @@
       "format": "",
       "emr": "",
       "consultant": "Rachel Gandhi",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Shida Saam DO (330770880)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -3539,16 +3239,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Grace Family Medicine Pllc (852556921)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Curtis Conard",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Corona Medical Center A Professional Corporation (330813580)",
       "status": "Not Enrolled",
@@ -3566,16 +3256,6 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Susan Denise Hoffman MD (56-2351986)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Danny Lagos",
       "notes": ""
     },
     {
@@ -3619,16 +3299,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Gulf Coast Internist, Llc. (270431668)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Crown Island Family Practice A Medical Corporation (464560273)",
       "status": "Enrolled",
@@ -3646,16 +3316,6 @@
       "format": "",
       "emr": "",
       "consultant": "",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Than Aung MD (943352055)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -3699,16 +3359,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Highlands Health And Wellness Center Llc (205083715)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Culture Of Life Family Services / George Delgado M.D., Inc. (912169315)",
       "status": "Not Enrolled",
@@ -3726,16 +3376,6 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Walter Woodhouse (563908888)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -3779,16 +3419,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Highlands Medical Group P A (931692347)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "David H Nguyen Md Inc (330920560)",
       "status": "Refused",
@@ -3806,16 +3436,6 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
-    },
-    {
-      "aco": "Florence",
-      "name": "Woun Hue Seok DO (201464369)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Samantha Montgomery",
       "notes": ""
     },
     {
@@ -3846,16 +3466,6 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Jorge I Zeledon Md Pa (472684652)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
       "notes": ""
     },
     {
@@ -3909,16 +3519,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Karen N Phillipps Md Pa (200122591)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Devadas Moses A Professional Medical Corporation (934377282)",
       "status": "Not Enrolled",
@@ -3966,16 +3566,6 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Keith Kappeler (170642979)",
-      "status": "Enrolled",
-      "intake": "Yes",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Sheri Borkowski",
       "notes": ""
     },
     {
@@ -4029,16 +3619,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Lytle Family Practice Pa (900214862)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Curtis Conard",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Douglas F. Carrasco Md Inc. (470928379)",
       "status": "Enrolled",
@@ -4089,16 +3669,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Mario E Carbonell Md Pa (651015296)",
-      "status": "Refused",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Dr Kenneth Pilgreen (436886333)",
       "status": "Not Enrolled",
@@ -4136,16 +3706,6 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Mcgregor Medical And Wellness,Llc (474623480)",
-      "status": "Refused",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Curtis Conard",
       "notes": ""
     },
     {
@@ -4189,16 +3749,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Medical Clinic Of Bellaire Pa (201129313)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Curtis Conard",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Dr Mona Shah Professional Corporation (271780971)",
       "status": "Not Enrolled",
@@ -4236,16 +3786,6 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Mina B Bhatt Md Pa (432054452)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
       "notes": ""
     },
     {
@@ -4289,16 +3829,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "North Port Primary Care Association Pl (270586429)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Elizabeth Salada Md A Medical Corporation (208111944)",
       "status": "Refused",
@@ -4336,16 +3866,6 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Palm Harbor Internal Medicine And Pediatrics Pa (010690352)",
-      "status": "Enrolled",
-      "intake": "Yes",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Sheri Borkowski",
       "notes": ""
     },
     {
@@ -4389,16 +3909,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Patel Pulmonary Pa (263564467)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Family & Preventive Medical Center Of Chula Vista A Medical Corporatio (330769133)",
       "status": "Enrolled",
@@ -4436,16 +3946,6 @@
       "format": "",
       "emr": "",
       "consultant": "AnnaVee Kim",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Pavan K Anand Md Pa (650923321)",
-      "status": "Refused",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Sheri Borkowski",
       "notes": ""
     },
     {
@@ -4489,16 +3989,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Pedro Y. Chan, R.Ph., Do, Pa (593426300)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "FamilyFirst Family Medical Practice (920711105)",
       "status": "Not Enrolled",
@@ -4536,16 +4026,6 @@
       "format": "",
       "emr": "",
       "consultant": "Xuan Pham",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Pinellas Internal Medicine Specialists, Pa (593603706)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "Sheri Borkowski",
       "notes": ""
     },
     {
@@ -4589,16 +4069,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Regional Health Management Corporation (630819576)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Curtis Conard",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Gateway Medical Group Of San Diego (330609888)",
       "status": "Refused",
@@ -4626,16 +4096,6 @@
       "format": "",
       "emr": "Fax",
       "consultant": "Candace",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Robert L Schubert Md Llc (815367503)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Elisa Kiesling",
       "notes": ""
     },
     {
@@ -4669,16 +4129,6 @@
       "notes": "No credentials issued yet"
     },
     {
-      "aco": "ADACO",
-      "name": "South Carolina Internal Medicine Associates And Rehabilitation,L.L.C. (562124971)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "EMR",
-      "emr": "EPIC",
-      "consultant": "Elisa Kiesling",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Ghasb Medical Corporation (332607553)",
       "status": "Not Enrolled",
@@ -4706,16 +4156,6 @@
       "format": "",
       "emr": "",
       "consultant": "Candace",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Story Family Medicine (454899964)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "OC Stephens",
       "notes": ""
     },
     {
@@ -4749,16 +4189,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Sun 'N Lake Medical Group Pa (651053879)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "",
-      "consultant": "OC Stephens",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Grace Family Health Inc. (272231107)",
       "status": "Enrolled",
@@ -4779,16 +4209,6 @@
       "notes": "Peggy (OM) to contact via call or text if issues"
     },
     {
-      "aco": "ADACO",
-      "name": "Suncoast Primary Care Llc (205962913)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Curtis Conard",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Graybill Medical Group Inc (953123703)",
       "status": "Not Enrolled",
@@ -4806,16 +4226,6 @@
       "format": "",
       "emr": "",
       "consultant": "Khushbu Shah",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Sunergy Physicians Llc (853957957)",
-      "status": "Not Enrolled",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "OC Stephens",
       "notes": ""
     },
     {
@@ -4839,16 +4249,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Syed Hassan Md Pa (465091853)",
-      "status": "Refused",
-      "intake": "No",
-      "format": "",
-      "emr": "",
-      "consultant": "Curtis Conard",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Hemchand Kolli Md Inc (208230308)",
       "status": "Enrolled",
@@ -4869,16 +4269,6 @@
       "notes": ""
     },
     {
-      "aco": "ADACO",
-      "name": "Three Rivers Medical Associates Pa (570983452)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "Fax",
-      "emr": "Athena",
-      "consultant": "Elisa Kiesling",
-      "notes": ""
-    },
-    {
       "aco": "CCPACO",
       "name": "Hoag Clinic (330676831)",
       "status": "Not Enrolled",
@@ -4896,16 +4286,6 @@
       "format": "",
       "emr": "",
       "consultant": "Rohan Banton",
-      "notes": ""
-    },
-    {
-      "aco": "ADACO",
-      "name": "Total Health Primary Care, Pllc (223940595)",
-      "status": "Enrolled",
-      "intake": "No",
-      "format": "EMR",
-      "emr": "Athena",
-      "consultant": "Curtis Conard",
       "notes": ""
     },
     {
@@ -6040,12 +5420,12 @@
     }
   ],
   "metrics485": {
-    "total": 370,
-    "enrolled": 78,
-    "notEnrolled": 258,
-    "refused": 32,
-    "inactive": 2,
-    "emrCount": 32,
+    "total": 308,
+    "enrolled": 56,
+    "notEnrolled": 224,
+    "refused": 27,
+    "inactive": 1,
+    "emrCount": 29,
     "byACO": [
       {
         "aco": "CCPACO",
@@ -9458,6 +8838,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-16T14:28:30.768Z",
+  "lastUpdated": "2026-07-16T14:34:38.905Z",
   "source": "auto-sync"
 }
