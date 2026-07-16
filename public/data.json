@@ -1780,7 +1780,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": ""
+      "notes": "fu on status of appt"
     },
     {
       "name": "Robert Dunn",
@@ -8838,6 +8838,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-16T14:34:38.905Z",
+  "lastUpdated": "2026-07-16T14:43:05.404Z",
   "source": "auto-sync"
 }
