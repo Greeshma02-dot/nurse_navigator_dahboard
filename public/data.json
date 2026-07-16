@@ -1307,29 +1307,29 @@
       "anticipatedStr": "7/17/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/28/2026",
       "apptType": "",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "status": "Scheduled",
+      "notes": "cc"
     }
   ],
   "metrics": {
     "totalPatients": 60,
     "currentlyAdmitted": 40,
-    "tcmScheduled": 43,
-    "tcmPending": 16,
+    "tcmScheduled": 44,
+    "tcmPending": 15,
     "visitVerified": 20,
     "missed14DayWindow": 0,
     "notYetScheduled": 1,
-    "scheduledRate": 71.7,
+    "scheduledRate": 73.3,
     "nurseCounts": {
       "Devan Lambruno": 60
     }
@@ -5888,6 +5888,6 @@
     "notReceived": 0,
     "pending": 0
   },
-  "lastUpdated": "2026-07-16T16:13:03.194Z",
+  "lastUpdated": "2026-07-16T16:28:03.122Z",
   "source": "auto-sync"
 }
