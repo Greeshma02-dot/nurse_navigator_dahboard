@@ -1340,7 +1340,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": ""
+      "notes": "appt was cancelled due to patient preference"
     },
     {
       "name": "Robert Madore",
@@ -1356,12 +1356,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/7/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": ""
     },
     {
@@ -1876,7 +1876,7 @@
     "currentlyAdmitted": 48,
     "tcmScheduled": 56,
     "tcmPending": 26,
-    "visitVerified": 22,
+    "visitVerified": 23,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
     "scheduledRate": 65.9,
@@ -2337,6 +2337,6 @@
     "tbd": 2,
     "emrComplete": 16
   },
-  "lastUpdated": "2026-07-15T20:43:18.888Z",
+  "lastUpdated": "2026-07-16T12:43:31.320Z",
   "source": "auto-sync"
 }
