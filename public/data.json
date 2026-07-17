@@ -6208,7 +6208,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6219,7 +6222,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6230,7 +6236,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/22/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6241,7 +6250,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6252,7 +6264,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6263,7 +6278,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6274,7 +6292,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6285,7 +6306,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6296,7 +6320,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6307,7 +6334,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6318,7 +6348,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6329,7 +6362,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "5/18/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6340,7 +6376,12 @@
       "formReceived": "Yes",
       "dateReceivedStr": "5/28/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrSystem": "Practice Fusion",
+      "emrAccessConfirmed": true
     },
     {
       "aco": "ACPACO",
@@ -6351,7 +6392,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "N/A",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6362,7 +6406,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6373,7 +6420,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6384,7 +6434,12 @@
       "formReceived": "Yes",
       "dateReceivedStr": "5/27/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrSystem": "Practice Fusion",
+      "emrAccessConfirmed": true
     },
     {
       "aco": "ACPACO",
@@ -6395,7 +6450,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6406,7 +6464,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6417,7 +6478,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6428,7 +6492,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6439,7 +6506,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "ACPACO",
@@ -6450,7 +6520,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6461,7 +6534,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6472,7 +6548,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6483,7 +6562,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6494,7 +6576,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6505,7 +6590,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6516,7 +6604,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6527,7 +6618,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6538,7 +6632,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6549,7 +6646,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6560,7 +6660,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6571,7 +6674,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6582,7 +6688,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6593,7 +6702,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6604,7 +6716,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/29/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6615,7 +6730,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6626,7 +6744,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6637,7 +6758,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6648,7 +6772,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6659,7 +6786,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6670,7 +6800,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6681,7 +6814,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6692,7 +6828,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6703,7 +6842,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6714,7 +6856,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6725,7 +6870,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6736,7 +6884,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6747,7 +6898,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6758,7 +6912,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6769,7 +6926,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6780,7 +6940,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6791,7 +6954,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6802,7 +6968,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6813,7 +6982,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6824,7 +6996,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6835,7 +7010,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6846,7 +7024,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6857,7 +7038,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6868,7 +7052,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6879,7 +7066,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6890,7 +7080,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6901,7 +7094,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6912,7 +7108,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6923,7 +7122,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6934,7 +7136,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6945,7 +7150,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6956,7 +7164,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6967,7 +7178,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6978,7 +7192,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6989,7 +7206,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7000,7 +7220,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7011,7 +7234,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7022,7 +7248,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7033,7 +7262,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7044,7 +7276,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7055,7 +7290,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7066,7 +7304,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7077,7 +7318,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7088,7 +7332,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7099,7 +7346,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7110,7 +7360,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7121,7 +7374,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7132,7 +7388,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7143,7 +7402,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7154,7 +7416,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7165,7 +7430,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7176,7 +7444,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7187,7 +7458,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7198,7 +7472,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7209,7 +7486,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7220,7 +7500,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7231,7 +7514,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7242,7 +7528,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7253,7 +7542,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7264,7 +7556,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7275,7 +7570,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7286,7 +7584,12 @@
       "formReceived": "Yes",
       "dateReceivedStr": "N/A",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Zoe"
+      ],
+      "emrSystem": "eCW",
+      "emrAccessConfirmed": true
     },
     {
       "aco": "CCPACO",
@@ -7297,7 +7600,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7308,7 +7614,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7319,7 +7628,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7330,7 +7642,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7341,7 +7656,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7352,7 +7670,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7363,7 +7684,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7374,7 +7698,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/25/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7385,7 +7712,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7396,7 +7726,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7407,7 +7740,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7418,7 +7754,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7429,7 +7768,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7440,7 +7782,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7451,7 +7796,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7462,7 +7810,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7473,7 +7824,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7484,7 +7838,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7495,7 +7852,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7506,7 +7866,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7517,7 +7880,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7528,7 +7894,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7539,7 +7908,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7550,7 +7922,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7561,7 +7936,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7572,7 +7950,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7583,7 +7964,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7594,7 +7978,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -7605,7 +7992,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7616,7 +8006,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7627,7 +8020,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7638,7 +8034,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7649,7 +8048,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7660,7 +8062,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7671,7 +8076,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7682,7 +8090,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7693,7 +8104,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7704,7 +8118,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7715,7 +8132,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7726,7 +8146,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7737,7 +8160,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7748,7 +8174,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7759,7 +8188,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7770,7 +8202,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7781,7 +8216,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7792,7 +8230,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7803,7 +8244,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7814,7 +8258,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7825,7 +8272,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7836,7 +8286,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7847,7 +8300,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7858,7 +8314,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7869,7 +8328,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7880,7 +8342,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7891,7 +8356,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7902,7 +8370,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7913,7 +8384,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7924,7 +8398,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7935,7 +8412,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7946,7 +8426,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7957,7 +8440,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7968,7 +8454,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7979,7 +8468,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -7990,7 +8482,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -8001,7 +8496,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Choice",
@@ -8012,7 +8510,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8023,7 +8524,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8034,7 +8538,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "5/27/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8045,7 +8552,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8056,7 +8566,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8067,7 +8580,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/9/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8078,7 +8594,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8089,7 +8608,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8100,7 +8622,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "5/18/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8111,7 +8636,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/9/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8122,7 +8650,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8133,7 +8664,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8144,7 +8678,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8155,7 +8692,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8166,7 +8706,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8177,7 +8720,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8188,7 +8734,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8199,7 +8748,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -8210,7 +8762,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8221,7 +8776,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8232,7 +8790,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8243,7 +8804,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8254,7 +8818,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8265,7 +8832,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/5/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8276,7 +8846,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8287,7 +8860,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8298,7 +8874,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8309,7 +8888,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8320,7 +8902,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8331,7 +8916,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8342,7 +8930,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8353,7 +8944,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8364,7 +8958,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8375,7 +8972,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8386,7 +8986,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8397,7 +9000,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8408,7 +9014,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8419,7 +9028,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8430,7 +9042,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8441,7 +9056,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8452,7 +9070,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8463,7 +9084,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8474,7 +9098,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8485,7 +9112,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8496,7 +9126,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8507,7 +9140,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/17/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8518,7 +9154,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8529,7 +9168,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8540,7 +9182,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8551,7 +9196,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8562,7 +9210,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8573,7 +9224,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8584,7 +9238,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8595,7 +9252,12 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/17/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [
+        "Taylor"
+      ],
+      "emrSystem": "eCW",
+      "emrAccessConfirmed": true
     },
     {
       "aco": "NJPACO",
@@ -8606,7 +9268,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8617,7 +9282,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8628,7 +9296,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8639,7 +9310,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8650,7 +9324,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/5/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8661,7 +9338,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8672,7 +9352,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8683,7 +9366,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8694,7 +9380,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8705,7 +9394,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8716,7 +9408,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8727,7 +9422,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8738,7 +9436,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8749,7 +9450,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8760,7 +9464,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8771,7 +9478,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8782,7 +9492,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8793,7 +9506,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8804,7 +9520,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8815,7 +9534,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8826,7 +9548,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/17/2025",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8837,7 +9562,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/25/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8848,7 +9576,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8859,7 +9590,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8870,7 +9604,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8881,7 +9618,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8892,7 +9632,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8903,7 +9646,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8914,7 +9660,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8925,7 +9674,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8936,7 +9688,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8947,7 +9702,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8958,7 +9716,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "6/25/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8969,7 +9730,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8980,7 +9744,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -8991,7 +9758,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9002,7 +9772,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9013,7 +9786,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "7/7/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9024,7 +9800,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9035,7 +9814,10 @@
       "formReceived": "Yes",
       "dateReceivedStr": "7/7/2026",
       "status": "Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9046,7 +9828,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9057,7 +9842,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9068,7 +9856,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9079,7 +9870,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9090,7 +9884,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9101,7 +9898,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9112,7 +9912,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9123,7 +9926,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9134,7 +9940,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9145,7 +9954,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9156,7 +9968,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9167,7 +9982,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9178,7 +9996,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9189,7 +10010,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -9200,7 +10024,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9211,7 +10038,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9222,7 +10052,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9233,7 +10066,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9244,7 +10080,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9255,7 +10094,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9266,7 +10108,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9277,7 +10122,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9288,7 +10136,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9299,7 +10150,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9310,7 +10164,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9321,7 +10178,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9332,7 +10192,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9343,7 +10206,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9354,7 +10220,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9365,7 +10234,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9376,7 +10248,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9387,7 +10262,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9398,7 +10276,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9409,7 +10290,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9420,7 +10304,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9431,7 +10318,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9442,7 +10332,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9453,7 +10346,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9464,7 +10360,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9475,7 +10374,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9486,7 +10388,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9497,7 +10402,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9508,7 +10416,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9519,7 +10430,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9530,7 +10444,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9541,7 +10458,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9552,7 +10472,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "Orion",
@@ -9563,7 +10486,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -9574,7 +10500,10 @@
       "formReceived": "",
       "dateReceivedStr": "N/A",
       "status": "Not Received",
-      "notes": ""
+      "notes": "",
+      "emrAccessNurses": [],
+      "emrSystem": "",
+      "emrAccessConfirmed": false
     }
   ],
   "intakeMetrics": {
@@ -9583,6 +10512,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-17T19:45:15.635Z",
+  "lastUpdated": "2026-07-17T19:53:14.195Z",
   "source": "auto-sync"
 }
