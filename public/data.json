@@ -1898,10 +1898,8 @@
       "contact": "Care Compass Messaging to: Chris R",
       "networkAccess": "",
       "notes": "Data agreement signed. Jamie working with IT.",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "LIVINGWATER'S MEDICAL CLINIC, INC.",
@@ -1930,11 +1928,8 @@
       "contact": "N/A",
       "networkAccess": "N/A",
       "notes": "Complete for both Sunnie and Devan as of 3/13",
-      "emrAccessNurses": [
-        "Devan",
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "KAMALDEEP PANACH, M.D., INC.",
@@ -2053,11 +2048,8 @@
       "contact": "N/A",
       "networkAccess": "",
       "notes": "Complete",
-      "emrAccessNurses": [
-        "Devan",
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "Citrus Valley Medical Associates Inc.",
@@ -2071,11 +2063,8 @@
       "contact": "N/A",
       "networkAccess": "",
       "notes": "Access complete as of 4/30",
-      "emrAccessNurses": [
-        "Devan",
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "RICHARD GUZMAN",
@@ -2149,11 +2138,8 @@
       "contact": "Danielle/Winnie",
       "networkAccess": "Devan EMR access",
       "notes": "Complete",
-      "emrAccessNurses": [
-        "Devan",
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "RHODA ESTRELLA-ITCHON, M.D., INC.",
@@ -2212,11 +2198,8 @@
       "contact": "N/A",
       "networkAccess": "Taylor EMR access",
       "notes": "Complete",
-      "emrAccessNurses": [
-        "Devan",
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "DOUGLAS F. CARRASCO M.D. INC.",
@@ -2230,10 +2213,8 @@
       "contact": "Jenaro",
       "networkAccess": "Devan EMR access",
       "notes": "Temecula: Complete for Devan & Sunnie Murrietta: Pending SSN request",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "DAVID H NGUYEN MD INC",
@@ -2247,10 +2228,8 @@
       "contact": "Keri/Michelle",
       "networkAccess": "Devan EMR access",
       "notes": "05/07 - Sunnie has access now 05/1 - sent text to Keri confirming she created access 03/18 - will confirm Sunnie access today in person meeting.",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "T D NGUYEN MD INC",
@@ -2354,11 +2333,8 @@
       "contact": "N/A",
       "networkAccess": "Taylor, Sunnie & Devan all have access",
       "notes": "Complete",
-      "emrAccessNurses": [
-        "Devan",
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "DAVID ZEBRACK DO INC (Temecula Valley PCPs)",
@@ -2387,11 +2363,8 @@
       "contact": "",
       "networkAccess": "",
       "notes": "Trysha to request Sunnie's access at 2/19 mtg",
-      "emrAccessNurses": [
-        "Sunnie",
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "name": "ABAYOMI A. ODUBELA, M.D., A PROFESSIONAL CORPORATION",
@@ -2766,10 +2739,8 @@
       "emr": "",
       "consultant": "Jet Ramos",
       "notes": "Allscripts/veradighm",
-      "emrAccessNurses": [
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2912,10 +2883,8 @@
       "emr": "Awaiting Intake",
       "consultant": "Jet Ramos",
       "notes": "eCW",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -2950,10 +2919,8 @@
       "emr": "eCW",
       "consultant": "Rachel Robinson",
       "notes": "",
-      "emrAccessNurses": [
-        "Taylor"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3060,10 +3027,8 @@
       "emr": "Tasks assigned",
       "consultant": "Jet Ramos",
       "notes": "Practice Fusion",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -3458,10 +3423,8 @@
       "emr": "eCW",
       "consultant": "Rachel Robinson",
       "notes": "",
-      "emrAccessNurses": [
-        "Taylor"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -3628,10 +3591,8 @@
       "emr": "Practice Fusion",
       "consultant": "Amy McCaughey",
       "notes": "Using Devan's Email",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3642,10 +3603,8 @@
       "emr": "",
       "consultant": "Jet Ramos",
       "notes": "eCW",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "HCPACO",
@@ -3836,10 +3795,8 @@
       "emr": "Practice Fusion",
       "consultant": "Amy McCaughey",
       "notes": "Reassign task to MA associated with PCP",
-      "emrAccessNurses": [
-        "Taylor"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3910,10 +3867,8 @@
       "emr": "",
       "consultant": "Jet Ramos",
       "notes": "",
-      "emrAccessNurses": [
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -3960,10 +3915,8 @@
       "emr": "Practice Fusion",
       "consultant": "Amy McCaughey",
       "notes": "",
-      "emrAccessNurses": [
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -3974,10 +3927,8 @@
       "emr": "",
       "consultant": "Jet Ramos",
       "notes": "intake received - method unknown EMR unknown",
-      "emrAccessNurses": [
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -4036,10 +3987,8 @@
       "emr": "Office Alley",
       "consultant": "Jet Ramos",
       "notes": "Sunnie",
-      "emrAccessNurses": [
-        "Sunnie"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "OACO",
@@ -4506,10 +4455,8 @@
       "emr": "",
       "consultant": "Samantha Lipyanek",
       "notes": "",
-      "emrAccessNurses": [
-        "Taylor"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CACO",
@@ -4928,10 +4875,8 @@
       "emr": "eCW",
       "consultant": "Rachel Robinson",
       "notes": "",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5698,10 +5643,8 @@
       "emr": "eCW",
       "consultant": "Bella McKay",
       "notes": "Tag OM Kathy McCoy",
-      "emrAccessNurses": [
-        "Taylor"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -5844,10 +5787,8 @@
       "emr": "eCW",
       "consultant": "Jasmine Smith",
       "notes": "",
-      "emrAccessNurses": [
-        "Taylor"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "NJPACO",
@@ -6062,10 +6003,8 @@
       "emr": "eCW",
       "consultant": "Sheyenne Powers",
       "notes": "Tammy (OM) primary contact",
-      "emrAccessNurses": [
-        "Taylor"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6124,10 +6063,8 @@
       "emr": "eCW",
       "consultant": "Sierra Williams",
       "notes": "Recommendations sent in the messages section",
-      "emrAccessNurses": [
-        "Devan"
-      ],
-      "emrAccessConfirmed": true
+      "emrAccessNurses": [],
+      "emrAccessConfirmed": false
     },
     {
       "aco": "CCPACO",
@@ -6172,7 +6109,7 @@
     "notEnrolled": 224,
     "refused": 27,
     "inactive": 1,
-    "emrCount": 34,
+    "emrCount": 29,
     "byACO": [
       {
         "aco": "CCPACO",
@@ -9585,6 +9522,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-17T15:13:05.273Z",
+  "lastUpdated": "2026-07-17T15:28:05.791Z",
   "source": "auto-sync"
 }
