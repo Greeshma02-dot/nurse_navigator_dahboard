@@ -1541,28 +1541,6 @@
       "notes": "CC"
     },
     {
-      "name": "Gail Gamet",
-      "practice": "Richard Uhler",
-      "location": "TVH",
-      "room": "4142",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/10/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "7/16/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": "not tcm eligible"
-    },
-    {
       "name": "Tali Manthey",
       "practice": "Richard Uhler",
       "location": "IVM",
@@ -1576,12 +1554,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/17/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": ""
     },
     {
@@ -2048,16 +2026,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 93,
-    "currentlyAdmitted": 52,
-    "tcmScheduled": 59,
+    "totalPatients": 92,
+    "currentlyAdmitted": 51,
+    "tcmScheduled": 58,
     "tcmPending": 31,
-    "visitVerified": 26,
+    "visitVerified": 27,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 63.4,
+    "scheduledRate": 63,
     "nurseCounts": {
-      "Devan Lambruno": 68,
+      "Devan Lambruno": 67,
       "Sunnie Emberson": 25
     }
   },
@@ -10688,6 +10666,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-20T20:28:05.418Z",
+  "lastUpdated": "2026-07-20T20:43:08.574Z",
   "source": "auto-sync"
 }
