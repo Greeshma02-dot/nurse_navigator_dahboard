@@ -1444,13 +1444,13 @@
       "tcmPending": false,
       "tcmDateStr": "7/14/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
-      "notes": "Call back to verify today 7/14"
+      "status": "Visit Verified",
+      "notes": ""
     },
     {
       "name": "Frances Valles",
@@ -2052,7 +2052,7 @@
     "currentlyAdmitted": 52,
     "tcmScheduled": 59,
     "tcmPending": 31,
-    "visitVerified": 25,
+    "visitVerified": 26,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
     "scheduledRate": 63.4,
@@ -10688,6 +10688,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-20T20:13:05.520Z",
+  "lastUpdated": "2026-07-20T20:28:05.418Z",
   "source": "auto-sync"
 }
