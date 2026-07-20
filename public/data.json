@@ -2022,7 +2022,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch "
     },
     {
       "name": "Kathleen Montaldo",
@@ -10688,6 +10688,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-20T18:43:05.360Z",
+  "lastUpdated": "2026-07-20T18:58:06.038Z",
   "source": "auto-sync"
 }
