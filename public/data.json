@@ -1788,7 +1788,7 @@
       "location": "TVH",
       "room": "4126",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/16/2026",
+      "anticipatedStr": "7/21/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1802,7 +1802,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "awaiting practice approval"
+      "notes": "sch"
     },
     {
       "name": "Rasheeda Chaudhri",
@@ -1934,7 +1934,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "dcd sch"
     },
     {
       "name": "Irene Garibay",
@@ -10688,6 +10688,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-20T17:28:05.388Z",
+  "lastUpdated": "2026-07-20T17:43:05.357Z",
   "source": "auto-sync"
 }
