@@ -1956,7 +1956,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch"
     },
     {
       "name": "Eleanor Mcgrew",
@@ -1964,7 +1964,7 @@
       "location": "TVH",
       "room": "",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/20/2001",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -1978,7 +1978,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch when pending dc"
     },
     {
       "name": "Neil Edwards",
@@ -10688,6 +10688,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-20T17:43:05.357Z",
+  "lastUpdated": "2026-07-20T17:58:05.393Z",
   "source": "auto-sync"
 }
