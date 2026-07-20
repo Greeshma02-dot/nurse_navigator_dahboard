@@ -1877,8 +1877,8 @@
       "room": "403, 01",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/17/2001",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/19/2026",
+      "daysSinceDischarge": 1,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1890,17 +1890,17 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch"
     },
     {
-      "name": "Gary  Larsen",
+      "name": "Gary  Larson",
       "practice": "Citrus Valley",
       "location": "CRM",
       "room": "",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/19/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/18/2026",
+      "daysSinceDischarge": 2,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1912,7 +1912,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch"
     },
     {
       "name": "Thelma Anders",
@@ -1921,8 +1921,8 @@
       "room": "",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/21/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/17/2026",
+      "daysSinceDischarge": 3,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1934,10 +1934,10 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch"
     },
     {
-      "name": "Luis Packard Jr",
+      "name": "Louis Packard Jr",
       "practice": "Richard Uhler",
       "location": "TVH",
       "room": "",
@@ -1956,7 +1956,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch"
     },
     {
       "name": "Reynold Welch",
@@ -1983,7 +1983,7 @@
   ],
   "metrics": {
     "totalPatients": 90,
-    "currentlyAdmitted": 53,
+    "currentlyAdmitted": 50,
     "tcmScheduled": 57,
     "tcmPending": 30,
     "visitVerified": 23,
@@ -10622,6 +10622,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-20T15:43:05.582Z",
+  "lastUpdated": "2026-07-20T15:58:03.761Z",
   "source": "auto-sync"
 }
