@@ -1532,12 +1532,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/15/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "CC"
     },
     {
@@ -2052,7 +2052,7 @@
     "currentlyAdmitted": 52,
     "tcmScheduled": 59,
     "tcmPending": 31,
-    "visitVerified": 24,
+    "visitVerified": 25,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
     "scheduledRate": 63.4,
@@ -10688,6 +10688,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-20T19:58:05.817Z",
+  "lastUpdated": "2026-07-20T20:13:05.520Z",
   "source": "auto-sync"
 }
