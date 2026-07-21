@@ -2028,7 +2028,7 @@
       "name": "Richard Bolduc",
       "practice": "Riverside Medical Clinic",
       "location": "IVM",
-      "room": "",
+      "room": "257,1",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/22/2026",
       "actualDischargeStr": "N/A",
@@ -2044,7 +2044,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "notify pt in hosp"
+      "notes": ""
     },
     {
       "name": "Ruth Winston",
@@ -10710,6 +10710,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-21T19:28:06.001Z",
+  "lastUpdated": "2026-07-21T19:43:03.686Z",
   "source": "auto-sync"
 }
