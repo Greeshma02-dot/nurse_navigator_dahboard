@@ -1811,8 +1811,8 @@
       "room": "403, 01",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/17/2001",
-      "actualDischargeStr": "7/19/2026",
-      "daysSinceDischarge": 2,
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1846,7 +1846,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "notify pt"
+      "notes": ""
     },
     {
       "name": "Thelma Anders",
@@ -1857,18 +1857,18 @@
       "anticipatedStr": "7/21/2026",
       "actualDischargeStr": "7/17/2026",
       "daysSinceDischarge": 4,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/21/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "sch"
+      "status": "Scheduled",
+      "notes": ""
     },
     {
       "name": "Louis Packard Jr",
@@ -1890,7 +1890,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "sch"
+      "notes": ""
     },
     {
       "name": "Reynold Welch",
@@ -1901,18 +1901,18 @@
       "anticipatedStr": "7/19/2026",
       "actualDischargeStr": "7/19/2026",
       "daysSinceDischarge": 2,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/21/2026",
       "apptType": "",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "dcd sch"
+      "status": "Scheduled",
+      "notes": ""
     },
     {
       "name": "Irene Garibay",
@@ -1934,7 +1934,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "sch"
+      "notes": "sch when closer to dc"
     },
     {
       "name": "Eleanor Mcgrew",
@@ -1967,18 +1967,18 @@
       "anticipatedStr": "7/22/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/30/2026",
       "apptType": "",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "status": "Scheduled",
+      "notes": "notify pt in hosp"
     },
     {
       "name": "Ann Mcmichael",
@@ -2000,7 +2000,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "sch "
+      "notes": "sch when closer to dc"
     },
     {
       "name": "Kathleen Montaldo",
@@ -2022,18 +2022,18 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch when closer to dc"
     }
   ],
   "metrics": {
     "totalPatients": 92,
-    "currentlyAdmitted": 51,
-    "tcmScheduled": 58,
-    "tcmPending": 31,
+    "currentlyAdmitted": 52,
+    "tcmScheduled": 61,
+    "tcmPending": 28,
     "visitVerified": 27,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 63,
+    "scheduledRate": 66.3,
     "nurseCounts": {
       "Devan Lambruno": 67,
       "Sunnie Emberson": 25
@@ -10666,6 +10666,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-20T20:43:08.574Z",
+  "lastUpdated": "2026-07-21T13:13:07.373Z",
   "source": "auto-sync"
 }
