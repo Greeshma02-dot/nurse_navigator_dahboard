@@ -1962,7 +1962,7 @@
       "name": "Neil Edwards",
       "practice": "Brian Nguyen",
       "location": "RSM",
-      "room": "",
+      "room": "122",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/22/2026",
       "actualDischargeStr": "N/A",
@@ -1978,7 +1978,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "notify pt in hosp"
+      "notes": ""
     },
     {
       "name": "Ann Mcmichael",
@@ -10710,6 +10710,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-21T18:58:05.959Z",
+  "lastUpdated": "2026-07-21T19:13:03.603Z",
   "source": "auto-sync"
 }
