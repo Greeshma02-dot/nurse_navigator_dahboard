@@ -1769,18 +1769,18 @@
       "anticipatedStr": "7/21/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/27/2026",
       "apptType": "Telehealth",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "FOLLOW UP w CM"
+      "status": "Scheduled",
+      "notes": ""
     },
     {
       "name": "Rasheeda Chaudhri",
@@ -1984,23 +1984,23 @@
       "name": "Ann Mcmichael",
       "practice": "Richard Uhler",
       "location": "TVH",
-      "room": "",
+      "room": "3127",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/24/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/31/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "sch when closer to dc"
+      "status": "Scheduled",
+      "notes": ""
     },
     {
       "name": "Kathleen Montaldo",
@@ -2072,12 +2072,12 @@
   "metrics": {
     "totalPatients": 94,
     "currentlyAdmitted": 53,
-    "tcmScheduled": 64,
-    "tcmPending": 27,
+    "tcmScheduled": 66,
+    "tcmPending": 25,
     "visitVerified": 27,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 68.1,
+    "scheduledRate": 70.2,
     "nurseCounts": {
       "Devan Lambruno": 69,
       "Sunnie Emberson": 25
@@ -10710,6 +10710,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-22T15:43:05.989Z",
+  "lastUpdated": "2026-07-22T15:58:04.997Z",
   "source": "auto-sync"
 }
