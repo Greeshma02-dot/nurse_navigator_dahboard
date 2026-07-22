@@ -1945,18 +1945,18 @@
       "anticipatedStr": "7/23/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "7/23/2026",
+      "apptType": "Telehealth",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "sch when pending dc"
+      "status": "Scheduled",
+      "notes": ""
     },
     {
       "name": "Neil Edwards",
@@ -2072,12 +2072,12 @@
   "metrics": {
     "totalPatients": 94,
     "currentlyAdmitted": 53,
-    "tcmScheduled": 66,
-    "tcmPending": 25,
+    "tcmScheduled": 67,
+    "tcmPending": 24,
     "visitVerified": 27,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 70.2,
+    "scheduledRate": 71.3,
     "nurseCounts": {
       "Devan Lambruno": 69,
       "Sunnie Emberson": 25
@@ -10710,6 +10710,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-22T17:43:09.663Z",
+  "lastUpdated": "2026-07-22T17:58:05.982Z",
   "source": "auto-sync"
 }
