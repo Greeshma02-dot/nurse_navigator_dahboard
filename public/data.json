@@ -1905,7 +1905,7 @@
       "tcmScheduled": true,
       "tcmPending": false,
       "tcmDateStr": "7/21/2026",
-      "apptType": "",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
@@ -10710,6 +10710,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-22T17:28:06.194Z",
+  "lastUpdated": "2026-07-22T17:43:09.663Z",
   "source": "auto-sync"
 }
