@@ -1773,7 +1773,7 @@
       "tcmScheduled": false,
       "tcmPending": true,
       "tcmDateStr": "N/A",
-      "apptType": "",
+      "apptType": "Telehealth",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
@@ -10710,6 +10710,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-22T15:28:07.456Z",
+  "lastUpdated": "2026-07-22T15:43:05.989Z",
   "source": "auto-sync"
 }
