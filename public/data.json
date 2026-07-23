@@ -2067,19 +2067,41 @@
       "call7": "",
       "status": "Pending",
       "notes": ""
+    },
+    {
+      "name": "Ena Modrich",
+      "practice": "Timothy Killeen",
+      "location": "TVH",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 94,
-    "currentlyAdmitted": 53,
+    "totalPatients": 95,
+    "currentlyAdmitted": 54,
     "tcmScheduled": 67,
-    "tcmPending": 24,
+    "tcmPending": 25,
     "visitVerified": 27,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 71.3,
+    "scheduledRate": 70.5,
     "nurseCounts": {
-      "Devan Lambruno": 69,
+      "Devan Lambruno": 70,
       "Sunnie Emberson": 25
     }
   },
@@ -10710,6 +10732,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-23T16:43:08.645Z",
+  "lastUpdated": "2026-07-23T17:24:21.907Z",
   "source": "auto-sync"
 }
