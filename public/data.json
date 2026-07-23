@@ -1921,8 +1921,8 @@
       "room": "",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "7/25/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/22/2026",
+      "daysSinceDischarge": 2,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -1934,7 +1934,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "sch when closer to dc"
+      "notes": ""
     },
     {
       "name": "Eleanor Mcgrew",
@@ -2093,7 +2093,7 @@
   ],
   "metrics": {
     "totalPatients": 95,
-    "currentlyAdmitted": 54,
+    "currentlyAdmitted": 53,
     "tcmScheduled": 67,
     "tcmPending": 25,
     "visitVerified": 27,
@@ -10732,6 +10732,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-23T18:28:06.199Z",
+  "lastUpdated": "2026-07-23T18:43:06.001Z",
   "source": "auto-sync"
 }
