@@ -1934,7 +1934,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "verify pt sees citrus valley"
     },
     {
       "name": "Eleanor Mcgrew",
@@ -2089,19 +2089,41 @@
       "call7": "",
       "status": "Pending",
       "notes": ""
+    },
+    {
+      "name": "Debra Desmith-Marshall",
+      "practice": "Timothy Killeen",
+      "location": "TVH",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 95,
-    "currentlyAdmitted": 53,
+    "totalPatients": 96,
+    "currentlyAdmitted": 54,
     "tcmScheduled": 67,
-    "tcmPending": 25,
+    "tcmPending": 26,
     "visitVerified": 27,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 70.5,
+    "scheduledRate": 69.8,
     "nurseCounts": {
-      "Devan Lambruno": 70,
+      "Devan Lambruno": 71,
       "Sunnie Emberson": 25
     }
   },
@@ -10732,6 +10754,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-24T15:43:05.928Z",
+  "lastUpdated": "2026-07-24T15:58:03.813Z",
   "source": "auto-sync"
 }
