@@ -2111,19 +2111,63 @@
       "call7": "",
       "status": "Pending",
       "notes": ""
+    },
+    {
+      "name": "Susan Reynolds",
+      "practice": "Citrus Valley",
+      "location": "CRM",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
+    },
+    {
+      "name": "Francis Luca",
+      "practice": "Richard Uhler",
+      "location": "RSM",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 96,
-    "currentlyAdmitted": 54,
+    "totalPatients": 98,
+    "currentlyAdmitted": 56,
     "tcmScheduled": 67,
-    "tcmPending": 26,
+    "tcmPending": 28,
     "visitVerified": 27,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 69.8,
+    "scheduledRate": 68.4,
     "nurseCounts": {
-      "Devan Lambruno": 71,
+      "Devan Lambruno": 73,
       "Sunnie Emberson": 25
     }
   },
@@ -10754,6 +10798,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-27T16:13:10.711Z",
+  "lastUpdated": "2026-07-27T16:28:08.951Z",
   "source": "auto-sync"
 }
