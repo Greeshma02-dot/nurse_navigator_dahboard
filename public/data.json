@@ -2110,7 +2110,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch"
     },
     {
       "name": "Susan Reynolds",
@@ -2132,7 +2132,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch when closer to dc"
     },
     {
       "name": "Francis Luca",
@@ -2154,7 +2154,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "sch when closer to dc"
     }
   ],
   "metrics": {
@@ -10798,6 +10798,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-27T20:28:05.444Z",
+  "lastUpdated": "2026-07-27T20:43:03.429Z",
   "source": "auto-sync"
 }
