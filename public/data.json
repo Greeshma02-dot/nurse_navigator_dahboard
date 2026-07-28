@@ -740,12 +740,12 @@
       "tcmPending": false,
       "tcmDateStr": "6/24/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": ""
     },
     {
@@ -1906,12 +1906,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/21/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": ""
     },
     {
@@ -2184,7 +2184,7 @@
     "currentlyAdmitted": 56,
     "tcmScheduled": 67,
     "tcmPending": 29,
-    "visitVerified": 27,
+    "visitVerified": 29,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
     "scheduledRate": 67.7,
@@ -10820,6 +10820,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-28T18:13:05.660Z",
+  "lastUpdated": "2026-07-28T18:28:05.464Z",
   "source": "auto-sync"
 }
