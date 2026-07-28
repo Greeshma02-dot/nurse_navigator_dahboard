@@ -2162,7 +2162,7 @@
       "location": "RSM",
       "room": "",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "7/31/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -10820,6 +10820,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-28T17:28:03.164Z",
+  "lastUpdated": "2026-07-28T17:43:05.398Z",
   "source": "auto-sync"
 }
