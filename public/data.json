@@ -2155,19 +2155,41 @@
       "call7": "",
       "status": "Pending",
       "notes": "sch when closer to dc"
+    },
+    {
+      "name": "Norma Fontenot",
+      "practice": "Kamran Qureshi",
+      "location": "RSM",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 98,
-    "currentlyAdmitted": 55,
+    "totalPatients": 99,
+    "currentlyAdmitted": 56,
     "tcmScheduled": 67,
-    "tcmPending": 28,
+    "tcmPending": 29,
     "visitVerified": 27,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 68.4,
+    "scheduledRate": 67.7,
     "nurseCounts": {
-      "Devan Lambruno": 73,
+      "Devan Lambruno": 74,
       "Sunnie Emberson": 25
     }
   },
@@ -10798,6 +10820,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-28T17:19:43.264Z",
+  "lastUpdated": "2026-07-28T17:28:03.164Z",
   "source": "auto-sync"
 }
