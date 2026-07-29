@@ -2177,20 +2177,43 @@
       "call7": "",
       "status": "Pending",
       "notes": "chest pain that woke her up this am, 1/10, substernal, non-radiating, stressed."
+    },
+    {
+      "name": "ZZ Test Patient",
+      "practice": "TEST PRACTICE",
+      "location": "TVH",
+      "room": "999",
+      "navigator": "Test Nav",
+      "anticipatedStr": "10/5/2026",
+      "actualDischargeStr": "10/4/2026",
+      "daysSinceDischarge": -67,
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "10/9/2026",
+      "apptType": "In-Person",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "46302",
+      "call7": "",
+      "status": "Scheduled",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 99,
+    "totalPatients": 100,
     "currentlyAdmitted": 56,
-    "tcmScheduled": 69,
+    "tcmScheduled": 70,
     "tcmPending": 27,
     "visitVerified": 29,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 69.7,
+    "scheduledRate": 70,
     "nurseCounts": {
       "Devan Lambruno": 74,
-      "Sunnie Emberson": 25
+      "Sunnie Emberson": 25,
+      "Test Nav": 1
     }
   },
   "practices": [
@@ -10820,6 +10843,6 @@
     "notReceived": 286,
     "pending": 0
   },
-  "lastUpdated": "2026-07-29T12:58:07.911Z",
+  "lastUpdated": "2026-07-29T13:13:07.314Z",
   "source": "auto-sync"
 }
