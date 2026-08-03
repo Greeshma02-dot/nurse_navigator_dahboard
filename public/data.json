@@ -1810,9 +1810,9 @@
       "location": "IVM",
       "room": "403, 01",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/22/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "anticipatedStr": "7/17/2026",
+      "actualDischargeStr": "7/21/2026",
+      "daysSinceDischarge": 14,
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
@@ -2335,7 +2335,7 @@
   ],
   "metrics": {
     "totalPatients": 106,
-    "currentlyAdmitted": 59,
+    "currentlyAdmitted": 58,
     "tcmScheduled": 76,
     "tcmPending": 27,
     "visitVerified": 30,
@@ -10974,6 +10974,6 @@
     "notReceived": 266,
     "pending": 0
   },
-  "lastUpdated": "2026-08-03T20:43:02.875Z",
+  "lastUpdated": "2026-08-03T20:58:34.779Z",
   "source": "auto-sync"
 }
