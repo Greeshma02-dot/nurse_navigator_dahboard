@@ -2229,8 +2229,8 @@
       "room": "ICU 03",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "8/3/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "7/31/2026",
+      "daysSinceDischarge": 4,
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
@@ -2335,7 +2335,7 @@
   ],
   "metrics": {
     "totalPatients": 106,
-    "currentlyAdmitted": 60,
+    "currentlyAdmitted": 59,
     "tcmScheduled": 76,
     "tcmPending": 27,
     "visitVerified": 30,
@@ -10974,6 +10974,6 @@
     "notReceived": 0,
     "pending": 269
   },
-  "lastUpdated": "2026-08-03T19:13:15.084Z",
+  "lastUpdated": "2026-08-03T19:28:05.091Z",
   "source": "auto-sync"
 }
