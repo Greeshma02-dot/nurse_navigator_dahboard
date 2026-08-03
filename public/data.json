@@ -5764,10 +5764,10 @@
       "tin": "872701531",
       "consultant": "Jasmine Smith",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
-      "status": "",
-      "notes": "",
+      "formReceived": "Yes",
+      "dateReceivedStr": "7/31/2026",
+      "status": "Received",
+      "notes": "Auto-processed from Outlook: Care Management Intake Form-Dr. Panach",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -7754,10 +7754,10 @@
       "tin": "113622598",
       "consultant": "Hamdullah Hassan",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
-      "status": "",
-      "notes": "",
+      "formReceived": "Yes",
+      "dateReceivedStr": "7/31/2026",
+      "status": "Received",
+      "notes": "Auto-processed from Outlook: ACO Care Management & Coordination Intake Form Submission - Glenridge Medical Associates",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -8344,10 +8344,10 @@
       "tin": "331030066",
       "consultant": "Samantha Lipyanek",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
-      "status": "",
-      "notes": "",
+      "formReceived": "Yes",
+      "dateReceivedStr": "7/31/2026",
+      "status": "Received",
+      "notes": "Auto-processed from Outlook: Rimmi Sobti Care Management Intake Form",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -9097,10 +9097,10 @@
   ],
   "intakeMetrics": {
     "total": 307,
-    "received": 35,
+    "received": 38,
     "notReceived": 0,
-    "pending": 272
+    "pending": 269
   },
-  "lastUpdated": "2026-08-03T15:13:05.344Z",
+  "lastUpdated": "2026-08-03T15:28:05.432Z",
   "source": "auto-sync"
 }
