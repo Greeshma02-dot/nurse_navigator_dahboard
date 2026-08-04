@@ -2297,17 +2297,17 @@
       "anticipatedStr": "8/4/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "8/12/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
+      "status": "Scheduled",
       "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator. 8/3 called practice to schedule, unable to reach practice will try again later"
     },
     {
@@ -2358,12 +2358,12 @@
   "metrics": {
     "totalPatients": 107,
     "currentlyAdmitted": 59,
-    "tcmScheduled": 77,
-    "tcmPending": 27,
+    "tcmScheduled": 78,
+    "tcmPending": 26,
     "visitVerified": 30,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 72,
+    "scheduledRate": 72.9,
     "nurseCounts": {
       "Devan Lambruno": 82,
       "Sunnie Emberson": 25
@@ -10996,6 +10996,6 @@
     "notReceived": 266,
     "pending": 0
   },
-  "lastUpdated": "2026-08-04T16:43:06.163Z",
+  "lastUpdated": "2026-08-04T16:58:05.454Z",
   "source": "auto-sync"
 }
