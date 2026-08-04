@@ -8739,8 +8739,8 @@
       "tin": "953848774",
       "consultant": "Candace Samuel",
       "dateStartedStr": "N/A",
-      "formReceived": "Yes",
-      "dateReceivedStr": "7/20/2026",
+      "formReceived": "",
+      "dateReceivedStr": "N/A",
       "status": "",
       "notes": "",
       "emrAccessNurses": [],
@@ -10992,10 +10992,10 @@
   ],
   "intakeMetrics": {
     "total": 307,
-    "received": 41,
+    "received": 40,
     "notReceived": 0,
-    "pending": 266
+    "pending": 267
   },
-  "lastUpdated": "2026-08-04T18:58:06.696Z",
+  "lastUpdated": "2026-08-04T19:13:06.725Z",
   "source": "auto-sync"
 }
