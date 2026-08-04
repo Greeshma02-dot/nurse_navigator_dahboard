@@ -2275,18 +2275,18 @@
       "anticipatedStr": "8/4/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "8/11/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "SOB, FATIGUE, AND BIL LEG SWELLING, HISTORY OF CHF. BNP ELEVATED PER PCP LAB WORK."
+      "status": "Scheduled",
+      "notes": "SOB, FATIGUE, AND BIL LEG SWELLING, HISTORY OF CHF. BNP ELEVATED PER PCP LAB WORK. Called pcp and scheduled pt for hfu for 8/11 at 1030 with dr ziatoon at Temescal valley  office, pt to be notified. "
     },
     {
       "name": "James Rouse",
@@ -2308,7 +2308,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator"
+      "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator. 8/3 called practice to schedule, unable to reach practice will try again later"
     },
     {
       "name": "Margret Mclean",
@@ -2336,12 +2336,12 @@
   "metrics": {
     "totalPatients": 106,
     "currentlyAdmitted": 58,
-    "tcmScheduled": 76,
-    "tcmPending": 27,
+    "tcmScheduled": 77,
+    "tcmPending": 26,
     "visitVerified": 30,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 71.7,
+    "scheduledRate": 72.6,
     "nurseCounts": {
       "Devan Lambruno": 81,
       "Sunnie Emberson": 25
@@ -10974,6 +10974,6 @@
     "notReceived": 266,
     "pending": 0
   },
-  "lastUpdated": "2026-08-04T12:58:06.600Z",
+  "lastUpdated": "2026-08-04T13:13:06.732Z",
   "source": "auto-sync"
 }
