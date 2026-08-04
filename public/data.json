@@ -2308,13 +2308,35 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator. 8/3 called practice to schedule, unable to reach practice will try again later"
+      "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator. 8/3 called practice to schedule, unable to reach practice will try again later. Called pcp and scheduled hfu for 8/12 at 445, patient to benotified. "
     },
     {
       "name": "Margret Mclean",
       "practice": "HEMCHAND KOLLI",
       "location": "IVM",
       "room": "238, 01",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "8/6/2026",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "8/11/2026",
+      "apptType": "Telehealth",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Scheduled",
+      "notes": "NAUSEA STARTED 45 MIN AGO AND ONE EPISODE OF VOMITING - called pcp and scheduled for 8/11 at 1130 via telehealth as patient is usually seen on telehealth, patient o be notified. "
+    },
+    {
+      "name": "William Nicholson",
+      "practice": "Citrus Valley",
+      "location": "CRM",
+      "room": "290, 01",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "8/6/2026",
       "actualDischargeStr": "N/A",
@@ -2330,40 +2352,18 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "NAUSEA STARTED 45 MIN AGO AND ONE EPISODE OF VOMITING "
-    },
-    {
-      "name": "William Nicholson",
-      "practice": "Citrus Valley",
-      "location": "CRM",
-      "room": "",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
+      "notes": "admit 8/3 96 YEAR MALE PT COMING FROM RESIDENCE. AOX4 GCS 15. C/C FALL. PT WAS GOING TO THE RESTROOM AND SLIPPED ANF FELL BACKWARDS HIT BACK HEAD AND SHOULDER. PAIN 2/10, SKIN TEAR TO LEFT ELBOW, NEGATIVE LOS OF CONSCIOUSNES"
     }
   ],
   "metrics": {
     "totalPatients": 107,
     "currentlyAdmitted": 59,
-    "tcmScheduled": 78,
-    "tcmPending": 26,
+    "tcmScheduled": 79,
+    "tcmPending": 25,
     "visitVerified": 30,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 72.9,
+    "scheduledRate": 73.8,
     "nurseCounts": {
       "Devan Lambruno": 82,
       "Sunnie Emberson": 25
@@ -10996,6 +10996,6 @@
     "notReceived": 266,
     "pending": 0
   },
-  "lastUpdated": "2026-08-04T16:58:05.454Z",
+  "lastUpdated": "2026-08-04T17:13:02.661Z",
   "source": "auto-sync"
 }
