@@ -2331,19 +2331,41 @@
       "call7": "",
       "status": "Pending",
       "notes": "NAUSEA STARTED 45 MIN AGO AND ONE EPISODE OF VOMITING "
+    },
+    {
+      "name": "William Nicholson",
+      "practice": "Citrus Valley",
+      "location": "CRM",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 106,
-    "currentlyAdmitted": 58,
+    "totalPatients": 107,
+    "currentlyAdmitted": 59,
     "tcmScheduled": 77,
-    "tcmPending": 26,
+    "tcmPending": 27,
     "visitVerified": 30,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 72.6,
+    "scheduledRate": 72,
     "nurseCounts": {
-      "Devan Lambruno": 81,
+      "Devan Lambruno": 82,
       "Sunnie Emberson": 25
     }
   },
@@ -10974,6 +10996,6 @@
     "notReceived": 266,
     "pending": 0
   },
-  "lastUpdated": "2026-08-04T16:28:06.214Z",
+  "lastUpdated": "2026-08-04T16:43:06.163Z",
   "source": "auto-sync"
 }
