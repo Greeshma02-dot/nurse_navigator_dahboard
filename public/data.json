@@ -2176,7 +2176,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "chest pain that woke her up this am, 1/10, substernal, non-radiating, stressed. Called practice and scheduled for 8/5 at 2pm, patient to be notified in hosp. patient dc before antificipated dc date- called to notify pt, and pt states she is aware of appt and rescheduled for 8/12 due to a conflict on 8/5, pt verbalizes understanding."
+      "notes": "chest pain that woke her up this am, 1/10, substernal, non-radiating, stressed. Called practice and scheduled for 8/5 at 2pm, patient to be notified in hosp. patient dc before antificipated dc date- called to notify pt, and pt states she is aware of appt and rescheduled for 8/12 due to a conflict on 8/5, pt verbalizes understanding. 8/4 pt called nurse navigator and asked if the hfu was necessary due to having numerous appts to keep up with, nurse reinforced importance of making it to hfu and patient verbalizes understanding. pt states she threw aware the discharge paperwork, nurse reassused this paperwork is important but that I would inform pcp this needs requested from hosp. Patient confirms appt time/date works for her and that shed be there. called pcp and informed on need for dc paperwork request, staff verbalize understanding and confirm they will request asap. "
     },
     {
       "name": "Marla Benson",
@@ -2295,8 +2295,8 @@
       "room": "3116",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "8/4/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "8/4/2026",
+      "daysSinceDischarge": 1,
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
@@ -2308,7 +2308,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator. 8/3 called practice to schedule, unable to reach practice will try again later. Called pcp and scheduled hfu for 8/12 at 445, patient to benotified.  8/4 went into hosp this morning to drop off appt card, pt had just dc home right before nurse got there. patient to be notified of appt via phone."
+      "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator. 8/3 called practice to schedule, unable to reach practice will try again later. Called pcp and scheduled hfu for 8/12 at 445, patient to benotified.  8/4 went into hosp this morning to drop off appt card, pt had just dc home right before nurse got there. patient to be notified of appt via phone. Spoke with nurse in hosp, she stated patient had just left before I came, she enphasized importance on f/u due to pt needing CT scan again in 3 mo r/t nodule found while in hosp. "
     },
     {
       "name": "Margret Mclean",
@@ -2317,8 +2317,8 @@
       "room": "238, 01",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "8/6/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "8/4/2026",
+      "daysSinceDischarge": 1,
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
@@ -2341,29 +2341,29 @@
       "anticipatedStr": "8/6/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "8/10/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
+      "status": "Scheduled",
       "notes": "admit 8/3 96 YEAR MALE PT COMING FROM RESIDENCE. AOX4 GCS 15. C/C FALL. PT WAS GOING TO THE RESTROOM AND SLIPPED ANF FELL BACKWARDS HIT BACK HEAD AND SHOULDER. PAIN 2/10, SKIN TEAR TO LEFT ELBOW, NEGATIVE LOS OF CONSCIOUSNES"
     }
   ],
   "metrics": {
     "totalPatients": 107,
-    "currentlyAdmitted": 59,
-    "tcmScheduled": 79,
-    "tcmPending": 25,
+    "currentlyAdmitted": 57,
+    "tcmScheduled": 80,
+    "tcmPending": 24,
     "visitVerified": 30,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 73.8,
+    "scheduledRate": 74.8,
     "nurseCounts": {
       "Devan Lambruno": 82,
       "Sunnie Emberson": 25
@@ -10996,6 +10996,6 @@
     "notReceived": 267,
     "pending": 0
   },
-  "lastUpdated": "2026-08-05T12:58:05.298Z",
+  "lastUpdated": "2026-08-05T13:13:04.956Z",
   "source": "auto-sync"
 }
