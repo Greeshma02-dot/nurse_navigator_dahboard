@@ -2308,7 +2308,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator. 8/3 called practice to schedule, unable to reach practice will try again later. Called pcp and scheduled hfu for 8/12 at 445, patient to benotified. "
+      "notes": "Arrived via  medics from home c/o chest pain - sudden onset since 2230 sgarp 10/10 with pain to left arm x1 week. BS 246 Hx: MI, 6 stents, triple bypass, defibrilator. 8/3 called practice to schedule, unable to reach practice will try again later. Called pcp and scheduled hfu for 8/12 at 445, patient to benotified.  8/4 went into hosp this morning to drop off appt card, pt had just dc home right before nurse got there. patient to be notified of appt via phone."
     },
     {
       "name": "Margret Mclean",
@@ -2330,7 +2330,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "NAUSEA STARTED 45 MIN AGO AND ONE EPISODE OF VOMITING - called pcp and scheduled for 8/11 at 1130 via telehealth as patient is usually seen on telehealth, patient o be notified. "
+      "notes": "NAUSEA STARTED 45 MIN AGO AND ONE EPISODE OF VOMITING - called pcp and scheduled for 8/11 at 1130 via telehealth as patient is usually seen on telehealth, patient o be notified. 8/4 went into hosp this morning to drop off appt card, pt had just dc home right before nurse got there. patient to be notified of appt via phone."
     },
     {
       "name": "William Nicholson",
@@ -10996,6 +10996,6 @@
     "notReceived": 267,
     "pending": 0
   },
-  "lastUpdated": "2026-08-04T20:58:05.056Z",
+  "lastUpdated": "2026-08-05T12:58:05.298Z",
   "source": "auto-sync"
 }
