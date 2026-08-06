@@ -1774,12 +1774,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/28/2026",
       "apptType": "Telehealth",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "per hosp intake PT WAS BOUGHT IN BY POV FOR WEAKNSS,SOB, LETHARGY, NAUSEA, AND MULTIPLE FALLS. PT ALSO IS COMPLAINING OF BILATERAL LOWER EXTREMITY EDEMA AND PAIN. PY HAS HX OD DIABETES, HTN. Called practice and scheduled for 7/28 at 10:10 am. Family requests telehealth appt due to pt condition- practice aware, appt made telehealth and pt + family aware. Appt card given to family at bedside. "
     },
     {
@@ -2016,12 +2016,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/28/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "C/C slurred speech. Last time pt was seen normal was 10pm last night. Today pt had trouble speaking and exhibited slurred speech. Medic states left side seemed a bit weaker as well. BS 94. Called pcp and scheduled pt for hfu for 7/28 at 1030 at temescal location. 7/21 visited pt and wife in hosp gave appt card, wife and patient verbalize understanding and confirm appt"
     },
     {
@@ -2382,7 +2382,7 @@
     "currentlyAdmitted": 57,
     "tcmScheduled": 80,
     "tcmPending": 24,
-    "visitVerified": 39,
+    "visitVerified": 41,
     "missed14DayWindow": 0,
     "notYetScheduled": 4,
     "scheduledRate": 74.1,
@@ -11018,6 +11018,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-06T18:28:24.435Z",
+  "lastUpdated": "2026-08-06T18:43:06.028Z",
   "source": "auto-sync"
 }
