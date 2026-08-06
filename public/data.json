@@ -1620,12 +1620,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/20/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "biba from home. pt had a UA 2 days ago and was told he may \"be septic\" pt c/o gen week. med hx: a-fib CHF, COPD, HTN. Called and scheduled fu with practice staff for 7/20 at 10:45 with Erin Starr at temecula location Patient made aware at bedside and given appt card, verbalizes understanding"
     },
     {
@@ -1670,7 +1670,7 @@
       "call2": "",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Mass to epigastric region present after cough spell. Occured 30min. Hx of cough for 2 weeks. Presently nonproductive. Slight nasal congestion. Called and scheduled fu with practice office staff for 7/20 at 11:15 with Erin Starr at temecula location.  Patient made aware at bedside and given appt card, verbalizes understanding"
+      "notes": "Mass to epigastric region present after cough spell. Occured 30min. Hx of cough for 2 weeks. Presently nonproductive. Slight nasal congestion. Called and scheduled fu with practice office staff for 7/20 at 11:15 with Erin Starr at temecula location.  Patient made aware at bedside and given appt card, verbalizes understanding. Per practice emr patient cancelled appt. next appt 9/17/26"
     },
     {
       "name": "Jane Burnsed",
@@ -1840,12 +1840,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/21/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "left leg swelling; concerned for possible blood clot; denies pain; uses home o2 at 2L. To dc home with family care. Patient already had appt for 7/21 at 1030"
     },
     {
@@ -1948,15 +1948,15 @@
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
-      "tcmDateStr": "7/30/2026",
-      "apptType": "In-Person",
-      "visitVerified": false,
+      "tcmDateStr": "8/4/2026",
+      "apptType": "Telehealth",
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
-      "notes": "BIBA from home, lives with wife, she called 911 when she found the patient sleeping while sitting at the dinner table and when he was awakened he was A/Ox3 forgetful to event when he is normally A/Ox4. Has dressed sores on bilateral legs and receives home wound care. called and scheduled pt for hfu for 7/30 at 11am, patient to be notified. 7/21 visited pt in hosp gave appt card pt verbalizes understanding of appt"
+      "status": "Visit Verified",
+      "notes": "BIBA from home, lives with wife, she called 911 when she found the patient sleeping while sitting at the dinner table and when he was awakened he was A/Ox3 forgetful to event when he is normally A/Ox4. Has dressed sores on bilateral legs and receives home wound care. called and scheduled pt for hfu for 7/30 at 11am, patient to be notified. 7/21 visited pt in hosp gave appt card pt verbalizes understanding of appt. per practice emr, patient rescheduled tcm to 8/4 telehealth, visit verified. "
     },
     {
       "name": "Ann Mcmichael",
@@ -2382,7 +2382,7 @@
     "currentlyAdmitted": 57,
     "tcmScheduled": 80,
     "tcmPending": 24,
-    "visitVerified": 36,
+    "visitVerified": 39,
     "missed14DayWindow": 0,
     "notYetScheduled": 4,
     "scheduledRate": 74.1,
@@ -11018,6 +11018,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-06T17:58:03.801Z",
+  "lastUpdated": "2026-08-06T18:13:06.771Z",
   "source": "auto-sync"
 }
