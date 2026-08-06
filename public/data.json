@@ -460,7 +460,7 @@
       "call2": "",
       "call7": "",
       "status": "Visit Verified",
-      "notes": "Has appt aready for 8 /28- needs moved to sooner appt.  6/4-unable to reach practice today  to confirm new appt- message sent in EMR to office staff. Spoke with office staff- scheduled patient 6/15 @1:00 patient made aware"
+      "notes": "Has appt aready for 8 /28- needs moved to sooner appt.  6/4-unable to reach practice today  to confirm new appt- message sent in EMR to office staff. Spoke with office staff- scheduled patient 6/15 @1:00 patient made aware. "
     },
     {
       "name": "John Mahanes",
@@ -491,20 +491,20 @@
       "room": "3101",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "N/A",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "6/10/2026",
+      "daysSinceDischarge": 58,
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
-      "tcmDateStr": "6/8/2026",
+      "tcmDateStr": "6/17/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
-      "notes": "EDFF -Has TCM scheduled 6/8/26 with PCP from last hospital admit. 6/5 visited patient in hosptial, made aware of f/u appt, however per nurse , discharged will likely be pushed out due to cardio workup and additional testing."
+      "status": "Visit Verified",
+      "notes": "EDFF -Has TCM scheduled 6/8/26 with PCP from last hospital admit. 6/5 visited patient in hosptial, made aware of f/u appt, however per nurse , discharged will likely be pushed out due to cardio workup and additional testing. Visit verified, appt changed to 6/17 per practice emr as pt dc 6/10, verified pt showed to appt. "
     },
     {
       "name": "Victor Acosta",
@@ -1246,12 +1246,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/9/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "No pending discharge at this time 6/30- 7/1 due to schedule"
     },
     {
@@ -1378,12 +1378,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/28/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "chest pain. 7/1 patient already has appt for 7/28and practice has no sooner appt. added to waitlist for cancelations. Pt to be outreached if cancellation to attempt to be seen in 14 day window from dc"
     },
     {
@@ -1576,12 +1576,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/30/2026",
       "apptType": "Telehealth",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "Patient had a fall while home alone. Unk downtime, unk LKW. Currently at baseline LOC per medics. Reporting weakness with some shakiness. Called and scheduled patient with pcp offie staff for 7/30/2026 as this was only open spot prior to mid august, patient will be added to cancelation list to call in for sooner appt if a spot opens up. visited pt in hosp 7/13 patient states transportation may be difficult so appt was changed to telehealth, appt card given to pt, pt verbalizes and confirms understanding. "
     },
     {
@@ -2082,12 +2082,12 @@
       "tcmPending": false,
       "tcmDateStr": "7/29/2026",
       "apptType": "In-Person",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "Pt ambulated to the ED with C/C of generalized weakness x3days. Pt states that her HR rate has been elevated. Pt endorses tightness in the chest, +Cough. Practice closed on fridays. Called pcp to schedule pt, has appt for tomorrow 7/29 at 1. patient is aware. "
     },
     {
@@ -2401,10 +2401,10 @@
   ],
   "metrics": {
     "totalPatients": 109,
-    "currentlyAdmitted": 59,
+    "currentlyAdmitted": 58,
     "tcmScheduled": 81,
     "tcmPending": 24,
-    "visitVerified": 30,
+    "visitVerified": 35,
     "missed14DayWindow": 0,
     "notYetScheduled": 4,
     "scheduledRate": 74.3,
@@ -11040,6 +11040,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-06T17:28:05.719Z",
+  "lastUpdated": "2026-08-06T17:43:05.344Z",
   "source": "auto-sync"
 }
