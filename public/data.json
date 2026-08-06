@@ -7577,10 +7577,10 @@
       "tin": "208230308",
       "consultant": "Jasmine Smith",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
+      "formReceived": "Yes",
+      "dateReceivedStr": "8/5/2026",
       "status": "",
-      "notes": "",
+      "notes": "Automatically updated from Outlook | Match: Subject practice name matched tracker at 90%+ after ignoring case/spaces/punctuation | Sender: Steffany Woollard | Subject: Care Management Intake Form-Dr. Kolli",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -11036,10 +11036,10 @@
   ],
   "intakeMetrics": {
     "total": 307,
-    "received": 40,
+    "received": 41,
     "notReceived": 0,
-    "pending": 267
+    "pending": 266
   },
-  "lastUpdated": "2026-08-06T15:43:05.340Z",
+  "lastUpdated": "2026-08-06T15:58:14.394Z",
   "source": "auto-sync"
 }
