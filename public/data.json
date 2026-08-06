@@ -1598,12 +1598,12 @@
       "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
-      "visitVerified": false,
+      "visitVerified": true,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Scheduled",
+      "status": "Visit Verified",
       "notes": "Pt found to be unresponsive 30 minutes prior to arrival. Slight response to painful stimuli. Nystagmus noted with forced eye opening. Hx CVA with thrombectomy. On Plavix and Eliquis. Called and scheduled pt with pcp office staff for tomorrow at 9:15 am for telehealth as this was only spot open until mid august. 7/13 patient dc to temecula healthcare center (SNF, pt not TCM eligible) on 7/11 but notes in hosp emr are still saying anticipated dc 7/13, notes were just updated to only new dc date on 7/11/2026 per nurse on site. PCP notified, appt cancelled and pcp staff  updated status in chart"
     },
     {
@@ -1693,28 +1693,6 @@
       "call7": "",
       "status": "Pending",
       "notes": "Patient awaiting discahrge to SNF at this time following fall/skull fx, not TCM eligible until SNF discharge"
-    },
-    {
-      "name": "Kathy Colby",
-      "practice": "Timothy Killeen",
-      "location": "TVH",
-      "room": "3136",
-      "navigator": "Devan Lambruno",
-      "anticipatedStr": "7/14/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Yes",
-      "tcmScheduled": true,
-      "tcmPending": false,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Scheduled",
-      "notes": " gen  weakness, difficulty speaking couple weeks, L facial drooping since yesterday, trouble keeping head up. Patient anticipated to DC 7/14/26, has appt with Killeen already for tomorrow 7/14/26, spoke with Jazmine at PCP and she says she will call patient to do appt confirmation and if patient is able to make it then they will keep appt, but if not she will be added to cancellation list to be called for fu when a spot opens up as schedule is booked out into mid august. "
     },
     {
       "name": "Robert Dunn",
@@ -2400,16 +2378,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 109,
-    "currentlyAdmitted": 58,
-    "tcmScheduled": 81,
+    "totalPatients": 108,
+    "currentlyAdmitted": 57,
+    "tcmScheduled": 80,
     "tcmPending": 24,
-    "visitVerified": 35,
+    "visitVerified": 36,
     "missed14DayWindow": 0,
     "notYetScheduled": 4,
-    "scheduledRate": 74.3,
+    "scheduledRate": 74.1,
     "nurseCounts": {
-      "Devan Lambruno": 84,
+      "Devan Lambruno": 83,
       "Sunnie Emberson": 25
     }
   },
@@ -11040,6 +11018,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-06T17:43:05.344Z",
+  "lastUpdated": "2026-08-06T17:58:03.801Z",
   "source": "auto-sync"
 }
