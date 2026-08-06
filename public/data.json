@@ -2363,18 +2363,18 @@
       "anticipatedStr": "8/6/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "8/13/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "complains of chest pain and abd pain x 1 wk and difficult to eat, had diahrea in the morning."
+      "status": "Scheduled",
+      "notes": "complains of chest pain and abd pain x 1 wk and difficult to eat, had diahrea in the morning. Called pcp and scheduled pt for 8/13 at 10am with pcp dr Virk at corona office. Patient to be notified "
     },
     {
       "name": "Mona Sespe",
@@ -2402,12 +2402,12 @@
   "metrics": {
     "totalPatients": 109,
     "currentlyAdmitted": 59,
-    "tcmScheduled": 80,
-    "tcmPending": 25,
+    "tcmScheduled": 81,
+    "tcmPending": 24,
     "visitVerified": 30,
     "missed14DayWindow": 0,
     "notYetScheduled": 4,
-    "scheduledRate": 73.4,
+    "scheduledRate": 74.3,
     "nurseCounts": {
       "Devan Lambruno": 84,
       "Sunnie Emberson": 25
@@ -11040,6 +11040,6 @@
     "notReceived": 0,
     "pending": 267
   },
-  "lastUpdated": "2026-08-06T12:58:34.297Z",
+  "lastUpdated": "2026-08-06T13:13:05.351Z",
   "source": "auto-sync"
 }
