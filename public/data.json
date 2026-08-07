@@ -2517,17 +2517,17 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "8/5/2026",
       "daysSinceDischarge": 3,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "8/10/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
-      "call2": "",
+      "call2": "Sat Dec 30 1899 10:15:00 GMT-0500 (Eastern Standard Time)",
       "call7": "",
-      "status": "Pending",
+      "status": "Scheduled",
       "notes": "Hepatic encephalopathy:Acute kidney failure, unspecified:Unspecified symptoms and signs involving the genitourinary system"
     },
     {
@@ -2622,12 +2622,12 @@
   "metrics": {
     "totalPatients": 119,
     "currentlyAdmitted": 63,
-    "tcmScheduled": 83,
-    "tcmPending": 33,
+    "tcmScheduled": 84,
+    "tcmPending": 32,
     "visitVerified": 41,
     "missed14DayWindow": 0,
     "notYetScheduled": 3,
-    "scheduledRate": 69.7,
+    "scheduledRate": 70.6,
     "nurseCounts": {
       "Devan Lambruno": 94,
       "Sunnie Emberson": 25
@@ -11260,6 +11260,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-07T19:13:03.654Z",
+  "lastUpdated": "2026-08-07T19:28:03.501Z",
   "source": "auto-sync"
 }
