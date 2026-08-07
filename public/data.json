@@ -2573,17 +2573,39 @@
       "call7": "",
       "status": "Pending",
       "notes": "Patient of Hasnain, Imran"
+    },
+    {
+      "name": "Edna Gabunales",
+      "practice": "Citrus Valley",
+      "location": "CRM",
+      "room": "",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 117,
-    "currentlyAdmitted": 61,
+    "totalPatients": 118,
+    "currentlyAdmitted": 62,
     "tcmScheduled": 83,
     "tcmPending": 31,
     "visitVerified": 41,
     "missed14DayWindow": 0,
-    "notYetScheduled": 3,
-    "scheduledRate": 70.9,
+    "notYetScheduled": 4,
+    "scheduledRate": 70.3,
     "nurseCounts": {
       "Devan Lambruno": 92,
       "Sunnie Emberson": 25
@@ -11216,6 +11238,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-07T17:28:05.640Z",
+  "lastUpdated": "2026-08-07T17:43:06.349Z",
   "source": "auto-sync"
 }
