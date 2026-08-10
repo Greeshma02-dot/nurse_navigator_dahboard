@@ -2361,8 +2361,8 @@
       "room": "PACU 02",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "N/A",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
+      "actualDischargeStr": "8/6/2026",
+      "daysSinceDischarge": 5,
       "tcmRaw": "Pending",
       "tcmScheduled": false,
       "tcmPending": true,
@@ -2627,9 +2627,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -2637,7 +2637,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
       "notes": ""
     },
     {
@@ -2649,9 +2649,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -2659,7 +2659,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
       "notes": ""
     },
     {
@@ -2671,9 +2671,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -2681,7 +2681,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
       "notes": ""
     },
     {
@@ -2693,9 +2693,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -2703,7 +2703,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
       "notes": ""
     },
     {
@@ -2715,9 +2715,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -2725,7 +2725,7 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
       "notes": ""
     },
     {
@@ -2737,9 +2737,9 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "",
+      "tcmRaw": "Pending",
       "tcmScheduled": false,
-      "tcmPending": false,
+      "tcmPending": true,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -2747,18 +2747,18 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Admitted",
+      "status": "Pending",
       "notes": ""
     }
   ],
   "metrics": {
     "totalPatients": 125,
-    "currentlyAdmitted": 69,
+    "currentlyAdmitted": 68,
     "tcmScheduled": 84,
-    "tcmPending": 32,
+    "tcmPending": 38,
     "visitVerified": 41,
     "missed14DayWindow": 0,
-    "notYetScheduled": 9,
+    "notYetScheduled": 3,
     "scheduledRate": 67.2,
     "nurseCounts": {
       "Devan Lambruno": 100,
@@ -11392,6 +11392,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-10T19:28:03.320Z",
+  "lastUpdated": "2026-08-10T19:43:03.360Z",
   "source": "auto-sync"
 }
