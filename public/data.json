@@ -2580,7 +2580,7 @@
       "location": "CRM",
       "room": "",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "8/7/2001",
+      "anticipatedStr": "8/9/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -11260,6 +11260,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-10T16:28:06.053Z",
+  "lastUpdated": "2026-08-10T16:43:05.899Z",
   "source": "auto-sync"
 }
