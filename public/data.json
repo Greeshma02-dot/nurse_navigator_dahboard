@@ -2617,17 +2617,39 @@
       "call7": "",
       "status": "Pending",
       "notes": ""
+    },
+    {
+      "name": "Christophe Davis",
+      "practice": "Douglas Carrasco",
+      "location": "IVM",
+      "room": "",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 119,
-    "currentlyAdmitted": 63,
+    "totalPatients": 120,
+    "currentlyAdmitted": 64,
     "tcmScheduled": 84,
     "tcmPending": 32,
     "visitVerified": 41,
     "missed14DayWindow": 0,
-    "notYetScheduled": 3,
-    "scheduledRate": 70.6,
+    "notYetScheduled": 4,
+    "scheduledRate": 70,
     "nurseCounts": {
       "Devan Lambruno": 94,
       "Sunnie Emberson": 25
@@ -11260,6 +11282,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-10T17:43:03.115Z",
+  "lastUpdated": "2026-08-10T17:58:03.027Z",
   "source": "auto-sync"
 }
