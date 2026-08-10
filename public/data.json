@@ -2705,19 +2705,41 @@
       "call7": "",
       "status": "Admitted",
       "notes": ""
+    },
+    {
+      "name": "William Drewes",
+      "practice": "Citrus Valley",
+      "location": "CRM",
+      "room": "",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 123,
-    "currentlyAdmitted": 67,
+    "totalPatients": 124,
+    "currentlyAdmitted": 68,
     "tcmScheduled": 84,
     "tcmPending": 32,
     "visitVerified": 41,
     "missed14DayWindow": 0,
-    "notYetScheduled": 7,
-    "scheduledRate": 68.3,
+    "notYetScheduled": 8,
+    "scheduledRate": 67.7,
     "nurseCounts": {
-      "Devan Lambruno": 98,
+      "Devan Lambruno": 99,
       "Sunnie Emberson": 25
     }
   },
@@ -11348,6 +11370,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-10T18:43:03.480Z",
+  "lastUpdated": "2026-08-10T18:58:03.724Z",
   "source": "auto-sync"
 }
