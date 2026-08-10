@@ -2418,7 +2418,7 @@
       "call2": "Sat Dec 30 1899 12:15:00 GMT-0500 (Eastern Standard Time)",
       "call7": "dr jenson, fallbrook",
       "status": "Scheduled",
-      "notes": "Coronary angioplasty status- admitted 8/5 dc 8/6, 2 days earlier than anticipated dc. Called pcp and scheduled pt for 8/18 at 12:15 with dr Jenson at fallbrook location"
+      "notes": "Coronary angioplasty status- admitted 8/5 dc 8/6, 2 days earlier than anticipated dc. Called pcp and scheduled pt for 8/18 at 12:15 with dr Jenson at fallbrook location. Patient notified of appt, confirms understanding."
     },
     {
       "name": "Paula Herron",
@@ -11392,6 +11392,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-10T19:13:03.866Z",
+  "lastUpdated": "2026-08-10T19:28:03.320Z",
   "source": "auto-sync"
 }
