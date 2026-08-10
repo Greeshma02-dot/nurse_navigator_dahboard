@@ -2623,7 +2623,29 @@
       "practice": "Douglas Carrasco",
       "location": "IVM",
       "room": "",
-      "navigator": "N/A",
+      "navigator": "Devan Lambruno",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": ""
+    },
+    {
+      "name": "Angela Butvich",
+      "practice": "Citrus Valley",
+      "location": "CRM",
+      "room": "",
+      "navigator": "Devan Lambruno",
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
@@ -2642,16 +2664,16 @@
     }
   ],
   "metrics": {
-    "totalPatients": 120,
-    "currentlyAdmitted": 64,
+    "totalPatients": 121,
+    "currentlyAdmitted": 65,
     "tcmScheduled": 84,
     "tcmPending": 32,
     "visitVerified": 41,
     "missed14DayWindow": 0,
-    "notYetScheduled": 4,
-    "scheduledRate": 70,
+    "notYetScheduled": 5,
+    "scheduledRate": 69.4,
     "nurseCounts": {
-      "Devan Lambruno": 94,
+      "Devan Lambruno": 96,
       "Sunnie Emberson": 25
     }
   },
@@ -11282,6 +11304,6 @@
     "notReceived": 0,
     "pending": 266
   },
-  "lastUpdated": "2026-08-10T17:58:03.027Z",
+  "lastUpdated": "2026-08-10T18:13:06.269Z",
   "source": "auto-sync"
 }
