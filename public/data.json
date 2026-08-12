@@ -2815,17 +2815,39 @@
       "call7": "",
       "status": "Pending",
       "notes": "readmitted 8/11-patient has not urinated since yesterday sometime. She is having stomach pain. Numerous attempts to reach pcp to notify and resch, unsuccessful LM to return call"
+    },
+    {
+      "name": "Shirley Pickel",
+      "practice": "Graybill Medical Clinic",
+      "location": "IVM",
+      "room": "",
+      "navigator": "N/A",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 128,
-    "currentlyAdmitted": 70,
+    "totalPatients": 129,
+    "currentlyAdmitted": 71,
     "tcmScheduled": 89,
     "tcmPending": 36,
     "visitVerified": 41,
     "missed14DayWindow": 0,
-    "notYetScheduled": 3,
-    "scheduledRate": 69.5,
+    "notYetScheduled": 4,
+    "scheduledRate": 69,
     "nurseCounts": {
       "Devan Lambruno": 103,
       "Sunnie Emberson": 25
@@ -11458,6 +11480,6 @@
     "notReceived": 0,
     "pending": 261
   },
-  "lastUpdated": "2026-08-12T20:43:03.282Z",
+  "lastUpdated": "2026-08-12T20:58:03.227Z",
   "source": "auto-sync"
 }
