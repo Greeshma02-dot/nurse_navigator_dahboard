@@ -9901,10 +9901,10 @@
       "tin": "834192234",
       "consultant": "Rohan Banton",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
+      "formReceived": "Yes",
+      "dateReceivedStr": "8/11/2026",
       "status": "",
-      "notes": "",
+      "notes": "Automatically updated from Outlook | Match: Subject practice name matched tracker at 90%+ after ignoring case/spaces/punctuation | Sender: Hamdullah Hassan | Subject: ACO Care Management & Coordination Intake Form Submission - Cross Island Medical",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -10153,10 +10153,10 @@
       "tin": "208508266",
       "consultant": "Rohan Banton",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
+      "formReceived": "Yes",
+      "dateReceivedStr": "8/11/2026",
       "status": "",
-      "notes": "",
+      "notes": "Automatically updated from Outlook | Match: Subject practice name matched tracker at 90%+ after ignoring case/spaces/punctuation | Sender: Hamdullah Hassan | Subject: ACO Care Management Intake Form Submission - Floral Park Medical",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -10827,10 +10827,10 @@
       "tin": "141932821",
       "consultant": "Hamdullah Hassan",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
+      "formReceived": "Yes",
+      "dateReceivedStr": "8/11/2026",
       "status": "",
-      "notes": "",
+      "notes": "Automatically updated from Outlook | Match: Subject practice name matched tracker at 90%+ after ignoring case/spaces/punctuation | Sender: Hamdullah Hassan | Subject: ACO Care Management Intake Form Submission - Shifrin Medical",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -11454,10 +11454,10 @@
   ],
   "intakeMetrics": {
     "total": 307,
-    "received": 41,
+    "received": 44,
     "notReceived": 0,
-    "pending": 266
+    "pending": 263
   },
-  "lastUpdated": "2026-08-12T13:58:03.329Z",
+  "lastUpdated": "2026-08-12T14:13:03.211Z",
   "source": "auto-sync"
 }
