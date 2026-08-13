@@ -2869,17 +2869,17 @@
       "anticipatedStr": "8/13/2026",
       "actualDischargeStr": "8/12/2026",
       "daysSinceDischarge": 2,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "8/19/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
-      "call2": "",
+      "call2": "8:40 Patel",
       "call7": "",
-      "status": "Pending",
+      "status": "Scheduled",
       "notes": "Patient's daughter states that approx. a week ago, her mom fell and hit her head. -LOC -thinners. since the fall, patient has been more confused and unable to care for herself.- pt dc sooner than anticipated, due to sch"
     },
     {
@@ -2930,12 +2930,12 @@
   "metrics": {
     "totalPatients": 133,
     "currentlyAdmitted": 73,
-    "tcmScheduled": 94,
-    "tcmPending": 34,
+    "tcmScheduled": 95,
+    "tcmPending": 33,
     "visitVerified": 44,
     "missed14DayWindow": 0,
     "notYetScheduled": 5,
-    "scheduledRate": 70.7,
+    "scheduledRate": 71.4,
     "nurseCounts": {
       "Devan Lambruno": 97,
       "Sunnie Emberson": 25,
@@ -11570,6 +11570,6 @@
     "notReceived": 0,
     "pending": 261
   },
-  "lastUpdated": "2026-08-13T19:58:11.823Z",
+  "lastUpdated": "2026-08-13T20:13:05.373Z",
   "source": "auto-sync"
 }
