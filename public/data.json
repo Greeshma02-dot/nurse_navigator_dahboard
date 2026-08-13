@@ -2880,7 +2880,7 @@
       "call2": "8:40 Patel",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Patient's daughter states that approx. a week ago, her mom fell and hit her head. -LOC -thinners. since the fall, patient has been more confused and unable to care for herself.- pt dc sooner than anticipated, due to sch"
+      "notes": "Patient's daughter states that approx. a week ago, her mom fell and hit her head. -LOC -thinners. since the fall, patient has been more confused and unable to care for herself.- pt dc sooner than anticipated, called Dr. Patel office and scheduled patient for 8/19 at 8:40, patient and daughter made aware verbalizes underdstanding and confirms appt."
     },
     {
       "name": "Michael Thomas",
@@ -11570,6 +11570,6 @@
     "notReceived": 0,
     "pending": 261
   },
-  "lastUpdated": "2026-08-13T20:13:05.373Z",
+  "lastUpdated": "2026-08-13T20:28:05.525Z",
   "source": "auto-sync"
 }
