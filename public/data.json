@@ -2899,7 +2899,7 @@
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
-      "call2": "",
+      "call2": "Called and left a message for Lauren to call me back to schedule appointment. ",
       "call7": "",
       "status": "Pending",
       "notes": "72 y/o M BIBA from home c/o ABD pain with distension x3 weeks. Pt called 911 today due to SOB due to distended abdomen. Pt c/o N/V. BGL 253. given 250mL NS by EMS. Initial SBP in 80's, currently SBP 140's"
@@ -11570,6 +11570,6 @@
     "notReceived": 0,
     "pending": 261
   },
-  "lastUpdated": "2026-08-13T17:28:05.894Z",
+  "lastUpdated": "2026-08-13T17:43:03.495Z",
   "source": "auto-sync"
 }
