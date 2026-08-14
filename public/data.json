@@ -2943,7 +2943,7 @@
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
-      "call2": "",
+      "call2": "Left message with Lauren to schedule appointment",
       "call7": "",
       "status": "Pending",
       "notes": "63 y/o Male NKA, was scheduled for a shoulder arthroplasty for the left humerus. Surgery was cancelled due to UDS coming back for + meth use. Patient becomes brady in the 30's when asleep, needs cardiac clearance to be cleared for surgery again. Patient had a car accident when he was a child, metal plate in left side of the head."
@@ -11592,6 +11592,6 @@
     "notReceived": 0,
     "pending": 261
   },
-  "lastUpdated": "2026-08-14T15:43:06.177Z",
+  "lastUpdated": "2026-08-14T15:58:05.527Z",
   "source": "auto-sync"
 }
