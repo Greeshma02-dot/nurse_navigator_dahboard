@@ -2998,7 +2998,7 @@
       "location": "CRM",
       "room": "235, 02",
       "navigator": "Latalia",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "8/16/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -3018,9 +3018,9 @@
       "name": "Christopher Hoyt",
       "practice": "Citrus Valley",
       "location": "CRM",
-      "room": "",
+      "room": "206, 02",
       "navigator": "Latalia",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "8/16/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -3034,7 +3034,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "79 y/o M chief complaint of S.O.B. Hx of Partial diaphragm paralysis and COPD. EMS arrived on scene with patient trying to catch his breath. O2 saturations at 86% on arrival per EMS. Baseline is at 4L, EMS titrated up to 6 but no resolution. Upon arrival to ED, patient O2 saturations dropped to 70%, patient placed on NRB 15L. Now at 100%. \r\n\r\nPatient takes elliquis, Flagyl, Lispro, and Lasix. BG 105. 12L unremarkable."
     }
   ],
   "metrics": {
@@ -7954,7 +7954,7 @@
       "formReceived": "Yes",
       "dateReceivedStr": "8/13/2026",
       "status": "",
-      "notes": "Automatically updated from Outlook | Match: Practice explicitly listed in intake email body | Sender: Rachel Robinson | Subject: CMP - T D Nguyen, David Nguyen and Kevin Nguyen",
+      "notes": "Automatically updated from Outlook | Match: Practice explicitly listed in email body and uniquely matched to tracker | Sender: Rachel Robinson | Subject: CMP - T D Nguyen, David Nguyen and Kevin Nguyen",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -9059,10 +9059,10 @@
       "tin": "680514531",
       "consultant": "Rachel Robinson",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
+      "formReceived": "Yes",
+      "dateReceivedStr": "8/13/2026",
       "status": "",
-      "notes": "",
+      "notes": "Automatically updated from Outlook | Match: GPT Vision 90%+ practice-name match | Sender: Rachel Robinson | Subject: CMP - T D Nguyen, David Nguyen and Kevin Nguyen",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -11676,10 +11676,10 @@
   ],
   "intakeMetrics": {
     "total": 307,
-    "received": 49,
+    "received": 50,
     "notReceived": 0,
-    "pending": 258
+    "pending": 257
   },
-  "lastUpdated": "2026-08-14T16:28:04.586Z",
+  "lastUpdated": "2026-08-14T16:56:46.675Z",
   "source": "auto-sync"
 }
