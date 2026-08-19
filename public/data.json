@@ -3056,7 +3056,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "patient was readmitted 8/14/2026 from IRF-BIBA 91male  from emcompas hc. for dvt and PE Cough started yesterday. GCS yesterday was 14 baseline, today is GCS 12. BS 144. has foley. Possible dc to SNF ck status"
+      "notes": "patient was readmitted 8/14/2026 from IRF-BIBA 91male  from emcompas hc. for dvt and PE Cough started yesterday. GCS yesterday was 14 baseline, today is GCS 12. BS 144. has foley. Possible dc to SNF ck status- 8/19 per MD notes  stable for discharge to rehab, and noted poor overall prognosis with appropriateness for palliative or hospice care."
     },
     {
       "name": "Sevilla Gruber",
@@ -3064,7 +3064,7 @@
       "location": "TVH",
       "room": "4122, 01",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "8/20/2026",
+      "anticipatedStr": "8/23/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -3078,7 +3078,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": "BIBA from Temecula healthcare. Bed is 2 feet off the ground, sitting next to bed, staff called for possible unwitnessed fall. Patient complaints of pain."
+      "notes": "BIBA from Temecula healthcare. Bed is 2 feet off the ground, sitting next to bed, staff called for possible unwitnessed fall. Patient complaints of pain. Likely to DC back to SNF Temecula Healthcare where patient came from- anticipated to dc 8/23/2026"
     },
     {
       "name": "Deborah Harper",
@@ -11966,6 +11966,6 @@
     "notReceived": 0,
     "pending": 257
   },
-  "lastUpdated": "2026-08-19T20:28:03.495Z",
+  "lastUpdated": "2026-08-19T20:43:03.575Z",
   "source": "auto-sync"
 }
