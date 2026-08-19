@@ -2847,9 +2847,9 @@
       "anticipatedStr": "8/14/2026",
       "actualDischargeStr": "8/13/2026",
       "daysSinceDischarge": 7,
-      "tcmRaw": "Pending",
+      "tcmRaw": "No",
       "tcmScheduled": false,
-      "tcmPending": true,
+      "tcmPending": false,
       "tcmDateStr": "N/A",
       "apptType": "",
       "visitVerified": false,
@@ -2857,8 +2857,8 @@
       "windowStatus": "",
       "call2": "",
       "call7": "",
-      "status": "Pending",
-      "notes": "Pt states he had labs done and was called and told he had abnormal labs and needed to come to ER. patient has not been seen at RMC since last august per practice EMR. Calling office to confirm. Due to sch. Pt dc earlier than anticipated, called pcp to schedule x2 unable to reach.LM to return call"
+      "status": "Discharged - No TCM",
+      "notes": "Pt states he had labs done and was called and told he had abnormal labs and needed to come to ER. patient has not been seen at RMC since last august per practice EMR. Calling office to confirm. Due to sch. Pt dc earlier than anticipated, called pcp to schedule x2 unable to reach.LM to return call. Chart review in pcp EMR pt noted to have new PCP has not been seen at RMC for a year. New Pcp unknown. "
     },
     {
       "name": "Jenne Paquette",
@@ -3327,10 +3327,10 @@
     "totalPatients": 151,
     "currentlyAdmitted": 87,
     "tcmScheduled": 104,
-    "tcmPending": 42,
+    "tcmPending": 41,
     "visitVerified": 45,
     "missed14DayWindow": 0,
-    "notYetScheduled": 5,
+    "notYetScheduled": 6,
     "scheduledRate": 68.9,
     "nurseCounts": {
       "Devan Lambruno": 105,
@@ -11966,6 +11966,6 @@
     "notReceived": 0,
     "pending": 257
   },
-  "lastUpdated": "2026-08-19T19:58:05.665Z",
+  "lastUpdated": "2026-08-19T20:13:05.625Z",
   "source": "auto-sync"
 }
