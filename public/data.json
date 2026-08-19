@@ -3260,9 +3260,9 @@
       "name": "Timothy Sangster",
       "practice": "Peter Strutz",
       "location": "TVH",
-      "room": "",
+      "room": "5m38, 01",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "8/21/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -3276,15 +3276,15 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "biba from home. pt hx of seizure and brain surgery with deficit on left side. pt got up this morning and c/o left leg pain in hip pain. denies trauma. can trnasfer at baseline right now he can not. no visable trauma or deformity. dx: hld- per hosp CM patient to dc 8/21 to SNF therefor not TCM eligible at this time. "
     },
     {
       "name": "Robert Drolet",
       "practice": "Timothy Killeen",
       "location": "TVH",
-      "room": "",
+      "room": "4103, 01",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "8/20/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -3298,13 +3298,13 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "Pt sent into ED via MD Killeen du to pt having palpitations, left neck pain, dizziness and headache. PMH Afib, and CABG (triple bypass). Pt denies chest pain. Pt is on 3 lpm O2 (Hx of COPD, lung CA, and CHF)"
     },
     {
       "name": "Cynthia Dacchioli",
       "practice": "Timothy Killeen",
       "location": "TVH",
-      "room": "",
+      "room": "3131, 01",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
@@ -3320,7 +3320,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "Patient biba from encompass health with c/c of shortness of breath. patient is requiring more oxygen than facility is comfortable treating. After PT patient was taking longer for O2 sat to come up. "
     }
   ],
   "metrics": {
@@ -11966,6 +11966,6 @@
     "notReceived": 0,
     "pending": 257
   },
-  "lastUpdated": "2026-08-19T20:13:05.625Z",
+  "lastUpdated": "2026-08-19T20:28:03.495Z",
   "source": "auto-sync"
 }
