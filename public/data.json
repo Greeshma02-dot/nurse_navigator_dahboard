@@ -3122,7 +3122,7 @@
       "call2": "12:20 Zebrack",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Wheeled into triage c/o 6/10 \"sharp\" chest pain, denies radiating pain, denies n/v, denies vision changes. Seen here at TVH on 8/12 for same complaint. States her pain goes away after taking her home nitroglycerin but this time pain hasnt subsided.\r\nHX: A fib, No anticipated dc at this time per hosp CM. cont sob+ chest pain, 40L- no dc anytime soon per CM"
+      "notes": "Wheeled into triage c/o 6/10 \"sharp\" chest pain, denies radiating pain, denies n/v, denies vision changes. Seen here at TVH on 8/12 for same complaint. States her pain goes away after taking her home nitroglycerin but this time pain hasnt subsided.\r\nHX: A fib, No anticipated dc at this time per hosp CM. cont sob+ chest pain, 40L- no dc anytime soon per CM. called pcp and scheduled pt for 8/27 at 1220. 8/20 met with patient and husband at bedside, appt card given, both verbalize understanding and confirm appt."
     },
     {
       "name": "Christopher Davis",
@@ -3166,7 +3166,7 @@
       "call2": "12:00 Zebrack",
       "call7": "",
       "status": "Scheduled",
-      "notes": "NSTEMI"
+      "notes": "NSTEMI, 8/19 called pcp and scheduled pt for 8/27 at 1200, met with patient in hosp at bedside, appt card given, pt verbalizes understanding and confirms appt, lives with daughter and wife."
     },
     {
       "name": "Susan Grindle",
@@ -3290,7 +3290,7 @@
       "tcmRaw": "Yes",
       "tcmScheduled": true,
       "tcmPending": false,
-      "tcmDateStr": "8/5/2026",
+      "tcmDateStr": "8/25/2026",
       "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
@@ -3298,7 +3298,7 @@
       "call2": "Sat Dec 30 1899 02:30:00 GMT-0500 (Eastern Standard Time)",
       "call7": "",
       "status": "Scheduled",
-      "notes": "Pt sent into ED via MD Killeen du to pt having palpitations, left neck pain, dizziness and headache. PMH Afib, and CABG (triple bypass). Pt denies chest pain. Pt is on 3 lpm O2 (Hx of COPD, lung CA, and CHF) called pcp and scheduled pt for 8/25 2:30 pt to be notified."
+      "notes": "Pt sent into ED via MD Killeen du to pt having palpitations, left neck pain, dizziness and headache. PMH Afib, and CABG (triple bypass). Pt denies chest pain. Pt is on 3 lpm O2 (Hx of COPD, lung CA, and CHF) called pcp and scheduled pt for 8/25 2:30 pt to be notified. met patent at bedside in hosp, patient in and out of sleeping, incoherent, not receptive to information at this time. Met with nurse and passed off appt card, nurse stated he would pass it on to wife when she comes in. Notified CM to include fu information in dc papaerwork. Per nurse, awaiting clearance from pulmo/cardio per Dr Killeen approval. anticipate possible cardioversion, dc date tentative on workup."
     },
     {
       "name": "Cynthia Dacchioli",
@@ -12010,6 +12010,6 @@
     "notReceived": 0,
     "pending": 257
   },
-  "lastUpdated": "2026-08-20T19:13:03.941Z",
+  "lastUpdated": "2026-08-20T19:28:06.786Z",
   "source": "auto-sync"
 }
