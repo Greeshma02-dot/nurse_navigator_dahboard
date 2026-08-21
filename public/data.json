@@ -3169,28 +3169,6 @@
       "notes": "NSTEMI, 8/19 called pcp and scheduled pt for 8/27 at 1200, met with patient in hosp at bedside, appt card given, pt verbalizes understanding and confirms appt, lives with daughter and wife."
     },
     {
-      "name": "Susan Grindle",
-      "practice": "Temecula Valley PCP",
-      "location": "IVM",
-      "room": "",
-      "navigator": "N/A",
-      "anticipatedStr": "8/18/2026",
-      "actualDischargeStr": "N/A",
-      "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
-      "visitVerified": false,
-      "missed14Day": false,
-      "windowStatus": "",
-      "call2": "",
-      "call7": "",
-      "status": "Pending",
-      "notes": ""
-    },
-    {
       "name": "Wanda McCleary",
       "practice": "Timothy Killeen",
       "location": "RSM",
@@ -3365,22 +3343,44 @@
       "call7": "",
       "status": "Pending",
       "notes": ""
+    },
+    {
+      "name": "Ruth Stanley",
+      "practice": "Rhoda Estrella-Itchon MD Inc",
+      "location": "IVM",
+      "room": "",
+      "navigator": "Shala",
+      "anticipatedStr": "N/A",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "",
+      "tcmScheduled": false,
+      "tcmPending": false,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Admitted",
+      "notes": "possible abscess to right hip x 2 weeks\r\nsent by dr french for surgery tomorrow\r\ndenis fevers. "
     }
   ],
   "metrics": {
     "totalPatients": 153,
     "currentlyAdmitted": 89,
     "tcmScheduled": 105,
-    "tcmPending": 42,
+    "tcmPending": 41,
     "visitVerified": 45,
     "missed14DayWindow": 0,
-    "notYetScheduled": 6,
+    "notYetScheduled": 7,
     "scheduledRate": 68.6,
     "nurseCounts": {
       "Devan Lambruno": 107,
       "Sunnie Emberson": 25,
       "Latalia": 11,
-      "Shala": 9
+      "Shala": 10
     }
   },
   "practices": [
@@ -12010,6 +12010,6 @@
     "notReceived": 0,
     "pending": 257
   },
-  "lastUpdated": "2026-08-21T12:58:13.536Z",
+  "lastUpdated": "2026-08-21T13:13:06.022Z",
   "source": "auto-sync"
 }
