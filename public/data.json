@@ -3199,17 +3199,17 @@
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
-      "tcmRaw": "Pending",
-      "tcmScheduled": false,
-      "tcmPending": true,
-      "tcmDateStr": "N/A",
-      "apptType": "",
+      "tcmRaw": "Yes",
+      "tcmScheduled": true,
+      "tcmPending": false,
+      "tcmDateStr": "9/4/2026",
+      "apptType": "In-Person",
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
       "call2": "Sent an email to Tammy Burgoa at Temecula Valley Primary Care requesting to make a post discharge appointment. ",
       "call7": "",
-      "status": "Pending",
+      "status": "Scheduled",
       "notes": ""
     },
     {
@@ -3370,12 +3370,12 @@
   "metrics": {
     "totalPatients": 153,
     "currentlyAdmitted": 89,
-    "tcmScheduled": 105,
-    "tcmPending": 41,
+    "tcmScheduled": 106,
+    "tcmPending": 40,
     "visitVerified": 45,
     "missed14DayWindow": 0,
     "notYetScheduled": 7,
-    "scheduledRate": 68.6,
+    "scheduledRate": 69.3,
     "nurseCounts": {
       "Devan Lambruno": 107,
       "Sunnie Emberson": 25,
@@ -12010,6 +12010,6 @@
     "notReceived": 255,
     "pending": 0
   },
-  "lastUpdated": "2026-08-21T20:28:05.197Z",
+  "lastUpdated": "2026-08-21T20:43:06.233Z",
   "source": "auto-sync"
 }
