@@ -3207,7 +3207,7 @@
       "visitVerified": false,
       "missed14Day": false,
       "windowStatus": "",
-      "call2": "",
+      "call2": "Sent an email to Tammy Burgoa at Temecula Valley Primary Care requesting to make a post discharge appointment. ",
       "call7": "",
       "status": "Pending",
       "notes": ""
@@ -3304,9 +3304,9 @@
       "name": "William Rupp",
       "practice": "Peter Strutz",
       "location": "TVH",
-      "room": "",
+      "room": "4144",
       "navigator": "Devan Lambruno",
-      "anticipatedStr": "N/A",
+      "anticipatedStr": "8/24/2026",
       "actualDischargeStr": "N/A",
       "daysSinceDischarge": null,
       "tcmRaw": "Pending",
@@ -3320,13 +3320,13 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "BIBA from home - complaint of Difficulty speaking. Hx: TIA. Code stroke 24 cancelled in triage. BGL 118"
     },
     {
       "name": "Antonio Ramos",
       "practice": "Ocampo",
       "location": "TVH",
-      "room": "",
+      "room": "ERHD",
       "navigator": "Devan Lambruno",
       "anticipatedStr": "N/A",
       "actualDischargeStr": "N/A",
@@ -3342,7 +3342,7 @@
       "call2": "",
       "call7": "",
       "status": "Pending",
-      "notes": ""
+      "notes": "Pt sent into ED via Cardiologist with afib RvR @ 141 bpm and BP of 82/56. Pt is in c-collar s/p cervical spine surgery (7/29- per hosp notes no pending DC as of 8/21 no DC information"
     },
     {
       "name": "Ruth Stanley",
@@ -12010,6 +12010,6 @@
     "notReceived": 255,
     "pending": 0
   },
-  "lastUpdated": "2026-08-21T19:13:15.281Z",
+  "lastUpdated": "2026-08-21T19:28:05.581Z",
   "source": "auto-sync"
 }
