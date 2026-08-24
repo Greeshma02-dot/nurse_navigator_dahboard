@@ -3541,21 +3541,43 @@
       "call7": "",
       "status": "Pending",
       "notes": ""
+    },
+    {
+      "name": "Bernard Ohanian",
+      "practice": "Riverside Medical Clinic",
+      "location": "CRM",
+      "room": "",
+      "navigator": "Latalia",
+      "anticipatedStr": "8/23/2026",
+      "actualDischargeStr": "N/A",
+      "daysSinceDischarge": null,
+      "tcmRaw": "Pending",
+      "tcmScheduled": false,
+      "tcmPending": true,
+      "tcmDateStr": "N/A",
+      "apptType": "",
+      "visitVerified": false,
+      "missed14Day": false,
+      "windowStatus": "",
+      "call2": "",
+      "call7": "",
+      "status": "Pending",
+      "notes": ""
     }
   ],
   "metrics": {
-    "totalPatients": 161,
-    "currentlyAdmitted": 97,
+    "totalPatients": 162,
+    "currentlyAdmitted": 98,
     "tcmScheduled": 106,
-    "tcmPending": 48,
+    "tcmPending": 49,
     "visitVerified": 45,
     "missed14DayWindow": 0,
     "notYetScheduled": 7,
-    "scheduledRate": 65.8,
+    "scheduledRate": 65.4,
     "nurseCounts": {
       "Devan Lambruno": 114,
       "Sunnie Emberson": 25,
-      "Latalia": 11,
+      "Latalia": 12,
       "Shala": 10
     }
   },
@@ -12186,6 +12208,6 @@
     "notReceived": 0,
     "pending": 255
   },
-  "lastUpdated": "2026-08-24T16:58:06.462Z",
+  "lastUpdated": "2026-08-24T17:13:06.301Z",
   "source": "auto-sync"
 }
