@@ -10357,10 +10357,10 @@
       "tin": "452901217",
       "consultant": "Elisa Kiesling",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
+      "formReceived": "Yes",
+      "dateReceivedStr": "8/26/2026",
       "status": "",
-      "notes": "",
+      "notes": "Automatically updated from Outlook | Match: Attachment OCR/text - unique shortened-name match | Sender: Kathryn Bernardini | Subject: Re: Bamboo Connectivity - Bridge Group",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -12204,10 +12204,10 @@
   ],
   "intakeMetrics": {
     "total": 307,
-    "received": 67,
+    "received": 68,
     "notReceived": 0,
-    "pending": 240
+    "pending": 239
   },
-  "lastUpdated": "2026-08-27T13:58:05.853Z",
+  "lastUpdated": "2026-08-27T14:13:08.740Z",
   "source": "auto-sync"
 }
