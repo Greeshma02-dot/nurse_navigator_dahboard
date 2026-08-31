@@ -9335,10 +9335,10 @@
       "tin": "297583487",
       "consultant": "Trysha Logan",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
+      "formReceived": "Yes",
+      "dateReceivedStr": "8/28/2026",
       "status": "",
-      "notes": "",
+      "notes": "Automatically updated from Outlook | Match: Attachment filename - 90%+ normalized match | Sender: Trysha Logan | Subject: PDV Parameter Form and Care Management Intake Form",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -9489,10 +9489,10 @@
       "tin": "770098153",
       "consultant": "Trysha Logan",
       "dateStartedStr": "N/A",
-      "formReceived": "",
-      "dateReceivedStr": "N/A",
+      "formReceived": "Yes",
+      "dateReceivedStr": "8/28/2026",
       "status": "",
-      "notes": "",
+      "notes": "Automatically updated from Outlook | Match: Attachment OCR/text - 90%+ normalized match | Sender: Trysha Logan | Subject: PDV Parameter and Care Management Program Intake Forms",
       "emrAccessNurses": [],
       "emrSystem": "",
       "emrAccessConfirmed": false
@@ -12204,10 +12204,10 @@
   ],
   "intakeMetrics": {
     "total": 307,
-    "received": 68,
+    "received": 70,
     "notReceived": 0,
-    "pending": 239
+    "pending": 237
   },
-  "lastUpdated": "2026-08-31T19:58:08.185Z",
+  "lastUpdated": "2026-08-31T20:13:03.981Z",
   "source": "auto-sync"
 }
